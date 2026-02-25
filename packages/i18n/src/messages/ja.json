@@ -28,14 +28,18 @@
       "info": "情報入力",
       "style": "スタイル"
     },
-    "preview": "プレビュー"
+    "preview": "プレビュー",
+    "previewDesktop": "デスクトップ",
+    "previewMobile": "モバイル"
   },
   "form": {
     "sections": {
       "basic": "基本情報",
       "contact": "連絡先",
       "address": "住所",
-      "logo": "ロゴ"
+      "logo": "ロゴ",
+      "disclaimer": "免責事項",
+      "social": "SNS・ソーシャル"
     },
     "fields": {
       "companyName": "会社名",
@@ -58,11 +62,20 @@
       "phone": "03-1234-5678",
       "postalCode": "〒100-0001",
       "address1": "東京都千代田区千代田1-1",
-      "address2": "サンプルビルディング 10階"
+      "address2": "サンプルビルディング 10階",
+      "disclaimer": "このメールは機密情報を含む場合があります。誤って受信された場合は削除してください。"
     },
     "logoSelect": "クリックしてロゴを選択",
     "logoPreview": "ロゴプレビュー",
-    "logoSelectAria": "ロゴ画像を選択"
+    "logoSelectAria": "ロゴ画像を選択",
+    "utm": {
+      "title": "UTMパラメータ追加",
+      "campaign": "キャンペーン名",
+      "apply": "適用",
+      "cancel": "キャンセル"
+    },
+    "addSocial": "追加",
+    "removeSocial": "削除"
   },
   "style": {
     "template": "テンプレート",
@@ -125,7 +138,29 @@
     "copied": "コピーしました！",
     "setGmail": "Gmailに設定",
     "pngError": "PNG出力に失敗しました。もう一度お試しください。",
-    "copyError": "コピーに失敗しました。ブラウザの設定を確認してください。"
+    "copyError": "コピーに失敗しました。ブラウザの設定を確認してください。",
+    "setEmail": "メールに設定",
+    "guide": {
+      "gmail": {
+        "step1": "下の「HTMLをコピー」ボタンをクリックします。",
+        "step2": "Gmail設定（設定 → すべての設定を表示 → 署名）を開きます。",
+        "step3": "「新しい署名を作成」をクリックし、署名名を入力します。",
+        "step4": "テキストエリアに貼り付け（Ctrl+V / Cmd+V）して保存します。"
+      },
+      "outlook": {
+        "step1": "下の「HTMLをコピー」ボタンをクリックします。",
+        "step2": "Outlook設定 → メール → 作成と返信 → メール署名を開きます。",
+        "step3": "「新しい署名」をクリックし、名前を入力します。",
+        "step4": "テキストエリアに貼り付けて保存します。"
+      },
+      "apple": {
+        "step1": "下の「HTMLをコピー」ボタンをクリックします。",
+        "step2": "Apple Mail → 環境設定 → 署名を開きます。",
+        "step3": "「+」ボタンで新しい署名を作成します。",
+        "step4": "署名エリアに貼り付けて完了です。"
+      },
+      "openOutlook": "Outlookを開く"
+    }
   },
   "gmail": {
     "instructions": "Gmail APIを使用して署名を直接設定します。Google Cloud ConsoleでOAuth 2.0 クライアントIDを作成してください。",

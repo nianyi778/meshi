@@ -1,14 +1,15 @@
 "use client";
 
-import React, { useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { useSignatureStore } from "@/store/signature-store";
-import type { SignatureData, FieldVisibility } from "@meishi/core/types";
+import type { SignatureData, FieldVisibility, SocialLink } from "@meishi/core/types";
 import { formatPhoneJP, formatPostalCodeJP } from "@meishi/core/utils";
+import { SOCIAL_PLATFORMS } from "@meishi/core/constants";
 import { Button } from "@meishi/ui/components/button";
 import { Input } from "@meishi/ui/components/input";
 import { Label } from "@meishi/ui/components/label";
-import { RotateCcw, Eye, EyeOff, Upload, X } from "lucide-react";
+import { RotateCcw, Eye, EyeOff, Upload, X, Plus } from "lucide-react";
 
 // ---------------------------------------------------------------------------
 // Field keys grouped by section
@@ -59,31 +60,109 @@ function FieldRow({
   onToggleVisibility,
 }: FieldRowProps) {
   const t = useTranslations();
+  const [showUtm, setShowUtm] = useState(false);
+  const [utmSource, setUtmSource] = useState("email");
+  const [utmMedium, setUtmMedium] = useState("signature");
+  const [utmCampaign, setUtmCampaign] = useState("");
+
+  const handleUtmApply = useCallback(() => {
+    let base = value;
+    // Strip existing UTM params
+    try {
+      const url = new URL(base.startsWith("http") ? base : `https://${base}`);
+      url.searchParams.delete("utm_source");
+      url.searchParams.delete("utm_medium");
+      url.searchParams.delete("utm_campaign");
+      base = url.toString();
+    } catch {
+      // not a valid URL yet, just append
+    }
+    const sep = base.includes("?") ? "&" : "?";
+    const params = [`utm_source=${encodeURIComponent(utmSource)}`, `utm_medium=${encodeURIComponent(utmMedium)}`];
+    if (utmCampaign) params.push(`utm_campaign=${encodeURIComponent(utmCampaign)}`);
+    onValueChange(`${base}${sep}${params.join("&")}`);
+    setShowUtm(false);
+  }, [value, utmSource, utmMedium, utmCampaign, onValueChange]);
+
   return (
-    <div className="group grid grid-cols-[1fr_auto] items-start gap-3">
-      <div className="space-y-1.5">
-        <Label
-          htmlFor={`field-${field}`}
-          className="text-[11px] font-semibold tracking-wider text-[var(--color-brand-text-muted)] uppercase"
-        >
-          {t(`form.fields.${field}`)}
-        </Label>
-        <Input
-          id={`field-${field}`}
-          value={value}
-          placeholder={t(`form.placeholders.${field}`)}
-          onChange={(e) => onValueChange(e.target.value)}
-          className="border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] transition-all duration-200 placeholder:text-[var(--color-brand-text-muted)]/50 focus:border-[var(--color-brand-primary)] focus:ring-2 focus:ring-[var(--color-brand-primary)]/10"
-        />
+    <div className="space-y-2">
+      <div className="group grid grid-cols-[1fr_auto] items-start gap-3">
+        <div className="space-y-1.5">
+          <Label
+            htmlFor={`field-${field}`}
+            className="text-[11px] font-semibold tracking-wider text-[var(--color-brand-text-muted)] uppercase"
+          >
+            {t(`form.fields.${field}`)}
+          </Label>
+          <Input
+            id={`field-${field}`}
+            value={value}
+            placeholder={t(`form.placeholders.${field}`)}
+            onChange={(e) => onValueChange(e.target.value)}
+            className="border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] transition-all duration-200 placeholder:text-[var(--color-brand-text-muted)]/50 focus:border-[var(--color-brand-primary)] focus:ring-2 focus:ring-[var(--color-brand-primary)]/10"
+          />
+        </div>
+        <div className="mt-6 flex items-center gap-1">
+          {field === "webUrl" && (
+            <button
+              type="button"
+              onClick={() => setShowUtm(!showUtm)}
+              className={`shrink-0 rounded-md px-2 py-1 text-[10px] font-bold tracking-wide border transition-colors cursor-pointer ${
+                showUtm
+                  ? "border-[var(--color-brand-primary)] text-[var(--color-brand-primary)] bg-[var(--color-brand-primary)]/5"
+                  : "border-[var(--color-brand-border)] text-[var(--color-brand-text-muted)] hover:border-[var(--color-brand-primary)] hover:text-[var(--color-brand-primary)]"
+              }`}
+            >
+              UTM
+            </button>
+          )}
+          <button
+            type="button"
+            onClick={onToggleVisibility}
+            title={visible ? t("common.hide") : t("common.show")}
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-[var(--color-brand-text-muted)] transition-all duration-200 hover:bg-[var(--color-brand-bg)] hover:text-[var(--color-brand-text)] cursor-pointer"
+          >
+            {visible ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4 opacity-50" />}
+          </button>
+        </div>
       </div>
-      <button
-        type="button"
-        onClick={onToggleVisibility}
-        title={visible ? t("common.hide") : t("common.show")}
-        className="mt-6 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-[var(--color-brand-text-muted)] transition-all duration-200 hover:bg-[var(--color-brand-bg)] hover:text-[var(--color-brand-text)] cursor-pointer"
-      >
-        {visible ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4 opacity-50" />}
-      </button>
+
+      {/* UTM Builder */}
+      {field === "webUrl" && showUtm && (
+        <div className="rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface-alt)] p-4 space-y-3">
+          <p className="text-xs font-semibold text-[var(--color-brand-text)]">{t("form.utm.title")}</p>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="space-y-1">
+              <Label className="text-[10px] font-semibold tracking-wider text-[var(--color-brand-text-muted)] uppercase">utm_source</Label>
+              <Input value={utmSource} onChange={(e) => setUtmSource(e.target.value)} className="h-8 text-xs border-[var(--color-brand-border)] bg-[var(--color-brand-surface)]" />
+            </div>
+            <div className="space-y-1">
+              <Label className="text-[10px] font-semibold tracking-wider text-[var(--color-brand-text-muted)] uppercase">utm_medium</Label>
+              <Input value={utmMedium} onChange={(e) => setUtmMedium(e.target.value)} className="h-8 text-xs border-[var(--color-brand-border)] bg-[var(--color-brand-surface)]" />
+            </div>
+          </div>
+          <div className="space-y-1">
+            <Label className="text-[10px] font-semibold tracking-wider text-[var(--color-brand-text-muted)] uppercase">{t("form.utm.campaign")}</Label>
+            <Input value={utmCampaign} onChange={(e) => setUtmCampaign(e.target.value)} placeholder="spring_2025" className="h-8 text-xs border-[var(--color-brand-border)] bg-[var(--color-brand-surface)]" />
+          </div>
+          <div className="flex gap-2 pt-1">
+            <button
+              type="button"
+              onClick={handleUtmApply}
+              className="rounded-lg bg-[var(--color-brand-cta)] px-4 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-[var(--color-brand-cta-hover)] cursor-pointer"
+            >
+              {t("form.utm.apply")}
+            </button>
+            <button
+              type="button"
+              onClick={() => setShowUtm(false)}
+              className="rounded-lg border border-[var(--color-brand-border)] px-4 py-1.5 text-xs font-semibold text-[var(--color-brand-text-muted)] transition-colors hover:text-[var(--color-brand-text)] cursor-pointer"
+            >
+              {t("form.utm.cancel")}
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -232,7 +311,7 @@ export function SignatureForm() {
               <FieldRow
                 key={field}
                 field={field}
-                value={data[field]}
+                value={data[field] as string}
                 visible={getVisibility(field)}
                 onValueChange={(v) => {
                   if (field === "phone") updateField(field, formatPhoneJP(v));
@@ -245,6 +324,114 @@ export function SignatureForm() {
           </div>
         </fieldset>
       ))}
+
+      {/* ---------- Social Links ---------- */}
+      <fieldset className="space-y-4">
+        <div className="flex items-center justify-between">
+          <legend className="text-sm font-bold text-[var(--color-brand-text)]">
+            {t("form.sections.social")}
+          </legend>
+          <button
+            type="button"
+            onClick={() => toggleFieldVisibility("socialLinks")}
+            title={style.fieldVisibility.socialLinks ? t("common.hide") : t("common.show")}
+            className="flex h-8 w-8 items-center justify-center rounded-lg text-[var(--color-brand-text-muted)] transition-all duration-200 hover:bg-[var(--color-brand-bg)] hover:text-[var(--color-brand-text)] cursor-pointer"
+          >
+            {style.fieldVisibility.socialLinks ? (
+              <Eye className="h-4 w-4" />
+            ) : (
+              <EyeOff className="h-4 w-4 opacity-50" />
+            )}
+          </button>
+        </div>
+
+        <div className="space-y-3">
+          {data.socialLinks.map((link, idx) => (
+            <div key={idx} className="grid grid-cols-[120px_1fr_auto] items-center gap-2">
+              <select
+                value={link.platform}
+                onChange={(e) => {
+                  const next: SocialLink[] = data.socialLinks.map((item, i) =>
+                    i === idx ? { platform: e.target.value as SocialLink["platform"], url: item.url } : item
+                  );
+                  updateField("socialLinks", next);
+                }}
+                className="h-9 rounded-lg border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-2 text-xs text-[var(--color-brand-text)] transition-all duration-200 focus:border-[var(--color-brand-primary)] focus:ring-2 focus:ring-[var(--color-brand-primary)]/10"
+              >
+                {SOCIAL_PLATFORMS.map((p) => (
+                  <option key={p.id} value={p.id}>{p.label}</option>
+                ))}
+              </select>
+              <Input
+                value={link.url}
+                placeholder={SOCIAL_PLATFORMS.find((p) => p.id === link.platform)?.urlPrefix ?? "https://"}
+                onChange={(e) => {
+                  const next: SocialLink[] = data.socialLinks.map((item, i) =>
+                    i === idx ? { platform: item.platform, url: e.target.value } : item
+                  );
+                  updateField("socialLinks", next);
+                }}
+                className="border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] transition-all duration-200 placeholder:text-[var(--color-brand-text-muted)]/50 focus:border-[var(--color-brand-primary)] focus:ring-2 focus:ring-[var(--color-brand-primary)]/10"
+              />
+              <button
+                type="button"
+                onClick={() => {
+                  const next: SocialLink[] = data.socialLinks.filter((_: SocialLink, i: number) => i !== idx);
+                  updateField("socialLinks", next);
+                }}
+                title={t("form.removeSocial")}
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-[var(--color-brand-text-muted)] transition-all duration-200 hover:bg-destructive/10 hover:text-destructive cursor-pointer"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+          ))}
+
+          {data.socialLinks.length < 6 && (
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                const next: SocialLink[] = [...data.socialLinks, { platform: "linkedin" as const, url: "" }];
+                updateField("socialLinks", next);
+              }}
+              className="gap-1.5 rounded-lg border-[var(--color-brand-border)] text-[var(--color-brand-text-muted)] transition-all duration-200 hover:border-[var(--color-brand-primary)]/30 hover:text-[var(--color-brand-primary)] cursor-pointer"
+            >
+              <Plus className="h-3.5 w-3.5" />
+              {t("form.addSocial")}
+            </Button>
+          )}
+        </div>
+      </fieldset>
+
+      {/* ---------- Disclaimer ---------- */}
+      <fieldset className="space-y-4">
+        <div className="flex items-center justify-between">
+          <legend className="text-sm font-bold text-[var(--color-brand-text)]">
+            {t("form.sections.disclaimer")}
+          </legend>
+          <button
+            type="button"
+            onClick={() => toggleFieldVisibility("disclaimer")}
+            title={style.fieldVisibility.disclaimer ? t("common.hide") : t("common.show")}
+            className="flex h-8 w-8 items-center justify-center rounded-lg text-[var(--color-brand-text-muted)] transition-all duration-200 hover:bg-[var(--color-brand-bg)] hover:text-[var(--color-brand-text)] cursor-pointer"
+          >
+            {style.fieldVisibility.disclaimer ? (
+              <Eye className="h-4 w-4" />
+            ) : (
+              <EyeOff className="h-4 w-4 opacity-50" />
+            )}
+          </button>
+        </div>
+        <textarea
+          value={data.disclaimer}
+          onChange={(e) => updateField("disclaimer", e.target.value)}
+          placeholder={t("form.placeholders.disclaimer")}
+          rows={3}
+          className="w-full rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-3.5 py-2.5 text-sm text-gray-700 placeholder:text-gray-400 transition-all duration-200 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 resize-none"
+        />
+      </fieldset>
 
       {/* ---------- Logo ---------- */}
       <fieldset className="space-y-4">

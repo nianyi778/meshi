@@ -4,7 +4,8 @@ import type {
   SignatureStyle,
   TemplateId,
 } from "@meishi/core/types";
-import { getFontFamilyCss, formatPhoneForLink } from "@meishi/core/utils";
+import { getFontFamilyCss, formatPhoneForLink, getSocialIconSvg } from "@meishi/core/utils";
+import { SOCIAL_PLATFORMS } from "@meishi/core/constants";
 
 // ============================================
 // PNG Export
@@ -79,6 +80,19 @@ function buildRow(label: string, value: string, link?: string, style?: string): 
   return `<tr><td style="padding:2px 0;${textStyle}">${label ? `<span style="color:#666666;">${label}</span> ` : ""}${escapeHtml(value)}</td></tr>`;
 }
 
+function buildSocialLinksRow(data: SignatureData, style: SignatureStyle, align?: string): string {
+  const v = style.fieldVisibility;
+  if (!v.socialLinks || !data.socialLinks || data.socialLinks.length === 0) return "";
+  const icons = data.socialLinks.map((link) => {
+    const platform = SOCIAL_PLATFORMS.find(p => p.id === link.platform);
+    if (!platform || !link.url) return "";
+    return `<a href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;width:26px;height:26px;border-radius:6px;background-color:${platform.color};text-align:center;line-height:26px;text-decoration:none;">${getSocialIconSvg(link.platform)}</a>`;
+  }).filter(Boolean).join("&nbsp;");
+  if (!icons) return "";
+  const alignStyle = align === "center" ? "text-align:center;" : "";
+  return `<tr><td style="padding:10px 0 0;${alignStyle}">${icons}</td></tr>`;
+}
+
 function generateClassicHtml(data: SignatureData, style: SignatureStyle): string {
   const v = style.fieldVisibility;
   const fontCss = getFontFamilyCss(style.fontFamily);
@@ -116,6 +130,8 @@ function generateClassicHtml(data: SignatureData, style: SignatureStyle): string
   if (v.address2 && data.address2) {
     rows.push(buildRow("", data.address2));
   }
+
+  rows.push(buildSocialLinksRow(data, style));
 
   if (style.borderStyle !== "none") rows.push(borderLine);
 
@@ -157,9 +173,10 @@ function generateModernHtml(data: SignatureData, style: SignatureStyle): string 
     rows.push(`<tr><td style="padding:6px 0 0;font-size:${style.fontSize - 2}px;color:#888888;">📍 ${addressParts.join(" ")}</td></tr>`);
   }
 
+  rows.push(buildSocialLinksRow(data, style));
+
   return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:${fontCss};color:${style.textColor};background-color:${style.backgroundColor};padding:20px;border-radius:12px;border:1px solid #e5e7eb;max-width:500px;">${rows.join("")}</table>`;
 }
-
 function generateMinimalHtml(data: SignatureData, style: SignatureStyle): string {
   const v = style.fieldVisibility;
   const fontCss = getFontFamilyCss(style.fontFamily);
@@ -188,9 +205,10 @@ function generateMinimalHtml(data: SignatureData, style: SignatureStyle): string
     rows.push(`<tr><td style="font-size:${style.fontSize - 2}px;color:#aaa;">${addressParts.join(" ")}</td></tr>`);
   }
 
+  rows.push(buildSocialLinksRow(data, style));
+
   return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:${fontCss};font-size:${style.fontSize}px;color:${style.textColor};background-color:${style.backgroundColor};max-width:500px;">${rows.join("")}</table>`;
 }
-
 function generateCorporateHtml(data: SignatureData, style: SignatureStyle): string {
   const v = style.fieldVisibility;
   const fontCss = getFontFamilyCss(style.fontFamily);
@@ -218,9 +236,10 @@ function generateCorporateHtml(data: SignatureData, style: SignatureStyle): stri
     rows.push(`<tr><td style="padding:6px 0 0;font-size:${style.fontSize - 2}px;color:#888;">📍 ${addressParts.join(" ")}</td></tr>`);
   }
 
+  rows.push(buildSocialLinksRow(data, style));
+
   return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:${fontCss};font-size:${style.fontSize}px;color:${style.textColor};background-color:${style.backgroundColor};border-left:4px solid ${style.accentColor};padding:12px 0 12px 16px;max-width:500px;">${rows.join("")}</table>`;
 }
-
 function generateElegantHtml(data: SignatureData, style: SignatureStyle): string {
   const v = style.fieldVisibility;
   const fontCss = getFontFamilyCss(style.fontFamily);
@@ -258,13 +277,14 @@ function generateElegantHtml(data: SignatureData, style: SignatureStyle): string
     rows.push(`<tr><td style="${centerStyle}padding:8px 0 0;font-size:${style.fontSize - 2}px;color:#aaa;">${addressParts.join("<br>")}</td></tr>`);
   }
 
+  rows.push(buildSocialLinksRow(data, style, "center"));
+
   if (style.borderStyle !== "none") {
     rows.push(`<tr><td style="border-bottom:1px solid ${style.borderColor};padding:12px 0 0;"></td></tr>`);
   }
 
   return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:${fontCss};font-size:${style.fontSize}px;color:${style.textColor};background-color:${style.backgroundColor};max-width:500px;width:100%;">${rows.join("")}</table>`;
 }
-
 const TEMPLATE_GENERATORS: Record<TemplateId, (data: SignatureData, style: SignatureStyle) => string> = {
   classic: generateClassicHtml,
   modern: generateModernHtml,

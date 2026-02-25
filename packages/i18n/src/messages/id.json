@@ -28,14 +28,18 @@
       "info": "Informasi Pribadi",
       "style": "Gaya"
     },
-    "preview": "Pratinjau"
+    "preview": "Pratinjau",
+    "previewDesktop": "Desktop",
+    "previewMobile": "Ponsel"
   },
   "form": {
     "sections": {
       "basic": "Informasi Dasar",
       "contact": "Informasi Kontak",
       "address": "Alamat",
-      "logo": "Logo"
+      "logo": "Logo",
+      "disclaimer": "Penafian",
+      "social": "Media Sosial"
     },
     "fields": {
       "companyName": "Nama Perusahaan",
@@ -58,11 +62,20 @@
       "phone": "021-1234-5678",
       "postalCode": "12190",
       "address1": "Jl. Sudirman No. 1",
-      "address2": "Jakarta Selatan, DKI Jakarta 12190"
+      "address2": "Jakarta Selatan, DKI Jakarta 12190",
+      "disclaimer": "Email ini mungkin mengandung informasi rahasia. Jika diterima secara tidak sengaja, mohon hapus."
     },
     "logoSelect": "Klik untuk memilih logo",
     "logoPreview": "Pratinjau Logo",
-    "logoSelectAria": "Pilih gambar logo"
+    "logoSelectAria": "Pilih gambar logo",
+    "utm": {
+      "title": "Tambah Parameter UTM",
+      "campaign": "Nama kampanye",
+      "apply": "Terapkan",
+      "cancel": "Batal"
+    },
+    "addSocial": "Tambah",
+    "removeSocial": "Hapus"
   },
   "style": {
     "template": "Template",
@@ -125,7 +138,29 @@
     "copied": "Disalin!",
     "setGmail": "Atur di Gmail",
     "pngError": "Tidak dapat mengekspor PNG. Silakan coba lagi.",
-    "copyError": "Tidak dapat menyalin. Periksa pengaturan browser Anda."
+    "copyError": "Tidak dapat menyalin. Periksa pengaturan browser Anda.",
+    "setEmail": "Atur di Email",
+    "guide": {
+      "gmail": {
+        "step1": "Klik tombol 'Salin HTML' di bawah.",
+        "step2": "Buka Pengaturan Gmail → Lihat semua setelan → Tanda tangan.",
+        "step3": "Klik 'Buat tanda tangan baru' dan beri nama.",
+        "step4": "Tempel (Ctrl+V / Cmd+V) ke area teks dan simpan."
+      },
+      "outlook": {
+        "step1": "Klik tombol 'Salin HTML' di bawah.",
+        "step2": "Buka Pengaturan Outlook → Surat → Tulis dan balas → Tanda tangan email.",
+        "step3": "Klik 'Tanda tangan baru' dan beri nama.",
+        "step4": "Tempel ke area teks dan simpan."
+      },
+      "apple": {
+        "step1": "Klik tombol 'Salin HTML' di bawah.",
+        "step2": "Buka Apple Mail → Preferensi → Tanda Tangan.",
+        "step3": "Klik '+' untuk membuat tanda tangan baru.",
+        "step4": "Tempel ke area tanda tangan dan selesai."
+      },
+      "openOutlook": "Buka Outlook"
+    }
   },
   "gmail": {
     "instructions": "Gunakan Gmail API untuk mengatur tanda tangan secara langsung. Buat OAuth 2.0 Client ID di Google Cloud Console.",

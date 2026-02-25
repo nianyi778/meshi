@@ -28,14 +28,18 @@
       "info": "정보",
       "style": "스타일"
     },
-    "preview": "미리보기"
+    "preview": "미리보기",
+    "previewDesktop": "데스크톱",
+    "previewMobile": "모바일"
   },
   "form": {
     "sections": {
       "basic": "기본 정보",
       "contact": "연락처",
       "address": "주소",
-      "logo": "로고"
+      "logo": "로고",
+      "disclaimer": "면책 조항",
+      "social": "소셜 링크"
     },
     "fields": {
       "companyName": "회사명",
@@ -58,11 +62,20 @@
       "phone": "02-1234-5678",
       "postalCode": "06130",
       "address1": "서울특별시 강남구 테헤란로 1",
-      "address2": "샘플빌딩 10층"
+      "address2": "샘플빌딩 10층",
+      "disclaimer": "이 이메일에는 기밀 정보가 포함될 수 있습니다. 잘못 수신된 경우 삭제해 주세요."
     },
     "logoSelect": "클릭하여 로고 선택",
     "logoPreview": "로고 미리보기",
-    "logoSelectAria": "로고 이미지 선택"
+    "logoSelectAria": "로고 이미지 선택",
+    "utm": {
+      "title": "UTM 매개변수 추가",
+      "campaign": "캠페인 이름",
+      "apply": "적용",
+      "cancel": "취소"
+    },
+    "addSocial": "추가",
+    "removeSocial": "삭제"
   },
   "style": {
     "template": "템플릿",
@@ -125,7 +138,29 @@
     "copied": "복사되었습니다!",
     "setGmail": "Gmail에 설정",
     "pngError": "PNG 생성에 실패했습니다. 다시 시도해주세요.",
-    "copyError": "복사에 실패했습니다. 브라우저 설정을 확인해주세요."
+    "copyError": "복사에 실패했습니다. 브라우저 설정을 확인해주세요.",
+    "setEmail": "이메일에 설정",
+    "guide": {
+      "gmail": {
+        "step1": "아래 'HTML 복사' 버튼을 클릭하세요.",
+        "step2": "Gmail 설정 → 모든 설정 보기 → 서명을 여세요.",
+        "step3": "'새 서명 만들기'를 클릭하고 이름을 입력하세요.",
+        "step4": "텍스트 영역에 붙여넣기(Ctrl+V / Cmd+V)한 후 저장하세요."
+      },
+      "outlook": {
+        "step1": "아래 'HTML 복사' 버튼을 클릭하세요.",
+        "step2": "Outlook 설정 → 메일 → 작성 및 회신 → 전자 메일 서명을 여세요.",
+        "step3": "'새 서명'을 클릭하고 이름을 입력하세요.",
+        "step4": "텍스트 영역에 붙여넣기한 후 저장하세요."
+      },
+      "apple": {
+        "step1": "아래 'HTML 복사' 버튼을 클릭하세요.",
+        "step2": "Apple Mail → 환경설정 → 서명을 여세요.",
+        "step3": "'+' 버튼을 클릭하여 새 서명을 만드세요.",
+        "step4": "서명 영역에 붙여넣기하면 완료됩니다."
+      },
+      "openOutlook": "Outlook 열기"
+    }
   },
   "gmail": {
     "instructions": "Gmail API를 사용하여 서명을 직접 설정합니다. Google Cloud Console에서 OAuth 2.0 클라이언트 ID를 생성해주세요.",

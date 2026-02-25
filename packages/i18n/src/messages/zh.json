@@ -28,14 +28,18 @@
       "info": "信息",
       "style": "样式"
     },
-    "preview": "预览"
+    "preview": "预览",
+    "previewDesktop": "桌面",
+    "previewMobile": "手机"
   },
   "form": {
     "sections": {
       "basic": "基本信息",
       "contact": "联系方式",
       "address": "地址",
-      "logo": "logo"
+      "logo": "logo",
+      "disclaimer": "免责声明",
+      "social": "社交媒体"
     },
     "fields": {
       "companyName": "公司名称",
@@ -58,11 +62,20 @@
       "phone": "010-1234-5678",
       "postalCode": "100000",
       "address1": "北京市朝阳区建国路1号",
-      "address2": "示例大厦 10层"
+      "address2": "示例大厦 10层",
+      "disclaimer": "此邮件可能包含机密信息。如误收，请删除。"
     },
     "logoSelect": "点击选择logo",
     "logoPreview": "Logo预览",
-    "logoSelectAria": "选择Logo图片"
+    "logoSelectAria": "选择Logo图片",
+    "utm": {
+      "title": "添加 UTM 参数",
+      "campaign": "推广活动名称",
+      "apply": "应用",
+      "cancel": "取消"
+    },
+    "addSocial": "添加",
+    "removeSocial": "删除"
   },
   "style": {
     "template": "模板",
@@ -125,7 +138,29 @@
     "copied": "已复制！",
     "setGmail": "设置到Gmail",
     "pngError": "PNG生成失败。请重试。",
-    "copyError": "复制失败。请检查浏览器设置。"
+    "copyError": "复制失败。请检查浏览器设置。",
+    "setEmail": "设置到邮箱",
+    "guide": {
+      "gmail": {
+        "step1": "点击下方「复制 HTML」按钮。",
+        "step2": "打开 Gmail 设置 → 查看所有设置 → 签名。",
+        "step3": "点击「创建新签名」并输入名称。",
+        "step4": "粘贴（Ctrl+V / Cmd+V）到文本区域并保存。"
+      },
+      "outlook": {
+        "step1": "点击下方「复制 HTML」按钮。",
+        "step2": "打开 Outlook 设置 → 邮件 → 撰写和回复 → 电子邮件签名。",
+        "step3": "点击「新建签名」并输入名称。",
+        "step4": "粘贴到文本区域并保存。"
+      },
+      "apple": {
+        "step1": "点击下方「复制 HTML」按钮。",
+        "step2": "打开 Apple Mail → 偏好设置 → 签名。",
+        "step3": "点击「+」创建新签名。",
+        "step4": "粘贴到签名区域即可完成。"
+      },
+      "openOutlook": "打开 Outlook"
+    }
   },
   "gmail": {
     "instructions": "使用Gmail API直接设置签名。请在Google Cloud Console中创建OAuth 2.0客户端ID。",

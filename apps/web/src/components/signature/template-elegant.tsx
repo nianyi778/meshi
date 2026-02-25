@@ -1,7 +1,8 @@
 "use client";
 
 import type { SignatureData, SignatureStyle } from "@meishi/core/types";
-import { getFontFamilyCss, formatPhoneForLink } from "@meishi/core/utils";
+import { getFontFamilyCss, formatPhoneForLink, getSocialIconSvg } from "@meishi/core/utils";
+import { SOCIAL_PLATFORMS } from "@meishi/core/constants";
 
 interface TemplateProps {
   data: SignatureData;
@@ -184,6 +185,54 @@ export function TemplateElegant({ data, style, className }: TemplateProps) {
           {v.address2 && data.address2 && (
             <div>{data.address2}</div>
           )}
+        </div>
+      )}
+
+      {/* Social links */}
+      {v.socialLinks && data.socialLinks && data.socialLinks.length > 0 && (
+        <div style={{ marginTop: "10px", display: "flex", gap: "5px", flexWrap: "wrap", justifyContent: "center" }}>
+          {data.socialLinks.map((link, i) => {
+            const platform = SOCIAL_PLATFORMS.find(p => p.id === link.platform);
+            if (!platform || !link.url) return null;
+            return (
+              <a
+                key={i}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "26px",
+                  height: "26px",
+                  borderRadius: "6px",
+                  backgroundColor: platform.color,
+                  textDecoration: "none",
+                  flexShrink: 0,
+                }}
+                dangerouslySetInnerHTML={{ __html: getSocialIconSvg(link.platform) }}
+              />
+            );
+          })}
+        </div>
+      )}
+
+      {/* Disclaimer */}
+      {v.disclaimer && data.disclaimer && (
+        <div style={{
+          marginTop: "12px",
+          paddingTop: "8px",
+          borderTop: `1px solid ${style.borderColor}`,
+          fontSize: `${Math.max(fontSize - 2, 10)}px`,
+          color: style.textColor,
+          opacity: 0.6,
+          lineHeight: 1.5,
+          fontFamily,
+          whiteSpace: "pre-wrap",
+          textAlign: "center",
+        }}>
+          {data.disclaimer}
         </div>
       )}
 

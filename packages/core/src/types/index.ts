@@ -2,6 +2,15 @@
 // Meishi (名刺) — Core Types
 // ============================================
 
+/** Supported social media platforms */
+export type SocialPlatform = "linkedin" | "x" | "github" | "instagram" | "facebook" | "youtube" | "tiktok" | "whatsapp" | "line" | "website2";
+
+/** A social media link entry */
+export interface SocialLink {
+  platform: SocialPlatform;
+  url: string;
+}
+
 /** Signature card form data fields */
 export interface SignatureData {
   /** 会社名 */
@@ -24,6 +33,10 @@ export interface SignatureData {
   address2: string;
   /** ロゴ画像 (data URL or external URL) */
   logoUrl: string;
+  /** ソーシャルリンク */
+  socialLinks: SocialLink[];
+  /** 免責事項 / Legal disclaimer */
+  disclaimer: string;
 }
 
 /** Template ID */
@@ -52,6 +65,8 @@ export interface FieldVisibility {
   address1: boolean;
   address2: boolean;
   logo: boolean;
+  socialLinks: boolean;
+  disclaimer: boolean;
 }
 
 /** Style customization options */

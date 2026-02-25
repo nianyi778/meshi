@@ -28,14 +28,18 @@
       "info": "Information",
       "style": "Style"
     },
-    "preview": "Preview"
+    "preview": "Preview",
+    "previewDesktop": "Desktop",
+    "previewMobile": "Mobile"
   },
   "form": {
     "sections": {
       "basic": "Basic Information",
       "contact": "Contact",
       "address": "Address",
-      "logo": "Logo"
+      "logo": "Logo",
+      "disclaimer": "Disclaimer",
+      "social": "Social Links"
     },
     "fields": {
       "companyName": "Company Name",
@@ -58,11 +62,20 @@
       "phone": "+1 (555) 123-4567",
       "postalCode": "94102",
       "address1": "123 Main St, Suite 100",
-      "address2": "San Francisco, CA 94102"
+      "address2": "San Francisco, CA 94102",
+      "disclaimer": "This email may contain confidential information. If received in error, please delete it."
     },
     "logoSelect": "Click to select logo",
     "logoPreview": "Logo preview",
-    "logoSelectAria": "Select logo image"
+    "logoSelectAria": "Select logo image",
+    "utm": {
+      "title": "Add UTM Parameters",
+      "campaign": "Campaign name",
+      "apply": "Apply",
+      "cancel": "Cancel"
+    },
+    "addSocial": "Add",
+    "removeSocial": "Remove"
   },
   "style": {
     "template": "Template",
@@ -125,7 +138,29 @@
     "copied": "Copied!",
     "setGmail": "Set in Gmail",
     "pngError": "Failed to generate PNG. Please try again.",
-    "copyError": "Failed to copy. Please check your browser settings."
+    "copyError": "Failed to copy. Please check your browser settings.",
+    "setEmail": "Set in Email",
+    "guide": {
+      "gmail": {
+        "step1": "Click 'Copy HTML' below.",
+        "step2": "Open Gmail Settings → See all settings → Signature.",
+        "step3": "Click 'Create new signature' and give it a name.",
+        "step4": "Paste (Ctrl+V / Cmd+V) into the text area and save."
+      },
+      "outlook": {
+        "step1": "Click 'Copy HTML' below.",
+        "step2": "Open Outlook Settings → Mail → Compose and reply → Email signature.",
+        "step3": "Click 'New signature' and give it a name.",
+        "step4": "Paste into the text area and save."
+      },
+      "apple": {
+        "step1": "Click 'Copy HTML' below.",
+        "step2": "Open Apple Mail → Preferences → Signatures.",
+        "step3": "Click '+' to create a new signature.",
+        "step4": "Paste into the signature area and you're done."
+      },
+      "openOutlook": "Open Outlook"
+    }
   },
   "gmail": {
     "instructions": "Use Gmail API to set your signature directly. Create an OAuth 2.0 client ID in Google Cloud Console.",

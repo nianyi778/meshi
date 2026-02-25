@@ -28,14 +28,18 @@
       "info": "Thông tin cá nhân",
       "style": "Kiểu dáng"
     },
-    "preview": "Xem trước"
+    "preview": "Xem trước",
+    "previewDesktop": "Máy tính",
+    "previewMobile": "Di động"
   },
   "form": {
     "sections": {
       "basic": "Thông tin cơ bản",
       "contact": "Thông tin liên hệ",
       "address": "Địa chỉ",
-      "logo": "Logo"
+      "logo": "Logo",
+      "disclaimer": "Tuyên bố miễn trách",
+      "social": "Mạng xã hội"
     },
     "fields": {
       "companyName": "Tên công ty",
@@ -58,11 +62,20 @@
       "phone": "028-1234-5678",
       "postalCode": "700000",
       "address1": "123 Nguyễn Huệ, Quận 1",
-      "address2": "TP. Hồ Chí Minh, 700000"
+      "address2": "TP. Hồ Chí Minh, 700000",
+      "disclaimer": "Email này có thể chứa thông tin bí mật. Nếu nhận nhầm, vui lòng xóa đi."
     },
     "logoSelect": "Nhấp để chọn logo",
     "logoPreview": "Xem trước logo",
-    "logoSelectAria": "Chọn hình ảnh logo"
+    "logoSelectAria": "Chọn hình ảnh logo",
+    "utm": {
+      "title": "Thêm tham số UTM",
+      "campaign": "Tên chiến dịch",
+      "apply": "Áp dụng",
+      "cancel": "Hủy"
+    },
+    "addSocial": "Thêm",
+    "removeSocial": "Xóa"
   },
   "style": {
     "template": "Mẫu",
@@ -125,7 +138,29 @@
     "copied": "Đã sao chép!",
     "setGmail": "Đặt trong Gmail",
     "pngError": "Không thể xuất PNG. Vui lòng thử lại.",
-    "copyError": "Không thể sao chép. Vui lòng kiểm tra cài đặt trình duyệt."
+    "copyError": "Không thể sao chép. Vui lòng kiểm tra cài đặt trình duyệt.",
+    "setEmail": "Cài vào Email",
+    "guide": {
+      "gmail": {
+        "step1": "Nhấn nút 'Sao chép HTML' bên dưới.",
+        "step2": "Mở cài đặt Gmail → Xem tất cả cài đặt → Chữ ký.",
+        "step3": "Nhấn 'Tạo chữ ký mới' và đặt tên.",
+        "step4": "Dán (Ctrl+V / Cmd+V) vào vùng văn bản và lưu."
+      },
+      "outlook": {
+        "step1": "Nhấn nút 'Sao chép HTML' bên dưới.",
+        "step2": "Mở cài đặt Outlook → Thư → Soạn và trả lời → Chữ ký email.",
+        "step3": "Nhấn 'Chữ ký mới' và đặt tên.",
+        "step4": "Dán vào vùng văn bản và lưu."
+      },
+      "apple": {
+        "step1": "Nhấn nút 'Sao chép HTML' bên dưới.",
+        "step2": "Mở Apple Mail → Tùy chọn → Chữ ký.",
+        "step3": "Nhấn '+' để tạo chữ ký mới.",
+        "step4": "Dán vào vùng chữ ký là xong."
+      },
+      "openOutlook": "Mở Outlook"
+    }
   },
   "gmail": {
     "instructions": "Sử dụng Gmail API để đặt chữ ký trực tiếp. Tạo OAuth 2.0 Client ID trong Google Cloud Console.",

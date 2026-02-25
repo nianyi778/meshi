@@ -3,6 +3,7 @@ import type {
   FontFamily,
   SignatureData,
   SignatureStyle,
+  SocialPlatform,
   TemplateDefinition,
   TemplateId,
 } from "../types";
@@ -22,6 +23,8 @@ export const DEFAULT_FIELD_VISIBILITY: FieldVisibility = {
   address1: true,
   address2: true,
   logo: false,
+  socialLinks: true,
+  disclaimer: false,
 };
 
 export const DEFAULT_SIGNATURE_DATA: SignatureData = {
@@ -35,6 +38,8 @@ export const DEFAULT_SIGNATURE_DATA: SignatureData = {
   address1: "東京都千代田区千代田1-1",
   address2: "テクノビル 3F",
   logoUrl: "",
+  socialLinks: [],
+  disclaimer: "",
 };
 
 export const DEFAULT_SIGNATURE_STYLE: SignatureStyle = {
@@ -195,3 +200,20 @@ export const BORDER_STYLES = [
   "dotted",
   "none",
 ] as const;
+
+// ============================================
+// Social Platforms
+// ============================================
+
+export const SOCIAL_PLATFORMS: { id: SocialPlatform; label: string; color: string; urlPrefix: string }[] = [
+  { id: "linkedin",   label: "LinkedIn",    color: "#0A66C2", urlPrefix: "https://linkedin.com/in/" },
+  { id: "x",          label: "X (Twitter)",  color: "#000000", urlPrefix: "https://x.com/" },
+  { id: "github",     label: "GitHub",       color: "#181717", urlPrefix: "https://github.com/" },
+  { id: "instagram",  label: "Instagram",    color: "#E4405F", urlPrefix: "https://instagram.com/" },
+  { id: "facebook",   label: "Facebook",     color: "#1877F2", urlPrefix: "https://facebook.com/" },
+  { id: "youtube",    label: "YouTube",      color: "#FF0000", urlPrefix: "https://youtube.com/@" },
+  { id: "tiktok",     label: "TikTok",       color: "#000000", urlPrefix: "https://tiktok.com/@" },
+  { id: "whatsapp",   label: "WhatsApp",     color: "#25D366", urlPrefix: "https://wa.me/" },
+  { id: "line",       label: "LINE",         color: "#00C300", urlPrefix: "https://line.me/ti/p/" },
+  { id: "website2",   label: "Website 2",    color: "#6366F1", urlPrefix: "https://" },
+];

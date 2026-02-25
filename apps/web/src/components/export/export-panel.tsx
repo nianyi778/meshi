@@ -5,13 +5,13 @@ import { useTranslations } from "next-intl";
 import { Download, ClipboardCopy, Mail, Check, Loader2 } from "lucide-react";
 import { useSignatureStore } from "@/store/signature-store";
 import { exportAsPng, generateGmailHtml, copyHtmlToClipboard } from "@/lib/export-utils";
-import { GmailIntegration } from "./gmail-integration";
+import { EmailClientGuide } from "./email-client-guide";
 
 export function ExportPanel() {
   const { data, style } = useSignatureStore();
   const [pngLoading, setPngLoading] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
-  const [showGmail, setShowGmail] = useState(false);
+  const [showGuide, setShowGuide] = useState(false);
   const t = useTranslations();
 
   const handlePngExport = useCallback(async () => {
@@ -72,24 +72,24 @@ export function ExportPanel() {
           )}
         </button>
 
-        {/* Gmail Integration Toggle — Tertiary */}
+        {/* Email Client Guide Toggle — Tertiary */}
         <button
-          onClick={() => setShowGmail(!showGmail)}
+          onClick={() => setShowGuide(!showGuide)}
           className={`flex items-center gap-2.5 rounded-xl border px-5 py-2.5 text-sm font-semibold shadow-sm transition-all duration-200 cursor-pointer ${
-            showGmail
+            showGuide
               ? "border-[var(--color-brand-primary)] bg-[var(--color-brand-primary)]/5 text-[var(--color-brand-primary)] shadow-[var(--color-brand-primary)]/10"
               : "border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] text-[var(--color-brand-text-body)] hover:border-[var(--color-brand-primary)]/30 hover:bg-[var(--color-brand-bg)] hover:shadow-md"
           }`}
         >
           <Mail className="h-4 w-4" />
-          {t("export.setGmail")}
+          {t("export.setEmail")}
         </button>
       </div>
 
-      {/* Gmail Integration Panel */}
-      {showGmail && (
+      {/* Email Client Guide Panel */}
+      {showGuide && (
         <div className="rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface-alt)] p-5">
-          <GmailIntegration />
+          <EmailClientGuide />
         </div>
       )}
     </div>
