@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://app.ekagu.qzz.io/sitemap.xml
+Sitemap: https://dashboard.ekagu.qzz.io/sitemap.xml
