@@ -31,6 +31,18 @@ pnpm dev
 ```bash
 pnpm dev:landing
 pnpm dev:web
+
+## Vinext 开发/构建
+
+```bash
+pnpm --filter @meishi/landing dev:vinext
+pnpm --filter @meishi/web dev:vinext
+```
+
+```bash
+pnpm --filter @meishi/landing build:vinext
+pnpm --filter @meishi/web build:vinext
+```
 ```
 
 ## 构建与检查
