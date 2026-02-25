@@ -2,18 +2,23 @@
   "name": "@meishi/web",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
-    "clean": "rm -rf .next out"
+    "clean": "rm -rf .next out",
+    "dev:vinext": "vinext dev",
+    "build:vinext": "vinext build",
+    "start:vinext": "vinext start",
+    "deploy:vinext": "vinext deploy"
   },
   "dependencies": {
     "@meishi/core": "workspace:*",
-    "@meishi/ui": "workspace:*",
     "@meishi/i18n": "workspace:*",
+    "@meishi/ui": "workspace:*",
     "framer-motion": "^11.15.0",
     "html-to-image": "^1.11.13",
     "lucide-react": "^0.469.0",
@@ -24,13 +29,18 @@
     "zustand": "^5.0.3"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.25.5",
     "@meishi/eslint-config": "workspace:*",
     "@meishi/tsconfig": "workspace:*",
     "@tailwindcss/postcss": "^4.2.1",
     "@types/node": "^22.10.7",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-rsc": "^0.5.20",
     "tailwindcss": "^4.0.0",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "vinext": "^0.0.5",
+    "vite": "^7.3.1",
+    "vite-tsconfig-paths": "^6.1.1"
   }
 }
