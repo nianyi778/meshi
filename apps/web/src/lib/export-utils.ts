@@ -17,14 +17,28 @@ export async function exportAsPng(elementId: string): Promise<void> {
     throw new Error(`Element with id "${elementId}" not found`);
   }
 
-  // Wait for fonts to load
+  // Wait for all fonts to finish loading
   await document.fonts.ready;
 
+  // Use 3× pixel ratio for crisp retina output; honour device but floor at 3
+  const pixelRatio = Math.max(3, window.devicePixelRatio ?? 1);
+
+  // Measure the element's natural (un-scaled) dimensions
+  const rect = element.getBoundingClientRect();
+
   const dataUrl = await toPng(element, {
-    pixelRatio: 2,
+    pixelRatio,
     quality: 1.0,
     cacheBust: true,
     backgroundColor: "#ffffff",
+    // Pass explicit canvas dimensions so html-to-image never guesses
+    width: rect.width,
+    height: rect.height,
+    // Re-apply the element's computed style so nothing bleeds
+    style: {
+      transform: "none",
+      transformOrigin: "top left",
+    },
   });
 
   const link = document.createElement("a");
