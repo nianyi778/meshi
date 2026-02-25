@@ -159,7 +159,7 @@
     "hero": {
       "badge": "완전 무료·가입 불필요",
       "title": "이메일에 명함을.",
-      "subtitle": "30초 안에 전문적인 이메일 서명을 만드세요. 템플릿을 선택하고 정보를 입력하기만 하면 됩니다.",
+      "subtitle": "경쟁사는 월 $9–$179. Meishi는 영구 무료. 워터마크 없음, 가입 불필요.",
       "cta": "무료로 서명 만들기",
       "secondaryCta": "템플릿 보기"
     },
@@ -188,8 +188,8 @@
           "description": "한 번의 클릭으로 Gmail에 서명을 설정하세요. 안전한 OAuth 인증."
         },
         "free": {
-          "title": "완전 무료",
-          "description": "모든 기능을 무료로 사용할 수 있습니다. 워터마크 없음, 가입 불필요."
+          "title": "영구 완전 무료",
+          "description": "WiseStamp는 월 $9부터, Newoldstamp는 $19부터. Meishi는 워터마크 없이 모든 기능을 무료로 제공합니다."
         }
       }
     },
@@ -268,6 +268,14 @@
         "q6": {
           "q": "로고 이미지를 사용할 수 있나요?",
           "a": "네. PNG, JPG, SVG 형식의 이미지를 업로드하여 서명에 로고를 포함할 수 있습니다."
+        },
+        "q7": {
+          "q": "다른 서명 생성기와 무엇이 다른가요?",
+          "a": "WiseStamp, Newoldstamp 등 주요 경쟁사는 모두 월 구독료($9–$179)를 청구합니다. Meishi는 영구 완전 무료입니다. 또한 데이터가 브라우저를 벗어나지 않고, PNG 내보내기, 7개 언어, 오픈 소스를 지원합니다."
+        },
+        "q8": {
+          "q": "왜 PNG로 내보낼 수 있나요?",
+          "a": "대부분의 경쟁사는 HTML만 내보냅니다. Meishi는 PNG 이미지로도 내보낼 수 있어 Word나 프레젠테이션 등 HTML을 사용할 수 없는 곳에도 활용할 수 있습니다."
         }
       }
     },
@@ -322,6 +330,55 @@
         "changes": {
           "title": "5. 약관 변경",
           "body": "본 약관은 사전 고지 없이 변경될 수 있습니다. 변경 후에도 본 서비스를 계속 이용하시면 변경된 약관에 동의한 것으로 간주됩니다."
+        }
+      }
+    },
+    "compare": {
+      "title": "왜 Meishi인가",
+      "subtitle": "다른 도구는 월 구독료를 청구합니다. Meishi는 모든 기능을 영구 무료로 제공합니다.",
+      "meishi": "Meishi",
+      "others": "기타 도구",
+      "othersSub": "WiseStamp / Newoldstamp 등",
+      "rows": {
+        "free": {
+          "label": "영구 무료",
+          "meishi": true,
+          "others": "$9–$179 / 월"
+        },
+        "watermark": {
+          "label": "워터마크 없음",
+          "meishi": true,
+          "others": "무료 버전 워터마크"
+        },
+        "noregister": {
+          "label": "가입 불필요",
+          "meishi": true,
+          "others": "계정 필요"
+        },
+        "png": {
+          "label": "PNG 내보내기",
+          "meishi": true,
+          "others": "HTML만 지원"
+        },
+        "japanese": {
+          "label": "일본어 네이티브 지원",
+          "meishi": true,
+          "others": "일본어 지원 제한"
+        },
+        "opensource": {
+          "label": "오픈 소스",
+          "meishi": true,
+          "others": "클로즈드 소스"
+        },
+        "privacy": {
+          "label": "데이터는 브라우저에만",
+          "meishi": true,
+          "others": "서버에 데이터 저장"
+        },
+        "lang": {
+          "label": "7개 언어",
+          "meishi": true,
+          "others": "영어 중심"
         }
       }
     }

@@ -159,7 +159,7 @@
     "hero": {
       "badge": "Sepenuhnya Gratis, Tanpa Pendaftaran",
       "title": "Kartu Nama di Email Anda",
-      "subtitle": "Buat tanda tangan email profesional dalam 30 detik. Pilih template dan masukkan informasi Anda.",
+      "subtitle": "Pesaing memungut $9–$179/bulan. Meishi gratis selamanya. Tanpa watermark, tanpa daftar.",
       "cta": "Buat Tanda Tangan Gratis",
       "secondaryCta": "Lihat Template"
     },
@@ -188,8 +188,8 @@
           "description": "Atur tanda tangan di Gmail dengan satu klik. Autentikasi OAuth untuk keamanan."
         },
         "free": {
-          "title": "Sepenuhnya Gratis",
-          "description": "Gunakan semua fitur secara gratis. Tanpa watermark, tanpa pendaftaran."
+          "title": "Gratis Selamanya",
+          "description": "WiseStamp mulai $9/bulan, Newoldstamp $19/bulan. Meishi 100% gratis — tanpa watermark, tanpa daftar."
         }
       }
     },
@@ -268,6 +268,14 @@
         "q6": {
           "q": "Bisakah saya menggunakan gambar logo?",
           "a": "Bisa. Anda dapat mengunggah gambar PNG, JPG, atau SVG untuk menyertakan logo di tanda tangan."
+        },
+        "q7": {
+          "q": "Apa bedanya Meishi dengan alat tanda tangan lainnya?",
+          "a": "Pesaing utama seperti WiseStamp dan Newoldstamp semuanya memungut biaya bulanan ($9–$179). Meishi gratis selamanya. Selain itu: data tidak keluar dari browser, mendukung ekspor PNG, 7 bahasa, dan open source."
+        },
+        "q8": {
+          "q": "Mengapa Meishi bisa ekspor PNG?",
+          "a": "Kebanyakan pesaing hanya mendukung ekspor HTML. Meishi juga bisa ekspor sebagai gambar PNG untuk ditempel di Word atau presentasi yang tidak mendukung HTML."
         }
       }
     },
@@ -322,6 +330,55 @@
         "changes": {
           "title": "5. Perubahan Ketentuan",
           "body": "Kami dapat memperbarui Ketentuan ini kapan saja tanpa pemberitahuan. Melanjutkan penggunaan Layanan setelah perubahan berarti Anda menerima Ketentuan baru."
+        }
+      }
+    },
+    "compare": {
+      "title": "Mengapa Memilih Meishi",
+      "subtitle": "Alat lain memungut biaya bulanan. Meishi menyediakan semua fitur gratis selamanya.",
+      "meishi": "Meishi",
+      "others": "Alat Lain",
+      "othersSub": "WiseStamp / Newoldstamp dll.",
+      "rows": {
+        "free": {
+          "label": "Gratis selamanya",
+          "meishi": true,
+          "others": "$9–$179 / bulan"
+        },
+        "watermark": {
+          "label": "Tanpa watermark",
+          "meishi": true,
+          "others": "Ada watermark di versi gratis"
+        },
+        "noregister": {
+          "label": "Tanpa daftar",
+          "meishi": true,
+          "others": "Perlu akun"
+        },
+        "png": {
+          "label": "Ekspor PNG",
+          "meishi": true,
+          "others": "Hanya HTML"
+        },
+        "japanese": {
+          "label": "Dukungan Bahasa Jepang",
+          "meishi": true,
+          "others": "Dukungan Jepang terbatas"
+        },
+        "opensource": {
+          "label": "Open source",
+          "meishi": true,
+          "others": "Sumber tertutup"
+        },
+        "privacy": {
+          "label": "Data hanya di browser",
+          "meishi": true,
+          "others": "Data dikirim ke server"
+        },
+        "lang": {
+          "label": "7 bahasa",
+          "meishi": true,
+          "others": "Berfokus bahasa Inggris"
         }
       }
     }

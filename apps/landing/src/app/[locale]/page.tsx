@@ -7,6 +7,7 @@ import { HowItWorks } from "@/components/how-it-works";
 import { TemplatesShowcase } from "@/components/templates-showcase";
 import { CTASection } from "@/components/cta-section";
 import { FAQ } from "@/components/faq";
+import { CompareSection } from "@/components/compare-section";
 import { Footer } from "@/components/footer";
 
 export function generateStaticParams() {
@@ -27,6 +28,7 @@ export default async function LandingPage({
       <main>
         <Hero />
         <Features />
+        <CompareSection />
         <HowItWorks />
         <TemplatesShowcase />
         <CTASection />

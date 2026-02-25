@@ -159,7 +159,7 @@
     "hero": {
       "badge": "Completely free · No signup required",
       "title": "Your email signature, perfected.",
-      "subtitle": "Create a professional email signature in 30 seconds. Choose a template, fill in your details, and you're done.",
+      "subtitle": "Competitors charge $9–$179/month. Meishi is free forever. No watermarks, no sign-up, no limits.",
       "cta": "Create signature for free",
       "secondaryCta": "View templates"
     },
@@ -188,8 +188,8 @@
           "description": "Set your signature in Gmail with one click. Secure OAuth authentication."
         },
         "free": {
-          "title": "Completely Free",
-          "description": "All features available at no cost. No watermarks, no signup required."
+          "title": "Free. Forever.",
+          "description": "WiseStamp starts at $9/mo, Newoldstamp at $19/mo. Meishi is 100% free — no watermarks, no account required, no hidden limits."
         }
       }
     },
@@ -268,6 +268,14 @@
         "q6": {
           "q": "Can I use a logo image?",
           "a": "Yes. You can upload PNG, JPG, or SVG images to include your logo in the signature."
+        },
+        "q7": {
+          "q": "How is Meishi different from other signature generators?",
+          "a": "Major competitors like WiseStamp and Newoldstamp all charge monthly fees ($9–$179/mo). Meishi is 100% free forever. On top of that: your data never leaves your browser, we offer PNG export (rare among competitors), 7-language support, and we're fully open source."
+        },
+        "q8": {
+          "q": "Why can Meishi export as PNG?",
+          "a": "Most competitors only export HTML. Meishi also exports as PNG image, so you can paste your signature into Word documents, presentations, or anywhere HTML isn't supported."
         }
       }
     },
@@ -322,6 +330,55 @@
         "changes": {
           "title": "5. Changes to Terms",
           "body": "We may update these Terms at any time without notice. Continued use of the Service after changes constitutes your acceptance of the new Terms."
+        }
+      }
+    },
+    "compare": {
+      "title": "Why Choose Meishi",
+      "subtitle": "Other tools charge per employee, per month. Meishi gives you everything, forever free.",
+      "meishi": "Meishi",
+      "others": "Other Tools",
+      "othersSub": "WiseStamp / Newoldstamp etc.",
+      "rows": {
+        "free": {
+          "label": "Free forever",
+          "meishi": true,
+          "others": "$9–$179 / month"
+        },
+        "watermark": {
+          "label": "No watermark",
+          "meishi": true,
+          "others": "Watermark on free tier"
+        },
+        "noregister": {
+          "label": "No sign-up required",
+          "meishi": true,
+          "others": "Account required"
+        },
+        "png": {
+          "label": "PNG export",
+          "meishi": true,
+          "others": "HTML only"
+        },
+        "japanese": {
+          "label": "Native Japanese support",
+          "meishi": true,
+          "others": "Limited Japanese support"
+        },
+        "opensource": {
+          "label": "Open source",
+          "meishi": true,
+          "others": "Closed source"
+        },
+        "privacy": {
+          "label": "Data stays in browser",
+          "meishi": true,
+          "others": "Data sent to servers"
+        },
+        "lang": {
+          "label": "7 languages",
+          "meishi": true,
+          "others": "English-centric"
         }
       }
     }

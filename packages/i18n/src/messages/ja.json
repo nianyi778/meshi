@@ -159,7 +159,7 @@
     "hero": {
       "badge": "完全無料・登録不要",
       "title": "メールに、名刺を。",
-      "subtitle": "プロフェッショナルなメール署名を30秒で作成。テンプレートを選んで、情報を入力するだけ。",
+      "subtitle": "他のツールは月額¥1,000〜¥20,000。Meishiは永久無料。ウォーターマークなし、登録なし、制限なし。",
       "cta": "無料で署名を作成",
       "secondaryCta": "テンプレートを見る"
     },
@@ -188,8 +188,8 @@
           "description": "ワンクリックでGmailの署名に設定。OAuth認証で安全に連携。"
         },
         "free": {
-          "title": "完全無料",
-          "description": "すべての機能を無料で利用可能。ウォーターマークなし、登録不要。"
+          "title": "完全無料・永久に",
+          "description": "WiseStampは月額$9〜、NewoldStampは月額$19〜。Meishiはすべての機能を永久無料で提供。ウォーターマークなし、登録不要。"
         }
       }
     },
@@ -268,6 +268,14 @@
         "q6": {
           "q": "ロゴ画像は使えますか？",
           "a": "はい。PNG、JPG、SVG形式の画像をアップロードして署名に組み込むことができます。"
+        },
+        "q7": {
+          "q": "他の署名ジェネレーターと何が違いますか？",
+          "a": "WiseStampやNewoldstampなど主要な競合ツールはすべて月額課金（$9〜$179）です。Meishiは全機能を永久無料で提供。さらに、データはブラウザ内のみで処理されサーバーへの送信はなく、PNGエクスポート対応、7言語サポート、オープンソースという点でも差別化しています。"
+        },
+        "q8": {
+          "q": "なぜPNGエクスポートができるのですか？",
+          "a": "多くの競合ツールはHTMLのみ対応ですが、MeishiはPNG画像としてもエクスポートできます。Wordやプレゼンテーションへの貼り付け、ウェブサイトへの掲載など、HTMLが使えない場面でも活用できます。"
         }
       }
     },
@@ -322,6 +330,55 @@
         "changes": {
           "title": "5. 規約の変更",
           "body": "本規約は予告なく変更される場合があります。変更後も本サービスをご利用いただいた場合、変更後の規約に同意したものとみなします。"
+        }
+      }
+    },
+    "compare": {
+      "title": "なぜMeishiを選ぶのか",
+      "subtitle": "他のツールは月額課金が当たり前。Meishiは全機能が永久無料です。",
+      "meishi": "Meishi",
+      "others": "他のツール",
+      "othersSub": "WiseStamp / Newoldstamp など",
+      "rows": {
+        "free": {
+          "label": "完全無料（永久）",
+          "meishi": true,
+          "others": "月額 $9〜$179"
+        },
+        "watermark": {
+          "label": "ウォーターマークなし",
+          "meishi": true,
+          "others": "無料版は透かし入り"
+        },
+        "noregister": {
+          "label": "登録不要",
+          "meishi": true,
+          "others": "要アカウント登録"
+        },
+        "png": {
+          "label": "PNG エクスポート",
+          "meishi": true,
+          "others": "HTML のみ"
+        },
+        "japanese": {
+          "label": "日本語ネイティブ対応",
+          "meishi": true,
+          "others": "日本語非対応が多数"
+        },
+        "opensource": {
+          "label": "オープンソース",
+          "meishi": true,
+          "others": "クローズドソース"
+        },
+        "privacy": {
+          "label": "データはブラウザのみ",
+          "meishi": true,
+          "others": "サーバーにデータ保存"
+        },
+        "lang": {
+          "label": "7言語対応",
+          "meishi": true,
+          "others": "英語中心"
         }
       }
     }

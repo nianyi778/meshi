@@ -1,74 +1,157 @@
-# Meishi (名刺)
+<div align="center">
 
-面向日本市场的商业化邮件签名生成器，支持多语言与 Gmail 签名配置。仓库采用 monorepo 架构，包含落地页与生成器应用。
+<h1>Meishi (名刺)</h1>
 
-## 主要功能
+<p>プロフェッショナルなメール署名を、30秒で。</p>
 
-- 5 套签名模板（classic / modern / minimal / corporate / elegant）
-- 可视化定制（配色、字体、边框、间距等）
-- 一键导出 PNG + HTML，并支持 Gmail OAuth 签名写入
-- i18n：ja（默认）、zh、en、ko、th、vi、id
-- SEO：多语言 hreflang、结构化数据、sitemap/robots
+<p>
+  <a href="https://meishi.ekagu.qzz.io">Live Demo</a> ·
+  <a href="https://dashboard.ekagu.qzz.io">Launch App</a> ·
+  <a href="https://github.com/nianyi778/meshi/issues">Report Bug</a> ·
+  <a href="https://github.com/nianyi778/meshi/issues">Request Feature</a>
+</p>
 
-## 项目结构
+<p>
+  <img src="https://img.shields.io/github/license/nianyi778/meshi?style=flat-square" alt="License" />
+  <img src="https://img.shields.io/github/stars/nianyi778/meshi?style=flat-square" alt="Stars" />
+  <img src="https://img.shields.io/github/forks/nianyi778/meshi?style=flat-square" alt="Forks" />
+  <img src="https://img.shields.io/github/issues/nianyi778/meshi?style=flat-square" alt="Issues" />
+</p>
 
-- `apps/landing`：落地页（Next.js）
-- `apps/web`：签名生成器（Next.js）
-- `packages/ui`：共享 UI 组件
-- `packages/core`：业务逻辑/模板
-- `packages/i18n`：多语言资源
-- `packages/tsconfig`、`packages/eslint-config`
+</div>
 
-## 本地开发
+---
+
+**Meishi** is a free, open-source email signature generator built for the Japanese market and beyond. No account required. No watermarks. No paywalls.
+
+Create beautiful, professional email signatures in seconds — export as PNG, copy as HTML, or set directly in Gmail.
+
+## ✨ Features
+
+- **5 templates** — Classic, Modern, Minimal, Corporate, Elegant
+- **Full customization** — colors, fonts, border styles, spacing
+- **One-click export** — PNG download, HTML copy, Gmail setup guide
+- **7 languages** — Japanese, English, Chinese, Korean, Thai, Vietnamese, Indonesian
+- **Privacy first** — all data stays in your browser, nothing sent to servers
+- **100% free** — no account, no watermark, no limits
+
+## 📸 Screenshots
+
+> Landing page: [meishi.ekagu.qzz.io](https://meishi.ekagu.qzz.io)
+> App: [dashboard.ekagu.qzz.io](https://dashboard.ekagu.qzz.io)
+
+## 🗂 Project Structure
+
+This is a pnpm monorepo:
+
+```
+.
+├── apps/
+│   ├── landing/        # Landing page (Next.js + vinext → Cloudflare Workers)
+│   └── web/            # Signature generator app (Next.js + vinext → Cloudflare Workers)
+└── packages/
+    ├── core/           # Business logic, templates, types, constants
+    ├── ui/             # Shared UI components (shadcn/ui)
+    ├── i18n/           # i18n message files (7 languages)
+    ├── tsconfig/       # Shared TypeScript config
+    └── eslint-config/  # Shared ESLint config
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 20+
+- pnpm 9+
+
+### Install
 
 ```bash
+git clone https://github.com/nianyi778/meshi.git
+cd meshi
 pnpm install
+```
+
+### Dev
+
+```bash
+# Run both apps
 pnpm dev
+
+# Or individually
+pnpm dev:landing   # http://localhost:3000
+pnpm dev:web       # http://localhost:3001
 ```
 
-分别启动：
-
-```bash
-pnpm dev:landing
-pnpm dev:web
-
-## Vinext 开发/构建
-
-```bash
-pnpm --filter @meishi/landing dev:vinext
-pnpm --filter @meishi/web dev:vinext
-```
-
-```bash
-pnpm --filter @meishi/landing build:vinext
-pnpm --filter @meishi/web build:vinext
-```
-```
-
-## 构建与检查
+### Build
 
 ```bash
 pnpm build
-pnpm lint
-pnpm type-check
 ```
 
-## 部署（Cloudflare Pages）
+### Type check & Lint
 
-已部署到 Cloudflare Pages：
+```bash
+pnpm type-check
+pnpm lint
+```
 
-- 落地页：`https://meshi.ekagu.qzz.io`
-- 生成器：`https://dashboard.ekagu.qzz.io`
+## ☁️ Deployment (Cloudflare Workers)
 
-若首次绑定自定义域名，请在 Cloudflare DNS 中添加：
+This project uses [vinext](https://github.com/nianyi778/vinext) to deploy Next.js apps to Cloudflare Workers.
 
-| Type | Name | Target | Proxy |
-|------|------|--------|-------|
-| CNAME | meshi | meishi-landing-e6k.pages.dev | Proxied |
-| CNAME | dashboard | meishi-app.pages.dev | Proxied |
+```bash
+# Deploy landing page
+pnpm --filter @meishi/landing deploy:vinext
 
-> 注意：如果已存在同名记录（如 A/AAAA），需先删除再添加 CNAME。
+# Deploy signature generator
+pnpm --filter @meishi/web deploy:vinext
+```
 
-## 许可
+**Live URLs:**
 
-MIT
+- Landing: `https://meishi.ekagu.qzz.io`
+- App: `https://dashboard.ekagu.qzz.io`
+
+## 🛠 Tech Stack
+
+| Layer         | Tech                            |
+| ------------- | ------------------------------- |
+| Framework     | Next.js 15 (App Router)         |
+| Runtime       | Cloudflare Workers (via vinext) |
+| Styling       | Tailwind CSS                    |
+| UI Components | shadcn/ui                       |
+| Animation     | Framer Motion                   |
+| i18n          | next-intl                       |
+| State         | Zustand                         |
+| Monorepo      | pnpm workspaces                 |
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how to get started:
+
+1. Fork the repo
+2. Create your branch: `git checkout -b feat/your-feature`
+3. Commit your changes: `git commit -m 'feat: add some feature'`
+4. Push to the branch: `git push origin feat/your-feature`
+5. Open a Pull Request
+
+Please open an issue first for major changes to discuss what you'd like to change.
+
+## 📋 Roadmap
+
+- [ ] More templates
+- [ ] Dark mode support
+- [ ] QR code in signature
+- [ ] Outlook direct integration
+- [ ] Team/organization sharing
+
+## 📄 License
+
+MIT © [nianyi778](https://github.com/nianyi778)
+
+---
+
+<div align="center">
+  <sub>If this project helped you, consider giving it a ⭐ on GitHub!</sub>
+</div>

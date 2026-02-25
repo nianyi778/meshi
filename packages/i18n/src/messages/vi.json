@@ -159,7 +159,7 @@
     "hero": {
       "badge": "Hoàn toàn miễn phí, không cần đăng ký",
       "title": "Danh thiếp trong email của bạn",
-      "subtitle": "Tạo chữ ký email chuyên nghiệp trong 30 giây. Chỉ cần chọn mẫu và nhập thông tin.",
+      "subtitle": "Đối thủ tính phí $9–$179/tháng. Meishi miễn phí mãi mãi. Không watermark, không cần đăng ký.",
       "cta": "Tạo chữ ký miễn phí",
       "secondaryCta": "Xem mẫu"
     },
@@ -188,8 +188,8 @@
           "description": "Đặt chữ ký trong Gmail bằng một cú nhấp. Xác thực OAuth để an toàn."
         },
         "free": {
-          "title": "Hoàn toàn miễn phí",
-          "description": "Sử dụng tất cả tính năng miễn phí. Không có hình mờ, không cần đăng ký."
+          "title": "Miễn phí mãi mãi",
+          "description": "WiseStamp từ $9/tháng, Newoldstamp từ $19/tháng. Meishi hoàn toàn miễn phí — không watermark, không cần đăng ký."
         }
       }
     },
@@ -268,6 +268,14 @@
         "q6": {
           "q": "Có thể dùng hình ảnh logo không?",
           "a": "Có. Bạn có thể tải lên hình ảnh PNG, JPG hoặc SVG để thêm logo vào chữ ký."
+        },
+        "q7": {
+          "q": "Meishi khác gì so với các công cụ khác?",
+          "a": "Các đối thủ lớn như WiseStamp và Newoldstamp đều tính phí hàng tháng ($9–$179). Meishi hoàn toàn miễn phí mãi mãi. Ngoài ra: dữ liệu không rời trình duyệt, hỗ trợ xuất PNG, 7 ngôn ngữ và mã nguồn mở."
+        },
+        "q8": {
+          "q": "Tại sao Meishi có thể xuất PNG?",
+          "a": "Hầu hết đối thủ chỉ xuất HTML. Meishi còn xuất được ảnh PNG, dùng được trong Word hay PowerPoint khi HTML không được hỗ trợ."
         }
       }
     },
@@ -322,6 +330,55 @@
         "changes": {
           "title": "5. Thay đổi điều khoản",
           "body": "Chúng tôi có thể cập nhật các Điều khoản này bất kỳ lúc nào mà không cần thông báo. Tiếp tục sử dụng Dịch vụ sau khi thay đổi có nghĩa là bạn chấp nhận các Điều khoản mới."
+        }
+      }
+    },
+    "compare": {
+      "title": "Tại sao chọn Meishi",
+      "subtitle": "Các công cụ khác tính phí hàng tháng. Meishi cung cấp mọi tính năng miễn phí mãi mãi.",
+      "meishi": "Meishi",
+      "others": "Công cụ khác",
+      "othersSub": "WiseStamp / Newoldstamp v.v.",
+      "rows": {
+        "free": {
+          "label": "Miễn phí mãi mãi",
+          "meishi": true,
+          "others": "$9–$179 / tháng"
+        },
+        "watermark": {
+          "label": "Không watermark",
+          "meishi": true,
+          "others": "Có watermark ở gói miễn phí"
+        },
+        "noregister": {
+          "label": "Không cần đăng ký",
+          "meishi": true,
+          "others": "Cần tài khoản"
+        },
+        "png": {
+          "label": "Xuất PNG",
+          "meishi": true,
+          "others": "Chỉ HTML"
+        },
+        "japanese": {
+          "label": "Hỗ trợ tiếng Nhật",
+          "meishi": true,
+          "others": "Hỗ trợ tiếng Nhật hạn chế"
+        },
+        "opensource": {
+          "label": "Mã nguồn mở",
+          "meishi": true,
+          "others": "Mã nguồn đóng"
+        },
+        "privacy": {
+          "label": "Dữ liệu chỉ trong trình duyệt",
+          "meishi": true,
+          "others": "Dữ liệu gửi lên máy chủ"
+        },
+        "lang": {
+          "label": "7 ngôn ngữ",
+          "meishi": true,
+          "others": "Chủ yếu tiếng Anh"
         }
       }
     }

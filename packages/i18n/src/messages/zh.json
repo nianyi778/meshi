@@ -159,7 +159,7 @@
     "hero": {
       "badge": "完全免费·无需注册",
       "title": "邮件签名，如此专业。",
-      "subtitle": "30秒内创建专业邮件签名。选择模板，填写信息，完成。",
+      "subtitle": "竞品月费 $9–$179。Meishi 永久免费。无水印、无需注册、无任何限制。",
       "cta": "免费创建签名",
       "secondaryCta": "查看模板"
     },
@@ -188,8 +188,8 @@
           "description": "一键设置Gmail签名。安全的OAuth认证。"
         },
         "free": {
-          "title": "完全免费",
-          "description": "所有功能免费使用。无水印，无需注册。"
+          "title": "永久完全免费",
+          "description": "WiseStamp 月费 $9 起，Newoldstamp $19 起。Meishi 全功能免费，无水印，无需注册。"
         }
       }
     },
@@ -268,6 +268,14 @@
         "q6": {
           "q": "可以使用 Logo 图片吗？",
           "a": "可以。您可以上传 PNG、JPG 或 SVG 格式的图片，将 Logo 嵌入签名中。"
+        },
+        "q7": {
+          "q": "Meishi 和其他签名生成器有什么区别？",
+          "a": "WiseStamp、Newoldstamp 等主要竞品均收取月费（$9–$179）。Meishi 永久完全免费。此外：数据不离开你的浏览器、支持 PNG 导出、7 种语言、完全开源。"
+        },
+        "q8": {
+          "q": "为什么 Meishi 可以导出 PNG？",
+          "a": "大多数竞品只支持 HTML 导出。Meishi 还支持 PNG 图片导出，可以粘贴到 Word、PPT 等不支持 HTML 的场合。"
         }
       }
     },
@@ -322,6 +330,55 @@
         "changes": {
           "title": "5. 条款变更",
           "body": "我们可能随时更新本条款，恕不另行通知。变更后继续使用本服务，即视为您同意更新后的条款。"
+        }
+      }
+    },
+    "compare": {
+      "title": "为什么选择 Meishi",
+      "subtitle": "其他工具按人头、按月收费。Meishi 全功能永久免费。",
+      "meishi": "Meishi",
+      "others": "其他工具",
+      "othersSub": "WiseStamp / Newoldstamp 等",
+      "rows": {
+        "free": {
+          "label": "永久免费",
+          "meishi": true,
+          "others": "$9–$179 / 月"
+        },
+        "watermark": {
+          "label": "无水印",
+          "meishi": true,
+          "others": "免费版有水印"
+        },
+        "noregister": {
+          "label": "无需注册",
+          "meishi": true,
+          "others": "需要注册账号"
+        },
+        "png": {
+          "label": "PNG 导出",
+          "meishi": true,
+          "others": "仅支持 HTML"
+        },
+        "japanese": {
+          "label": "原生日语支持",
+          "meishi": true,
+          "others": "日语支持有限"
+        },
+        "opensource": {
+          "label": "开源",
+          "meishi": true,
+          "others": "闭源"
+        },
+        "privacy": {
+          "label": "数据仅在浏览器",
+          "meishi": true,
+          "others": "数据上传服务器"
+        },
+        "lang": {
+          "label": "7 种语言",
+          "meishi": true,
+          "others": "以英语为主"
         }
       }
     }
