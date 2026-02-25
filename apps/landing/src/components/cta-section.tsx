@@ -16,29 +16,63 @@ export function CTASection() {
 
   return (
     <section
-      className="relative overflow-hidden py-24 md:py-32"
+      className="relative overflow-hidden py-28 md:py-36"
       style={{
         background:
-          "linear-gradient(180deg, var(--color-brand-surface-alt) 0%, #fff 100%)",
+          "linear-gradient(180deg, #fff 0%, var(--color-brand-bg) 30%, var(--color-brand-bg) 70%, #fff 100%)",
       }}
     >
+      {/* Japanese-inspired concentric circles */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div
+          className="h-[600px] w-[600px] rounded-full opacity-[0.035]"
+          style={{
+            border: "1px solid var(--color-brand-primary)",
+          }}
+        />
+      </div>
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div
+          className="h-[440px] w-[440px] rounded-full opacity-[0.04]"
+          style={{
+            border: "1px solid var(--color-brand-primary)",
+          }}
+        />
+      </div>
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div
+          className="h-[280px] w-[280px] rounded-full opacity-[0.05]"
+          style={{
+            border: "1px solid var(--color-brand-primary)",
+          }}
+        />
+      </div>
+
+      {/* Subtle dot grid */}
       <div
-        className="pointer-events-none absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.04]"
-        style={{ backgroundColor: "var(--color-brand-primary)" }}
-      />
-      <div
-        className="pointer-events-none absolute top-1/2 left-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.03]"
-        style={{ backgroundColor: "var(--color-brand-primary)" }}
+        className="pointer-events-none absolute inset-0 opacity-[0.015]"
+        style={{
+          backgroundImage:
+            "radial-gradient(var(--color-brand-primary) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
       />
 
       <div className="relative mx-auto max-w-3xl px-5 text-center lg:px-8">
         <FadeInUp>
+          {/* Decorative dash */}
+          <div
+            className="mx-auto mb-8 h-px w-16"
+            style={{ backgroundColor: "var(--color-brand-primary)" }}
+          />
+
           <h2
             className="text-3xl font-extrabold md:text-4xl"
             style={{
               fontFamily: "var(--font-heading)",
               color: "var(--color-brand-text)",
               lineHeight: "1.2",
+              letterSpacing: "-0.02em",
             }}
           >
             {t("landing.cta.title")}
@@ -61,7 +95,7 @@ export function CTASection() {
           <div className="mt-10">
             <a
               href={`/${locale}/generator`}
-              className="group inline-flex items-center gap-2.5 rounded-2xl px-8 py-4 text-base font-bold text-white shadow-xl transition-all duration-200 hover:shadow-2xl"
+              className="group inline-flex items-center gap-2.5 rounded-2xl px-9 py-4 text-base font-bold text-white shadow-xl transition-all duration-200 hover:shadow-2xl cursor-pointer"
               style={{
                 backgroundColor: "var(--color-brand-cta)",
                 fontFamily: "var(--font-sans)",

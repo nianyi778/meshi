@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Mail, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { FadeInUp } from "./animations";
@@ -51,29 +51,65 @@ function SignatureCard({
 }) {
   return (
     <div
-      className="w-full rounded-xl border bg-white p-5 shadow-lg"
+      className="w-full rounded-2xl border bg-white/90 p-6 shadow-xl backdrop-blur-sm"
       style={{ borderColor: "var(--color-brand-border)" }}
     >
+      {/* Top accent bar */}
       <div
-        className="mb-4 h-1 w-12 rounded-full"
+        className="mb-5 h-0.5 w-16 rounded-full"
         style={{ backgroundColor: sig.accent }}
       />
       <div className="flex gap-4">
         <div
-          className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-lg font-bold text-white"
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-base font-bold text-white"
           style={{ backgroundColor: sig.accent }}
         >
           {sig.name.charAt(0)}
         </div>
         <div className="min-w-0 flex-1">
-          <p className="text-base font-bold leading-tight" style={{ color: "var(--color-brand-text)" }}>{sig.name}</p>
-          <p className="mt-0.5 text-xs" style={{ color: "var(--color-brand-text-muted)" }}>{sig.nameEn}</p>
-          <p className="mt-1 text-sm font-medium" style={{ color: "var(--color-brand-text-body)" }}>{sig.title}</p>
-          <p className="text-xs" style={{ color: "var(--color-brand-text-muted)" }}>{sig.company}</p>
-          <div className="my-2.5 h-px w-full" style={{ backgroundColor: "var(--color-brand-border)" }} />
-          <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs">
-            <span style={{ color: "var(--color-brand-text-body)" }}>✉ {sig.email}</span>
-            <span style={{ color: "var(--color-brand-text-body)" }}>☎ {sig.phone}</span>
+          <p
+            className="text-[15px] font-bold leading-tight"
+            style={{ color: "var(--color-brand-text)", fontFamily: "var(--font-heading)" }}
+          >
+            {sig.name}
+          </p>
+          <p
+            className="mt-0.5 text-[11px] tracking-wide"
+            style={{ color: "var(--color-brand-text-muted)" }}
+          >
+            {sig.nameEn}
+          </p>
+          <p
+            className="mt-1.5 text-[13px] font-medium"
+            style={{ color: "var(--color-brand-text-body)" }}
+          >
+            {sig.title}
+          </p>
+          <p
+            className="text-[11px]"
+            style={{ color: "var(--color-brand-text-muted)" }}
+          >
+            {sig.company}
+          </p>
+          <div
+            className="my-3 h-px w-full"
+            style={{ backgroundColor: "var(--color-brand-border)" }}
+          />
+          <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px]">
+            <span
+              className="inline-flex items-center gap-1.5"
+              style={{ color: "var(--color-brand-text-body)" }}
+            >
+              <Mail size={11} strokeWidth={2} style={{ color: sig.accent }} />
+              {sig.email}
+            </span>
+            <span
+              className="inline-flex items-center gap-1.5"
+              style={{ color: "var(--color-brand-text-body)" }}
+            >
+              <Phone size={11} strokeWidth={2} style={{ color: sig.accent }} />
+              {sig.phone}
+            </span>
           </div>
         </div>
       </div>
@@ -99,31 +135,51 @@ export function Hero() {
 
   return (
     <section
-      className="relative overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24"
+      className="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28"
       style={{
         background:
-          "linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 50%, #BAE6FD 100%)",
+          "linear-gradient(165deg, #F0F9FF 0%, #E0F2FE 40%, #F0F9FF 70%, #BAE6FD 100%)",
       }}
     >
-      {/* Decorative grid pattern */}
+      {/* Subtle grid texture */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03]"
+        className="pointer-events-none absolute inset-0 opacity-[0.025]"
         style={{
           backgroundImage:
             "linear-gradient(var(--color-brand-primary) 1px, transparent 1px), linear-gradient(90deg, var(--color-brand-primary) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
+          backgroundSize: "48px 48px",
         }}
       />
+
+      {/* Japanese-inspired decorative circle — top right */}
       <div
-        className="pointer-events-none absolute top-1/4 -right-32 h-96 w-96 rounded-full opacity-20 blur-3xl"
-        style={{ backgroundColor: "var(--color-brand-primary)" }}
-      />
-      <div
-        className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full opacity-15 blur-3xl"
-        style={{ backgroundColor: "#BAE6FD" }}
+        className="pointer-events-none absolute -top-20 -right-20 h-[420px] w-[420px] rounded-full opacity-[0.06]"
+        style={{
+          background: "radial-gradient(circle, var(--color-brand-primary) 0%, transparent 70%)",
+        }}
       />
 
-      <div className="relative mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8">
+      {/* Decorative circle — bottom left */}
+      <div
+        className="pointer-events-none absolute -bottom-32 -left-32 h-[320px] w-[320px] rounded-full opacity-[0.04]"
+        style={{
+          background: "radial-gradient(circle, var(--color-brand-dark) 0%, transparent 70%)",
+        }}
+      />
+
+      {/* Decorative dot pattern — zen-like */}
+      <div
+        className="pointer-events-none absolute top-32 left-8 opacity-[0.06] hidden lg:block"
+        style={{
+          width: "100px",
+          height: "100px",
+          backgroundImage:
+            "radial-gradient(var(--color-brand-primary) 1.5px, transparent 1.5px)",
+          backgroundSize: "16px 16px",
+        }}
+      />
+
+      <div className="relative mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-2 lg:items-center lg:gap-20 lg:px-8">
         {/* ---- Text column ---- */}
         <div>
           <FadeInUp>
@@ -143,11 +199,12 @@ export function Hero() {
 
           <FadeInUp delay={0.08}>
             <h1
-              className="mt-6 font-extrabold leading-[1.15]"
+              className="mt-7 font-extrabold leading-[1.12]"
               style={{
                 fontFamily: "var(--font-heading)",
                 color: "var(--color-brand-text)",
-                fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                fontSize: "clamp(2.25rem, 4.5vw, 3.75rem)",
+                letterSpacing: "-0.02em",
               }}
             >
               {t("landing.hero.title")}
@@ -156,7 +213,7 @@ export function Hero() {
 
           <FadeInUp delay={0.16}>
             <p
-              className="mt-5 max-w-lg text-base leading-[1.8] md:text-lg"
+              className="mt-6 max-w-lg text-base leading-[1.9] md:text-[17px]"
               style={{
                 fontFamily: "var(--font-sans)",
                 color: "var(--color-brand-text-body)",
@@ -167,10 +224,10 @@ export function Hero() {
           </FadeInUp>
 
           <FadeInUp delay={0.24}>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
                 href={`/${locale}/generator`}
-                className="group inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold text-white shadow-lg transition-all duration-200 hover:shadow-xl"
+                className="group inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-sm font-bold text-white shadow-lg transition-all duration-200 hover:shadow-xl cursor-pointer"
                 style={{
                   backgroundColor: "var(--color-brand-cta)",
                   fontFamily: "var(--font-sans)",
@@ -192,7 +249,7 @@ export function Hero() {
               </a>
               <a
                 href="#templates"
-                className="inline-flex items-center gap-1.5 rounded-xl border-2 px-5 py-3 text-sm font-semibold transition-colors duration-200"
+                className="inline-flex items-center gap-1.5 rounded-xl border-2 px-5 py-3 text-sm font-semibold transition-all duration-200 cursor-pointer hover:bg-white/50"
                 style={{
                   borderColor: "var(--color-brand-primary)",
                   color: "var(--color-brand-primary)",
@@ -208,33 +265,41 @@ export function Hero() {
         {/* ---- Signature preview column ---- */}
         <FadeInUp delay={0.2} className="relative">
           <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+            {/* Decorative shadow card behind */}
             <div
-              className="absolute top-4 right-4 -z-10 h-full w-full rounded-2xl"
-              style={{ backgroundColor: "rgba(14,165,233,0.06)" }}
+              className="absolute top-5 right-5 -z-10 h-full w-full rounded-2xl"
+              style={{ backgroundColor: "rgba(14,165,233,0.05)" }}
             />
-            <div className="relative h-[220px] sm:h-[200px]">
+            <div
+              className="absolute top-10 right-10 -z-20 h-full w-full rounded-2xl"
+              style={{ backgroundColor: "rgba(14,165,233,0.025)" }}
+            />
+
+            <div className="relative h-[240px] sm:h-[220px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentIndex}
-                  initial={{ opacity: 0, y: 16, scale: 0.97 }}
+                  initial={{ opacity: 0, y: 18, scale: 0.97 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -12, scale: 0.97 }}
-                  transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                  exit={{ opacity: 0, y: -14, scale: 0.97 }}
+                  transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
                   className="absolute inset-0"
                 >
                   <SignatureCard sig={SIGNATURES[currentIndex]!} />
                 </motion.div>
               </AnimatePresence>
             </div>
-            <div className="mt-5 flex justify-center gap-2">
+
+            {/* Dot indicators */}
+            <div className="mt-6 flex justify-center gap-2">
               {SIGNATURES.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrentIndex(i)}
                   aria-label={`Signature preview ${i + 1}`}
-                  className="h-2 rounded-full transition-all duration-300"
+                  className="h-2 rounded-full transition-all duration-300 cursor-pointer"
                   style={{
-                    width: i === currentIndex ? "24px" : "8px",
+                    width: i === currentIndex ? "28px" : "8px",
                     backgroundColor:
                       i === currentIndex
                         ? "var(--color-brand-primary)"

@@ -30,19 +30,19 @@ const TEMPLATE_DEFS: TemplateDef[] = [
   {
     id: "classic",
     render: () => (
-      <div className="rounded-lg border border-gray-200 bg-white p-4 text-left">
+      <div className="rounded-lg border border-gray-200 bg-white p-4 text-left shadow-sm">
         <div className="flex items-start gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-sky-500 text-xs font-bold text-white">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white" style={{ backgroundColor: "var(--color-brand-primary)" }}>
             山
           </div>
           <div className="min-w-0">
-            <p className="text-sm font-bold text-slate-800">{SAMPLE.name}</p>
-            <p className="text-[10px] text-slate-400">{SAMPLE.nameEn}</p>
-            <p className="mt-0.5 text-[11px] font-medium text-slate-600">{SAMPLE.title}</p>
-            <p className="text-[10px] text-slate-400">{SAMPLE.company}</p>
-            <div className="mt-2 border-t border-gray-100 pt-2">
-              <p className="text-[10px] text-slate-500">{SAMPLE.email}</p>
-              <p className="text-[10px] text-slate-500">{SAMPLE.phone}</p>
+            <p className="text-sm font-bold" style={{ color: "var(--color-brand-text)" }}>{SAMPLE.name}</p>
+            <p className="text-[10px]" style={{ color: "var(--color-brand-text-muted)" }}>{SAMPLE.nameEn}</p>
+            <p className="mt-0.5 text-[11px] font-medium" style={{ color: "var(--color-brand-text-body)" }}>{SAMPLE.title}</p>
+            <p className="text-[10px]" style={{ color: "var(--color-brand-text-muted)" }}>{SAMPLE.company}</p>
+            <div className="mt-2 border-t pt-2" style={{ borderColor: "var(--color-brand-border)" }}>
+              <p className="text-[10px]" style={{ color: "var(--color-brand-text-muted)" }}>{SAMPLE.email}</p>
+              <p className="text-[10px]" style={{ color: "var(--color-brand-text-muted)" }}>{SAMPLE.phone}</p>
             </div>
           </div>
         </div>
@@ -52,14 +52,14 @@ const TEMPLATE_DEFS: TemplateDef[] = [
   {
     id: "modern",
     render: () => (
-      <div className="rounded-lg border border-gray-200 bg-white p-4 text-left">
-        <div className="mb-2 h-1 w-10 rounded-full bg-orange-500" />
-        <p className="text-sm font-bold text-slate-800">{SAMPLE.name}</p>
-        <p className="text-[11px] font-medium text-orange-500">{SAMPLE.title}</p>
-        <p className="text-[10px] text-slate-400">{SAMPLE.company}</p>
+      <div className="rounded-lg border border-gray-200 bg-white p-4 text-left shadow-sm">
+        <div className="mb-2.5 h-1 w-10 rounded-full" style={{ backgroundColor: "var(--color-brand-cta)" }} />
+        <p className="text-sm font-bold" style={{ color: "var(--color-brand-text)" }}>{SAMPLE.name}</p>
+        <p className="text-[11px] font-medium" style={{ color: "var(--color-brand-cta)" }}>{SAMPLE.title}</p>
+        <p className="text-[10px]" style={{ color: "var(--color-brand-text-muted)" }}>{SAMPLE.company}</p>
         <div className="mt-2 flex flex-wrap gap-x-3 gap-y-0.5">
-          <span className="text-[10px] text-slate-500">{SAMPLE.email}</span>
-          <span className="text-[10px] text-slate-500">{SAMPLE.phone}</span>
+          <span className="text-[10px]" style={{ color: "var(--color-brand-text-muted)" }}>{SAMPLE.email}</span>
+          <span className="text-[10px]" style={{ color: "var(--color-brand-text-muted)" }}>{SAMPLE.phone}</span>
         </div>
       </div>
     ),
@@ -67,11 +67,11 @@ const TEMPLATE_DEFS: TemplateDef[] = [
   {
     id: "minimal",
     render: () => (
-      <div className="rounded-lg border border-gray-200 bg-white p-4 text-left">
-        <p className="text-sm font-bold text-slate-800">{SAMPLE.name}</p>
-        <p className="text-[11px] text-slate-500">{SAMPLE.title} | {SAMPLE.company}</p>
-        <div className="mt-2 h-px w-8 bg-slate-200" />
-        <p className="mt-2 text-[10px] text-slate-400">
+      <div className="rounded-lg border border-gray-200 bg-white p-4 text-left shadow-sm">
+        <p className="text-sm font-bold" style={{ color: "var(--color-brand-text)" }}>{SAMPLE.name}</p>
+        <p className="text-[11px]" style={{ color: "var(--color-brand-text-muted)" }}>{SAMPLE.title} | {SAMPLE.company}</p>
+        <div className="mt-2 h-px w-8" style={{ backgroundColor: "var(--color-brand-border)" }} />
+        <p className="mt-2 text-[10px]" style={{ color: "var(--color-brand-text-muted)" }}>
           {SAMPLE.email} · {SAMPLE.phone}
         </p>
       </div>
@@ -80,16 +80,16 @@ const TEMPLATE_DEFS: TemplateDef[] = [
   {
     id: "corporate",
     render: () => (
-      <div className="overflow-hidden rounded-lg border border-gray-200 bg-white text-left">
-        <div className="bg-sky-600 px-4 py-2">
+      <div className="overflow-hidden rounded-lg border border-gray-200 bg-white text-left shadow-sm">
+        <div className="px-4 py-2" style={{ backgroundColor: "var(--color-brand-dark)" }}>
           <p className="text-xs font-bold text-white">{SAMPLE.company}</p>
         </div>
         <div className="p-4">
-          <p className="text-sm font-bold text-slate-800">{SAMPLE.name}</p>
-          <p className="text-[11px] text-sky-600">{SAMPLE.title}</p>
+          <p className="text-sm font-bold" style={{ color: "var(--color-brand-text)" }}>{SAMPLE.name}</p>
+          <p className="text-[11px]" style={{ color: "var(--color-brand-primary)" }}>{SAMPLE.title}</p>
           <div className="mt-2 flex flex-wrap gap-x-3 gap-y-0.5">
-            <span className="text-[10px] text-slate-500">{SAMPLE.email}</span>
-            <span className="text-[10px] text-slate-500">{SAMPLE.phone}</span>
+            <span className="text-[10px]" style={{ color: "var(--color-brand-text-muted)" }}>{SAMPLE.email}</span>
+            <span className="text-[10px]" style={{ color: "var(--color-brand-text-muted)" }}>{SAMPLE.phone}</span>
           </div>
         </div>
       </div>
@@ -98,15 +98,15 @@ const TEMPLATE_DEFS: TemplateDef[] = [
   {
     id: "elegant",
     render: () => (
-      <div className="rounded-lg border border-gray-200 bg-white p-4 text-center">
-        <p className="text-sm font-bold tracking-wider text-slate-800">{SAMPLE.name}</p>
-        <p className="text-[10px] tracking-widest text-slate-400 uppercase">{SAMPLE.nameEn}</p>
-        <div className="mx-auto my-2 h-px w-12 bg-amber-400" />
-        <p className="text-[11px] font-medium text-slate-600">{SAMPLE.title}</p>
-        <p className="text-[10px] text-slate-400">{SAMPLE.company}</p>
+      <div className="rounded-lg border border-gray-200 bg-white p-4 text-center shadow-sm">
+        <p className="text-sm font-bold tracking-wider" style={{ color: "var(--color-brand-text)" }}>{SAMPLE.name}</p>
+        <p className="text-[10px] tracking-widest uppercase" style={{ color: "var(--color-brand-text-muted)" }}>{SAMPLE.nameEn}</p>
+        <div className="mx-auto my-2.5 h-px w-12" style={{ backgroundColor: "var(--color-brand-cta)" }} />
+        <p className="text-[11px] font-medium" style={{ color: "var(--color-brand-text-body)" }}>{SAMPLE.title}</p>
+        <p className="text-[10px]" style={{ color: "var(--color-brand-text-muted)" }}>{SAMPLE.company}</p>
         <div className="mt-2 flex justify-center gap-3">
-          <span className="text-[10px] text-slate-500">{SAMPLE.email}</span>
-          <span className="text-[10px] text-slate-500">{SAMPLE.phone}</span>
+          <span className="text-[10px]" style={{ color: "var(--color-brand-text-muted)" }}>{SAMPLE.email}</span>
+          <span className="text-[10px]" style={{ color: "var(--color-brand-text-muted)" }}>{SAMPLE.phone}</span>
         </div>
       </div>
     ),
@@ -125,27 +125,37 @@ function TemplateCard({ template }: { template: TemplateDef }) {
         className="group cursor-pointer overflow-hidden rounded-2xl border transition-all duration-300 hover:shadow-lg"
         style={{ borderColor: "var(--color-brand-border)" }}
       >
+        {/* Preview area */}
         <div
-          className="p-4 transition-transform duration-300 group-hover:scale-[1.01]"
+          className="relative overflow-hidden p-5 transition-all duration-300"
           style={{ backgroundColor: "var(--color-brand-surface-alt)" }}
         >
-          {template.render()}
+          {/* Decorative dot */}
+          <div
+            className="pointer-events-none absolute top-3 right-3 h-2 w-2 rounded-full opacity-40"
+            style={{ backgroundColor: "var(--color-brand-primary)" }}
+          />
+          <div className="transition-transform duration-300 group-hover:scale-[1.02]">
+            {template.render()}
+          </div>
         </div>
 
-        <div className="border-t bg-white px-5 py-4" style={{ borderColor: "var(--color-brand-border)" }}>
-          <div className="flex items-baseline gap-2">
-            <h3
-              className="text-sm font-bold"
-              style={{
-                fontFamily: "var(--font-heading)",
-                color: "var(--color-brand-text)",
-              }}
-            >
-              {t(`templates.${template.id}.name`)}
-            </h3>
-          </div>
+        {/* Label area */}
+        <div
+          className="border-t bg-white px-5 py-4"
+          style={{ borderColor: "var(--color-brand-border)" }}
+        >
+          <h3
+            className="text-sm font-bold"
+            style={{
+              fontFamily: "var(--font-heading)",
+              color: "var(--color-brand-text)",
+            }}
+          >
+            {t(`templates.${template.id}.name`)}
+          </h3>
           <p
-            className="mt-1 text-xs leading-[1.8]"
+            className="mt-1 text-xs leading-[1.7]"
             style={{
               fontFamily: "var(--font-sans)",
               color: "var(--color-brand-text-muted)",
@@ -168,18 +178,27 @@ export function TemplatesShowcase() {
   return (
     <section
       id="templates"
-      className="py-20 md:py-28"
+      className="relative py-24 md:py-32"
       style={{ backgroundColor: "var(--color-brand-surface-alt)" }}
     >
-      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+      {/* Subtle radial gradient texture */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.03]"
+        style={{
+          background: "radial-gradient(ellipse at 30% 20%, var(--color-brand-primary) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, var(--color-brand-dark) 0%, transparent 50%)",
+        }}
+      />
+
+      <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
         <FadeInUp>
-          <div className="mx-auto mb-14 max-w-2xl text-center">
+          <div className="mx-auto mb-16 max-w-2xl text-center">
             <h2
-              className="text-2xl font-extrabold md:text-3xl"
+              className="text-2xl font-extrabold md:text-[32px]"
               style={{
                 fontFamily: "var(--font-heading)",
                 color: "var(--color-brand-text)",
                 lineHeight: "1.2",
+                letterSpacing: "-0.01em",
               }}
             >
               {t("landing.templatesShowcase.title")}

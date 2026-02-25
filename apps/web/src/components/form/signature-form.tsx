@@ -59,11 +59,11 @@ function FieldRow({
 }: FieldRowProps) {
   const t = useTranslations();
   return (
-    <div className="group grid grid-cols-[1fr_auto] items-start gap-2">
+    <div className="group grid grid-cols-[1fr_auto] items-start gap-3">
       <div className="space-y-1.5">
         <Label
           htmlFor={`field-${field}`}
-          className="text-xs font-semibold tracking-wide text-muted-foreground uppercase"
+          className="text-[11px] font-semibold tracking-wider text-[var(--color-brand-text-muted)] uppercase"
         >
           {t(`form.fields.${field}`)}
         </Label>
@@ -72,16 +72,16 @@ function FieldRow({
           value={value}
           placeholder={t(`form.placeholders.${field}`)}
           onChange={(e) => onValueChange(e.target.value)}
-          className="bg-card"
+          className="border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] transition-all duration-200 placeholder:text-[var(--color-brand-text-muted)]/50 focus:border-[var(--color-brand-primary)] focus:ring-2 focus:ring-[var(--color-brand-primary)]/10"
         />
       </div>
       <button
         type="button"
         onClick={onToggleVisibility}
         title={visible ? t("common.hide") : t("common.show")}
-        className="mt-6 flex h-9 w-9 shrink-0 items-center justify-center rounded-[var(--radius)] text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground cursor-pointer"
+        className="mt-6 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-[var(--color-brand-text-muted)] transition-all duration-200 hover:bg-[var(--color-brand-bg)] hover:text-[var(--color-brand-text)] cursor-pointer"
       >
-        {visible ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
+        {visible ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4 opacity-50" />}
       </button>
     </div>
   );
@@ -132,16 +132,16 @@ function LogoUpload({
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <Label className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+        <Label className="text-[11px] font-semibold tracking-wider text-[var(--color-brand-text-muted)] uppercase">
           {t("form.fields.logoUrl")}
         </Label>
         <button
           type="button"
           onClick={onToggleVisibility}
           title={visible ? t("common.hide") : t("common.show")}
-          className="flex h-8 w-8 items-center justify-center rounded-[var(--radius)] text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground cursor-pointer"
+          className="flex h-8 w-8 items-center justify-center rounded-lg text-[var(--color-brand-text-muted)] transition-all duration-200 hover:bg-[var(--color-brand-bg)] hover:text-[var(--color-brand-text)] cursor-pointer"
         >
-          {visible ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
+          {visible ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4 opacity-50" />}
         </button>
       </div>
 
@@ -150,12 +150,12 @@ function LogoUpload({
           <img
             src={logoUrl}
             alt={t("form.logoPreview")}
-            className="h-16 w-auto max-w-full rounded-[var(--radius)] border border-border object-contain"
+            className="h-16 w-auto max-w-full rounded-xl border border-[var(--color-brand-border)] object-contain p-1"
           />
           <button
             type="button"
             onClick={handleClear}
-            className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-destructive text-destructive-foreground shadow-sm transition-transform hover:scale-110 cursor-pointer"
+            className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-destructive text-destructive-foreground shadow-sm transition-colors duration-200 hover:bg-destructive/90 cursor-pointer"
           >
             <X className="h-3 w-3" />
           </button>
@@ -164,7 +164,7 @@ function LogoUpload({
         <button
           type="button"
           onClick={() => fileInputRef.current?.click()}
-          className="flex w-full items-center justify-center gap-2 rounded-[var(--radius)] border-2 border-dashed border-border px-4 py-6 text-sm text-muted-foreground transition-colors hover:border-primary/50 hover:bg-primary/5 cursor-pointer"
+          className="flex w-full items-center justify-center gap-2.5 rounded-xl border-2 border-dashed border-[var(--color-brand-border)] px-4 py-7 text-sm text-[var(--color-brand-text-muted)] transition-all duration-200 hover:border-[var(--color-brand-primary)]/40 hover:bg-[var(--color-brand-primary)]/5 hover:text-[var(--color-brand-text)] cursor-pointer"
         >
           <Upload className="h-4 w-4" />
           {t("form.logoSelect")}
@@ -214,14 +214,19 @@ export function SignatureForm() {
   );
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-10">
       {/* ---------- Text field sections ---------- */}
-      {SECTIONS.map((section) => (
+      {SECTIONS.map((section, idx) => (
         <fieldset key={section.titleKey} className="space-y-4">
-          <legend className="mb-1 text-sm font-bold text-foreground">
-            {t(section.titleKey)}
-          </legend>
-          <div className="space-y-3">
+          <div className="flex items-center gap-3">
+            <legend className="text-sm font-bold text-[var(--color-brand-text)]">
+              {t(section.titleKey)}
+            </legend>
+            {idx === 0 && (
+              <div className="h-px flex-1 bg-[var(--color-brand-border)]" />
+            )}
+          </div>
+          <div className="space-y-4">
             {section.fields.map((field) => (
               <FieldRow
                 key={field}
@@ -238,7 +243,7 @@ export function SignatureForm() {
 
       {/* ---------- Logo ---------- */}
       <fieldset className="space-y-4">
-        <legend className="mb-1 text-sm font-bold text-foreground">
+        <legend className="text-sm font-bold text-[var(--color-brand-text)]">
           {t("form.sections.logo")}
         </legend>
         <LogoUpload
@@ -250,13 +255,13 @@ export function SignatureForm() {
       </fieldset>
 
       {/* ---------- Reset ---------- */}
-      <div className="border-t border-border pt-4">
+      <div className="border-t border-[var(--color-brand-border)] pt-5">
         <Button
           type="button"
           variant="outline"
           size="sm"
           onClick={resetData}
-          className="gap-1.5 text-muted-foreground hover:text-destructive"
+          className="gap-1.5 rounded-lg border-[var(--color-brand-border)] text-[var(--color-brand-text-muted)] transition-all duration-200 hover:border-destructive/30 hover:text-destructive cursor-pointer"
         >
           <RotateCcw className="h-3.5 w-3.5" />
           {t("common.reset")}

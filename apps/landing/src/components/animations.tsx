@@ -11,10 +11,10 @@ import { type ReactNode } from "react";
 /*  Shared defaults                                                    */
 /* ------------------------------------------------------------------ */
 
-const DURATION = 0.45; // max 500 ms – "quiet motion"
-const EASE = [0.25, 0.1, 0.25, 1.0] as const; // smooth cubic-bezier
+const DURATION = 0.5;
+const EASE = [0.25, 0.1, 0.25, 1.0] as const;
 
-const viewportOnce = { once: true, margin: "-60px" } as const;
+const viewportOnce = { once: true, margin: "-80px" } as const;
 
 /* ------------------------------------------------------------------ */
 /*  FadeInUp                                                           */
@@ -60,6 +60,93 @@ export function FadeInUp({
       whileInView="visible"
       viewport={viewportOnce}
       custom={{ delay, y }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  FadeIn (no vertical movement)                                      */
+/* ------------------------------------------------------------------ */
+
+interface FadeInProps {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}
+
+const fadeInVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: (delay: number) => ({
+    opacity: 1,
+    transition: {
+      duration: DURATION,
+      ease: EASE,
+      delay,
+    },
+  }),
+};
+
+export function FadeIn({ children, className, delay = 0 }: FadeInProps) {
+  const prefersReduced = useReducedMotion();
+
+  if (prefersReduced) {
+    return <div className={className}>{children}</div>;
+  }
+
+  return (
+    <motion.div
+      className={className}
+      variants={fadeInVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+      custom={delay}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  SlideInLeft                                                        */
+/* ------------------------------------------------------------------ */
+
+interface SlideInLeftProps {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}
+
+const slideInLeftVariants: Variants = {
+  hidden: { opacity: 0, x: -32 },
+  visible: (delay: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: DURATION,
+      ease: EASE,
+      delay,
+    },
+  }),
+};
+
+export function SlideInLeft({ children, className, delay = 0 }: SlideInLeftProps) {
+  const prefersReduced = useReducedMotion();
+
+  if (prefersReduced) {
+    return <div className={className}>{children}</div>;
+  }
+
+  return (
+    <motion.div
+      className={className}
+      variants={slideInLeftVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+      custom={delay}
     >
       {children}
     </motion.div>

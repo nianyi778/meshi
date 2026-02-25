@@ -15,24 +15,24 @@ export default function SignaturePreview() {
   const templateName = t(`templates.${style.templateId}.name`);
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex w-full flex-col gap-5">
       {/* Header: template name + zoom controls */}
       <div className="flex items-center justify-between">
-        <h3 className="text-sm font-medium text-muted-foreground">
+        <h3 className="text-sm text-[var(--color-brand-text-muted)]">
           {t("generator.preview")} —{" "}
-          <span className="text-foreground font-semibold">{templateName}</span>
+          <span className="font-semibold text-[var(--color-brand-text)]">{templateName}</span>
         </h3>
 
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 rounded-lg border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] p-0.5">
           {ZOOM_LEVELS.map((level) => (
             <button
               key={level}
               type="button"
               onClick={() => setZoom(level)}
-              className={`px-2 py-1 text-xs rounded-md transition-colors cursor-pointer ${
+              className={`rounded-md px-2.5 py-1 text-xs font-medium transition-all duration-200 cursor-pointer ${
                 zoom === level
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-muted text-muted-foreground hover:bg-muted/80"
+                  ? "bg-[var(--color-brand-primary)] text-white shadow-sm"
+                  : "text-[var(--color-brand-text-muted)] hover:text-[var(--color-brand-text)] hover:bg-[var(--color-brand-bg)]"
               }`}
             >
               {level}%
@@ -42,7 +42,7 @@ export default function SignaturePreview() {
       </div>
 
       {/* Preview container */}
-      <div className="overflow-auto rounded-lg border border-border bg-muted/30 p-6">
+      <div className="overflow-auto rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface-alt)] p-8">
         <div
           style={{
             transform: `scale(${zoom / 100})`,

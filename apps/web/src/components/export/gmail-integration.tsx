@@ -91,23 +91,23 @@ export function GmailIntegration() {
   }, [accessToken, data, style, t]);
 
   return (
-    <div className="space-y-4">
-      <div className="text-xs text-slate-500">
+    <div className="space-y-5">
+      <p className="text-xs leading-relaxed text-[var(--color-brand-text-muted)]">
         {t("gmail.instructions")}
         <a
           href="https://console.cloud.google.com/apis/credentials"
           target="_blank"
           rel="noopener noreferrer"
-          className="ml-1 inline-flex items-center gap-0.5 text-sky-500 hover:underline"
+          className="ml-1 inline-flex items-center gap-0.5 font-medium text-[var(--color-brand-primary)] transition-colors duration-200 hover:text-[var(--color-brand-dark)] hover:underline cursor-pointer"
         >
           {t("gmail.consoleLink")}
           <ExternalLink className="h-3 w-3" />
         </a>
-      </div>
+      </p>
 
       {/* Client ID Input */}
-      <div>
-        <label className="mb-1 block text-xs font-medium text-slate-700">
+      <div className="space-y-1.5">
+        <label className="block text-[11px] font-semibold tracking-wider text-[var(--color-brand-text-muted)] uppercase">
           {t("gmail.clientIdLabel")}
         </label>
         <input
@@ -115,7 +115,7 @@ export function GmailIntegration() {
           value={clientId}
           onChange={(e) => handleClientIdChange(e.target.value)}
           placeholder={t("gmail.clientIdPlaceholder")}
-          className="w-full rounded-md border border-slate-200 px-3 py-2 text-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+          className="w-full rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-3.5 py-2.5 text-sm text-[var(--color-brand-text)] transition-all duration-200 placeholder:text-[var(--color-brand-text-muted)]/50 focus:border-[var(--color-brand-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-primary)]/10"
         />
       </div>
 
@@ -125,7 +125,7 @@ export function GmailIntegration() {
           <button
             onClick={handleConnect}
             disabled={status === "loading" || !clientId.trim()}
-            className="flex items-center gap-2 rounded-md bg-sky-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-sky-600 disabled:opacity-50"
+            className="flex items-center gap-2 rounded-xl bg-[var(--color-brand-primary)] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[var(--color-brand-dark)] hover:shadow-md disabled:opacity-50 cursor-pointer"
           >
             {status === "loading" && (
               <Loader2 className="h-4 w-4 animate-spin" />
@@ -136,7 +136,7 @@ export function GmailIntegration() {
           <button
             onClick={handleUpdateSignature}
             disabled={updating}
-            className="flex items-center gap-2 rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-green-700 disabled:opacity-50"
+            className="flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-emerald-700 hover:shadow-md disabled:opacity-50 cursor-pointer"
           >
             {updating && <Loader2 className="h-4 w-4 animate-spin" />}
             {t("gmail.updateSignature")}
@@ -147,18 +147,18 @@ export function GmailIntegration() {
       {/* Status */}
       {statusMessage && (
         <div
-          className={`flex items-center gap-2 rounded-md px-3 py-2 text-xs ${
+          className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-medium ${
             status === "connected"
-              ? "bg-green-50 text-green-700"
+              ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
               : status === "error"
-                ? "bg-red-50 text-red-700"
-                : "bg-sky-50 text-sky-700"
+                ? "bg-red-50 text-red-700 border border-red-200"
+                : "bg-[var(--color-brand-bg)] text-[var(--color-brand-primary)] border border-[var(--color-brand-border)]"
           }`}
         >
-          {status === "connected" && <CheckCircle className="h-3.5 w-3.5" />}
-          {status === "error" && <AlertCircle className="h-3.5 w-3.5" />}
+          {status === "connected" && <CheckCircle className="h-3.5 w-3.5 shrink-0" />}
+          {status === "error" && <AlertCircle className="h-3.5 w-3.5 shrink-0" />}
           {status === "loading" && (
-            <Loader2 className="h-3.5 w-3.5 animate-spin" />
+            <Loader2 className="h-3.5 w-3.5 shrink-0 animate-spin" />
           )}
           {statusMessage}
         </div>
