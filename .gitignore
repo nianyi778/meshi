@@ -26,3 +26,7 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+*.png
+.agents/
+.agent/
+.claude/
