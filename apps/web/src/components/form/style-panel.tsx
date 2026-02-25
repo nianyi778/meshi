@@ -12,6 +12,7 @@ import {
 import type {
   FontFamily,
   BorderStyle,
+  TemplateId,
 } from "@meishi/core/types";
 import { Button } from "@meishi/ui/components/button";
 import { Input } from "@meishi/ui/components/input";
@@ -59,6 +60,69 @@ function ColorPicker({ label, value, onChange }: ColorPickerProps) {
 }
 
 // ---------------------------------------------------------------------------
+// SVG thumbnail previews for each template (abstract layout representation)
+// ---------------------------------------------------------------------------
+const TEMPLATE_THUMBNAILS: Record<TemplateId, React.ReactNode> = {
+  classic: (
+    <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <rect x="8" y="8" width="4" height="64" rx="2" fill="var(--color-brand-primary)" opacity="0.85" />
+      <rect x="20" y="12" width="52" height="8" rx="2" fill="var(--color-brand-primary)" opacity="0.7" />
+      <rect x="20" y="24" width="36" height="5" rx="1.5" fill="#94A3B8" opacity="0.5" />
+      <rect x="20" y="36" width="80" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="20" y="43" width="72" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="20" y="50" width="64" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="20" y="57" width="56" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="20" y="66" width="24" height="3" rx="1" fill="var(--color-brand-primary)" opacity="0.3" />
+    </svg>
+  ),
+  modern: (
+    <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <circle cx="24" cy="24" r="12" fill="var(--color-brand-primary)" opacity="0.2" stroke="var(--color-brand-primary)" strokeWidth="1.5" />
+      <rect x="44" y="14" width="56" height="8" rx="2" fill="var(--color-brand-primary)" opacity="0.7" />
+      <rect x="44" y="26" width="36" height="5" rx="1.5" fill="#94A3B8" opacity="0.5" />
+      <rect x="8" y="40" width="144" height="2" rx="1" fill="var(--color-brand-primary)" opacity="0.35" />
+      <rect x="8" y="50" width="80" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="8" y="57" width="72" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="8" y="64" width="64" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+    </svg>
+  ),
+  minimal: (
+    <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <rect x="12" y="14" width="60" height="7" rx="2" fill="#475569" opacity="0.6" />
+      <rect x="12" y="25" width="40" height="5" rx="1.5" fill="#94A3B8" opacity="0.4" />
+      <rect x="12" y="38" width="88" height="3" rx="1" fill="#CBD5E1" opacity="0.35" />
+      <rect x="12" y="45" width="76" height="3" rx="1" fill="#CBD5E1" opacity="0.35" />
+      <rect x="12" y="52" width="68" height="3" rx="1" fill="#CBD5E1" opacity="0.35" />
+      <rect x="12" y="59" width="56" height="3" rx="1" fill="#CBD5E1" opacity="0.35" />
+      <rect x="12" y="66" width="44" height="3" rx="1" fill="#CBD5E1" opacity="0.35" />
+    </svg>
+  ),
+  corporate: (
+    <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <rect x="8" y="8" width="6" height="64" rx="2" fill="var(--color-brand-primary)" opacity="0.85" />
+      <rect x="22" y="12" width="56" height="8" rx="2" fill="var(--color-brand-primary)" opacity="0.7" />
+      <rect x="22" y="24" width="40" height="5" rx="1.5" fill="#94A3B8" opacity="0.5" />
+      <rect x="22" y="33" width="32" height="5" rx="1.5" fill="var(--color-brand-primary)" opacity="0.25" />
+      <rect x="22" y="46" width="80" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="22" y="53" width="72" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="22" y="60" width="64" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+    </svg>
+  ),
+  elegant: (
+    <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <rect x="48" y="8" width="64" height="2" rx="1" fill="var(--color-brand-primary)" opacity="0.5" />
+      <rect x="36" y="16" width="88" height="8" rx="2" fill="var(--color-brand-primary)" opacity="0.7" />
+      <rect x="52" y="28" width="56" height="5" rx="1.5" fill="#94A3B8" opacity="0.5" />
+      <rect x="56" y="38" width="48" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="44" y="48" width="72" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="48" y="55" width="64" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="52" y="62" width="56" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="60" y="70" width="40" height="2" rx="1" fill="var(--color-brand-primary)" opacity="0.3" />
+    </svg>
+  ),
+};
+
+// ---------------------------------------------------------------------------
 // Main panel
 // ---------------------------------------------------------------------------
 export function StylePanel() {
@@ -88,7 +152,7 @@ export function StylePanel() {
       {/* ===== Template selector ===== */}
       <section className="space-y-4">
         <h3 className="text-sm font-bold text-[var(--color-brand-text)]">{t("style.template")}</h3>
-        <div className="grid grid-cols-1 gap-2.5">
+        <div className="grid grid-cols-2 gap-3">
           {TEMPLATES.map((tpl) => {
             const isActive = style.templateId === tpl.id;
             return (
@@ -96,25 +160,28 @@ export function StylePanel() {
                 key={tpl.id}
                 type="button"
                 onClick={() => setTemplate(tpl.id)}
-                className={`cursor-pointer rounded-xl border-2 px-4 py-3.5 text-left transition-all duration-200 ${
+                className={`group relative cursor-pointer rounded-xl border-2 p-2.5 text-left transition-all duration-200 ${
                   isActive
                     ? "border-[var(--color-brand-primary)] bg-[var(--color-brand-primary)]/5 shadow-sm shadow-[var(--color-brand-primary)]/10"
                     : "border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] hover:border-[var(--color-brand-primary)]/30 hover:shadow-sm"
                 }`}
               >
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-semibold text-[var(--color-brand-text)]">
-                    {t(`templates.${tpl.id}.name`)}
-                  </span>
-                  {isActive && (
-                    <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--color-brand-primary)]">
-                      <Check className="h-3 w-3 text-white" />
-                    </div>
-                  )}
+                {/* Checkmark badge */}
+                {isActive && (
+                  <div className="absolute top-1.5 right-1.5 z-10 flex h-5 w-5 items-center justify-center rounded-full bg-[var(--color-brand-primary)] shadow-sm">
+                    <Check className="h-3 w-3 text-white" />
+                  </div>
+                )}
+                {/* SVG thumbnail */}
+                <div className="mb-2 h-[72px] w-full overflow-hidden rounded-lg border border-[var(--color-brand-border)]/50 bg-white">
+                  {TEMPLATE_THUMBNAILS[tpl.id as TemplateId]}
                 </div>
-                <p className="mt-1 text-xs leading-relaxed text-[var(--color-brand-text-muted)]">
-                  {t(`templates.${tpl.id}.description`)}
-                </p>
+                {/* Template name */}
+                <span className={`block text-center text-xs font-semibold ${
+                  isActive ? "text-[var(--color-brand-primary)]" : "text-[var(--color-brand-text)]"
+                }`}>
+                  {t(`templates.${tpl.id}.name`)}
+                </span>
               </button>
             );
           })}

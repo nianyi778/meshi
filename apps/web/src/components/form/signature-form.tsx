@@ -346,46 +346,59 @@ export function SignatureForm() {
         </div>
 
         <div className="space-y-3">
-          {data.socialLinks.map((link, idx) => (
-            <div key={idx} className="grid grid-cols-[120px_1fr_auto] items-center gap-2">
-              <select
-                value={link.platform}
-                onChange={(e) => {
-                  const next: SocialLink[] = data.socialLinks.map((item, i) =>
-                    i === idx ? { platform: e.target.value as SocialLink["platform"], url: item.url } : item
-                  );
-                  updateField("socialLinks", next);
-                }}
-                className="h-9 rounded-lg border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-2 text-xs text-[var(--color-brand-text)] transition-all duration-200 focus:border-[var(--color-brand-primary)] focus:ring-2 focus:ring-[var(--color-brand-primary)]/10"
+          {data.socialLinks.map((link, idx) => {
+            const platform = SOCIAL_PLATFORMS.find((p) => p.id === link.platform);
+            const platformColor = platform?.color ?? "#6366F1";
+            return (
+              <div
+                key={idx}
+                className="grid grid-cols-[auto_120px_1fr_auto] items-center gap-2 rounded-lg border-l-2 pl-2 transition-colors"
+                style={{ borderLeftColor: platformColor }}
               >
-                {SOCIAL_PLATFORMS.map((p) => (
-                  <option key={p.id} value={p.id}>{p.label}</option>
-                ))}
-              </select>
-              <Input
-                value={link.url}
-                placeholder={SOCIAL_PLATFORMS.find((p) => p.id === link.platform)?.urlPrefix ?? "https://"}
-                onChange={(e) => {
-                  const next: SocialLink[] = data.socialLinks.map((item, i) =>
-                    i === idx ? { platform: item.platform, url: e.target.value } : item
-                  );
-                  updateField("socialLinks", next);
-                }}
-                className="border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] transition-all duration-200 placeholder:text-[var(--color-brand-text-muted)]/50 focus:border-[var(--color-brand-primary)] focus:ring-2 focus:ring-[var(--color-brand-primary)]/10"
-              />
-              <button
-                type="button"
-                onClick={() => {
-                  const next: SocialLink[] = data.socialLinks.filter((_: SocialLink, i: number) => i !== idx);
-                  updateField("socialLinks", next);
-                }}
-                title={t("form.removeSocial")}
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-[var(--color-brand-text-muted)] transition-all duration-200 hover:bg-destructive/10 hover:text-destructive cursor-pointer"
-              >
-                <X className="h-4 w-4" />
-              </button>
-            </div>
-          ))}
+                {/* Platform color dot */}
+                <span
+                  className="h-2.5 w-2.5 shrink-0 rounded-full"
+                  style={{ backgroundColor: platformColor }}
+                />
+                <select
+                  value={link.platform}
+                  onChange={(e) => {
+                    const next: SocialLink[] = data.socialLinks.map((item, i) =>
+                      i === idx ? { platform: e.target.value as SocialLink["platform"], url: item.url } : item
+                    );
+                    updateField("socialLinks", next);
+                  }}
+                  className="h-9 rounded-lg border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-2 text-xs text-[var(--color-brand-text)] transition-all duration-200 focus:border-[var(--color-brand-primary)] focus:ring-2 focus:ring-[var(--color-brand-primary)]/10"
+                >
+                  {SOCIAL_PLATFORMS.map((p) => (
+                    <option key={p.id} value={p.id}>{p.label}</option>
+                  ))}
+                </select>
+                <Input
+                  value={link.url}
+                  placeholder={platform?.urlPrefix ?? "https://"}
+                  onChange={(e) => {
+                    const next: SocialLink[] = data.socialLinks.map((item, i) =>
+                      i === idx ? { platform: item.platform, url: e.target.value } : item
+                    );
+                    updateField("socialLinks", next);
+                  }}
+                  className="border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] transition-all duration-200 placeholder:text-[var(--color-brand-text-muted)]/50 focus:border-[var(--color-brand-primary)] focus:ring-2 focus:ring-[var(--color-brand-primary)]/10"
+                />
+                <button
+                  type="button"
+                  onClick={() => {
+                    const next: SocialLink[] = data.socialLinks.filter((_: SocialLink, i: number) => i !== idx);
+                    updateField("socialLinks", next);
+                  }}
+                  title={t("form.removeSocial")}
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-[var(--color-brand-text-muted)] transition-all duration-200 hover:bg-destructive/10 hover:text-destructive cursor-pointer"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+            );
+          })}
 
           {data.socialLinks.length < 6 && (
             <Button
