@@ -7,7 +7,7 @@ import { routing } from "@/i18n/routing";
 import { getMessagesByLocale } from "@meishi/i18n/messages";
 import { locales } from "@meishi/i18n";
 
-const SITE_URL = "https://ekagu.qzz.io";
+const SITE_URL = "https://meshi.ekagu.qzz.io";
 
 const OG_LOCALE_MAP: Record<string, string> = {
   ja: "ja_JP",

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ekagu.qzz.io/sitemap.xml
+Sitemap: https://meshi.ekagu.qzz.io/sitemap.xml
