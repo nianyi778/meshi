@@ -11,7 +11,7 @@ export function Footer() {
     {
       title: t("landing.footer.product"),
       links: [
-        { label: t("landing.footer.createSignature"), href: `/${locale}/generator` },
+        { label: t("landing.footer.createSignature"), href: `https://app.ekagu.qzz.io/${locale}/generator` },
         { label: t("landing.footer.viewTemplates"), href: "#templates" },
         { label: t("landing.footer.viewFeatures"), href: "#features" },
       ],

@@ -226,7 +226,7 @@ export function Hero() {
           <FadeInUp delay={0.24}>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
-                href={`/${locale}/generator`}
+                href={`https://app.ekagu.qzz.io/${locale}/generator`}
                 className="group inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-sm font-bold text-white shadow-lg transition-all duration-200 hover:shadow-xl cursor-pointer"
                 style={{
                   backgroundColor: "var(--color-brand-cta)",

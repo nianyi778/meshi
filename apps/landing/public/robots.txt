@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://meishi-landing-e6k.pages.dev/sitemap.xml
+Sitemap: https://ekagu.qzz.io/sitemap.xml

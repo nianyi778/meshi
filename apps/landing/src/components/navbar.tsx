@@ -105,7 +105,7 @@ export function Navbar() {
               <LanguageSwitcher />
               {/* Desktop CTA */}
               <a
-                href={`/${locale}/generator`}
+                href={`https://app.ekagu.qzz.io/${locale}/generator`}
                 className="group items-center gap-1.5 rounded-xl px-4 py-2 text-[13px] font-bold text-white shadow-sm transition-all duration-200 hover:shadow-md inline-flex cursor-pointer"
                 style={{
                   backgroundColor: "var(--color-brand-cta)",
@@ -176,7 +176,7 @@ export function Navbar() {
             <LanguageSwitcher />
 
             <a
-              href={`/${locale}/generator`}
+              href={`https://app.ekagu.qzz.io/${locale}/generator`}
               onClick={closeMobile}
               className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-base font-bold text-white cursor-pointer shadow-lg transition-all duration-200"
               style={{ backgroundColor: "var(--color-brand-cta)" }}
