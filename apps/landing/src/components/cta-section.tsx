@@ -94,20 +94,20 @@ export function CTASection() {
         <ScaleIn delay={0.16}>
           <div className="mt-10">
             <a
-              href={`https://app.ekagu.qzz.io/${locale}/generator`}
+              href={`https://dashboard.ekagu.qzz.io/${locale}/generator`}
               className="group inline-flex items-center gap-2.5 rounded-2xl px-9 py-4 text-base font-bold text-white shadow-xl transition-all duration-200 hover:shadow-2xl cursor-pointer"
               style={{
                 backgroundColor: "var(--color-brand-cta)",
                 fontFamily: "var(--font-sans)",
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.backgroundColor =
-                  "var(--color-brand-cta-hover)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.backgroundColor =
-                  "var(--color-brand-cta)")
-              }
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor =
+                  "var(--color-brand-cta-hover)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor =
+                  "var(--color-brand-cta)";
+              }}
             >
               {t("landing.cta.button")}
               <ArrowRight

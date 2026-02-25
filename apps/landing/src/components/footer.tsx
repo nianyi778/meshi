@@ -11,7 +11,7 @@ export function Footer() {
     {
       title: t("landing.footer.product"),
       links: [
-        { label: t("landing.footer.createSignature"), href: `https://app.ekagu.qzz.io/${locale}/generator` },
+        { label: t("landing.footer.createSignature"), href: `https://dashboard.ekagu.qzz.io/${locale}/generator` },
         { label: t("landing.footer.viewTemplates"), href: "#templates" },
         { label: t("landing.footer.viewFeatures"), href: "#features" },
       ],
@@ -99,12 +99,12 @@ export function Footer() {
                         fontFamily: "var(--font-sans)",
                         color: "rgba(255,255,255,0.45)",
                       }}
-                      onMouseEnter={(e) =>
-                        (e.currentTarget.style.color = "rgba(255,255,255,0.9)")
-                      }
-                      onMouseLeave={(e) =>
-                        (e.currentTarget.style.color = "rgba(255,255,255,0.45)")
-                      }
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = "rgba(255,255,255,0.9)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = "rgba(255,255,255,0.45)";
+                      }}
                     >
                       {link.label}
                     </a>

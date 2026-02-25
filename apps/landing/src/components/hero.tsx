@@ -226,20 +226,20 @@ export function Hero() {
           <FadeInUp delay={0.24}>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
-                href={`https://app.ekagu.qzz.io/${locale}/generator`}
+                href={`https://dashboard.ekagu.qzz.io/${locale}/generator`}
                 className="group inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-sm font-bold text-white shadow-lg transition-all duration-200 hover:shadow-xl cursor-pointer"
                 style={{
                   backgroundColor: "var(--color-brand-cta)",
                   fontFamily: "var(--font-sans)",
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.backgroundColor =
-                    "var(--color-brand-cta-hover)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.backgroundColor =
-                    "var(--color-brand-cta)")
-                }
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "var(--color-brand-cta-hover)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "var(--color-brand-cta)";
+                }}
               >
                 {t("landing.hero.cta")}
                 <ArrowRight
@@ -295,6 +295,7 @@ export function Hero() {
               {SIGNATURES.map((_, i) => (
                 <button
                   key={i}
+                  type="button"
                   onClick={() => setCurrentIndex(i)}
                   aria-label={`Signature preview ${i + 1}`}
                   className="h-2 rounded-full transition-all duration-300 cursor-pointer"

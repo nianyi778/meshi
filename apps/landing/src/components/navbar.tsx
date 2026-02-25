@@ -60,7 +60,7 @@ export function Navbar() {
           >
             {/* Logo */}
             <a
-              href="#"
+              href={`/${locale}`}
               className="flex items-center gap-2 no-underline cursor-pointer"
             >
               <span
@@ -105,20 +105,20 @@ export function Navbar() {
               <LanguageSwitcher />
               {/* Desktop CTA */}
               <a
-                href={`https://app.ekagu.qzz.io/${locale}/generator`}
+                href={`https://dashboard.ekagu.qzz.io/${locale}/generator`}
                 className="group items-center gap-1.5 rounded-xl px-4 py-2 text-[13px] font-bold text-white shadow-sm transition-all duration-200 hover:shadow-md inline-flex cursor-pointer"
                 style={{
                   backgroundColor: "var(--color-brand-cta)",
                   fontFamily: "var(--font-sans)",
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.backgroundColor =
-                    "var(--color-brand-cta-hover)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.backgroundColor =
-                    "var(--color-brand-cta)")
-                }
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "var(--color-brand-cta-hover)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    "var(--color-brand-cta)";
+                }}
               >
                 {t("common.createNow")}
                 <ArrowRight
@@ -131,6 +131,7 @@ export function Navbar() {
 
             {/* Mobile hamburger */}
             <button
+              type="button"
               className="inline-flex items-center justify-center rounded-lg p-2 cursor-pointer md:hidden transition-colors duration-200"
               style={{ color: "var(--color-brand-text)" }}
               onClick={() => setMobileOpen((o) => !o)}
@@ -176,7 +177,7 @@ export function Navbar() {
             <LanguageSwitcher />
 
             <a
-              href={`https://app.ekagu.qzz.io/${locale}/generator`}
+              href={`https://dashboard.ekagu.qzz.io/${locale}/generator`}
               onClick={closeMobile}
               className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-base font-bold text-white cursor-pointer shadow-lg transition-all duration-200"
               style={{ backgroundColor: "var(--color-brand-cta)" }}
