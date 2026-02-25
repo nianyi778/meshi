@@ -45,17 +45,17 @@ pnpm type-check
 
 已部署到 Cloudflare Pages：
 
-- 落地页：`https://ekagu.qzz.io`
-- 生成器：`https://app.ekagu.qzz.io`
+- 落地页：`https://meshi.ekagu.qzz.io`
+- 生成器：`https://dashboard.ekagu.qzz.io`
 
 若首次绑定自定义域名，请在 Cloudflare DNS 中添加：
 
 | Type | Name | Target | Proxy |
 |------|------|--------|-------|
-| CNAME | @ | meishi-landing-e6k.pages.dev | Proxied |
-| CNAME | app | meishi-app.pages.dev | Proxied |
+| CNAME | meshi | meishi-landing-e6k.pages.dev | Proxied |
+| CNAME | dashboard | meishi-app.pages.dev | Proxied |
 
-> 注意：如果根域已有 A/AAAA 记录，需先删除再添加 CNAME。
+> 注意：如果已存在同名记录（如 A/AAAA），需先删除再添加 CNAME。
 
 ## 许可
 
