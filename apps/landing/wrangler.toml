@@ -4,3 +4,7 @@ compatibility_date = "2024-12-30"
 compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
 
 assets = { directory = "dist/client", binding = "ASSETS" }
+
+routes = [
+  { pattern = "meishi.ekagu.qzz.io/*", zone_id = "ba7addf8cd2b762faf687c98b2053f2c" }
+]
