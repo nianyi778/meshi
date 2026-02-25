@@ -22,4 +22,19 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  build: {
+    rollupOptions: {
+      onwarn(warning, defaultHandler) {
+        // vinext 0.0.5: sourcemap chain break on "use client" files (cosmetic, upstream fix pending)
+        if (warning.message?.includes("Can't resolve original location of error")) return;
+        // vinext: react-dom/server.edge dual static+dynamic import in SSR entry (cosmetic)
+        if (
+          warning.message?.includes("react-dom") &&
+          warning.message?.includes("dynamically imported") &&
+          warning.message?.includes("statically imported")
+        ) return;
+        defaultHandler(warning);
+      },
+    },
+  },
 });

@@ -166,6 +166,9 @@ importers:
       vite-tsconfig-paths:
         specifier: ^6.1.1
         version: 6.1.1(typescript@5.9.3)(vite@7.3.1(@types/node@22.19.11)(jiti@2.6.1)(lightningcss@1.31.1)(terser@5.46.0))
+      wrangler:
+        specifier: ^4.68.1
+        version: 4.68.1
 
   packages/core:
     devDependencies:
