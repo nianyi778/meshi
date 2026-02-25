@@ -102,7 +102,6 @@ export function Navbar() {
             </ul>
 
             <div className="hidden items-center gap-3 md:flex">
-              <LanguageSwitcher />
               {/* GitHub link */}
               <a
                 href="https://github.com/nianyi778/meshi"
