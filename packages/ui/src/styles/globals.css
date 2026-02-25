@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(210 11% 8%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(210 11% 8%);
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(210 11% 8%);
+  --color-primary: hsl(199 89% 48%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(210 40% 96%);
+  --color-secondary-foreground: hsl(210 11% 15%);
+  --color-muted: hsl(210 40% 96%);
+  --color-muted-foreground: hsl(215 16% 47%);
+  --color-accent: hsl(24 95% 53%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(214 32% 91%);
+  --color-input: hsl(214 32% 91%);
+  --color-ring: hsl(199 89% 48%);
+  --radius: 0.625rem;
+
+  --color-brand-primary: #0EA5E9;
+  --color-brand-dark: #0369A1;
+  --color-brand-cta: #F97316;
+  --color-brand-cta-hover: #EA6C0A;
+  --color-brand-bg: #F0F9FF;
+  --color-brand-surface: #FFFFFF;
+  --color-brand-surface-alt: #F8FAFC;
+  --color-brand-text: #0C4A6E;
+  --color-brand-text-body: #334155;
+  --color-brand-text-muted: #64748B;
+  --color-brand-border: #E0F2FE;
+
+  --font-sans: "Noto Sans JP", "Inter", system-ui, sans-serif;
+  --font-heading: "Inter", "Noto Sans JP", system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
