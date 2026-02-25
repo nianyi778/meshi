@@ -114,14 +114,20 @@ export function TemplateModern({ data, style, className }: TemplateProps) {
       </div>
 
       {/* Divider */}
+      {style.borderStyle !== "none" && (
       <div
         style={{
-          height: "1px",
+          height: style.borderStyle === "double" ? "3px" : "1px",
           backgroundColor: style.borderColor,
           margin: "0 0 16px 0",
           opacity: 0.5,
+          borderTop: style.borderStyle === "double" ? `1px solid ${style.borderColor}` : undefined,
+          borderBottom: style.borderStyle === "double" ? `1px solid ${style.borderColor}` : undefined,
+          background: style.borderStyle === "double" ? "none" : style.borderColor,
+          boxSizing: "border-box" as const,
         }}
       />
+      )}
 
       {/* Contact grid */}
       <div
@@ -181,7 +187,7 @@ export function TemplateModern({ data, style, className }: TemplateProps) {
           }}
         >
           {v.postalCode && data.postalCode && (
-            <span>{data.postalCode} </span>
+            <span>{`〒${data.postalCode}`} </span>
           )}
           {v.address1 && data.address1 && (
             <span>{data.address1}</span>

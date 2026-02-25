@@ -14,6 +14,10 @@ export function TemplateElegant({ data, style, className }: TemplateProps) {
   const fontFamily = getFontFamilyCss(style.fontFamily);
   const fontSize = style.fontSize;
 
+  const isNoBorder = style.borderStyle === "none";
+  const borderWidth = style.borderStyle === "double" ? "3px" : "1px";
+  const elegantBorderCss = isNoBorder ? "none" : `${borderWidth} ${style.borderStyle} ${style.borderColor}`;
+
   const linkStyle: React.CSSProperties = {
     color: style.textColor,
     textDecoration: "none",
@@ -38,7 +42,7 @@ export function TemplateElegant({ data, style, className }: TemplateProps) {
       {/* Top border — thin */}
       <div
         style={{
-          borderTop: `1px ${style.borderStyle !== "none" ? style.borderStyle : "solid"} ${style.borderColor}`,
+          borderTop: elegantBorderCss,
           marginBottom: "20px",
         }}
       />
@@ -172,7 +176,7 @@ export function TemplateElegant({ data, style, className }: TemplateProps) {
           }}
         >
           {v.postalCode && data.postalCode && (
-            <div>{data.postalCode}</div>
+            <div>{`〒${data.postalCode}`}</div>
           )}
           {v.address1 && data.address1 && (
             <div>{data.address1}</div>
@@ -186,7 +190,7 @@ export function TemplateElegant({ data, style, className }: TemplateProps) {
       {/* Bottom border — thin */}
       <div
         style={{
-          borderBottom: `1px ${style.borderStyle !== "none" ? style.borderStyle : "solid"} ${style.borderColor}`,
+          borderBottom: elegantBorderCss,
           marginTop: "20px",
         }}
       />

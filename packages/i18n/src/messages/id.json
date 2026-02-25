@@ -140,7 +140,15 @@
     "updated": "Tanda tangan untuk {email} telah diperbarui",
     "enterClientId": "Silakan masukkan Client ID",
     "connectionFailed": "Tidak dapat terhubung",
-    "updateFailed": "Tidak dapat memperbarui tanda tangan"
+    "updateFailed": "Tidak dapat memperbarui tanda tangan",
+    "guide": {
+      "step1": "Klik tombol 'Salin HTML' di bawah untuk menyalin HTML tanda tangan ke clipboard.",
+      "step2": "Klik 'Buka Gmail' untuk masuk ke halaman pengaturan Gmail.",
+      "step3": "Gulir ke bagian 'Tanda Tangan' dan buat tanda tangan baru.",
+      "step4": "Klik kanan area teks → 'Tempel' untuk menyisipkan HTML, lalu simpan.",
+      "copyButton": "Salin HTML",
+      "openGmail": "Buka Gmail"
+    }
   },
   "landing": {
     "nav": {
@@ -228,6 +236,90 @@
       "privacy": "Kebijakan Privasi",
       "terms": "Syarat Penggunaan",
       "copyright": "© {year} Meishi. All rights reserved."
+    },
+    "faq": {
+      "title": "Pertanyaan yang Sering Diajukan",
+      "subtitle": "Semua yang perlu Anda ketahui tentang Meishi.",
+      "items": {
+        "q1": {
+          "q": "Apakah Meishi benar-benar gratis?",
+          "a": "Ya, sepenuhnya gratis. Semua fitur dapat digunakan tanpa kartu kredit atau pendaftaran akun."
+        },
+        "q2": {
+          "q": "Apakah tanda tangan yang dibuat memiliki watermark?",
+          "a": "Tidak. Tanda tangan yang dibuat dengan Meishi sepenuhnya bebas watermark."
+        },
+        "q3": {
+          "q": "Klien email apa yang didukung?",
+          "a": "Format HTML bekerja dengan Gmail, Outlook, Apple Mail, Thunderbird, dan semua klien email utama. Integrasi Gmail memungkinkan Anda mengaturnya dengan satu klik."
+        },
+        "q4": {
+          "q": "Bagaimana cara mengatur tanda tangan di Gmail?",
+          "a": "Klik 'Atur di Gmail' di editor dan autentikasi dengan akun Google Anda. Kami menggunakan OAuth 2.0 — kata sandi Anda tidak pernah dibagikan ke Meishi."
+        },
+        "q5": {
+          "q": "Apakah informasi yang saya masukkan disimpan di server?",
+          "a": "Tidak. Semua informasi yang Anda masukkan hanya diproses di browser Anda dan tidak pernah dikirim ke server kami."
+        },
+        "q6": {
+          "q": "Bisakah saya menggunakan gambar logo?",
+          "a": "Bisa. Anda dapat mengunggah gambar PNG, JPG, atau SVG untuk menyertakan logo di tanda tangan."
+        }
+      }
+    },
+    "privacy": {
+      "title": "Kebijakan Privasi",
+      "lastUpdated": "Terakhir diperbarui: {date}",
+      "intro": "Meishi ('Layanan') menghormati privasi Anda dan berkomitmen untuk melindungi informasi pribadi Anda. Kebijakan ini menjelaskan cara kami menangani informasi dalam Layanan.",
+      "sections": {
+        "collect": {
+          "title": "1. Informasi yang Kami Kumpulkan",
+          "body": "Layanan tidak mengumpulkan atau menyimpan informasi yang Anda masukkan untuk membuat tanda tangan (nama, perusahaan, email, telepon, dll.). Semua data ini hanya diproses di browser Anda dan tidak pernah dikirim ke server kami.\n\nJika Anda menggunakan integrasi Gmail, kami mendapatkan token akses Gmail melalui OAuth 2.0 Google hanya untuk mengatur tanda tangan Anda. Token ini tidak disimpan."
+        },
+        "use": {
+          "title": "2. Cara Kami Menggunakan Informasi",
+          "body": "Log akses (alamat IP, info browser, dll.) yang dikumpulkan oleh infrastruktur kami hanya digunakan untuk meningkatkan Layanan dan mencegah penyalahgunaan. Kami tidak menjual atau membagikan data ini kepada pihak ketiga."
+        },
+        "cookies": {
+          "title": "3. Cookie",
+          "body": "Layanan mungkin menggunakan cookie untuk menyimpan preferensi pengguna seperti pengaturan bahasa. Anda dapat menonaktifkan cookie di browser, tetapi beberapa fitur mungkin tidak berfungsi dengan benar."
+        },
+        "thirdParty": {
+          "title": "4. Layanan Pihak Ketiga",
+          "body": "Layanan menggunakan Cloudflare untuk infrastruktur dan keamanan. Layanan ini memproses data sesuai kebijakan privasi mereka masing-masing."
+        },
+        "contact": {
+          "title": "5. Kontak",
+          "body": "Untuk pertanyaan tentang kebijakan ini, silakan buka Issue di repositori GitHub kami."
+        }
+      }
+    },
+    "terms": {
+      "title": "Ketentuan Layanan",
+      "lastUpdated": "Terakhir diperbarui: {date}",
+      "intro": "Ketentuan Layanan ini mengatur penggunaan Meishi Anda. Harap baca dengan saksama sebelum menggunakan Layanan.",
+      "sections": {
+        "acceptance": {
+          "title": "1. Penerimaan Ketentuan",
+          "body": "Dengan menggunakan Layanan, Anda menyetujui Ketentuan ini. Jika tidak setuju, harap jangan gunakan Layanan."
+        },
+        "service": {
+          "title": "2. Deskripsi Layanan",
+          "body": "Meishi adalah aplikasi web untuk membuat dan mengekspor tanda tangan email. Kami dapat mengubah atau menghentikan Layanan kapan saja tanpa pemberitahuan."
+        },
+        "prohibited": {
+          "title": "3. Perilaku yang Dilarang",
+          "body": "Anda setuju untuk tidak:\n• Mencoba akses tidak sah ke Layanan\n• Mengganggu operasi Layanan\n• Melanggar hukum atau peraturan yang berlaku\n• Melakukan perilaku yang kami anggap tidak pantas"
+        },
+        "disclaimer": {
+          "title": "4. Penafian",
+          "body": "Layanan disediakan 'apa adanya' tanpa jaminan apa pun. Kami tidak bertanggung jawab atas kerugian apa pun yang timbul dari penggunaan Layanan."
+        },
+        "changes": {
+          "title": "5. Perubahan Ketentuan",
+          "body": "Kami dapat memperbarui Ketentuan ini kapan saja tanpa pemberitahuan. Melanjutkan penggunaan Layanan setelah perubahan berarti Anda menerima Ketentuan baru."
+        }
+      }
     }
   }
 }

@@ -140,7 +140,15 @@
     "updated": "Updated signature for {email}",
     "enterClientId": "Please enter Client ID",
     "connectionFailed": "Connection failed",
-    "updateFailed": "Failed to update signature"
+    "updateFailed": "Failed to update signature",
+    "guide": {
+      "step1": "Click \"Copy HTML\" below to copy your signature HTML to clipboard.",
+      "step2": "Click \"Open Gmail\" to go to Gmail settings.",
+      "step3": "Scroll to the \"Signature\" section and create a new signature.",
+      "step4": "Right-click the text area → \"Paste\" to insert the HTML, then save.",
+      "copyButton": "Copy HTML",
+      "openGmail": "Open Gmail"
+    }
   },
   "landing": {
     "nav": {
@@ -228,6 +236,90 @@
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
       "copyright": "© {year} Meishi. All rights reserved."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about Meishi.",
+      "items": {
+        "q1": {
+          "q": "Is Meishi really free?",
+          "a": "Yes, completely free. All features are available with no credit card or account required."
+        },
+        "q2": {
+          "q": "Will my signature have a watermark?",
+          "a": "No. Signatures created with Meishi are completely watermark-free."
+        },
+        "q3": {
+          "q": "Which email clients are supported?",
+          "a": "The HTML format works with Gmail, Outlook, Apple Mail, Thunderbird, and all major email clients. The Gmail integration lets you set it with one click."
+        },
+        "q4": {
+          "q": "How do I set my signature in Gmail?",
+          "a": "Click \"Set in Gmail\" in the editor and authenticate with your Google account. We use OAuth 2.0 — your password is never shared with Meishi."
+        },
+        "q5": {
+          "q": "Is my data stored on your servers?",
+          "a": "No. All information you enter is processed entirely in your browser and never sent to our servers."
+        },
+        "q6": {
+          "q": "Can I use a logo image?",
+          "a": "Yes. You can upload PNG, JPG, or SVG images to include your logo in the signature."
+        }
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: {date}",
+      "intro": "Meishi (the \"Service\") respects your privacy and is committed to protecting your personal information. This policy explains how we handle information in connection with the Service.",
+      "sections": {
+        "collect": {
+          "title": "1. Information We Collect",
+          "body": "The Service does not collect or store the information you enter to create your signature (name, company, email, phone, etc.). All such data is processed entirely in your browser and never transmitted to our servers.\n\nIf you use the Gmail integration, we obtain a Gmail access token via Google's OAuth 2.0 flow solely to set your signature. This token is not stored."
+        },
+        "use": {
+          "title": "2. How We Use Information",
+          "body": "Access logs (IP address, browser info, etc.) collected by our infrastructure are used only to improve the Service and prevent abuse. We do not sell or share this data with third parties."
+        },
+        "cookies": {
+          "title": "3. Cookies",
+          "body": "The Service may use cookies to store user preferences such as language settings. You can disable cookies in your browser, but some features may not work correctly."
+        },
+        "thirdParty": {
+          "title": "4. Third-Party Services",
+          "body": "The Service uses Cloudflare for infrastructure and security. These services process data under their own privacy policies."
+        },
+        "contact": {
+          "title": "5. Contact",
+          "body": "For questions about this policy, please open an issue in our GitHub repository."
+        }
+      }
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "lastUpdated": "Last updated: {date}",
+      "intro": "These Terms of Service govern your use of Meishi. Please read them carefully before using the Service.",
+      "sections": {
+        "acceptance": {
+          "title": "1. Acceptance of Terms",
+          "body": "By using the Service, you agree to these Terms. If you do not agree, please do not use the Service."
+        },
+        "service": {
+          "title": "2. Description of Service",
+          "body": "Meishi is a web application for creating and exporting email signatures. We may change or discontinue the Service at any time without notice."
+        },
+        "prohibited": {
+          "title": "3. Prohibited Conduct",
+          "body": "You agree not to:\n• Attempt unauthorized access to the Service\n• Interfere with the operation of the Service\n• Violate any applicable laws or regulations\n• Engage in any conduct we deem inappropriate"
+        },
+        "disclaimer": {
+          "title": "4. Disclaimer",
+          "body": "The Service is provided \"as is\" without warranty of any kind. We are not liable for any damages arising from your use of the Service."
+        },
+        "changes": {
+          "title": "5. Changes to Terms",
+          "body": "We may update these Terms at any time without notice. Continued use of the Service after changes constitutes your acceptance of the new Terms."
+        }
+      }
     }
   }
 }

@@ -1,19 +1,18 @@
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { Navbar } from "@/components/navbar";
-import { Hero } from "@/components/hero";
-import { Features } from "@/components/features";
-import { HowItWorks } from "@/components/how-it-works";
-import { TemplatesShowcase } from "@/components/templates-showcase";
-import { CTASection } from "@/components/cta-section";
-import { FAQ } from "@/components/faq";
 import { Footer } from "@/components/footer";
+import { LegalPage } from "@/components/legal-page";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export default async function LandingPage({
+const LAST_UPDATED = "2026-02-25";
+
+const SECTION_KEYS = ["collect", "use", "cookies", "thirdParty", "contact"];
+
+export default async function PrivacyPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -25,12 +24,14 @@ export default async function LandingPage({
     <>
       <Navbar />
       <main>
-        <Hero />
-        <Features />
-        <HowItWorks />
-        <TemplatesShowcase />
-        <CTASection />
-        <FAQ />
+        <LegalPage
+          titleKey="landing.privacy.title"
+          lastUpdatedKey="landing.privacy.lastUpdated"
+          introKey="landing.privacy.intro"
+          sectionKeys={SECTION_KEYS}
+          sectionsNsKey="landing.privacy.sections"
+          date={LAST_UPDATED}
+        />
       </main>
       <Footer />
     </>

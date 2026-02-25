@@ -20,14 +20,14 @@ export function Footer() {
       title: t("landing.footer.support"),
       links: [
         { label: t("landing.footer.howToUse"), href: "#how-it-works" },
-        { label: t("landing.footer.faq"), href: "#" },
+        { label: t("landing.footer.faq"), href: "#faq" },
       ],
     },
     {
       title: t("landing.footer.legal"),
       links: [
-        { label: t("landing.footer.privacy"), href: "#" },
-        { label: t("landing.footer.terms"), href: "#" },
+        { label: t("landing.footer.privacy"), href: `/${locale}/privacy` },
+        { label: t("landing.footer.terms"), href: `/${locale}/terms` },
       ],
     },
   ];

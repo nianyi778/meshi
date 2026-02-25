@@ -4,6 +4,7 @@ import React, { useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { useSignatureStore } from "@/store/signature-store";
 import type { SignatureData, FieldVisibility } from "@meishi/core/types";
+import { formatPhoneJP, formatPostalCodeJP } from "@meishi/core/utils";
 import { Button } from "@meishi/ui/components/button";
 import { Input } from "@meishi/ui/components/input";
 import { Label } from "@meishi/ui/components/label";
@@ -233,7 +234,11 @@ export function SignatureForm() {
                 field={field}
                 value={data[field]}
                 visible={getVisibility(field)}
-                onValueChange={(v) => updateField(field, v)}
+                onValueChange={(v) => {
+                  if (field === "phone") updateField(field, formatPhoneJP(v));
+                  else if (field === "postalCode") updateField(field, formatPostalCodeJP(v));
+                  else updateField(field, v);
+                }}
                 onToggleVisibility={() => handleToggle(field)}
               />
             ))}

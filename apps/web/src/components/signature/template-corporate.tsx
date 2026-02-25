@@ -115,14 +115,19 @@ export function TemplateCorporate({ data, style, className }: TemplateProps) {
         )}
 
         {/* Divider */}
+        {style.borderStyle !== "none" && (
         <div
           style={{
-            height: "1px",
-            backgroundColor: style.borderColor,
+            height: style.borderStyle === "double" ? "3px" : "1px",
+            backgroundColor: style.borderStyle === "double" ? "transparent" : style.borderColor,
             margin: "12px 0",
-            opacity: 0.4,
+            opacity: style.borderStyle === "double" ? 1 : 0.4,
+            borderTop: style.borderStyle === "double" ? `1px solid ${style.borderColor}` : undefined,
+            borderBottom: style.borderStyle === "double" ? `1px solid ${style.borderColor}` : undefined,
+            boxSizing: "border-box" as const,
           }}
         />
+        )}
 
         {/* Contact info */}
         <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
@@ -175,7 +180,7 @@ export function TemplateCorporate({ data, style, className }: TemplateProps) {
                 }}
               >
                 {v.postalCode && data.postalCode && (
-                  <div>{data.postalCode}</div>
+                  <div>{`〒${data.postalCode}`}</div>
                 )}
                 {v.address1 && data.address1 && (
                   <div>{data.address1}</div>

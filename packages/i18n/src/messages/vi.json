@@ -140,7 +140,15 @@
     "updated": "Đã cập nhật chữ ký cho {email}",
     "enterClientId": "Vui lòng nhập Client ID",
     "connectionFailed": "Không thể kết nối",
-    "updateFailed": "Không thể cập nhật chữ ký"
+    "updateFailed": "Không thể cập nhật chữ ký",
+    "guide": {
+      "step1": "Nhấn nút 'Sao chép HTML' bên dưới để sao chép HTML chữ ký vào clipboard.",
+      "step2": "Nhấn 'Mở Gmail' để đến trang cài đặt Gmail.",
+      "step3": "Cuộn xuống phần 'Chữ ký' và tạo chữ ký mới.",
+      "step4": "Nhấp chuột phải vào ô văn bản → 'Dán' để chèn HTML, rồi lưu lại.",
+      "copyButton": "Sao chép HTML",
+      "openGmail": "Mở Gmail"
+    }
   },
   "landing": {
     "nav": {
@@ -228,6 +236,90 @@
       "privacy": "Chính sách bảo mật",
       "terms": "Điều khoản sử dụng",
       "copyright": "© {year} Meishi. All rights reserved."
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp",
+      "subtitle": "Mọi thứ bạn cần biết về Meishi.",
+      "items": {
+        "q1": {
+          "q": "Meishi có thực sự miễn phí không?",
+          "a": "Có, hoàn toàn miễn phí. Tất cả tính năng đều có thể sử dụng mà không cần thẻ tín dụng hay tạo tài khoản."
+        },
+        "q2": {
+          "q": "Chữ ký tạo ra có watermark không?",
+          "a": "Không. Chữ ký tạo bằng Meishi hoàn toàn không có watermark."
+        },
+        "q3": {
+          "q": "Hỗ trợ những ứng dụng email nào?",
+          "a": "Định dạng HTML hoạt động với Gmail, Outlook, Apple Mail, Thunderbird và tất cả ứng dụng email phổ biến. Tích hợp Gmail cho phép thiết lập chỉ với một cú nhấp."
+        },
+        "q4": {
+          "q": "Cách thiết lập chữ ký trong Gmail?",
+          "a": "Nhấn 'Thiết lập trong Gmail' trong trình chỉnh sửa và xác thực bằng tài khoản Google. Chúng tôi dùng OAuth 2.0 — mật khẩu của bạn không được chia sẻ với Meishi."
+        },
+        "q5": {
+          "q": "Thông tin tôi nhập có được lưu trên máy chủ không?",
+          "a": "Không. Tất cả thông tin bạn nhập chỉ được xử lý trong trình duyệt và không bao giờ gửi đến máy chủ."
+        },
+        "q6": {
+          "q": "Có thể dùng hình ảnh logo không?",
+          "a": "Có. Bạn có thể tải lên hình ảnh PNG, JPG hoặc SVG để thêm logo vào chữ ký."
+        }
+      }
+    },
+    "privacy": {
+      "title": "Chính sách bảo mật",
+      "lastUpdated": "Cập nhật lần cuối: {date}",
+      "intro": "Meishi ('Dịch vụ') tôn trọng quyền riêng tư của bạn và cam kết bảo vệ thông tin cá nhân. Chính sách này giải thích cách chúng tôi xử lý thông tin trong Dịch vụ.",
+      "sections": {
+        "collect": {
+          "title": "1. Thông tin chúng tôi thu thập",
+          "body": "Dịch vụ không thu thập hoặc lưu trữ thông tin bạn nhập để tạo chữ ký (tên, công ty, email, điện thoại, v.v.). Tất cả dữ liệu này chỉ được xử lý trong trình duyệt của bạn và không được gửi đến máy chủ.\n\nNếu bạn sử dụng tích hợp Gmail, chúng tôi lấy token truy cập Gmail qua OAuth 2.0 của Google chỉ để thiết lập chữ ký. Token này không được lưu trữ."
+        },
+        "use": {
+          "title": "2. Mục đích sử dụng thông tin",
+          "body": "Nhật ký truy cập (địa chỉ IP, thông tin trình duyệt, v.v.) do cơ sở hạ tầng thu thập chỉ được sử dụng để cải thiện Dịch vụ và ngăn chặn lạm dụng. Chúng tôi không bán hoặc chia sẻ dữ liệu này cho bên thứ ba."
+        },
+        "cookies": {
+          "title": "3. Cookie",
+          "body": "Dịch vụ có thể sử dụng cookie để lưu tùy chọn người dùng như cài đặt ngôn ngữ. Bạn có thể tắt cookie trong trình duyệt, nhưng một số tính năng có thể không hoạt động đúng."
+        },
+        "thirdParty": {
+          "title": "4. Dịch vụ bên thứ ba",
+          "body": "Dịch vụ sử dụng Cloudflare cho cơ sở hạ tầng và bảo mật. Các dịch vụ này xử lý dữ liệu theo chính sách bảo mật riêng của họ."
+        },
+        "contact": {
+          "title": "5. Liên hệ",
+          "body": "Nếu có câu hỏi về chính sách này, vui lòng mở Issue trên kho GitHub của chúng tôi."
+        }
+      }
+    },
+    "terms": {
+      "title": "Điều khoản dịch vụ",
+      "lastUpdated": "Cập nhật lần cuối: {date}",
+      "intro": "Các Điều khoản Dịch vụ này điều chỉnh việc sử dụng Meishi của bạn. Vui lòng đọc kỹ trước khi sử dụng Dịch vụ.",
+      "sections": {
+        "acceptance": {
+          "title": "1. Chấp nhận điều khoản",
+          "body": "Bằng cách sử dụng Dịch vụ, bạn đồng ý với các Điều khoản này. Nếu không đồng ý, vui lòng không sử dụng Dịch vụ."
+        },
+        "service": {
+          "title": "2. Mô tả dịch vụ",
+          "body": "Meishi là ứng dụng web để tạo và xuất chữ ký email. Chúng tôi có thể thay đổi hoặc ngừng Dịch vụ bất kỳ lúc nào mà không cần thông báo."
+        },
+        "prohibited": {
+          "title": "3. Hành vi bị cấm",
+          "body": "Bạn đồng ý không:\n• Cố gắng truy cập trái phép vào Dịch vụ\n• Can thiệp vào hoạt động của Dịch vụ\n• Vi phạm bất kỳ luật hoặc quy định nào\n• Thực hiện bất kỳ hành vi nào mà chúng tôi coi là không phù hợp"
+        },
+        "disclaimer": {
+          "title": "4. Tuyên bố miễn trách nhiệm",
+          "body": "Dịch vụ được cung cấp 'nguyên trạng' mà không có bất kỳ bảo đảm nào. Chúng tôi không chịu trách nhiệm về bất kỳ thiệt hại nào phát sinh từ việc sử dụng Dịch vụ."
+        },
+        "changes": {
+          "title": "5. Thay đổi điều khoản",
+          "body": "Chúng tôi có thể cập nhật các Điều khoản này bất kỳ lúc nào mà không cần thông báo. Tiếp tục sử dụng Dịch vụ sau khi thay đổi có nghĩa là bạn chấp nhận các Điều khoản mới."
+        }
+      }
     }
   }
 }

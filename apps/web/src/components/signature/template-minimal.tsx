@@ -154,7 +154,7 @@ export function TemplateMinimal({ data, style, className }: TemplateProps) {
           }}
         >
           {v.postalCode && data.postalCode && (
-            <span>{data.postalCode} </span>
+            <span>{`〒${data.postalCode}`} </span>
           )}
           {v.address1 && data.address1 && <span>{data.address1}</span>}
           {v.address2 && data.address2 && <span> {data.address2}</span>}

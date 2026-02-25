@@ -14,10 +14,13 @@ export function TemplateClassic({ data, style, className }: TemplateProps) {
   const fontFamily = getFontFamilyCss(style.fontFamily);
   const fontSize = style.fontSize;
 
-  const borderCss =
-    style.borderStyle !== "none"
-      ? `1px ${style.borderStyle} ${style.borderColor}`
-      : `1px solid ${style.borderColor}`;
+  const isNoBorder = style.borderStyle === "none";
+  const borderWidth = style.borderStyle === "double" ? "3px" : "1px";
+  const borderCss = isNoBorder
+    ? "none"
+    : `${borderWidth} ${style.borderStyle} ${style.borderColor}`;
+  const borderTopCss = isNoBorder ? "none" : borderCss;
+  const borderBottomCss = isNoBorder ? "none" : borderCss;
 
   const labelStyle: React.CSSProperties = {
     display: "inline-block",
@@ -152,7 +155,7 @@ export function TemplateClassic({ data, style, className }: TemplateProps) {
       {(v.postalCode || v.address1 || v.address2) && (
         <div style={{ marginTop: "4px" }}>
           {v.postalCode && data.postalCode && (
-            <span>{data.postalCode}</span>
+            <span>{`〒${data.postalCode}`}</span>
           )}
           {v.address1 && data.address1 && (
             <div>{data.address1}</div>
