@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Sparkles, Mail, Phone } from "lucide-react";
+import { ArrowRight, Sparkles, Mail, Phone, Github } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { FadeInUp } from "./animations";
@@ -183,18 +183,35 @@ export function Hero() {
         {/* ---- Text column ---- */}
         <div>
           <FadeInUp>
-            <span
-              className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-medium"
-              style={{
-                borderColor: "var(--color-brand-border)",
-                color: "var(--color-brand-text-body)",
-                backgroundColor: "rgba(255,255,255,0.7)",
-                fontFamily: "var(--font-sans)",
-              }}
-            >
-              <Sparkles size={13} style={{ color: "var(--color-brand-cta)" }} />
-              {t("landing.hero.badge")}
-            </span>
+            <div className="flex flex-wrap items-center gap-3">
+              <span
+                className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-medium"
+                style={{
+                  borderColor: "var(--color-brand-border)",
+                  color: "var(--color-brand-text-body)",
+                  backgroundColor: "rgba(255,255,255,0.7)",
+                  fontFamily: "var(--font-sans)",
+                }}
+              >
+                <Sparkles size={13} style={{ color: "var(--color-brand-cta)" }} />
+                {t("landing.hero.badge")}
+              </span>
+              <a
+                href="https://github.com/nianyi778/meshi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-medium transition-all duration-200 cursor-pointer hover:border-gray-300 hover:bg-white/80"
+                style={{
+                  borderColor: "var(--color-brand-border)",
+                  color: "var(--color-brand-text-body)",
+                  backgroundColor: "rgba(255,255,255,0.5)",
+                  fontFamily: "var(--font-sans)",
+                }}
+              >
+                <Github size={13} />
+                {t("landing.footer.starOnGithub")}
+              </a>
+            </div>
           </FadeInUp>
 
           <FadeInUp delay={0.08}>

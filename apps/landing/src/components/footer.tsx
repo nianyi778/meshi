@@ -1,11 +1,13 @@
 "use client";
 
-import { Heart } from "lucide-react";
+import { Heart, Github, Star } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 
 export function Footer() {
   const t = useTranslations();
   const locale = useLocale();
+
+  const GITHUB_URL = "https://github.com/nianyi778/meshi";
 
   const COLUMNS = [
     {
@@ -49,7 +51,7 @@ export function Footer() {
       />
 
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-6">
           {/* Brand column */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2.5">
@@ -75,6 +77,49 @@ export function Footer() {
             >
               {t("landing.footer.tagline")}
             </p>
+          </div>
+
+          {/* GitHub / Open Source column */}
+          <div className="lg:col-span-1">
+            <h4
+              className="mb-5 text-xs font-bold uppercase tracking-wider"
+              style={{
+                fontFamily: "var(--font-heading)",
+                color: "rgba(255,255,255,0.7)",
+              }}
+            >
+              {t("landing.footer.openSource")}
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href={GITHUB_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm transition-colors duration-200 cursor-pointer"
+                  style={{ fontFamily: "var(--font-sans)", color: "rgba(255,255,255,0.45)" }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.9)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.45)"; }}
+                >
+                  <Github size={13} />
+                  {t("landing.footer.github")}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={GITHUB_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm transition-colors duration-200 cursor-pointer"
+                  style={{ fontFamily: "var(--font-sans)", color: "rgba(255,255,255,0.45)" }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.9)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.45)"; }}
+                >
+                  <Star size={13} />
+                  {t("landing.footer.starOnGithub")}
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* Link columns */}

@@ -235,7 +235,11 @@
       "legal": "Informasi Hukum",
       "privacy": "Kebijakan Privasi",
       "terms": "Syarat Penggunaan",
-      "copyright": "© {year} Meishi. All rights reserved."
+      "copyright": "© {year} Meishi. All rights reserved.",
+      "openSource": "Open Source",
+      "github": "Repositori GitHub",
+      "starOnGithub": "Beri Bintang di GitHub",
+      "githubBadge": "Open Source · Beri Bintang di GitHub ⭐"
     },
     "faq": {
       "title": "Pertanyaan yang Sering Diajukan",

@@ -25,15 +25,15 @@ export const DEFAULT_FIELD_VISIBILITY: FieldVisibility = {
 };
 
 export const DEFAULT_SIGNATURE_DATA: SignatureData = {
-  companyName: "",
-  personName: "",
-  nameReading: "",
-  webUrl: "",
-  email: "",
-  phone: "",
-  postalCode: "",
-  address1: "",
-  address2: "",
+  companyName: "株式会社テクノソリューション",
+  personName: "田中 美咲",
+  nameReading: "タナカ ミサキ / Misaki Tanaka",
+  webUrl: "https://www.techno-solution.co.jp",
+  email: "m.tanaka@techno-solution.co.jp",
+  phone: "03-1234-5678",
+  postalCode: "100-0001",
+  address1: "東京都千代田区千代田1-1",
+  address2: "テクノビル 3F",
   logoUrl: "",
 };
 

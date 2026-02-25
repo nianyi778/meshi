@@ -235,7 +235,11 @@
       "legal": "法律",
       "privacy": "隐私政策",
       "terms": "服务条款",
-      "copyright": "© {year} Meishi. 版权所有。"
+      "copyright": "© {year} Meishi. 版权所有。",
+      "openSource": "开源",
+      "github": "GitHub 仓库",
+      "starOnGithub": "在 GitHub 上 Star",
+      "githubBadge": "开源项目 · 在 GitHub 上 Star ⭐"
     },
     "faq": {
       "title": "常见问题",

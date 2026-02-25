@@ -235,7 +235,11 @@
       "legal": "Legal",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
-      "copyright": "© {year} Meishi. All rights reserved."
+      "copyright": "© {year} Meishi. All rights reserved.",
+      "openSource": "Open Source",
+      "github": "GitHub Repository",
+      "starOnGithub": "Star on GitHub",
+      "githubBadge": "Open Source · Star on GitHub ⭐"
     },
     "faq": {
       "title": "Frequently Asked Questions",

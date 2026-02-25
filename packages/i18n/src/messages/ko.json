@@ -235,7 +235,11 @@
       "legal": "법적 정보",
       "privacy": "개인정보 보호정책",
       "terms": "서비스 약관",
-      "copyright": "© {year} Meishi. 모든 권리 보유."
+      "copyright": "© {year} Meishi. 모든 권리 보유.",
+      "openSource": "오픈 소스",
+      "github": "GitHub 저장소",
+      "starOnGithub": "GitHub에서 스타 주기",
+      "githubBadge": "오픈 소스 · GitHub에서 스타 ⭐"
     },
     "faq": {
       "title": "자주 묻는 질문",

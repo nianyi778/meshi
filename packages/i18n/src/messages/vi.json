@@ -235,7 +235,11 @@
       "legal": "Thông tin pháp lý",
       "privacy": "Chính sách bảo mật",
       "terms": "Điều khoản sử dụng",
-      "copyright": "© {year} Meishi. All rights reserved."
+      "copyright": "© {year} Meishi. All rights reserved.",
+      "openSource": "Mã nguồn mở",
+      "github": "Kho GitHub",
+      "starOnGithub": "Star trên GitHub",
+      "githubBadge": "Mã nguồn mở · Star trên GitHub ⭐"
     },
     "faq": {
       "title": "Câu hỏi thường gặp",

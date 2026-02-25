@@ -235,7 +235,11 @@
       "legal": "ข้อมูลทางกฎหมาย",
       "privacy": "นโยบายความเป็นส่วนตัว",
       "terms": "เงื่อนไขการใช้",
-      "copyright": "© {year} Meishi. All rights reserved."
+      "copyright": "© {year} Meishi. All rights reserved.",
+      "openSource": "โอเพนซอร์ส",
+      "github": "GitHub Repository",
+      "starOnGithub": "ให้ดาวบน GitHub",
+      "githubBadge": "โอเพนซอร์ส · ให้ดาวบน GitHub ⭐"
     },
     "faq": {
       "title": "คำถามที่พบบ่อย",

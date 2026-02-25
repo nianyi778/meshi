@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X, Github } from "lucide-react";
 import { useState, useCallback } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { LanguageSwitcher } from "./language-switcher";
@@ -102,6 +102,20 @@ export function Navbar() {
             </ul>
 
             <div className="hidden items-center gap-3 md:flex">
+              <LanguageSwitcher />
+              {/* GitHub link */}
+              <a
+                href="https://github.com/nianyi778/meshi"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="flex h-9 w-9 items-center justify-center rounded-lg transition-colors duration-200 cursor-pointer"
+                style={{ color: "var(--color-brand-text-muted)" }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = "var(--color-brand-text)"; e.currentTarget.style.backgroundColor = "rgba(0,0,0,0.05)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = "var(--color-brand-text-muted)"; e.currentTarget.style.backgroundColor = "transparent"; }}
+              >
+                <Github size={18} strokeWidth={1.8} />
+              </a>
               <LanguageSwitcher />
               {/* Desktop CTA */}
               <a
