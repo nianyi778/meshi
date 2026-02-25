@@ -1,0 +1,233 @@
+{
+  "common": {
+    "back": "Quay lại",
+    "reset": "Đặt lại",
+    "show": "Hiển thị",
+    "hide": "Ẩn",
+    "close": "Đóng",
+    "openMenu": "Mở menu",
+    "loading": "Đang tải...",
+    "createNow": "Tạo ngay",
+    "free": "Hoàn toàn miễn phí",
+    "language": "Ngôn ngữ"
+  },
+  "metadata": {
+    "web": {
+      "title": "Meishi (メシ) — Tạo chữ ký email chuyên nghiệp miễn phí",
+      "description": "Tạo chữ ký email chuyên nghiệp trong 30 giây. 5 mẫu, tùy chỉnh đầy đủ, hỗ trợ PNG, HTML và Gmail. Hoàn toàn miễn phí.",
+      "keywords": "chữ ký email,danh thiếp,thẻ kinh doanh,chữ ký Gmail,email signature"
+    },
+    "landing": {
+      "title": "Meishi (メシ) — Danh thiếp trong email của bạn",
+      "description": "Tạo chữ ký email chuyên nghiệp trong 30 giây. 5 mẫu, tùy chỉnh đầy đủ, hỗ trợ PNG, HTML và Gmail. Hoàn toàn miễn phí."
+    }
+  },
+  "generator": {
+    "title": "Trình chỉnh sửa chữ ký",
+    "tabs": {
+      "info": "Thông tin cá nhân",
+      "style": "Kiểu dáng"
+    },
+    "preview": "Xem trước"
+  },
+  "form": {
+    "sections": {
+      "basic": "Thông tin cơ bản",
+      "contact": "Thông tin liên hệ",
+      "address": "Địa chỉ",
+      "logo": "Logo"
+    },
+    "fields": {
+      "companyName": "Tên công ty",
+      "personName": "Họ và tên",
+      "nameReading": "Cách phát âm",
+      "webUrl": "Trang web",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "postalCode": "Mã bưu chính",
+      "address1": "Địa chỉ 1",
+      "address2": "Địa chỉ 2",
+      "logoUrl": "Hình ảnh logo"
+    },
+    "placeholders": {
+      "companyName": "Công ty TNHH Mẫu",
+      "personName": "Nguyễn Văn An",
+      "nameReading": "Nguyen Van An",
+      "webUrl": "https://www.example.com.vn",
+      "email": "an.nguyen@example.com",
+      "phone": "028-1234-5678",
+      "postalCode": "700000",
+      "address1": "123 Nguyễn Huệ, Quận 1",
+      "address2": "TP. Hồ Chí Minh, 700000"
+    },
+    "logoSelect": "Nhấp để chọn logo",
+    "logoPreview": "Xem trước logo",
+    "logoSelectAria": "Chọn hình ảnh logo"
+  },
+  "style": {
+    "template": "Mẫu",
+    "color": "Màu sắc",
+    "font": "Phông chữ",
+    "border": "Đường viền",
+    "preset": "Cài đặt sẵn",
+    "primary": "Màu chính",
+    "accent": "Màu nhấn",
+    "text": "Văn bản",
+    "background": "Nền",
+    "fontFamily": "Họ phông chữ",
+    "fontSize": "Kích thước phông chữ",
+    "borderStyle": "Kiểu đường viền",
+    "borderColor": "Màu đường viền",
+    "resetStyle": "Đặt lại kiểu dáng",
+    "borderOptions": {
+      "solid": "Đường liền",
+      "double": "Đường kép",
+      "dashed": "Đường gạch",
+      "dotted": "Đường chấm",
+      "none": "Không"
+    }
+  },
+  "templates": {
+    "classic": {
+      "name": "Cổ điển",
+      "description": "Đường phân cách ngang đơn giản. Hoàn hảo cho email kinh doanh."
+    },
+    "modern": {
+      "name": "Hiện đại",
+      "description": "Thiết kế kiểu thẻ. Bóng và góc bo tròn."
+    },
+    "minimal": {
+      "name": "Tối giản",
+      "description": "Chữ lớn, không có khung. Ấn tượng tinh tế."
+    },
+    "corporate": {
+      "name": "Công ty",
+      "description": "Thanh nhấn ở bên trái. Dành cho doanh nghiệp."
+    },
+    "elegant": {
+      "name": "Thanh lịch",
+      "description": "Phông chữ serif, đường viền mỏng. Ấn tượng sang trọng."
+    }
+  },
+  "colorPresets": {
+    "navy": "Xanh hải quân",
+    "green": "Xanh lá",
+    "purple": "Tím",
+    "red": "Đỏ",
+    "orange": "Cam",
+    "black": "Đen",
+    "blue": "Xanh dương",
+    "teal": "Xanh mòng két"
+  },
+  "export": {
+    "downloadPng": "Tải xuống PNG",
+    "copyHtml": "Sao chép HTML",
+    "copied": "Đã sao chép!",
+    "setGmail": "Đặt trong Gmail",
+    "pngError": "Không thể xuất PNG. Vui lòng thử lại.",
+    "copyError": "Không thể sao chép. Vui lòng kiểm tra cài đặt trình duyệt."
+  },
+  "gmail": {
+    "instructions": "Sử dụng Gmail API để đặt chữ ký trực tiếp. Tạo OAuth 2.0 Client ID trong Google Cloud Console.",
+    "consoleLink": "Google Cloud Console",
+    "clientIdLabel": "Google Client ID",
+    "clientIdPlaceholder": "123456789.apps.googleusercontent.com",
+    "connect": "Kết nối với tài khoản Google",
+    "connecting": "Đang kết nối...",
+    "connected": "Đã kết nối với tài khoản Google",
+    "updateSignature": "Cập nhật chữ ký trong Gmail",
+    "updating": "Đang cập nhật chữ ký...",
+    "updated": "Đã cập nhật chữ ký cho {email}",
+    "enterClientId": "Vui lòng nhập Client ID",
+    "connectionFailed": "Không thể kết nối",
+    "updateFailed": "Không thể cập nhật chữ ký"
+  },
+  "landing": {
+    "nav": {
+      "features": "Tính năng",
+      "templates": "Mẫu",
+      "howItWorks": "Cách sử dụng"
+    },
+    "hero": {
+      "badge": "Hoàn toàn miễn phí, không cần đăng ký",
+      "title": "Danh thiếp trong email của bạn",
+      "subtitle": "Tạo chữ ký email chuyên nghiệp trong 30 giây. Chỉ cần chọn mẫu và nhập thông tin.",
+      "cta": "Tạo chữ ký miễn phí",
+      "secondaryCta": "Xem mẫu"
+    },
+    "features": {
+      "title": "Trình tạo chữ ký có đầy đủ tính năng",
+      "subtitle": "Có tất cả các tính năng cần thiết cho chữ ký chuyên nghiệp.",
+      "items": {
+        "templates": {
+          "title": "5 mẫu đa dạng",
+          "description": "Cổ điển, Hiện đại, Tối giản, Công ty, Thanh lịch. Chọn mẫu phù hợp với phong cách của bạn."
+        },
+        "customization": {
+          "title": "Tùy chỉnh đầy đủ",
+          "description": "Điều chỉnh màu sắc, phông chữ, bố cục tự do. 8 cài đặt sẵn màu giúp bạn bắt đầu ngay."
+        },
+        "export": {
+          "title": "Xuất đa dạng",
+          "description": "Hình ảnh PNG, mã HTML, đặt Gmail trực tiếp. Hỗ trợ tất cả các ứng dụng email."
+        },
+        "preview": {
+          "title": "Xem trước thời gian thực",
+          "description": "Xem kết quả ngay khi chỉnh sửa. Tính năng phóng to để kiểm tra chi tiết."
+        },
+        "gmail": {
+          "title": "Tích hợp Gmail",
+          "description": "Đặt chữ ký trong Gmail bằng một cú nhấp. Xác thực OAuth để an toàn."
+        },
+        "free": {
+          "title": "Hoàn toàn miễn phí",
+          "description": "Sử dụng tất cả tính năng miễn phí. Không có hình mờ, không cần đăng ký."
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "Hoàn thành trong 3 bước",
+      "subtitle": "Không có thao tác phức tạp. Chữ ký hoàn thành trong 30 giây.",
+      "steps": {
+        "step1": {
+          "title": "Chọn mẫu",
+          "description": "Chọn thiết kế yêu thích từ 5 mẫu chuyên nghiệp."
+        },
+        "step2": {
+          "title": "Nhập thông tin",
+          "description": "Nhập tên, tên công ty, thông tin liên hệ. Xem trước cập nhật theo thời gian thực."
+        },
+        "step3": {
+          "title": "Tải xuống hoặc đặt",
+          "description": "Tải xuống PNG, sao chép HTML hoặc đặt trong Gmail trực tiếp."
+        }
+      }
+    },
+    "templatesShowcase": {
+      "title": "Mẫu phù hợp với phong cách của bạn",
+      "subtitle": "Chọn từ 5 mẫu chuyên nghiệp. Tùy chỉnh đầy đủ cho tất cả."
+    },
+    "cta": {
+      "title": "Làm cho chữ ký email của bạn chuyên nghiệp hơn",
+      "subtitle": "Tạo trong 30 giây, hoàn toàn miễn phí. Tạo chữ ký với Meishi ngay bây giờ.",
+      "button": "Tạo chữ ký miễn phí",
+      "trust1": "Không cần thẻ tín dụng",
+      "trust2": "Không cần đăng ký",
+      "trust3": "Không có hình mờ"
+    },
+    "footer": {
+      "tagline": "Danh thiếp trong email của bạn",
+      "product": "Sản phẩm",
+      "createSignature": "Tạo chữ ký",
+      "viewTemplates": "Mẫu",
+      "viewFeatures": "Tính năng",
+      "support": "Hỗ trợ",
+      "howToUse": "Cách sử dụng",
+      "faq": "Câu hỏi thường gặp",
+      "legal": "Thông tin pháp lý",
+      "privacy": "Chính sách bảo mật",
+      "terms": "Điều khoản sử dụng",
+      "copyright": "© {year} Meishi. All rights reserved."
+    }
+  }
+}

@@ -3,22 +3,26 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { useState, useCallback } from "react";
-
-const NAV_LINKS = [
-  { label: "機能", href: "#features" },
-  { label: "テンプレート", href: "#templates" },
-  { label: "使い方", href: "#how-it-works" },
-] as const;
+import { useTranslations, useLocale } from "next-intl";
+import { LanguageSwitcher } from "./language-switcher";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { scrollY } = useScroll();
+  const t = useTranslations();
+  const locale = useLocale();
 
   const bgOpacity = useTransform(scrollY, [0, 80], [0, 1]);
   const borderOpacity = useTransform(scrollY, [0, 80], [0, 0.08]);
   const blur = useTransform(scrollY, [0, 80], [0, 16]);
 
   const closeMobile = useCallback(() => setMobileOpen(false), []);
+
+  const NAV_LINKS = [
+    { label: t("landing.nav.features"), href: "#features" },
+    { label: t("landing.nav.templates"), href: "#templates" },
+    { label: t("landing.nav.howItWorks"), href: "#how-it-works" },
+  ];
 
   return (
     <>
@@ -78,33 +82,36 @@ export function Navbar() {
             ))}
           </ul>
 
-          {/* Desktop CTA */}
-          <a
-            href="/generator"
-            className="hidden items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-bold text-white shadow-sm transition-all duration-200 hover:shadow-md md:inline-flex"
-            style={{
-              backgroundColor: "var(--color-brand-cta)",
-              fontFamily: "var(--font-sans)",
-            }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.backgroundColor =
-                "var(--color-brand-cta-hover)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.backgroundColor =
-                "var(--color-brand-cta)")
-            }
-          >
-            今すぐ作成
-            <ArrowRight size={15} strokeWidth={2.5} />
-          </a>
+          <div className="hidden items-center gap-3 md:flex">
+            <LanguageSwitcher />
+            {/* Desktop CTA */}
+            <a
+              href={`/${locale}/generator`}
+              className="items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-bold text-white shadow-sm transition-all duration-200 hover:shadow-md inline-flex"
+              style={{
+                backgroundColor: "var(--color-brand-cta)",
+                fontFamily: "var(--font-sans)",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor =
+                  "var(--color-brand-cta-hover)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.backgroundColor =
+                  "var(--color-brand-cta)")
+              }
+            >
+              {t("common.createNow")}
+              <ArrowRight size={15} strokeWidth={2.5} />
+            </a>
+          </div>
 
           {/* Mobile hamburger */}
           <button
             className="inline-flex items-center justify-center rounded-md p-2 md:hidden"
             style={{ color: "var(--color-brand-text)" }}
             onClick={() => setMobileOpen((o) => !o)}
-            aria-label="メニューを開く"
+            aria-label={t("common.openMenu")}
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -134,13 +141,14 @@ export function Navbar() {
                 {label}
               </a>
             ))}
+            <LanguageSwitcher />
             <a
-              href="/generator"
+              href={`/${locale}/generator`}
               onClick={closeMobile}
               className="mt-4 inline-flex items-center gap-2 rounded-lg px-6 py-3 text-base font-bold text-white"
               style={{ backgroundColor: "var(--color-brand-cta)" }}
             >
-              今すぐ作成
+              {t("common.createNow")}
               <ArrowRight size={17} />
             </a>
           </div>

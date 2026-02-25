@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { useSignatureStore } from "@/store/signature-store";
-import { TEMPLATE_MAP } from "@meishi/core/constants";
 import TemplateRenderer from "./template-renderer";
 
 const ZOOM_LEVELS = [75, 100, 125] as const;
@@ -10,16 +10,16 @@ const ZOOM_LEVELS = [75, 100, 125] as const;
 export default function SignaturePreview() {
   const { data, style } = useSignatureStore();
   const [zoom, setZoom] = useState<(typeof ZOOM_LEVELS)[number]>(100);
+  const t = useTranslations();
 
-  const template = TEMPLATE_MAP[style.templateId];
-  const templateName = template?.name ?? style.templateId;
+  const templateName = t(`templates.${style.templateId}.name`);
 
   return (
     <div className="flex flex-col gap-4">
       {/* Header: template name + zoom controls */}
       <div className="flex items-center justify-between">
         <h3 className="text-sm font-medium text-muted-foreground">
-          プレビュー —{" "}
+          {t("generator.preview")} —{" "}
           <span className="text-foreground font-semibold">{templateName}</span>
         </h3>
 

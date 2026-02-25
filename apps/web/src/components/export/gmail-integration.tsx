@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { Loader2, CheckCircle, AlertCircle, ExternalLink } from "lucide-react";
 import { useSignatureStore } from "@/store/signature-store";
 import { generateGmailHtml } from "@/lib/export-utils";
@@ -21,6 +22,7 @@ export function GmailIntegration() {
   const [status, setStatus] = useState<ConnectionStatus>("disconnected");
   const [statusMessage, setStatusMessage] = useState("");
   const [updating, setUpdating] = useState(false);
+  const t = useTranslations();
 
   // Load saved client ID
   useEffect(() => {
@@ -38,12 +40,12 @@ export function GmailIntegration() {
   const handleConnect = useCallback(async () => {
     if (!clientId.trim()) {
       setStatus("error");
-      setStatusMessage("Client IDを入力してください");
+      setStatusMessage(t("gmail.enterClientId"));
       return;
     }
 
     setStatus("loading");
-    setStatusMessage("接続中...");
+    setStatusMessage(t("gmail.connecting"));
 
     try {
       await loadGisScript();
@@ -53,7 +55,7 @@ export function GmailIntegration() {
         (token) => {
           setAccessToken(token);
           setStatus("connected");
-          setStatusMessage("Googleアカウントに接続しました");
+          setStatusMessage(t("gmail.connected"));
         },
         (error) => {
           setStatus("error");
@@ -63,17 +65,17 @@ export function GmailIntegration() {
     } catch (err) {
       setStatus("error");
       setStatusMessage(
-        err instanceof Error ? err.message : "接続に失敗しました"
+        err instanceof Error ? err.message : t("gmail.connectionFailed")
       );
     }
-  }, [clientId]);
+  }, [clientId, t]);
 
   // Update Gmail signature
   const handleUpdateSignature = useCallback(async () => {
     if (!accessToken) return;
 
     setUpdating(true);
-    setStatusMessage("署名を更新中...");
+    setStatusMessage(t("gmail.updating"));
 
     const html = generateGmailHtml(data, style);
     const result = await setGmailSignature(accessToken, html);
@@ -81,25 +83,24 @@ export function GmailIntegration() {
     setUpdating(false);
 
     if (result.success) {
-      setStatusMessage(`✅ ${result.email} の署名を更新しました`);
+      setStatusMessage(`✅ ${t("gmail.updated", { email: result.email ?? "" })}`);
     } else {
       setStatus("error");
-      setStatusMessage(result.error ?? "署名の更新に失敗しました");
+      setStatusMessage(result.error ?? t("gmail.updateFailed"));
     }
-  }, [accessToken, data, style]);
+  }, [accessToken, data, style, t]);
 
   return (
     <div className="space-y-4">
       <div className="text-xs text-slate-500">
-        Gmail APIを使用して署名を直接設定します。Google Cloud Consoleで
-        OAuth 2.0 クライアントIDを作成してください。
+        {t("gmail.instructions")}
         <a
           href="https://console.cloud.google.com/apis/credentials"
           target="_blank"
           rel="noopener noreferrer"
           className="ml-1 inline-flex items-center gap-0.5 text-sky-500 hover:underline"
         >
-          Google Cloud Console
+          {t("gmail.consoleLink")}
           <ExternalLink className="h-3 w-3" />
         </a>
       </div>
@@ -107,13 +108,13 @@ export function GmailIntegration() {
       {/* Client ID Input */}
       <div>
         <label className="mb-1 block text-xs font-medium text-slate-700">
-          Google Client ID
+          {t("gmail.clientIdLabel")}
         </label>
         <input
           type="text"
           value={clientId}
           onChange={(e) => handleClientIdChange(e.target.value)}
-          placeholder="123456789.apps.googleusercontent.com"
+          placeholder={t("gmail.clientIdPlaceholder")}
           className="w-full rounded-md border border-slate-200 px-3 py-2 text-sm focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
         />
       </div>
@@ -129,7 +130,7 @@ export function GmailIntegration() {
             {status === "loading" && (
               <Loader2 className="h-4 w-4 animate-spin" />
             )}
-            Googleアカウントに接続
+            {t("gmail.connect")}
           </button>
         ) : (
           <button
@@ -138,7 +139,7 @@ export function GmailIntegration() {
             className="flex items-center gap-2 rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-green-700 disabled:opacity-50"
           >
             {updating && <Loader2 className="h-4 w-4 animate-spin" />}
-            Gmailの署名を更新
+            {t("gmail.updateSignature")}
           </button>
         )}
       </div>

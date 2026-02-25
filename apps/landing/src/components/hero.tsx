@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useTranslations, useLocale } from "next-intl";
 import { FadeInUp } from "./animations";
 
 /* ------------------------------------------------------------------ */
@@ -53,62 +54,26 @@ function SignatureCard({
       className="w-full rounded-xl border bg-white p-5 shadow-lg"
       style={{ borderColor: "var(--color-brand-border)" }}
     >
-      {/* Top accent bar */}
       <div
         className="mb-4 h-1 w-12 rounded-full"
         style={{ backgroundColor: sig.accent }}
       />
-
-      {/* Content */}
       <div className="flex gap-4">
-        {/* Avatar placeholder */}
         <div
           className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-lg font-bold text-white"
           style={{ backgroundColor: sig.accent }}
         >
           {sig.name.charAt(0)}
         </div>
-
         <div className="min-w-0 flex-1">
-          <p
-            className="text-base font-bold leading-tight"
-            style={{ color: "var(--color-brand-text)" }}
-          >
-            {sig.name}
-          </p>
-          <p
-            className="mt-0.5 text-xs"
-            style={{ color: "var(--color-brand-text-muted)" }}
-          >
-            {sig.nameEn}
-          </p>
-          <p
-            className="mt-1 text-sm font-medium"
-            style={{ color: "var(--color-brand-text-body)" }}
-          >
-            {sig.title}
-          </p>
-          <p
-            className="text-xs"
-            style={{ color: "var(--color-brand-text-muted)" }}
-          >
-            {sig.company}
-          </p>
-
-          {/* Divider */}
-          <div
-            className="my-2.5 h-px w-full"
-            style={{ backgroundColor: "var(--color-brand-border)" }}
-          />
-
-          {/* Contact row */}
+          <p className="text-base font-bold leading-tight" style={{ color: "var(--color-brand-text)" }}>{sig.name}</p>
+          <p className="mt-0.5 text-xs" style={{ color: "var(--color-brand-text-muted)" }}>{sig.nameEn}</p>
+          <p className="mt-1 text-sm font-medium" style={{ color: "var(--color-brand-text-body)" }}>{sig.title}</p>
+          <p className="text-xs" style={{ color: "var(--color-brand-text-muted)" }}>{sig.company}</p>
+          <div className="my-2.5 h-px w-full" style={{ backgroundColor: "var(--color-brand-border)" }} />
           <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs">
-            <span style={{ color: "var(--color-brand-text-body)" }}>
-              ✉ {sig.email}
-            </span>
-            <span style={{ color: "var(--color-brand-text-body)" }}>
-              ☎ {sig.phone}
-            </span>
+            <span style={{ color: "var(--color-brand-text-body)" }}>✉ {sig.email}</span>
+            <span style={{ color: "var(--color-brand-text-body)" }}>☎ {sig.phone}</span>
           </div>
         </div>
       </div>
@@ -122,6 +87,8 @@ function SignatureCard({
 
 export function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const t = useTranslations();
+  const locale = useLocale();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -147,8 +114,6 @@ export function Hero() {
           backgroundSize: "40px 40px",
         }}
       />
-
-      {/* Decorative radial glow */}
       <div
         className="pointer-events-none absolute top-1/4 -right-32 h-96 w-96 rounded-full opacity-20 blur-3xl"
         style={{ backgroundColor: "var(--color-brand-primary)" }}
@@ -161,7 +126,6 @@ export function Hero() {
       <div className="relative mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8">
         {/* ---- Text column ---- */}
         <div>
-          {/* Badge */}
           <FadeInUp>
             <span
               className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-medium"
@@ -172,15 +136,11 @@ export function Hero() {
                 fontFamily: "var(--font-sans)",
               }}
             >
-              <Sparkles
-                size={13}
-                style={{ color: "var(--color-brand-cta)" }}
-              />
-              完全無料 · コード不要 · Gmail対応
+              <Sparkles size={13} style={{ color: "var(--color-brand-cta)" }} />
+              {t("landing.hero.badge")}
             </span>
           </FadeInUp>
 
-          {/* Headline */}
           <FadeInUp delay={0.08}>
             <h1
               className="mt-6 font-extrabold leading-[1.15]"
@@ -190,11 +150,10 @@ export function Hero() {
                 fontSize: "clamp(2.5rem, 5vw, 4rem)",
               }}
             >
-              メールに、名刺を。
+              {t("landing.hero.title")}
             </h1>
           </FadeInUp>
 
-          {/* Sub-headline */}
           <FadeInUp delay={0.16}>
             <p
               className="mt-5 max-w-lg text-base leading-[1.8] md:text-lg"
@@ -203,18 +162,14 @@ export function Hero() {
                 color: "var(--color-brand-text-body)",
               }}
             >
-              プロフェッショナルなメール署名を30秒で作成。
-              <br className="hidden sm:block" />
-              5つのテンプレート、フルカスタマイズ。
+              {t("landing.hero.subtitle")}
             </p>
           </FadeInUp>
 
-          {/* CTAs */}
           <FadeInUp delay={0.24}>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              {/* Primary CTA */}
               <a
-                href="/generator"
+                href={`/${locale}/generator`}
                 className="group inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold text-white shadow-lg transition-all duration-200 hover:shadow-xl"
                 style={{
                   backgroundColor: "var(--color-brand-cta)",
@@ -229,14 +184,12 @@ export function Hero() {
                     "var(--color-brand-cta)")
                 }
               >
-                無料で署名を作成する
+                {t("landing.hero.cta")}
                 <ArrowRight
                   size={16}
                   className="transition-transform duration-200 group-hover:translate-x-0.5"
                 />
               </a>
-
-              {/* Secondary CTA */}
               <a
                 href="#templates"
                 className="inline-flex items-center gap-1.5 rounded-xl border-2 px-5 py-3 text-sm font-semibold transition-colors duration-200"
@@ -246,7 +199,7 @@ export function Hero() {
                   fontFamily: "var(--font-sans)",
                 }}
               >
-                テンプレートを見る
+                {t("landing.hero.secondaryCta")}
               </a>
             </div>
           </FadeInUp>
@@ -255,13 +208,10 @@ export function Hero() {
         {/* ---- Signature preview column ---- */}
         <FadeInUp delay={0.2} className="relative">
           <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-            {/* Background card decoration */}
             <div
               className="absolute top-4 right-4 -z-10 h-full w-full rounded-2xl"
               style={{ backgroundColor: "rgba(14,165,233,0.06)" }}
             />
-
-            {/* Animated signature cards */}
             <div className="relative h-[220px] sm:h-[200px]">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -276,14 +226,12 @@ export function Hero() {
                 </motion.div>
               </AnimatePresence>
             </div>
-
-            {/* Dots indicator */}
             <div className="mt-5 flex justify-center gap-2">
               {SIGNATURES.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrentIndex(i)}
-                  aria-label={`署名プレビュー ${i + 1}`}
+                  aria-label={`Signature preview ${i + 1}`}
                   className="h-2 rounded-full transition-all duration-300"
                   style={{
                     width: i === currentIndex ? "24px" : "8px",

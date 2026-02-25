@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useCallback } from "react";
+import { useTranslations } from "next-intl";
 import { useSignatureStore } from "@/store/signature-store";
-import { FIELD_LABELS, FIELD_PLACEHOLDERS } from "@meishi/core/constants";
 import type { SignatureData, FieldVisibility } from "@meishi/core/types";
 import { Button } from "@meishi/ui/components/button";
 import { Input } from "@meishi/ui/components/input";
@@ -13,19 +13,19 @@ import { RotateCcw, Eye, EyeOff, Upload, X } from "lucide-react";
 // Field keys grouped by section
 // ---------------------------------------------------------------------------
 const SECTIONS: {
-  title: string;
+  titleKey: string;
   fields: (keyof SignatureData)[];
 }[] = [
   {
-    title: "基本情報",
+    titleKey: "form.sections.basic",
     fields: ["companyName", "personName", "nameReading"],
   },
   {
-    title: "連絡先",
+    titleKey: "form.sections.contact",
     fields: ["webUrl", "email", "phone"],
   },
   {
-    title: "住所",
+    titleKey: "form.sections.address",
     fields: ["postalCode", "address1", "address2"],
   },
 ];
@@ -57,6 +57,7 @@ function FieldRow({
   onValueChange,
   onToggleVisibility,
 }: FieldRowProps) {
+  const t = useTranslations();
   return (
     <div className="group grid grid-cols-[1fr_auto] items-start gap-2">
       <div className="space-y-1.5">
@@ -64,12 +65,12 @@ function FieldRow({
           htmlFor={`field-${field}`}
           className="text-xs font-semibold tracking-wide text-muted-foreground uppercase"
         >
-          {FIELD_LABELS[field]}
+          {t(`form.fields.${field}`)}
         </Label>
         <Input
           id={`field-${field}`}
           value={value}
-          placeholder={FIELD_PLACEHOLDERS[field]}
+          placeholder={t(`form.placeholders.${field}`)}
           onChange={(e) => onValueChange(e.target.value)}
           className="bg-card"
         />
@@ -77,7 +78,7 @@ function FieldRow({
       <button
         type="button"
         onClick={onToggleVisibility}
-        title={visible ? "非表示にする" : "表示する"}
+        title={visible ? t("common.hide") : t("common.show")}
         className="mt-6 flex h-9 w-9 shrink-0 items-center justify-center rounded-[var(--radius)] text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground cursor-pointer"
       >
         {visible ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
@@ -103,6 +104,7 @@ function LogoUpload({
   onToggleVisibility,
 }: LogoUploadProps) {
   const fileInputRef = React.useRef<HTMLInputElement>(null);
+  const t = useTranslations();
 
   const handleFileChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -131,12 +133,12 @@ function LogoUpload({
     <div className="space-y-3">
       <div className="flex items-center justify-between">
         <Label className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
-          {FIELD_LABELS.logoUrl}
+          {t("form.fields.logoUrl")}
         </Label>
         <button
           type="button"
           onClick={onToggleVisibility}
-          title={visible ? "非表示にする" : "表示する"}
+          title={visible ? t("common.hide") : t("common.show")}
           className="flex h-8 w-8 items-center justify-center rounded-[var(--radius)] text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground cursor-pointer"
         >
           {visible ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
@@ -147,7 +149,7 @@ function LogoUpload({
         <div className="relative inline-block">
           <img
             src={logoUrl}
-            alt="ロゴプレビュー"
+            alt={t("form.logoPreview")}
             className="h-16 w-auto max-w-full rounded-[var(--radius)] border border-border object-contain"
           />
           <button
@@ -165,7 +167,7 @@ function LogoUpload({
           className="flex w-full items-center justify-center gap-2 rounded-[var(--radius)] border-2 border-dashed border-border px-4 py-6 text-sm text-muted-foreground transition-colors hover:border-primary/50 hover:bg-primary/5 cursor-pointer"
         >
           <Upload className="h-4 w-4" />
-          クリックしてロゴを選択
+          {t("form.logoSelect")}
         </button>
       )}
 
@@ -175,7 +177,7 @@ function LogoUpload({
         accept="image/*"
         onChange={handleFileChange}
         className="hidden"
-        aria-label="ロゴ画像を選択"
+        aria-label={t("form.logoSelectAria")}
       />
     </div>
   );
@@ -192,6 +194,7 @@ export function SignatureForm() {
     (s) => s.toggleFieldVisibility
   );
   const resetData = useSignatureStore((s) => s.resetData);
+  const t = useTranslations();
 
   const getVisibility = useCallback(
     (field: keyof SignatureData): boolean => {
@@ -214,9 +217,9 @@ export function SignatureForm() {
     <div className="flex flex-col gap-8">
       {/* ---------- Text field sections ---------- */}
       {SECTIONS.map((section) => (
-        <fieldset key={section.title} className="space-y-4">
+        <fieldset key={section.titleKey} className="space-y-4">
           <legend className="mb-1 text-sm font-bold text-foreground">
-            {section.title}
+            {t(section.titleKey)}
           </legend>
           <div className="space-y-3">
             {section.fields.map((field) => (
@@ -236,7 +239,7 @@ export function SignatureForm() {
       {/* ---------- Logo ---------- */}
       <fieldset className="space-y-4">
         <legend className="mb-1 text-sm font-bold text-foreground">
-          ロゴ
+          {t("form.sections.logo")}
         </legend>
         <LogoUpload
           logoUrl={data.logoUrl}
@@ -256,7 +259,7 @@ export function SignatureForm() {
           className="gap-1.5 text-muted-foreground hover:text-destructive"
         >
           <RotateCcw className="h-3.5 w-3.5" />
-          リセット
+          {t("common.reset")}
         </Button>
       </div>
     </div>

@@ -1,0 +1,233 @@
+{
+  "common": {
+    "back": "Kembali",
+    "reset": "Atur Ulang",
+    "show": "Tampilkan",
+    "hide": "Sembunyikan",
+    "close": "Tutup",
+    "openMenu": "Buka Menu",
+    "loading": "Memuat...",
+    "createNow": "Buat Sekarang",
+    "free": "Sepenuhnya Gratis",
+    "language": "Bahasa"
+  },
+  "metadata": {
+    "web": {
+      "title": "Meishi (メシ) — Buat Tanda Tangan Email Profesional Gratis",
+      "description": "Buat tanda tangan email profesional dalam 30 detik. 5 template, kustomisasi penuh, dukungan PNG, HTML, dan Gmail. Sepenuhnya gratis.",
+      "keywords": "tanda tangan email,kartu nama,kartu bisnis,tanda tangan Gmail,email signature"
+    },
+    "landing": {
+      "title": "Meishi (メシ) — Kartu Nama di Email Anda",
+      "description": "Buat tanda tangan email profesional dalam 30 detik. 5 template, kustomisasi penuh, dukungan PNG, HTML, dan Gmail. Sepenuhnya gratis."
+    }
+  },
+  "generator": {
+    "title": "Editor Tanda Tangan",
+    "tabs": {
+      "info": "Informasi Pribadi",
+      "style": "Gaya"
+    },
+    "preview": "Pratinjau"
+  },
+  "form": {
+    "sections": {
+      "basic": "Informasi Dasar",
+      "contact": "Informasi Kontak",
+      "address": "Alamat",
+      "logo": "Logo"
+    },
+    "fields": {
+      "companyName": "Nama Perusahaan",
+      "personName": "Nama Lengkap",
+      "nameReading": "Cara Pengucapan",
+      "webUrl": "Situs Web",
+      "email": "Email",
+      "phone": "Nomor Telepon",
+      "postalCode": "Kode Pos",
+      "address1": "Alamat 1",
+      "address2": "Alamat 2",
+      "logoUrl": "Gambar Logo"
+    },
+    "placeholders": {
+      "companyName": "PT Contoh Sukses",
+      "personName": "Budi Santoso",
+      "nameReading": "Budi Santoso",
+      "webUrl": "https://www.example.co.id",
+      "email": "budi@example.com",
+      "phone": "021-1234-5678",
+      "postalCode": "12190",
+      "address1": "Jl. Sudirman No. 1",
+      "address2": "Jakarta Selatan, DKI Jakarta 12190"
+    },
+    "logoSelect": "Klik untuk memilih logo",
+    "logoPreview": "Pratinjau Logo",
+    "logoSelectAria": "Pilih gambar logo"
+  },
+  "style": {
+    "template": "Template",
+    "color": "Warna",
+    "font": "Font",
+    "border": "Batas",
+    "preset": "Preset",
+    "primary": "Warna Utama",
+    "accent": "Warna Aksen",
+    "text": "Teks",
+    "background": "Latar Belakang",
+    "fontFamily": "Keluarga Font",
+    "fontSize": "Ukuran Font",
+    "borderStyle": "Gaya Batas",
+    "borderColor": "Warna Batas",
+    "resetStyle": "Atur Ulang Gaya",
+    "borderOptions": {
+      "solid": "Garis Solid",
+      "double": "Garis Ganda",
+      "dashed": "Garis Putus-putus",
+      "dotted": "Garis Titik",
+      "none": "Tidak Ada"
+    }
+  },
+  "templates": {
+    "classic": {
+      "name": "Klasik",
+      "description": "Pemisah garis horizontal sederhana. Sempurna untuk email bisnis."
+    },
+    "modern": {
+      "name": "Modern",
+      "description": "Desain bergaya kartu. Bayangan dan sudut membulat."
+    },
+    "minimal": {
+      "name": "Minimal",
+      "description": "Teks besar, tanpa bingkai. Kesan elegan."
+    },
+    "corporate": {
+      "name": "Korporat",
+      "description": "Bilah aksen di sisi kiri. Untuk perusahaan."
+    },
+    "elegant": {
+      "name": "Elegan",
+      "description": "Font serif, batas tipis. Kesan mewah."
+    }
+  },
+  "colorPresets": {
+    "navy": "Biru Laut",
+    "green": "Hijau",
+    "purple": "Ungu",
+    "red": "Merah",
+    "orange": "Oranye",
+    "black": "Hitam",
+    "blue": "Biru",
+    "teal": "Biru Kehijauan"
+  },
+  "export": {
+    "downloadPng": "Unduh PNG",
+    "copyHtml": "Salin HTML",
+    "copied": "Disalin!",
+    "setGmail": "Atur di Gmail",
+    "pngError": "Tidak dapat mengekspor PNG. Silakan coba lagi.",
+    "copyError": "Tidak dapat menyalin. Periksa pengaturan browser Anda."
+  },
+  "gmail": {
+    "instructions": "Gunakan Gmail API untuk mengatur tanda tangan secara langsung. Buat OAuth 2.0 Client ID di Google Cloud Console.",
+    "consoleLink": "Google Cloud Console",
+    "clientIdLabel": "Google Client ID",
+    "clientIdPlaceholder": "123456789.apps.googleusercontent.com",
+    "connect": "Hubungkan dengan Akun Google",
+    "connecting": "Menghubungkan...",
+    "connected": "Terhubung dengan Akun Google",
+    "updateSignature": "Perbarui Tanda Tangan di Gmail",
+    "updating": "Memperbarui tanda tangan...",
+    "updated": "Tanda tangan untuk {email} telah diperbarui",
+    "enterClientId": "Silakan masukkan Client ID",
+    "connectionFailed": "Tidak dapat terhubung",
+    "updateFailed": "Tidak dapat memperbarui tanda tangan"
+  },
+  "landing": {
+    "nav": {
+      "features": "Fitur",
+      "templates": "Template",
+      "howItWorks": "Cara Kerja"
+    },
+    "hero": {
+      "badge": "Sepenuhnya Gratis, Tanpa Pendaftaran",
+      "title": "Kartu Nama di Email Anda",
+      "subtitle": "Buat tanda tangan email profesional dalam 30 detik. Pilih template dan masukkan informasi Anda.",
+      "cta": "Buat Tanda Tangan Gratis",
+      "secondaryCta": "Lihat Template"
+    },
+    "features": {
+      "title": "Pembuat Tanda Tangan Lengkap",
+      "subtitle": "Memiliki semua fitur yang diperlukan untuk tanda tangan profesional.",
+      "items": {
+        "templates": {
+          "title": "5 Template Beragam",
+          "description": "Klasik, Modern, Minimal, Korporat, Elegan. Pilih template yang sesuai dengan gaya Anda."
+        },
+        "customization": {
+          "title": "Kustomisasi Penuh",
+          "description": "Sesuaikan warna, font, dan tata letak dengan bebas. 8 preset warna membantu Anda memulai dengan cepat."
+        },
+        "export": {
+          "title": "Ekspor Beragam",
+          "description": "Gambar PNG, kode HTML, atur Gmail langsung. Kompatibel dengan semua klien email."
+        },
+        "preview": {
+          "title": "Pratinjau Real-time",
+          "description": "Lihat hasil saat Anda mengedit. Fitur zoom untuk memeriksa detail."
+        },
+        "gmail": {
+          "title": "Integrasi Gmail",
+          "description": "Atur tanda tangan di Gmail dengan satu klik. Autentikasi OAuth untuk keamanan."
+        },
+        "free": {
+          "title": "Sepenuhnya Gratis",
+          "description": "Gunakan semua fitur secara gratis. Tanpa watermark, tanpa pendaftaran."
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "Selesai dalam 3 Langkah",
+      "subtitle": "Tidak ada operasi rumit. Tanda tangan selesai dalam 30 detik.",
+      "steps": {
+        "step1": {
+          "title": "Pilih Template",
+          "description": "Pilih desain favorit Anda dari 5 template profesional."
+        },
+        "step2": {
+          "title": "Masukkan Informasi",
+          "description": "Masukkan nama, nama perusahaan, informasi kontak. Pratinjau diperbarui secara real-time."
+        },
+        "step3": {
+          "title": "Unduh atau Atur",
+          "description": "Unduh PNG, salin HTML, atau atur di Gmail secara langsung."
+        }
+      }
+    },
+    "templatesShowcase": {
+      "title": "Template yang Sesuai dengan Gaya Anda",
+      "subtitle": "Pilih dari 5 template profesional. Semuanya dapat dikustomisasi sepenuhnya."
+    },
+    "cta": {
+      "title": "Buat Tanda Tangan Email Anda Lebih Profesional",
+      "subtitle": "Buat dalam 30 detik, sepenuhnya gratis. Buat tanda tangan dengan Meishi sekarang.",
+      "button": "Buat Tanda Tangan Gratis",
+      "trust1": "Tidak Perlu Kartu Kredit",
+      "trust2": "Tidak Perlu Pendaftaran",
+      "trust3": "Tanpa Watermark"
+    },
+    "footer": {
+      "tagline": "Kartu Nama di Email Anda",
+      "product": "Produk",
+      "createSignature": "Buat Tanda Tangan",
+      "viewTemplates": "Template",
+      "viewFeatures": "Fitur",
+      "support": "Dukungan",
+      "howToUse": "Cara Kerja",
+      "faq": "Pertanyaan Umum",
+      "legal": "Informasi Hukum",
+      "privacy": "Kebijakan Privasi",
+      "terms": "Syarat Penggunaan",
+      "copyright": "© {year} Meishi. All rights reserved."
+    }
+  }
+}

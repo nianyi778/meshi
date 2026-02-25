@@ -13,10 +13,12 @@
   "dependencies": {
     "@meishi/core": "workspace:*",
     "@meishi/ui": "workspace:*",
+    "@meishi/i18n": "workspace:*",
     "framer-motion": "^11.15.0",
     "html-to-image": "^1.11.13",
     "lucide-react": "^0.469.0",
     "next": "^15.1.6",
+    "next-intl": "^4.8.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "zustand": "^5.0.3"

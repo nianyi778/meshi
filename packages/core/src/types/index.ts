@@ -81,10 +81,6 @@ export interface SignatureStyle {
 /** Template definition */
 export interface TemplateDefinition {
   id: TemplateId;
-  /** 表示名 */
-  name: string;
-  /** 説明 */
-  description: string;
   /** Preview thumbnail (component key) */
   previewKey: string;
   /** Default style overrides for this template */

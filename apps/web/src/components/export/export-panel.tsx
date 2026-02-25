@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import { useTranslations } from "next-intl";
 import { Download, ClipboardCopy, Mail, Check, Loader2 } from "lucide-react";
 import { useSignatureStore } from "@/store/signature-store";
 import { exportAsPng, generateGmailHtml, copyHtmlToClipboard } from "@/lib/export-utils";
@@ -11,6 +12,7 @@ export function ExportPanel() {
   const [pngLoading, setPngLoading] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
   const [showGmail, setShowGmail] = useState(false);
+  const t = useTranslations();
 
   const handlePngExport = useCallback(async () => {
     setPngLoading(true);
@@ -18,11 +20,11 @@ export function ExportPanel() {
       await exportAsPng("signature-preview");
     } catch (err) {
       console.error("PNG export failed:", err);
-      alert("PNG出力に失敗しました。もう一度お試しください。");
+      alert(t("export.pngError"));
     } finally {
       setPngLoading(false);
     }
-  }, []);
+  }, [t]);
 
   const handleCopyHtml = useCallback(async () => {
     const html = generateGmailHtml(data, style);
@@ -31,9 +33,9 @@ export function ExportPanel() {
       setCopySuccess(true);
       setTimeout(() => setCopySuccess(false), 2000);
     } else {
-      alert("コピーに失敗しました。ブラウザの設定を確認してください。");
+      alert(t("export.copyError"));
     }
-  }, [data, style]);
+  }, [data, style, t]);
 
   return (
     <div className="space-y-4">
@@ -49,7 +51,7 @@ export function ExportPanel() {
           ) : (
             <Download className="h-4 w-4" />
           )}
-          PNGでダウンロード
+          {t("export.downloadPng")}
         </button>
 
         {/* Copy HTML */}
@@ -60,12 +62,12 @@ export function ExportPanel() {
           {copySuccess ? (
             <>
               <Check className="h-4 w-4 text-green-500" />
-              <span className="text-green-600">コピーしました！</span>
+              <span className="text-green-600">{t("export.copied")}</span>
             </>
           ) : (
             <>
               <ClipboardCopy className="h-4 w-4" />
-              HTMLをコピー
+              {t("export.copyHtml")}
             </>
           )}
         </button>
@@ -80,7 +82,7 @@ export function ExportPanel() {
           }`}
         >
           <Mail className="h-4 w-4" />
-          Gmailに設定
+          {t("export.setGmail")}
         </button>
       </div>
 

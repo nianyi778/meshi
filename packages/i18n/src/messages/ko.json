@@ -1,0 +1,233 @@
+{
+  "common": {
+    "back": "뒤로",
+    "reset": "초기화",
+    "show": "표시",
+    "hide": "숨기기",
+    "close": "닫기",
+    "openMenu": "메뉴 열기",
+    "loading": "로딩 중...",
+    "createNow": "지금 만들기",
+    "free": "완전 무료",
+    "language": "언어"
+  },
+  "metadata": {
+    "web": {
+      "title": "Meishi — 전문적인 이메일 서명을 무료로 만들기",
+      "description": "30초 안에 전문적인 이메일 서명을 만드세요. 5개의 템플릿, 완전한 커스터마이징, PNG, HTML 및 Gmail 지원. 완전 무료.",
+      "keywords": "이메일 서명,명함,Gmail 서명,전문 서명,이메일 템플릿"
+    },
+    "landing": {
+      "title": "Meishi — 이메일에 명함을.",
+      "description": "30초 안에 전문적인 이메일 서명을 만드세요. 5개의 템플릿, 완전한 커스터마이징, PNG, HTML 및 Gmail 지원. 완전 무료."
+    }
+  },
+  "generator": {
+    "title": "서명 편집기",
+    "tabs": {
+      "info": "정보",
+      "style": "스타일"
+    },
+    "preview": "미리보기"
+  },
+  "form": {
+    "sections": {
+      "basic": "기본 정보",
+      "contact": "연락처",
+      "address": "주소",
+      "logo": "로고"
+    },
+    "fields": {
+      "companyName": "회사명",
+      "personName": "이름",
+      "nameReading": "이름 읽기",
+      "webUrl": "웹사이트",
+      "email": "이메일 주소",
+      "phone": "전화번호",
+      "postalCode": "우편번호",
+      "address1": "주소 1",
+      "address2": "주소 2",
+      "logoUrl": "로고 이미지"
+    },
+    "placeholders": {
+      "companyName": "주식회사 샘플",
+      "personName": "김민수",
+      "nameReading": "Kim Min-su / 김민수",
+      "webUrl": "https://www.example.co.kr",
+      "email": "minsu@example.com",
+      "phone": "02-1234-5678",
+      "postalCode": "06130",
+      "address1": "서울특별시 강남구 테헤란로 1",
+      "address2": "샘플빌딩 10층"
+    },
+    "logoSelect": "클릭하여 로고 선택",
+    "logoPreview": "로고 미리보기",
+    "logoSelectAria": "로고 이미지 선택"
+  },
+  "style": {
+    "template": "템플릿",
+    "color": "색상",
+    "font": "글꼴",
+    "border": "테두리",
+    "preset": "프리셋",
+    "primary": "주색상",
+    "accent": "강조색",
+    "text": "텍스트",
+    "background": "배경",
+    "fontFamily": "글꼴 패밀리",
+    "fontSize": "글꼴 크기",
+    "borderStyle": "테두리 스타일",
+    "borderColor": "테두리 색상",
+    "resetStyle": "스타일 초기화",
+    "borderOptions": {
+      "solid": "실선",
+      "double": "이중선",
+      "dashed": "점선",
+      "dotted": "점",
+      "none": "없음"
+    }
+  },
+  "templates": {
+    "classic": {
+      "name": "클래식",
+      "description": "간단한 가로선 구분. 비즈니스 이메일에 최적."
+    },
+    "modern": {
+      "name": "모던",
+      "description": "카드 스타일 디자인. 그림자와 둥근 모서리."
+    },
+    "minimal": {
+      "name": "미니멀",
+      "description": "큰 텍스트, 테두리 없음. 세련된 인상."
+    },
+    "corporate": {
+      "name": "기업",
+      "description": "왼쪽 강조 바. 기업용으로 이상적."
+    },
+    "elegant": {
+      "name": "우아함",
+      "description": "세리프 글꼴, 얇은 테두리. 고급스러운 인상."
+    }
+  },
+  "colorPresets": {
+    "navy": "네이비",
+    "green": "초록색",
+    "purple": "보라색",
+    "red": "빨간색",
+    "orange": "주황색",
+    "black": "검은색",
+    "blue": "파란색",
+    "teal": "청록색"
+  },
+  "export": {
+    "downloadPng": "PNG로 다운로드",
+    "copyHtml": "HTML 복사",
+    "copied": "복사되었습니다!",
+    "setGmail": "Gmail에 설정",
+    "pngError": "PNG 생성에 실패했습니다. 다시 시도해주세요.",
+    "copyError": "복사에 실패했습니다. 브라우저 설정을 확인해주세요."
+  },
+  "gmail": {
+    "instructions": "Gmail API를 사용하여 서명을 직접 설정합니다. Google Cloud Console에서 OAuth 2.0 클라이언트 ID를 생성해주세요.",
+    "consoleLink": "Google Cloud Console",
+    "clientIdLabel": "Google Client ID",
+    "clientIdPlaceholder": "123456789.apps.googleusercontent.com",
+    "connect": "Google 계정 연결",
+    "connecting": "연결 중...",
+    "connected": "Google 계정에 연결되었습니다",
+    "updateSignature": "Gmail 서명 업데이트",
+    "updating": "서명 업데이트 중...",
+    "updated": "{email}의 서명을 업데이트했습니다",
+    "enterClientId": "Client ID를 입력해주세요",
+    "connectionFailed": "연결에 실패했습니다",
+    "updateFailed": "서명 업데이트에 실패했습니다"
+  },
+  "landing": {
+    "nav": {
+      "features": "기능",
+      "templates": "템플릿",
+      "howItWorks": "사용 방법"
+    },
+    "hero": {
+      "badge": "완전 무료·가입 불필요",
+      "title": "이메일에 명함을.",
+      "subtitle": "30초 안에 전문적인 이메일 서명을 만드세요. 템플릿을 선택하고 정보를 입력하기만 하면 됩니다.",
+      "cta": "무료로 서명 만들기",
+      "secondaryCta": "템플릿 보기"
+    },
+    "features": {
+      "title": "전문적인 서명에 필요한 모든 것",
+      "subtitle": "돋보이는 이메일 서명을 만드는 데 필요한 모든 기능을 갖추고 있습니다.",
+      "items": {
+        "templates": {
+          "title": "5가지 전문 템플릿",
+          "description": "클래식, 모던, 미니멀, 기업, 우아함. 당신의 스타일에 맞는 완벽한 디자인을 찾으세요."
+        },
+        "customization": {
+          "title": "완전한 커스터마이징",
+          "description": "색상, 글꼴, 레이아웃을 자유롭게 조정하세요. 8가지 색상 프리셋으로 빠르게 시작하세요."
+        },
+        "export": {
+          "title": "다양한 내보내기 옵션",
+          "description": "PNG 이미지, HTML 코드 또는 Gmail 직접 설정. 모든 이메일 클라이언트와 호환됩니다."
+        },
+        "preview": {
+          "title": "실시간 미리보기",
+          "description": "편집하면서 즉시 결과를 확인하세요. 줌 기능으로 세부 사항을 확인하세요."
+        },
+        "gmail": {
+          "title": "Gmail 통합",
+          "description": "한 번의 클릭으로 Gmail에 서명을 설정하세요. 안전한 OAuth 인증."
+        },
+        "free": {
+          "title": "완전 무료",
+          "description": "모든 기능을 무료로 사용할 수 있습니다. 워터마크 없음, 가입 불필요."
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "3단계로 완성",
+      "subtitle": "복잡한 단계가 없습니다. 30초 안에 서명이 완성됩니다.",
+      "steps": {
+        "step1": {
+          "title": "템플릿 선택",
+          "description": "5가지 전문 템플릿 중에서 당신의 스타일에 맞는 디자인을 선택하세요."
+        },
+        "step2": {
+          "title": "정보 입력",
+          "description": "이름, 회사명, 연락처를 입력하세요. 미리보기가 실시간으로 업데이트됩니다."
+        },
+        "step3": {
+          "title": "다운로드 또는 설정",
+          "description": "PNG로 다운로드하거나, HTML을 복사하거나, Gmail에 직접 설정하세요."
+        }
+      }
+    },
+    "templatesShowcase": {
+      "title": "모든 스타일을 위한 템플릿",
+      "subtitle": "5가지 전문 템플릿 중에서 선택하세요. 모두 완전히 커스터마이징 가능하여 당신의 브랜드에 맞게 조정할 수 있습니다."
+    },
+    "cta": {
+      "title": "이메일 서명을 더욱 전문적으로 만드세요.",
+      "subtitle": "30초 안에 만들고, 완전 무료입니다. 지금 Meishi로 시작하세요.",
+      "button": "무료로 서명 만들기",
+      "trust1": "신용카드 불필요",
+      "trust2": "가입 불필요",
+      "trust3": "워터마크 없음"
+    },
+    "footer": {
+      "tagline": "이메일에 명함을.",
+      "product": "제품",
+      "createSignature": "서명 만들기",
+      "viewTemplates": "템플릿",
+      "viewFeatures": "기능",
+      "support": "지원",
+      "howToUse": "사용 방법",
+      "faq": "자주 묻는 질문",
+      "legal": "법적 정보",
+      "privacy": "개인정보 보호정책",
+      "terms": "서비스 약관",
+      "copyright": "© {year} Meishi. 모든 권리 보유."
+    }
+  }
+}

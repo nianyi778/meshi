@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { FadeInUp, StaggerContainer, StaggerItem } from "./animations";
 
 /* ------------------------------------------------------------------ */
@@ -20,20 +21,14 @@ const SAMPLE = {
 /*  Template definitions with inline mock previews                     */
 /* ------------------------------------------------------------------ */
 
-interface Template {
+interface TemplateDef {
   id: string;
-  name: string;
-  nameJa: string;
-  description: string;
   render: () => React.ReactNode;
 }
 
-const TEMPLATES: Template[] = [
+const TEMPLATE_DEFS: TemplateDef[] = [
   {
     id: "classic",
-    name: "Classic",
-    nameJa: "クラシック",
-    description: "伝統的で信頼感のあるデザイン",
     render: () => (
       <div className="rounded-lg border border-gray-200 bg-white p-4 text-left">
         <div className="flex items-start gap-3">
@@ -56,9 +51,6 @@ const TEMPLATES: Template[] = [
   },
   {
     id: "modern",
-    name: "Modern",
-    nameJa: "モダン",
-    description: "洗練されたミニマルモダン",
     render: () => (
       <div className="rounded-lg border border-gray-200 bg-white p-4 text-left">
         <div className="mb-2 h-1 w-10 rounded-full bg-orange-500" />
@@ -74,9 +66,6 @@ const TEMPLATES: Template[] = [
   },
   {
     id: "minimal",
-    name: "Minimal",
-    nameJa: "ミニマル",
-    description: "シンプルを極めた美しさ",
     render: () => (
       <div className="rounded-lg border border-gray-200 bg-white p-4 text-left">
         <p className="text-sm font-bold text-slate-800">{SAMPLE.name}</p>
@@ -90,9 +79,6 @@ const TEMPLATES: Template[] = [
   },
   {
     id: "corporate",
-    name: "Corporate",
-    nameJa: "コーポレート",
-    description: "企業ブランドを際立たせる",
     render: () => (
       <div className="overflow-hidden rounded-lg border border-gray-200 bg-white text-left">
         <div className="bg-sky-600 px-4 py-2">
@@ -111,9 +97,6 @@ const TEMPLATES: Template[] = [
   },
   {
     id: "elegant",
-    name: "Elegant",
-    nameJa: "エレガント",
-    description: "品格と高級感を演出",
     render: () => (
       <div className="rounded-lg border border-gray-200 bg-white p-4 text-center">
         <p className="text-sm font-bold tracking-wider text-slate-800">{SAMPLE.name}</p>
@@ -134,14 +117,14 @@ const TEMPLATES: Template[] = [
 /*  Template card component                                            */
 /* ------------------------------------------------------------------ */
 
-function TemplateCard({ template }: { template: Template }) {
+function TemplateCard({ template }: { template: TemplateDef }) {
+  const t = useTranslations();
   return (
     <StaggerItem>
       <div
         className="group cursor-pointer overflow-hidden rounded-2xl border transition-all duration-300 hover:shadow-lg"
         style={{ borderColor: "var(--color-brand-border)" }}
       >
-        {/* Mock preview area */}
         <div
           className="p-4 transition-transform duration-300 group-hover:scale-[1.01]"
           style={{ backgroundColor: "var(--color-brand-surface-alt)" }}
@@ -149,7 +132,6 @@ function TemplateCard({ template }: { template: Template }) {
           {template.render()}
         </div>
 
-        {/* Label */}
         <div className="border-t bg-white px-5 py-4" style={{ borderColor: "var(--color-brand-border)" }}>
           <div className="flex items-baseline gap-2">
             <h3
@@ -159,14 +141,8 @@ function TemplateCard({ template }: { template: Template }) {
                 color: "var(--color-brand-text)",
               }}
             >
-              {template.nameJa}
+              {t(`templates.${template.id}.name`)}
             </h3>
-            <span
-              className="text-xs"
-              style={{ color: "var(--color-brand-text-muted)" }}
-            >
-              {template.name}
-            </span>
           </div>
           <p
             className="mt-1 text-xs leading-[1.8]"
@@ -175,7 +151,7 @@ function TemplateCard({ template }: { template: Template }) {
               color: "var(--color-brand-text-muted)",
             }}
           >
-            {template.description}
+            {t(`templates.${template.id}.description`)}
           </p>
         </div>
       </div>
@@ -188,6 +164,7 @@ function TemplateCard({ template }: { template: Template }) {
 /* ------------------------------------------------------------------ */
 
 export function TemplatesShowcase() {
+  const t = useTranslations();
   return (
     <section
       id="templates"
@@ -195,7 +172,6 @@ export function TemplatesShowcase() {
       style={{ backgroundColor: "var(--color-brand-surface-alt)" }}
     >
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
-        {/* Section heading */}
         <FadeInUp>
           <div className="mx-auto mb-14 max-w-2xl text-center">
             <h2
@@ -206,7 +182,7 @@ export function TemplatesShowcase() {
                 lineHeight: "1.2",
               }}
             >
-              プロがデザインした5つのテンプレート
+              {t("landing.templatesShowcase.title")}
             </h2>
             <p
               className="mt-4 text-sm leading-[1.8] md:text-base"
@@ -215,40 +191,18 @@ export function TemplatesShowcase() {
                 color: "var(--color-brand-text-muted)",
               }}
             >
-              ビジネスシーンに合わせて最適なデザインを選択できます。
+              {t("landing.templatesShowcase.subtitle")}
             </p>
           </div>
         </FadeInUp>
 
-        {/* Template grid */}
         <StaggerContainer
           className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
           stagger={0.08}
         >
-          {TEMPLATES.map((template) => (
+          {TEMPLATE_DEFS.map((template) => (
             <TemplateCard key={template.id} template={template} />
           ))}
-
-          {/* "More coming" placeholder card */}
-          <StaggerItem>
-            <div
-              className="flex h-full min-h-[240px] flex-col items-center justify-center rounded-2xl border-2 border-dashed p-6 text-center"
-              style={{ borderColor: "var(--color-brand-border)" }}
-            >
-              <p
-                className="text-sm font-bold"
-                style={{ color: "var(--color-brand-text-muted)" }}
-              >
-                さらに追加予定...
-              </p>
-              <p
-                className="mt-1 text-xs"
-                style={{ color: "var(--color-brand-text-muted)", opacity: 0.7 }}
-              >
-                新しいテンプレートを随時追加
-              </p>
-            </div>
-          </StaggerItem>
         </StaggerContainer>
       </div>
     </section>

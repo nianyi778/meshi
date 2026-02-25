@@ -1,0 +1,233 @@
+{
+  "common": {
+    "back": "Back",
+    "reset": "Reset",
+    "show": "Show",
+    "hide": "Hide",
+    "close": "Close",
+    "openMenu": "Open menu",
+    "loading": "Loading...",
+    "createNow": "Create now",
+    "free": "Completely free",
+    "language": "Language"
+  },
+  "metadata": {
+    "web": {
+      "title": "Meishi — Create Professional Email Signatures for Free",
+      "description": "Create a professional email signature in 30 seconds. 5 templates, full customization, PNG, HTML & Gmail support. Completely free.",
+      "keywords": "email signature,business card,Gmail signature,professional signature,email template"
+    },
+    "landing": {
+      "title": "Meishi — Your email signature, perfected.",
+      "description": "Create a professional email signature in 30 seconds. 5 templates, full customization, PNG, HTML & Gmail support. Completely free."
+    }
+  },
+  "generator": {
+    "title": "Signature Editor",
+    "tabs": {
+      "info": "Information",
+      "style": "Style"
+    },
+    "preview": "Preview"
+  },
+  "form": {
+    "sections": {
+      "basic": "Basic Information",
+      "contact": "Contact",
+      "address": "Address",
+      "logo": "Logo"
+    },
+    "fields": {
+      "companyName": "Company Name",
+      "personName": "Full Name",
+      "nameReading": "Name Reading",
+      "webUrl": "Website",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "postalCode": "Postal Code",
+      "address1": "Address Line 1",
+      "address2": "Address Line 2",
+      "logoUrl": "Logo Image"
+    },
+    "placeholders": {
+      "companyName": "Acme Inc.",
+      "personName": "John Smith",
+      "nameReading": "John Smith",
+      "webUrl": "https://www.example.com",
+      "email": "john@example.com",
+      "phone": "+1 (555) 123-4567",
+      "postalCode": "94102",
+      "address1": "123 Main St, Suite 100",
+      "address2": "San Francisco, CA 94102"
+    },
+    "logoSelect": "Click to select logo",
+    "logoPreview": "Logo preview",
+    "logoSelectAria": "Select logo image"
+  },
+  "style": {
+    "template": "Template",
+    "color": "Color",
+    "font": "Font",
+    "border": "Border",
+    "preset": "Preset",
+    "primary": "Primary",
+    "accent": "Accent",
+    "text": "Text",
+    "background": "Background",
+    "fontFamily": "Font Family",
+    "fontSize": "Font Size",
+    "borderStyle": "Border Style",
+    "borderColor": "Border Color",
+    "resetStyle": "Reset Style",
+    "borderOptions": {
+      "solid": "Solid",
+      "double": "Double",
+      "dashed": "Dashed",
+      "dotted": "Dotted",
+      "none": "None"
+    }
+  },
+  "templates": {
+    "classic": {
+      "name": "Classic",
+      "description": "Simple horizontal divider. Perfect for business emails."
+    },
+    "modern": {
+      "name": "Modern",
+      "description": "Card-style design with shadows and rounded corners."
+    },
+    "minimal": {
+      "name": "Minimal",
+      "description": "Large text, no borders. Clean and sophisticated."
+    },
+    "corporate": {
+      "name": "Corporate",
+      "description": "Accent bar on the left side. Ideal for enterprises."
+    },
+    "elegant": {
+      "name": "Elegant",
+      "description": "Serif font with thin borders. Refined impression."
+    }
+  },
+  "colorPresets": {
+    "navy": "Navy",
+    "green": "Green",
+    "purple": "Purple",
+    "red": "Red",
+    "orange": "Orange",
+    "black": "Black",
+    "blue": "Blue",
+    "teal": "Teal"
+  },
+  "export": {
+    "downloadPng": "Download as PNG",
+    "copyHtml": "Copy HTML",
+    "copied": "Copied!",
+    "setGmail": "Set in Gmail",
+    "pngError": "Failed to generate PNG. Please try again.",
+    "copyError": "Failed to copy. Please check your browser settings."
+  },
+  "gmail": {
+    "instructions": "Use Gmail API to set your signature directly. Create an OAuth 2.0 client ID in Google Cloud Console.",
+    "consoleLink": "Google Cloud Console",
+    "clientIdLabel": "Google Client ID",
+    "clientIdPlaceholder": "123456789.apps.googleusercontent.com",
+    "connect": "Connect Google Account",
+    "connecting": "Connecting...",
+    "connected": "Connected to Google Account",
+    "updateSignature": "Update Gmail Signature",
+    "updating": "Updating signature...",
+    "updated": "Updated signature for {email}",
+    "enterClientId": "Please enter Client ID",
+    "connectionFailed": "Connection failed",
+    "updateFailed": "Failed to update signature"
+  },
+  "landing": {
+    "nav": {
+      "features": "Features",
+      "templates": "Templates",
+      "howItWorks": "How it works"
+    },
+    "hero": {
+      "badge": "Completely free · No signup required",
+      "title": "Your email signature, perfected.",
+      "subtitle": "Create a professional email signature in 30 seconds. Choose a template, fill in your details, and you're done.",
+      "cta": "Create signature for free",
+      "secondaryCta": "View templates"
+    },
+    "features": {
+      "title": "Everything you need for a professional signature",
+      "subtitle": "All the features you need to create a standout email signature.",
+      "items": {
+        "templates": {
+          "title": "5 Professional Templates",
+          "description": "Classic, Modern, Minimal, Corporate, Elegant. Find the perfect style for your brand."
+        },
+        "customization": {
+          "title": "Full Customization",
+          "description": "Adjust colors, fonts, and layout freely. Get started instantly with 8 color presets."
+        },
+        "export": {
+          "title": "Multiple Export Options",
+          "description": "PNG images, HTML code, or direct Gmail setup. Compatible with all email clients."
+        },
+        "preview": {
+          "title": "Real-time Preview",
+          "description": "See results instantly as you edit. Zoom in to check every detail."
+        },
+        "gmail": {
+          "title": "Gmail Integration",
+          "description": "Set your signature in Gmail with one click. Secure OAuth authentication."
+        },
+        "free": {
+          "title": "Completely Free",
+          "description": "All features available at no cost. No watermarks, no signup required."
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "Done in 3 steps",
+      "subtitle": "No complicated steps. Your signature is ready in 30 seconds.",
+      "steps": {
+        "step1": {
+          "title": "Choose a template",
+          "description": "Select from 5 professional templates that match your style."
+        },
+        "step2": {
+          "title": "Enter your information",
+          "description": "Add your name, company, and contact details. Preview updates in real-time."
+        },
+        "step3": {
+          "title": "Download or set up",
+          "description": "Download as PNG, copy HTML, or set directly in Gmail."
+        }
+      }
+    },
+    "templatesShowcase": {
+      "title": "Templates for every style",
+      "subtitle": "Choose from 5 professional templates. All fully customizable to match your brand."
+    },
+    "cta": {
+      "title": "Make your email signature more professional.",
+      "subtitle": "Create in 30 seconds, completely free. Start with Meishi today.",
+      "button": "Create signature for free",
+      "trust1": "No credit card required",
+      "trust2": "No signup needed",
+      "trust3": "No watermarks"
+    },
+    "footer": {
+      "tagline": "Your email signature, perfected.",
+      "product": "Product",
+      "createSignature": "Create Signature",
+      "viewTemplates": "Templates",
+      "viewFeatures": "Features",
+      "support": "Support",
+      "howToUse": "How to use",
+      "faq": "FAQ",
+      "legal": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "copyright": "© {year} Meishi. All rights reserved."
+    }
+  }
+}

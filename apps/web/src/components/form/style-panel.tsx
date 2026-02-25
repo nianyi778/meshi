@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useCallback } from "react";
+import { useTranslations } from "next-intl";
 import { useSignatureStore } from "@/store/signature-store";
 import {
   TEMPLATES,
   COLOR_PRESETS,
   FONT_FAMILIES,
+  BORDER_STYLES,
 } from "@meishi/core/constants";
 import type {
   FontFamily,
@@ -15,17 +17,6 @@ import { Button } from "@meishi/ui/components/button";
 import { Input } from "@meishi/ui/components/input";
 import { Label } from "@meishi/ui/components/label";
 import { RotateCcw, Check } from "lucide-react";
-
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-const BORDER_STYLES: { id: BorderStyle; label: string }[] = [
-  { id: "solid", label: "実線" },
-  { id: "double", label: "二重線" },
-  { id: "dashed", label: "破線" },
-  { id: "dotted", label: "点線" },
-  { id: "none", label: "なし" },
-];
 
 // ---------------------------------------------------------------------------
 // Color picker row: native color input + hex text input
@@ -82,6 +73,7 @@ export function StylePanel() {
   const setBorderStyle = useSignatureStore((s) => s.setBorderStyle);
   const setBorderColor = useSignatureStore((s) => s.setBorderColor);
   const resetStyle = useSignatureStore((s) => s.resetStyle);
+  const t = useTranslations();
 
   const handlePresetClick = useCallback(
     (preset: (typeof COLOR_PRESETS)[number]) => {
@@ -95,7 +87,7 @@ export function StylePanel() {
     <div className="flex flex-col gap-8">
       {/* ===== Template selector ===== */}
       <section className="space-y-3">
-        <h3 className="text-sm font-bold text-foreground">テンプレート</h3>
+        <h3 className="text-sm font-bold text-foreground">{t("style.template")}</h3>
         <div className="grid grid-cols-1 gap-2">
           {TEMPLATES.map((tpl) => {
             const isActive = style.templateId === tpl.id;
@@ -112,14 +104,14 @@ export function StylePanel() {
               >
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-semibold text-foreground">
-                    {tpl.name}
+                    {t(`templates.${tpl.id}.name`)}
                   </span>
                   {isActive && (
                     <Check className="h-4 w-4 text-primary" />
                   )}
                 </div>
                 <p className="mt-0.5 text-xs text-muted-foreground">
-                  {tpl.description}
+                  {t(`templates.${tpl.id}.description`)}
                 </p>
               </button>
             );
@@ -129,12 +121,12 @@ export function StylePanel() {
 
       {/* ===== Color customization ===== */}
       <section className="space-y-4">
-        <h3 className="text-sm font-bold text-foreground">カラー</h3>
+        <h3 className="text-sm font-bold text-foreground">{t("style.color")}</h3>
 
         {/* Color presets */}
         <div className="space-y-2">
           <span className="block text-xs font-medium text-muted-foreground">
-            プリセット
+            {t("style.preset")}
           </span>
           <div className="flex flex-wrap gap-2">
             {COLOR_PRESETS.map((preset) => {
@@ -143,10 +135,10 @@ export function StylePanel() {
                 style.accentColor === preset.accent;
               return (
                 <button
-                  key={preset.name}
+                  key={preset.key}
                   type="button"
                   onClick={() => handlePresetClick(preset)}
-                  title={preset.name}
+                  title={t(`colorPresets.${preset.key}`)}
                   className={`group/swatch relative flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border-2 transition-transform hover:scale-110 ${
                     isActive
                       ? "border-primary ring-2 ring-primary/30"
@@ -171,22 +163,22 @@ export function StylePanel() {
         {/* Individual pickers */}
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <ColorPicker
-            label="プライマリ"
+            label={t("style.primary")}
             value={style.primaryColor}
             onChange={setPrimaryColor}
           />
           <ColorPicker
-            label="アクセント"
+            label={t("style.accent")}
             value={style.accentColor}
             onChange={setAccentColor}
           />
           <ColorPicker
-            label="テキスト"
+            label={t("style.text")}
             value={style.textColor}
             onChange={setTextColor}
           />
           <ColorPicker
-            label="背景"
+            label={t("style.background")}
             value={style.backgroundColor}
             onChange={setBackgroundColor}
           />
@@ -195,13 +187,13 @@ export function StylePanel() {
 
       {/* ===== Font family ===== */}
       <section className="space-y-3">
-        <h3 className="text-sm font-bold text-foreground">フォント</h3>
+        <h3 className="text-sm font-bold text-foreground">{t("style.font")}</h3>
         <div className="space-y-2">
           <Label
             htmlFor="font-family-select"
             className="text-xs text-muted-foreground"
           >
-            フォントファミリー
+            {t("style.fontFamily")}
           </Label>
           <select
             id="font-family-select"
@@ -224,7 +216,7 @@ export function StylePanel() {
               htmlFor="font-size-slider"
               className="text-xs text-muted-foreground"
             >
-              フォントサイズ
+              {t("style.fontSize")}
             </Label>
             <span className="text-xs font-mono tabular-nums text-muted-foreground">
               {style.fontSize}px
@@ -249,27 +241,27 @@ export function StylePanel() {
 
       {/* ===== Border ===== */}
       <section className="space-y-3">
-        <h3 className="text-sm font-bold text-foreground">ボーダー</h3>
+        <h3 className="text-sm font-bold text-foreground">{t("style.border")}</h3>
 
         <div className="space-y-2">
           <Label className="text-xs text-muted-foreground">
-            ボーダースタイル
+            {t("style.borderStyle")}
           </Label>
           <div className="flex flex-wrap gap-1.5">
             {BORDER_STYLES.map((bs) => {
-              const isActive = style.borderStyle === bs.id;
+              const isActive = style.borderStyle === bs;
               return (
                 <button
-                  key={bs.id}
+                  key={bs}
                   type="button"
-                  onClick={() => setBorderStyle(bs.id)}
+                  onClick={() => setBorderStyle(bs as BorderStyle)}
                   className={`cursor-pointer rounded-[var(--radius)] border px-3 py-1.5 text-xs font-medium transition-colors ${
                     isActive
                       ? "border-primary bg-primary/10 text-primary"
                       : "border-border text-muted-foreground hover:border-primary/30 hover:text-foreground"
                   }`}
                 >
-                  {bs.label}
+                  {t(`style.borderOptions.${bs}`)}
                 </button>
               );
             })}
@@ -278,7 +270,7 @@ export function StylePanel() {
 
         {style.borderStyle !== "none" && (
           <ColorPicker
-            label="ボーダーカラー"
+            label={t("style.borderColor")}
             value={style.borderColor}
             onChange={setBorderColor}
           />
@@ -295,7 +287,7 @@ export function StylePanel() {
           className="gap-1.5 text-muted-foreground hover:text-destructive"
         >
           <RotateCcw className="h-3.5 w-3.5" />
-          スタイルをリセット
+          {t("style.resetStyle")}
         </Button>
       </div>
     </div>

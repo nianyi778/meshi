@@ -1,0 +1,233 @@
+{
+  "common": {
+    "back": "戻る",
+    "reset": "リセット",
+    "show": "表示する",
+    "hide": "非表示にする",
+    "close": "閉じる",
+    "openMenu": "メニューを開く",
+    "loading": "読み込み中...",
+    "createNow": "今すぐ作成",
+    "free": "完全無料",
+    "language": "言語"
+  },
+  "metadata": {
+    "web": {
+      "title": "Meishi (名刺) — プロフェッショナルなメール署名を無料で作成",
+      "description": "30秒でプロフェッショナルなメール署名を作成。5つのテンプレート、フルカスタマイズ、PNG・HTML・Gmail対応。完全無料。",
+      "keywords": "メール署名,名刺,ビジネスカード,Gmail署名,email signature"
+    },
+    "landing": {
+      "title": "Meishi (名刺) — メールに、名刺を。",
+      "description": "プロフェッショナルなメール署名を30秒で作成。5つのテンプレート、フルカスタマイズ、PNG・HTML・Gmail対応。完全無料。"
+    }
+  },
+  "generator": {
+    "title": "署名エディタ",
+    "tabs": {
+      "info": "情報入力",
+      "style": "スタイル"
+    },
+    "preview": "プレビュー"
+  },
+  "form": {
+    "sections": {
+      "basic": "基本情報",
+      "contact": "連絡先",
+      "address": "住所",
+      "logo": "ロゴ"
+    },
+    "fields": {
+      "companyName": "会社名",
+      "personName": "氏名",
+      "nameReading": "フリガナ",
+      "webUrl": "ウェブサイト",
+      "email": "メールアドレス",
+      "phone": "電話番号",
+      "postalCode": "郵便番号",
+      "address1": "住所1",
+      "address2": "住所2",
+      "logoUrl": "ロゴ画像"
+    },
+    "placeholders": {
+      "companyName": "株式会社○○",
+      "personName": "山田 太郎",
+      "nameReading": "ヤマダ タロウ / Yamada Taro",
+      "webUrl": "https://www.example.co.jp",
+      "email": "taro@example.co.jp",
+      "phone": "03-1234-5678",
+      "postalCode": "〒100-0001",
+      "address1": "東京都千代田区千代田1-1",
+      "address2": "サンプルビルディング 10階"
+    },
+    "logoSelect": "クリックしてロゴを選択",
+    "logoPreview": "ロゴプレビュー",
+    "logoSelectAria": "ロゴ画像を選択"
+  },
+  "style": {
+    "template": "テンプレート",
+    "color": "カラー",
+    "font": "フォント",
+    "border": "ボーダー",
+    "preset": "プリセット",
+    "primary": "プライマリ",
+    "accent": "アクセント",
+    "text": "テキスト",
+    "background": "背景",
+    "fontFamily": "フォントファミリー",
+    "fontSize": "フォントサイズ",
+    "borderStyle": "ボーダースタイル",
+    "borderColor": "ボーダーカラー",
+    "resetStyle": "スタイルをリセット",
+    "borderOptions": {
+      "solid": "実線",
+      "double": "二重線",
+      "dashed": "破線",
+      "dotted": "点線",
+      "none": "なし"
+    }
+  },
+  "templates": {
+    "classic": {
+      "name": "クラシック",
+      "description": "シンプルな横線区切り。ビジネスメールに最適。"
+    },
+    "modern": {
+      "name": "モダン",
+      "description": "カード風デザイン。影とラウンドコーナー。"
+    },
+    "minimal": {
+      "name": "ミニマル",
+      "description": "大きめの文字、枠線なし。洗練された印象。"
+    },
+    "corporate": {
+      "name": "コーポレート",
+      "description": "左サイドにアクセントバー。企業向け。"
+    },
+    "elegant": {
+      "name": "エレガント",
+      "description": "セリフフォント、細い枠線。上品な印象。"
+    }
+  },
+  "colorPresets": {
+    "navy": "ネイビー",
+    "green": "グリーン",
+    "purple": "パープル",
+    "red": "レッド",
+    "orange": "オレンジ",
+    "black": "ブラック",
+    "blue": "ブルー",
+    "teal": "ティール"
+  },
+  "export": {
+    "downloadPng": "PNGでダウンロード",
+    "copyHtml": "HTMLをコピー",
+    "copied": "コピーしました！",
+    "setGmail": "Gmailに設定",
+    "pngError": "PNG出力に失敗しました。もう一度お試しください。",
+    "copyError": "コピーに失敗しました。ブラウザの設定を確認してください。"
+  },
+  "gmail": {
+    "instructions": "Gmail APIを使用して署名を直接設定します。Google Cloud ConsoleでOAuth 2.0 クライアントIDを作成してください。",
+    "consoleLink": "Google Cloud Console",
+    "clientIdLabel": "Google Client ID",
+    "clientIdPlaceholder": "123456789.apps.googleusercontent.com",
+    "connect": "Googleアカウントに接続",
+    "connecting": "接続中...",
+    "connected": "Googleアカウントに接続しました",
+    "updateSignature": "Gmailの署名を更新",
+    "updating": "署名を更新中...",
+    "updated": "{email} の署名を更新しました",
+    "enterClientId": "Client IDを入力してください",
+    "connectionFailed": "接続に失敗しました",
+    "updateFailed": "署名の更新に失敗しました"
+  },
+  "landing": {
+    "nav": {
+      "features": "機能",
+      "templates": "テンプレート",
+      "howItWorks": "使い方"
+    },
+    "hero": {
+      "badge": "完全無料・登録不要",
+      "title": "メールに、名刺を。",
+      "subtitle": "プロフェッショナルなメール署名を30秒で作成。テンプレートを選んで、情報を入力するだけ。",
+      "cta": "無料で署名を作成",
+      "secondaryCta": "テンプレートを見る"
+    },
+    "features": {
+      "title": "すべてが揃った署名ジェネレーター",
+      "subtitle": "プロフェッショナルな署名に必要な機能をすべて搭載。",
+      "items": {
+        "templates": {
+          "title": "5種類のテンプレート",
+          "description": "クラシック、モダン、ミニマル、コーポレート、エレガント。あなたのスタイルに合った署名を。"
+        },
+        "customization": {
+          "title": "フルカスタマイズ",
+          "description": "カラー、フォント、レイアウトを自由に調整。8つのカラープリセットですぐに始められます。"
+        },
+        "export": {
+          "title": "多彩なエクスポート",
+          "description": "PNG画像、HTMLコード、Gmail直接設定。あらゆるメールクライアントに対応。"
+        },
+        "preview": {
+          "title": "リアルタイムプレビュー",
+          "description": "編集しながらすぐに結果を確認。ズーム機能で細部までチェック。"
+        },
+        "gmail": {
+          "title": "Gmail連携",
+          "description": "ワンクリックでGmailの署名に設定。OAuth認証で安全に連携。"
+        },
+        "free": {
+          "title": "完全無料",
+          "description": "すべての機能を無料で利用可能。ウォーターマークなし、登録不要。"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "3ステップで完成",
+      "subtitle": "難しい操作は一切なし。30秒で署名が完成します。",
+      "steps": {
+        "step1": {
+          "title": "テンプレートを選ぶ",
+          "description": "5種類のプロフェッショナルなテンプレートから、お好みのデザインを選択。"
+        },
+        "step2": {
+          "title": "情報を入力",
+          "description": "名前、会社名、連絡先を入力。リアルタイムでプレビューが更新されます。"
+        },
+        "step3": {
+          "title": "ダウンロード・設定",
+          "description": "PNGでダウンロード、HTMLをコピー、またはGmailに直接設定。"
+        }
+      }
+    },
+    "templatesShowcase": {
+      "title": "あなたのスタイルに合ったテンプレート",
+      "subtitle": "5種類のプロフェッショナルなテンプレートから選べます。すべてフルカスタマイズ対応。"
+    },
+    "cta": {
+      "title": "メール署名を、もっとプロフェッショナルに。",
+      "subtitle": "30秒で作成、完全無料。今すぐMeishiで署名を作りましょう。",
+      "button": "無料で署名を作成",
+      "trust1": "クレジットカード不要",
+      "trust2": "登録不要",
+      "trust3": "ウォーターマークなし"
+    },
+    "footer": {
+      "tagline": "メールに、名刺を。",
+      "product": "プロダクト",
+      "createSignature": "署名を作成",
+      "viewTemplates": "テンプレート",
+      "viewFeatures": "機能一覧",
+      "support": "サポート",
+      "howToUse": "使い方",
+      "faq": "FAQ",
+      "legal": "法的情報",
+      "privacy": "プライバシーポリシー",
+      "terms": "利用規約",
+      "copyright": "© {year} Meishi. All rights reserved."
+    }
+  }
+}

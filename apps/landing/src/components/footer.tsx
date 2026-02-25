@@ -1,50 +1,41 @@
+"use client";
+
 import { Heart } from "lucide-react";
-
-/* ------------------------------------------------------------------ */
-/*  Footer link columns                                                */
-/* ------------------------------------------------------------------ */
-
-interface FooterColumn {
-  title: string;
-  links: { label: string; href: string }[];
-}
-
-const COLUMNS: FooterColumn[] = [
-  {
-    title: "プロダクト",
-    links: [
-      { label: "署名を作成", href: "/generator" },
-      { label: "テンプレート", href: "#templates" },
-      { label: "機能一覧", href: "#features" },
-    ],
-  },
-  {
-    title: "サポート",
-    links: [
-      { label: "使い方", href: "#how-it-works" },
-      { label: "FAQ", href: "#" },
-    ],
-  },
-  {
-    title: "法的情報",
-    links: [
-      { label: "プライバシーポリシー", href: "#" },
-      { label: "利用規約", href: "#" },
-    ],
-  },
-];
-
-/* ------------------------------------------------------------------ */
-/*  Footer component                                                   */
-/* ------------------------------------------------------------------ */
+import { useTranslations, useLocale } from "next-intl";
 
 export function Footer() {
+  const t = useTranslations();
+  const locale = useLocale();
+
+  const COLUMNS = [
+    {
+      title: t("landing.footer.product"),
+      links: [
+        { label: t("landing.footer.createSignature"), href: `/${locale}/generator` },
+        { label: t("landing.footer.viewTemplates"), href: "#templates" },
+        { label: t("landing.footer.viewFeatures"), href: "#features" },
+      ],
+    },
+    {
+      title: t("landing.footer.support"),
+      links: [
+        { label: t("landing.footer.howToUse"), href: "#how-it-works" },
+        { label: t("landing.footer.faq"), href: "#" },
+      ],
+    },
+    {
+      title: t("landing.footer.legal"),
+      links: [
+        { label: t("landing.footer.privacy"), href: "#" },
+        { label: t("landing.footer.terms"), href: "#" },
+      ],
+    },
+  ];
+
   return (
     <footer className="bg-slate-900 pt-16 pb-10">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
-        {/* Top section */}
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
-          {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2.5">
               <span
@@ -61,11 +52,10 @@ export function Footer() {
               className="mt-3 max-w-xs text-sm leading-[1.8] text-slate-400"
               style={{ fontFamily: "var(--font-sans)" }}
             >
-              メールに、プロフェッショナルを。
+              {t("landing.footer.tagline")}
             </p>
           </div>
 
-          {/* Link columns */}
           {COLUMNS.map((col) => (
             <div key={col.title}>
               <h4
@@ -91,16 +81,14 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Divider */}
         <div className="mt-14 h-px w-full bg-slate-800" />
 
-        {/* Bottom bar */}
         <div className="mt-6 flex flex-col items-center justify-between gap-4 md:flex-row">
           <p
             className="text-xs text-slate-500"
             style={{ fontFamily: "var(--font-sans)" }}
           >
-            © 2026 Meishi. All rights reserved.
+            {t("landing.footer.copyright", { year: new Date().getFullYear() })}
           </p>
           <p
             className="inline-flex items-center gap-1 text-xs text-slate-500"

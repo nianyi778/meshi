@@ -2,9 +2,11 @@
 
 import { useState, lazy, Suspense } from "react";
 import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
 import { SignatureForm } from "@/components/form/signature-form";
 import { StylePanel } from "@/components/form/style-panel";
 import SignaturePreview from "@/components/signature/signature-preview";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { ArrowLeft, PenLine, Palette, Download, ClipboardCopy, Mail } from "lucide-react";
 
 const ExportPanel = lazy(() =>
@@ -17,6 +19,8 @@ type EditorTab = "data" | "style";
 
 export default function GeneratorPage() {
   const [activeTab, setActiveTab] = useState<EditorTab>("data");
+  const t = useTranslations();
+  const locale = useLocale();
 
   return (
     <div className="flex min-h-screen flex-col bg-sky-50">
@@ -25,20 +29,21 @@ export default function GeneratorPage() {
         <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4">
           <div className="flex items-center gap-3">
             <Link
-              href="/"
+              href={`/${locale}`}
               className="flex items-center gap-2 text-sm text-slate-500 transition hover:text-slate-800"
             >
               <ArrowLeft className="h-4 w-4" />
-              戻る
+              {t("common.back")}
             </Link>
             <div className="h-5 w-px bg-slate-200" />
             <h1 className="text-lg font-bold text-slate-800">
               Meishi
               <span className="ml-1.5 text-xs font-normal text-slate-400">
-                署名エディタ
+                {t("generator.title")}
               </span>
             </h1>
           </div>
+          <LanguageSwitcher />
         </div>
       </header>
 
@@ -57,7 +62,7 @@ export default function GeneratorPage() {
               }`}
             >
               <PenLine className="h-4 w-4" />
-              情報入力
+              {t("generator.tabs.info")}
             </button>
             <button
               onClick={() => setActiveTab("style")}
@@ -68,7 +73,7 @@ export default function GeneratorPage() {
               }`}
             >
               <Palette className="h-4 w-4" />
-              スタイル
+              {t("generator.tabs.style")}
             </button>
           </div>
 
@@ -82,7 +87,7 @@ export default function GeneratorPage() {
         <section className="flex flex-1 flex-col">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-sm font-semibold text-slate-700">
-              プレビュー
+              {t("generator.preview")}
             </h2>
           </div>
 
@@ -106,19 +111,20 @@ export default function GeneratorPage() {
 }
 
 function ExportPlaceholder() {
+  const t = useTranslations();
   return (
     <div className="flex flex-wrap gap-3">
       <button className="flex items-center gap-2 rounded-lg bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white">
         <Download className="h-4 w-4" />
-        PNGでダウンロード
+        {t("export.downloadPng")}
       </button>
       <button className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700">
         <ClipboardCopy className="h-4 w-4" />
-        HTMLをコピー
+        {t("export.copyHtml")}
       </button>
       <button className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700">
         <Mail className="h-4 w-4" />
-        Gmailに設定
+        {t("export.setGmail")}
       </button>
     </div>
   );
