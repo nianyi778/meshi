@@ -11,7 +11,7 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
 
     posthog.init(key, {
       api_host:
-        process.env.NEXT_PUBLIC_POSTHOG_HOST ?? "https://eu.i.posthog.com",
+        process.env.NEXT_PUBLIC_POSTHOG_HOST ?? "https://us.i.posthog.com",
       // Privacy-first: no cookies, no persistent user profiles
       person_profiles: "never",
       persistence: "memory",
