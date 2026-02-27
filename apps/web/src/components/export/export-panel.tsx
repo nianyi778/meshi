@@ -2,9 +2,9 @@
 
 import { useState, useCallback } from "react";
 import { useTranslations } from "next-intl";
-import { Download, ClipboardCopy, Mail, Check, Loader2 } from "lucide-react";
+import { Download, ClipboardCopy, Mail, Check, Loader2, FileDown } from "lucide-react";
 import { useSignatureStore } from "@/store/signature-store";
-import { exportAsPng, generateGmailHtml, copyHtmlToClipboard } from "@/lib/export-utils";
+import { exportAsPng, generateGmailHtml, copyHtmlToClipboard, downloadOutlookHtm } from "@/lib/export-utils";
 import { EmailClientGuide } from "./email-client-guide";
 import { usePostHog } from "posthog-js/react";
 
@@ -13,6 +13,7 @@ export function ExportPanel() {
   const [pngLoading, setPngLoading] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
   const [showGuide, setShowGuide] = useState(false);
+  const [htmLoading, setHtmLoading] = useState(false);
   const t = useTranslations();
   const posthog = usePostHog();
   const handlePngExport = useCallback(async () => {
@@ -98,6 +99,16 @@ export function ExportPanel() {
         >
           <Mail className="h-4 w-4" />
           {t("export.setEmail")}
+        </button>
+
+        {/* Outlook .htm Download */}
+        <button
+          onClick={async () => { setHtmLoading(true); try { await downloadOutlookHtm(data, style); posthog?.capture("export_clicked", { format: "htm", template: style.templateId }); } finally { setHtmLoading(false); } }}
+          disabled={htmLoading}
+          className="flex items-center gap-2.5 rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-5 py-2.5 text-sm font-semibold text-[var(--color-brand-text-body)] shadow-sm transition-all duration-200 hover:border-[var(--color-brand-primary)]/30 hover:bg-[var(--color-brand-bg)] hover:shadow-md cursor-pointer"
+        >
+          {htmLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <FileDown className="h-4 w-4" />}
+          {t("export.downloadHtm")}
         </button>
       </div>
 

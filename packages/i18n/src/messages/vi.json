@@ -154,6 +154,7 @@
     "pngError": "Không thể xuất PNG. Vui lòng thử lại.",
     "copyError": "Không thể sao chép. Vui lòng kiểm tra cài đặt trình duyệt.",
     "setEmail": "Cài vào Email",
+    "downloadHtm": "Tải xuống Outlook .htm",
     "guide": {
       "gmail": {
         "step1": "Nhấn nút 'Sao chép HTML' bên dưới.",
@@ -175,6 +176,17 @@
       },
       "openOutlook": "Mở Outlook"
     }
+  },
+  "auth": {
+    "save": "Lưu",
+    "logout": "Đăng xuất",
+    "notLoggedIn": "Chưa đăng nhập",
+    "mySignatures": "Chữ ký của tôi",
+    "noSignatures": "Chưa có chữ ký nào",
+    "signatureName": "Tên chữ ký",
+    "saveNew": "Lưu mới",
+    "load": "Tải",
+    "freeLimitReached": "Gói miễn phí cho phép {limit} chữ ký. Nâng cấp Pro để không giới hạn."
   },
   "gmail": {
     "instructions": "Sử dụng Gmail API để đặt chữ ký trực tiếp. Tạo OAuth 2.0 Client ID trong Google Cloud Console.",

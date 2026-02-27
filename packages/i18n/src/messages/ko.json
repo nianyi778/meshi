@@ -154,6 +154,7 @@
     "pngError": "PNG 생성에 실패했습니다. 다시 시도해주세요.",
     "copyError": "복사에 실패했습니다. 브라우저 설정을 확인해주세요.",
     "setEmail": "이메일에 설정",
+    "downloadHtm": "Outlook .htm 다운로드",
     "guide": {
       "gmail": {
         "step1": "아래 'HTML 복사' 버튼을 클릭하세요.",
@@ -175,6 +176,17 @@
       },
       "openOutlook": "Outlook 열기"
     }
+  },
+  "auth": {
+    "save": "저장",
+    "logout": "로그아웃",
+    "notLoggedIn": "로그인 안됨",
+    "mySignatures": "내 서명",
+    "noSignatures": "저장된 서명이 없습니다",
+    "signatureName": "서명 이름",
+    "saveNew": "새로 저장",
+    "load": "불러오기",
+    "freeLimitReached": "무료 플랜은 {limit}개까지. Pro로 업그레이드하면 무제한."
   },
   "gmail": {
     "instructions": "Gmail API를 사용하여 서명을 직접 설정합니다. Google Cloud Console에서 OAuth 2.0 클라이언트 ID를 생성해주세요.",

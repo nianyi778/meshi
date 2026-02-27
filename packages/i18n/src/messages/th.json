@@ -154,6 +154,7 @@
     "pngError": "ไม่สามารถส่งออก PNG ได้ โปรดลองอีกครั้ง",
     "copyError": "ไม่สามารถคัดลอกได้ โปรดตรวจสอบการตั้งค่าเบราว์เซอร์",
     "setEmail": "ตั้งค่าในอีเมล",
+    "downloadHtm": "ดาวน์โหลด Outlook .htm",
     "guide": {
       "gmail": {
         "step1": "คลิกปุ่ม 'คัดลอก HTML' ด้านล่าง",
@@ -175,6 +176,17 @@
       },
       "openOutlook": "เปิด Outlook"
     }
+  },
+  "auth": {
+    "save": "บันทึก",
+    "logout": "ออกจากระบบ",
+    "notLoggedIn": "ยังไม่เข้าสู่ระบบ",
+    "mySignatures": "ลายเซ็นของฉัน",
+    "noSignatures": "ไม่มีลายเซ็นที่บันทึกไว้",
+    "signatureName": "ชื่อลายเซ็น",
+    "saveNew": "บันทึกใหม่",
+    "load": "โหลด",
+    "freeLimitReached": "แผนฟรีรองรับ {limit} รายการ อัปเกรดเป็น Pro เพื่อไม่จำกัด"
   },
   "gmail": {
     "instructions": "ใช้ Gmail API เพื่อตั้งค่าลายเซ็นโดยตรง สร้าง OAuth 2.0 Client ID ใน Google Cloud Console",

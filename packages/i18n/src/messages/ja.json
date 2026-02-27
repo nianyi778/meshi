@@ -154,6 +154,7 @@
     "pngError": "PNG出力に失敗しました。もう一度お試しください。",
     "copyError": "コピーに失敗しました。ブラウザの設定を確認してください。",
     "setEmail": "メールに設定",
+    "downloadHtm": "Outlook .htm をダウンロード",
     "guide": {
       "gmail": {
         "step1": "下の「HTMLをコピー」ボタンをクリックします。",
@@ -175,6 +176,17 @@
       },
       "openOutlook": "Outlookを開く"
     }
+  },
+  "auth": {
+    "save": "保存",
+    "logout": "ログアウト",
+    "notLoggedIn": "未ログイン",
+    "mySignatures": "マイ署名",
+    "noSignatures": "保存済みの署名はありません",
+    "signatureName": "署名の名前",
+    "saveNew": "新規保存",
+    "load": "読込",
+    "freeLimitReached": "無料プランは{limit}件まで。Proにアップグレードで無制限。"
   },
   "gmail": {
     "instructions": "Gmail APIを使用して署名を直接設定します。Google Cloud ConsoleでOAuth 2.0 クライアントIDを作成してください。",

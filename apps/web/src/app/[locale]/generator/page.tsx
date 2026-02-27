@@ -7,6 +7,8 @@ import { SignatureForm } from "@/components/form/signature-form";
 import { StylePanel } from "@/components/form/style-panel";
 import SignaturePreview from "@/components/signature/signature-preview";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { AuthButton } from "@/components/auth/auth-button";
+import { SignatureManager } from "@/components/auth/signature-manager";
 import { ArrowLeft, PenLine, Palette, Download, ClipboardCopy, Mail } from "lucide-react";
 
 const ExportPanel = lazy(() =>
@@ -45,7 +47,10 @@ export default function GeneratorPage() {
               </span>
             </div>
           </div>
-          <LanguageSwitcher />
+          <div className="flex items-center gap-3">
+            <AuthButton />
+            <LanguageSwitcher />
+          </div>
         </div>
       </header>
 
@@ -82,6 +87,10 @@ export default function GeneratorPage() {
           {/* Tab Content */}
           <div className="flex-1 overflow-y-auto rounded-2xl border border-[var(--color-brand-border)] bg-white p-5 shadow-sm lg:max-h-[calc(100vh-160px)] lg:p-6">
             {activeTab === "data" ? <SignatureForm /> : <StylePanel />}
+            {/* Cloud Signature Manager */}
+            <div className="mt-6 border-t border-[var(--color-brand-border)] pt-5">
+              <SignatureManager />
+            </div>
           </div>
         </aside>
 

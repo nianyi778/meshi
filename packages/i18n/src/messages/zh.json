@@ -154,6 +154,7 @@
     "pngError": "PNG生成失败。请重试。",
     "copyError": "复制失败。请检查浏览器设置。",
     "setEmail": "设置到邮箱",
+    "downloadHtm": "下载 Outlook .htm",
     "guide": {
       "gmail": {
         "step1": "点击下方「复制 HTML」按钮。",
@@ -175,6 +176,17 @@
       },
       "openOutlook": "打开 Outlook"
     }
+  },
+  "auth": {
+    "save": "保存",
+    "logout": "退出",
+    "notLoggedIn": "未登录",
+    "mySignatures": "我的签名",
+    "noSignatures": "暂无已保存的签名",
+    "signatureName": "签名名称",
+    "saveNew": "新建保存",
+    "load": "加载",
+    "freeLimitReached": "免费版最多{limit}套，升级 Pro 版可无限使用。"
   },
   "gmail": {
     "instructions": "使用Gmail API直接设置签名。请在Google Cloud Console中创建OAuth 2.0客户端ID。",

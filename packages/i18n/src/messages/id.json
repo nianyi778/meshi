@@ -154,6 +154,7 @@
     "pngError": "Tidak dapat mengekspor PNG. Silakan coba lagi.",
     "copyError": "Tidak dapat menyalin. Periksa pengaturan browser Anda.",
     "setEmail": "Atur di Email",
+    "downloadHtm": "Unduh Outlook .htm",
     "guide": {
       "gmail": {
         "step1": "Klik tombol 'Salin HTML' di bawah.",
@@ -175,6 +176,17 @@
       },
       "openOutlook": "Buka Outlook"
     }
+  },
+  "auth": {
+    "save": "Simpan",
+    "logout": "Keluar",
+    "notLoggedIn": "Belum masuk",
+    "mySignatures": "Tanda Tangan Saya",
+    "noSignatures": "Belum ada tanda tangan tersimpan",
+    "signatureName": "Nama tanda tangan",
+    "saveNew": "Simpan baru",
+    "load": "Muat",
+    "freeLimitReached": "Paket gratis hanya {limit} tanda tangan. Upgrade ke Pro untuk tak terbatas."
   },
   "gmail": {
     "instructions": "Gunakan Gmail API untuk mengatur tanda tangan secara langsung. Buat OAuth 2.0 Client ID di Google Cloud Console.",

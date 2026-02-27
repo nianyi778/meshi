@@ -471,3 +471,27 @@ export async function generateGmailHtml(data: SignatureData, style: SignatureSty
   const generator = TEMPLATE_GENERATORS[style.templateId];
   return generator(data, style, qrDataUrl);
 }
+
+// ============================================
+// Outlook .htm Export
+// ============================================
+
+export async function downloadOutlookHtm(data: SignatureData, style: SignatureStyle): Promise<void> {
+  const html = await generateGmailHtml(data, style);
+  const fullHtml = `<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+${html}
+</body>
+</html>`;
+  const blob = new Blob([fullHtml], { type: "text/html;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `meishi-outlook-signature-${Date.now()}.htm`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}

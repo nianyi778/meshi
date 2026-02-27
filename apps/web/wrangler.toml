@@ -8,3 +8,9 @@ assets = { directory = "dist/client", binding = "ASSETS" }
 routes = [
   { pattern = "dashboard.ekagu.qzz.io/*", zone_id = "ba7addf8cd2b762faf687c98b2053f2c" }
 ]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "meishi-db"
+database_id = "REPLACE_WITH_ACTUAL_ID"
+migrations_dir = "drizzle/migrations"
