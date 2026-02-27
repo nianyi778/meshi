@@ -6,7 +6,8 @@
     "dev": "turbo run dev",
     "dev:web": "turbo run dev --filter=@meishi/web",
     "dev:landing": "turbo run dev --filter=@meishi/landing",
-    "lint": "turbo run lint",
+    "dev:landing": "turbo run dev --filter=@meishi/landing",
+    "dev:admin": "turbo run dev --filter=@meishi/admin",
     "type-check": "turbo run type-check",
     "format": "prettier --write \"**/*.{ts,tsx,md,json,css}\"",
     "clean": "turbo run clean && rm -rf node_modules"
