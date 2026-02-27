@@ -14,12 +14,12 @@
   "metadata": {
     "web": {
       "title": "Meishi — 免费创建专业邮件签名",
-      "description": "30秒内创建专业邮件签名。5个模板、完全自定义、支持PNG、HTML和Gmail。完全免费。",
+      "description": "30秒内创建专业邮件签名。7个模板、完全自定义、支持PNG、HTML和Gmail。完全免费。",
       "keywords": "邮件签名,名片,Gmail签名,专业签名,邮件模板"
     },
     "landing": {
       "title": "Meishi — 邮件签名，如此专业。",
-      "description": "30秒内创建专业邮件签名。5个模板、完全自定义、支持PNG、HTML和Gmail。完全免费。"
+      "description": "30秒内创建专业邮件签名。7个模板、完全自定义、支持PNG、HTML和Gmail。完全免费。"
     }
   },
   "generator": {
@@ -217,7 +217,7 @@
       "subtitle": "拥有创建出众邮件签名所需的所有功能。",
       "items": {
         "templates": {
-          "title": "5个专业模板",
+          "title": "7个专业模板",
           "description": "经典、现代、极简、企业、优雅。找到适合您品牌的完美风格。"
         },
         "customization": {
@@ -248,7 +248,7 @@
       "steps": {
         "step1": {
           "title": "选择模板",
-          "description": "从5个专业模板中选择符合您风格的设计。"
+          "description": "从7个专业模板中选择符合您风格的设计。"
         },
         "step2": {
           "title": "填写信息",
@@ -262,7 +262,7 @@
     },
     "templatesShowcase": {
       "title": "适合各种风格的模板",
-      "subtitle": "从5个专业模板中选择。所有模板都可完全自定义以匹配您的品牌。"
+      "subtitle": "从7个专业模板中选择。所有模板都可完全自定义以匹配您的品牌。"
     },
     "cta": {
       "title": "让您的邮件签名更加专业。",

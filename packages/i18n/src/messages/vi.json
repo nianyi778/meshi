@@ -14,12 +14,12 @@
   "metadata": {
     "web": {
       "title": "Meishi (メシ) — Tạo chữ ký email chuyên nghiệp miễn phí",
-      "description": "Tạo chữ ký email chuyên nghiệp trong 30 giây. 5 mẫu, tùy chỉnh đầy đủ, hỗ trợ PNG, HTML và Gmail. Hoàn toàn miễn phí.",
+      "description": "Tạo chữ ký email chuyên nghiệp trong 30 giây. 7 mẫu, tùy chỉnh đầy đủ, hỗ trợ PNG, HTML và Gmail. Hoàn toàn miễn phí.",
       "keywords": "chữ ký email,danh thiếp,thẻ kinh doanh,chữ ký Gmail,email signature"
     },
     "landing": {
       "title": "Meishi (メシ) — Danh thiếp trong email của bạn",
-      "description": "Tạo chữ ký email chuyên nghiệp trong 30 giây. 5 mẫu, tùy chỉnh đầy đủ, hỗ trợ PNG, HTML và Gmail. Hoàn toàn miễn phí."
+      "description": "Tạo chữ ký email chuyên nghiệp trong 30 giây. 7 mẫu, tùy chỉnh đầy đủ, hỗ trợ PNG, HTML và Gmail. Hoàn toàn miễn phí."
     }
   },
   "generator": {
@@ -217,7 +217,7 @@
       "subtitle": "Có tất cả các tính năng cần thiết cho chữ ký chuyên nghiệp.",
       "items": {
         "templates": {
-          "title": "5 mẫu đa dạng",
+          "title": "7 mẫu đa dạng",
           "description": "Cổ điển, Hiện đại, Tối giản, Công ty, Thanh lịch. Chọn mẫu phù hợp với phong cách của bạn."
         },
         "customization": {
@@ -248,7 +248,7 @@
       "steps": {
         "step1": {
           "title": "Chọn mẫu",
-          "description": "Chọn thiết kế yêu thích từ 5 mẫu chuyên nghiệp."
+          "description": "Chọn thiết kế yêu thích từ 7 mẫu chuyên nghiệp."
         },
         "step2": {
           "title": "Nhập thông tin",
@@ -262,7 +262,7 @@
     },
     "templatesShowcase": {
       "title": "Mẫu phù hợp với phong cách của bạn",
-      "subtitle": "Chọn từ 5 mẫu chuyên nghiệp. Tùy chỉnh đầy đủ cho tất cả."
+      "subtitle": "Chọn từ 7 mẫu chuyên nghiệp. Tùy chỉnh đầy đủ cho tất cả."
     },
     "cta": {
       "title": "Làm cho chữ ký email của bạn chuyên nghiệp hơn",

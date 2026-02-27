@@ -14,12 +14,12 @@
   "metadata": {
     "web": {
       "title": "Meishi (メシ) — Buat Tanda Tangan Email Profesional Gratis",
-      "description": "Buat tanda tangan email profesional dalam 30 detik. 5 template, kustomisasi penuh, dukungan PNG, HTML, dan Gmail. Sepenuhnya gratis.",
+      "description": "Buat tanda tangan email profesional dalam 30 detik. 7 template, kustomisasi penuh, dukungan PNG, HTML, dan Gmail. Sepenuhnya gratis.",
       "keywords": "tanda tangan email,kartu nama,kartu bisnis,tanda tangan Gmail,email signature"
     },
     "landing": {
       "title": "Meishi (メシ) — Kartu Nama di Email Anda",
-      "description": "Buat tanda tangan email profesional dalam 30 detik. 5 template, kustomisasi penuh, dukungan PNG, HTML, dan Gmail. Sepenuhnya gratis."
+      "description": "Buat tanda tangan email profesional dalam 30 detik. 7 template, kustomisasi penuh, dukungan PNG, HTML, dan Gmail. Sepenuhnya gratis."
     }
   },
   "generator": {
@@ -248,7 +248,7 @@
       "steps": {
         "step1": {
           "title": "Pilih Template",
-          "description": "Pilih desain favorit Anda dari 5 template profesional."
+          "description": "Pilih desain favorit Anda dari 7 template profesional."
         },
         "step2": {
           "title": "Masukkan Informasi",
@@ -262,7 +262,7 @@
     },
     "templatesShowcase": {
       "title": "Template yang Sesuai dengan Gaya Anda",
-      "subtitle": "Pilih dari 5 template profesional. Semuanya dapat dikustomisasi sepenuhnya."
+      "subtitle": "Pilih dari 7 template profesional. Semuanya dapat dikustomisasi sepenuhnya."
     },
     "cta": {
       "title": "Buat Tanda Tangan Email Anda Lebih Profesional",

@@ -14,12 +14,12 @@
   "metadata": {
     "web": {
       "title": "Meishi — Create Professional Email Signatures for Free",
-      "description": "Create a professional email signature in 30 seconds. 5 templates, full customization, PNG, HTML & Gmail support. Completely free.",
+      "description": "Create a professional email signature in 30 seconds. 7 templates, full customization, PNG, HTML & Gmail support. Completely free.",
       "keywords": "email signature,business card,Gmail signature,professional signature,email template"
     },
     "landing": {
       "title": "Meishi — Your email signature, perfected.",
-      "description": "Create a professional email signature in 30 seconds. 5 templates, full customization, PNG, HTML & Gmail support. Completely free."
+      "description": "Create a professional email signature in 30 seconds. 7 templates, full customization, PNG, HTML & Gmail support. Completely free."
     }
   },
   "generator": {
@@ -217,7 +217,7 @@
       "subtitle": "All the features you need to create a standout email signature.",
       "items": {
         "templates": {
-          "title": "5 Professional Templates",
+          "title": "7 Professional Templates",
           "description": "Classic, Modern, Minimal, Corporate, Elegant. Find the perfect style for your brand."
         },
         "customization": {
@@ -248,7 +248,7 @@
       "steps": {
         "step1": {
           "title": "Choose a template",
-          "description": "Select from 5 professional templates that match your style."
+          "description": "Select from 7 professional templates that match your style."
         },
         "step2": {
           "title": "Enter your information",
@@ -262,7 +262,7 @@
     },
     "templatesShowcase": {
       "title": "Templates for every style",
-      "subtitle": "Choose from 5 professional templates. All fully customizable to match your brand."
+      "subtitle": "Choose from 7 professional templates. All fully customizable to match your brand."
     },
     "cta": {
       "title": "Make your email signature more professional.",
