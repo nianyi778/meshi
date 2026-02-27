@@ -30,7 +30,8 @@
     },
     "preview": "プレビュー",
     "previewDesktop": "デスクトップ",
-    "previewMobile": "モバイル"
+    "previewMobile": "モバイル",
+    "newMessage": "新規メッセージ"
   },
   "form": {
     "sections": {
@@ -155,6 +156,7 @@
     "copyError": "コピーに失敗しました。ブラウザの設定を確認してください。",
     "setEmail": "メールに設定",
     "downloadHtm": "Outlook .htm をダウンロード",
+    "pngCompatibility": "PNG は Gmail / Outlook 両対応",
     "guide": {
       "gmail": {
         "step1": "下の「HTMLをコピー」ボタンをクリックします。",
@@ -281,7 +283,14 @@
     },
     "templatesShowcase": {
       "title": "あなたのスタイルに合ったテンプレート",
-      "subtitle": "7種類のプロフェッショナルなテンプレートから選べます。すべてフルカスタマイズ対応。"
+      "subtitle": "7種類のプロフェッショナルなテンプレートから選べます。すべてフルカスタマイズ対応。",
+      "useTemplate": "このテンプレートで作成 →"
+    },
+    "socialProof": {
+      "templates": "テンプレート",
+      "creationTime": "秒で作成",
+      "cost": "永久無料",
+      "languages": "対応言語"
     },
     "cta": {
       "title": "メール署名を、もっとプロフェッショナルに。",

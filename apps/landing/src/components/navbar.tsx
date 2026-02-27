@@ -13,10 +13,9 @@ export function Navbar() {
   const locale = useLocale();
 
   const bgOpacity = useTransform(scrollY, [0, 80], [0, 1]);
-  const borderOpacity = useTransform(scrollY, [0, 80], [0, 0.12]);
+  const borderOpacity = useTransform(scrollY, [0, 80], [0, 0.15]);
   const blur = useTransform(scrollY, [0, 80], [0, 20]);
   const navY = useTransform(scrollY, [0, 80], [8, 0]);
-  const navScale = useTransform(scrollY, [0, 80], [0.98, 1]);
 
   const closeMobile = useCallback(() => setMobileOpen(false), []);
 
@@ -30,54 +29,47 @@ export function Navbar() {
     <>
       <motion.header
         className="fixed top-0 right-0 left-0 z-50"
-        style={{
-          y: navY,
-        }}
+        style={{ y: navY }}
       >
-        <motion.div
-          className="mx-auto max-w-6xl px-4 pt-3 lg:px-6"
-          style={{ scale: navScale }}
-        >
+        <motion.div className="mx-auto max-w-6xl px-4 pt-3 lg:px-6">
           <motion.nav
             className="flex h-14 items-center justify-between rounded-2xl px-5 lg:px-6"
             style={{
               backgroundColor: useTransform(
                 bgOpacity,
-                (v) => `rgba(255,255,255,${v * 0.88})`
+                (v) => `rgba(15,23,42,${v * 0.95})`
               ),
               backdropFilter: useTransform(blur, (v) => `blur(${v}px)`),
               WebkitBackdropFilter: useTransform(blur, (v) => `blur(${v}px)`),
               boxShadow: useTransform(
                 bgOpacity,
                 (v) =>
-                  `0 1px 3px rgba(12,74,110,${v * 0.04}), 0 8px 24px rgba(14,165,233,${v * 0.06})`
+                  `0 1px 3px rgba(0,0,0,${v * 0.1}), 0 8px 24px rgba(0,0,0,${v * 0.15})`
               ),
               border: useTransform(
                 borderOpacity,
-                (v) => `1px solid rgba(14,165,233,${v})`
+                (v) => `1px solid rgba(200,164,78,${v})`
               ),
             }}
           >
             {/* Logo */}
             <a
               href={`/${locale}`}
-              className="flex items-center gap-2 no-underline cursor-pointer"
+              className="flex items-center gap-2.5 no-underline cursor-pointer"
             >
               <span
-                className="text-lg font-extrabold tracking-tight"
-                style={{
-                  fontFamily: "var(--font-heading)",
-                  color: "var(--color-brand-text)",
-                }}
+                className="text-lg font-extrabold tracking-tight text-white"
+                style={{ fontFamily: "var(--font-display)" }}
               >
                 Meishi
               </span>
               <span
-                className="rounded-md px-1.5 py-0.5 text-[10px] font-bold tracking-wide"
-                style={{
-                  backgroundColor: "var(--color-brand-primary)",
-                  color: "#fff",
-                }}
+                className="h-4 w-px"
+                style={{ backgroundColor: "var(--color-brand-accent)" }}
+              />
+              <span
+                className="text-sm font-medium tracking-wider text-white/70"
+                style={{ fontFamily: "var(--font-heading)" }}
               >
                 名刺
               </span>
@@ -89,11 +81,8 @@ export function Navbar() {
                 <li key={href}>
                   <a
                     href={href}
-                    className="relative text-[13px] font-medium cursor-pointer transition-colors duration-200 hover:opacity-80"
-                    style={{
-                      color: "var(--color-brand-text-body)",
-                      fontFamily: "var(--font-sans)",
-                    }}
+                    className="relative text-[13px] font-medium cursor-pointer transition-colors duration-200 text-white/60 hover:text-white"
+                    style={{ fontFamily: "var(--font-sans)" }}
                   >
                     {label}
                   </a>
@@ -106,9 +95,10 @@ export function Navbar() {
               {/* Desktop CTA */}
               <a
                 href={`https://dashboard.ekagu.qzz.io/${locale}/generator`}
-                className="group items-center gap-1.5 rounded-xl px-4 py-2 text-[13px] font-bold text-white shadow-sm transition-all duration-200 hover:shadow-md inline-flex cursor-pointer"
+                className="group inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-[13px] font-bold shadow-sm transition-all duration-200 hover:shadow-md cursor-pointer"
                 style={{
                   backgroundColor: "var(--color-brand-cta)",
+                  color: "var(--color-brand-dark)",
                   fontFamily: "var(--font-sans)",
                 }}
                 onMouseEnter={(e) => {
@@ -130,8 +120,7 @@ export function Navbar() {
             {/* Mobile hamburger */}
             <button
               type="button"
-              className="inline-flex items-center justify-center rounded-lg p-2 cursor-pointer md:hidden transition-colors duration-200"
-              style={{ color: "var(--color-brand-text)" }}
+              className="inline-flex items-center justify-center rounded-lg p-2 cursor-pointer md:hidden transition-colors duration-200 text-white/80"
               onClick={() => setMobileOpen((o) => !o)}
               aria-label={t("common.openMenu")}
             >
@@ -148,7 +137,10 @@ export function Navbar() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-40 md:hidden"
-          style={{ backgroundColor: "rgba(240,249,255,0.97)", backdropFilter: "blur(20px)" }}
+          style={{
+            backgroundColor: "rgba(15,23,42,0.97)",
+            backdropFilter: "blur(20px)",
+          }}
         >
           <div className="flex h-full flex-col items-center justify-center gap-10">
             {NAV_LINKS.map(({ label, href }) => (
@@ -156,20 +148,16 @@ export function Navbar() {
                 key={href}
                 href={href}
                 onClick={closeMobile}
-                className="text-2xl font-semibold cursor-pointer transition-colors duration-200"
-                style={{
-                  color: "var(--color-brand-text)",
-                  fontFamily: "var(--font-heading)",
-                }}
+                className="text-2xl font-semibold cursor-pointer transition-colors duration-200 text-white/80 hover:text-white"
+                style={{ fontFamily: "var(--font-heading)" }}
               >
                 {label}
               </a>
             ))}
 
-            {/* Decorative line */}
             <div
               className="h-px w-12"
-              style={{ backgroundColor: "var(--color-brand-border)" }}
+              style={{ backgroundColor: "var(--color-brand-accent)" }}
             />
 
             <LanguageSwitcher />
@@ -177,8 +165,11 @@ export function Navbar() {
             <a
               href={`https://dashboard.ekagu.qzz.io/${locale}/generator`}
               onClick={closeMobile}
-              className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-base font-bold text-white cursor-pointer shadow-lg transition-all duration-200"
-              style={{ backgroundColor: "var(--color-brand-cta)" }}
+              className="inline-flex items-center gap-2 rounded-lg px-7 py-3.5 text-base font-bold cursor-pointer shadow-lg transition-all duration-200"
+              style={{
+                backgroundColor: "var(--color-brand-cta)",
+                color: "var(--color-brand-dark)",
+              }}
             >
               {t("common.createNow")}
               <ArrowRight size={17} />

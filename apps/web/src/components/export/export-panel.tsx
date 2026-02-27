@@ -60,7 +60,7 @@ export function ExportPanel() {
         <button
           onClick={handlePngExport}
           disabled={pngLoading}
-          className="col-span-2 flex items-center justify-center gap-2.5 rounded-xl bg-[var(--color-brand-cta)] px-8 py-3 text-sm font-semibold text-white shadow-sm shadow-[var(--color-brand-cta)]/20 transition-all duration-150 hover:bg-[var(--color-brand-cta-hover)] hover:shadow-md hover:shadow-[var(--color-brand-cta)]/25 active:scale-[0.98] disabled:opacity-50 cursor-pointer sm:col-span-1"
+          className="col-span-2 flex items-center justify-center gap-2.5 rounded-xl bg-[var(--color-brand-cta)] px-8 py-3 text-sm font-semibold text-[var(--color-brand-dark)] shadow-sm shadow-[var(--color-brand-cta)]/20 transition-all duration-150 hover:bg-[var(--color-brand-cta-hover)] hover:shadow-md hover:shadow-[var(--color-brand-cta)]/25 active:scale-[0.98] disabled:opacity-50 cursor-pointer sm:col-span-1"
         >
           {pngLoading ? (
             <Loader2 className="h-4 w-4 animate-spin" />
@@ -74,7 +74,7 @@ export function ExportPanel() {
         {/* Copy HTML — Secondary */}
         <button
           onClick={handleCopyHtml}
-          className="flex items-center justify-center gap-2.5 rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-5 py-2.5 text-sm font-semibold text-[var(--color-brand-text-body)] shadow-sm transition-all duration-150 hover:border-[var(--color-brand-primary)]/40 hover:bg-[var(--color-brand-bg)] hover:shadow-md active:scale-[0.98] cursor-pointer"
+          className="flex items-center justify-center gap-2.5 rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-5 py-2.5 text-sm font-semibold text-[var(--color-brand-text-body)] shadow-sm transition-all duration-150 hover:border-[var(--color-brand-accent)]/40 hover:bg-[var(--color-brand-bg)] hover:shadow-md active:scale-[0.98] cursor-pointer"
         >
           {copySuccess ? (
             <>
@@ -94,8 +94,8 @@ export function ExportPanel() {
           onClick={() => { const next = !showGuide; setShowGuide(next); if (next) posthog?.capture("email_guide_opened", { template: style.templateId }); }}
           className={`flex items-center justify-center gap-2.5 rounded-xl border px-5 py-2.5 text-sm font-semibold shadow-sm transition-all duration-150 active:scale-[0.98] cursor-pointer ${
             showGuide
-              ? "border-[var(--color-brand-primary)] bg-[var(--color-brand-primary)]/5 text-[var(--color-brand-primary)] shadow-[var(--color-brand-primary)]/10"
-              : "border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] text-[var(--color-brand-text-body)] hover:border-[var(--color-brand-primary)]/30 hover:bg-[var(--color-brand-bg)] hover:shadow-md"
+              ? "border-[var(--color-brand-accent)] bg-[var(--color-brand-accent)]/5 text-[var(--color-brand-accent)] shadow-[var(--color-brand-accent)]/10"
+              : "border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] text-[var(--color-brand-text-body)] hover:border-[var(--color-brand-accent)]/30 hover:bg-[var(--color-brand-bg)] hover:shadow-md"
           }`}
         >
           <Mail className="h-4 w-4" />
@@ -106,13 +106,13 @@ export function ExportPanel() {
         <button
           onClick={async () => { setHtmLoading(true); try { await downloadOutlookHtm(data, style); posthog?.capture("export_clicked", { format: "htm", template: style.templateId }); } finally { setHtmLoading(false); } }}
           disabled={htmLoading}
-          className="flex items-center justify-center gap-2.5 rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-5 py-2.5 text-sm font-semibold text-[var(--color-brand-text-body)] shadow-sm transition-all duration-150 hover:border-[var(--color-brand-primary)]/30 hover:bg-[var(--color-brand-bg)] hover:shadow-md active:scale-[0.98] cursor-pointer"
+          className="flex items-center justify-center gap-2.5 rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-5 py-2.5 text-sm font-semibold text-[var(--color-brand-text-body)] shadow-sm transition-all duration-150 hover:border-[var(--color-brand-accent)]/30 hover:bg-[var(--color-brand-bg)] hover:shadow-md active:scale-[0.98] cursor-pointer"
         >
           {htmLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <FileDown className="h-4 w-4" />}
           {t("export.downloadHtm")}
         </button>
       </div>
-      <p className="text-[11px] text-[var(--color-brand-text-muted)]">PNG は Gmail / Outlook 両対応</p>
+      <p className="text-[11px] text-[var(--color-brand-text-muted)]">{t("export.pngCompatibility")}</p>
 
       {/* Email Client Guide Panel */}
       {showGuide && (

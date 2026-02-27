@@ -16,58 +16,35 @@ export function CTASection() {
 
   return (
     <section
-      className="relative overflow-hidden py-28 md:py-36"
+      className="relative overflow-hidden py-24 md:py-32"
       style={{
         background:
           "linear-gradient(180deg, #fff 0%, var(--color-brand-bg) 30%, var(--color-brand-bg) 70%, #fff 100%)",
       }}
     >
-      {/* Japanese-inspired concentric circles */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <div
-          className="h-[600px] w-[600px] rounded-full opacity-[0.035]"
-          style={{
-            border: "1px solid var(--color-brand-primary)",
-          }}
-        />
-      </div>
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <div
-          className="h-[440px] w-[440px] rounded-full opacity-[0.04]"
-          style={{
-            border: "1px solid var(--color-brand-primary)",
-          }}
-        />
-      </div>
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <div
-          className="h-[280px] w-[280px] rounded-full opacity-[0.05]"
-          style={{
-            border: "1px solid var(--color-brand-primary)",
-          }}
-        />
+      {/* Decorative watermark */}
+      <div
+        className="pointer-events-none absolute top-1/2 left-8 -translate-y-1/2 select-none text-[180px] font-bold leading-none opacity-[0.015] hidden lg:block"
+        style={{
+          fontFamily: "var(--font-heading)",
+          color: "var(--color-brand-primary)",
+        }}
+      >
+        名刺
       </div>
 
-      {/* Subtle dot grid */}
+      {/* Gold decorative lines */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.015]"
-        style={{
-          backgroundImage:
-            "radial-gradient(var(--color-brand-primary) 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-        }}
+        className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-px w-48"
+        style={{ backgroundColor: "var(--color-brand-accent)", opacity: 0.3 }}
       />
 
       <div className="relative mx-auto max-w-3xl px-5 text-center lg:px-8">
         <FadeInUp>
-          {/* Decorative dash */}
-          <div
-            className="mx-auto mb-8 h-px w-16"
-            style={{ backgroundColor: "var(--color-brand-primary)" }}
-          />
+          <div className="mx-auto mb-6 h-px w-12" style={{ backgroundColor: "var(--color-brand-accent)" }} />
 
           <h2
-            className="text-3xl font-extrabold md:text-4xl"
+            className="text-3xl font-bold md:text-4xl"
             style={{
               fontFamily: "var(--font-heading)",
               color: "var(--color-brand-text)",
@@ -95,18 +72,18 @@ export function CTASection() {
           <div className="mt-10">
             <a
               href={`https://dashboard.ekagu.qzz.io/${locale}/generator`}
-              className="group inline-flex items-center gap-2.5 rounded-2xl px-9 py-4 text-base font-bold text-white shadow-xl transition-all duration-200 hover:shadow-2xl cursor-pointer"
+              className="group inline-flex items-center gap-2.5 rounded-2xl px-9 py-4 text-base font-bold shadow-xl transition-all duration-200 hover:shadow-2xl cursor-pointer"
               style={{
                 backgroundColor: "var(--color-brand-cta)",
+                color: "var(--color-brand-dark)",
                 fontFamily: "var(--font-sans)",
+                boxShadow: "0 8px 32px rgba(200,164,78,0.25)",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor =
-                  "var(--color-brand-cta-hover)";
+                e.currentTarget.style.boxShadow = "0 8px 40px rgba(200,164,78,0.4)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor =
-                  "var(--color-brand-cta)";
+                e.currentTarget.style.boxShadow = "0 8px 32px rgba(200,164,78,0.25)";
               }}
             >
               {t("landing.cta.button")}
@@ -132,7 +109,7 @@ export function CTASection() {
                 <Check
                   size={15}
                   strokeWidth={2.5}
-                  style={{ color: "var(--color-brand-primary)" }}
+                  style={{ color: "var(--color-brand-accent)" }}
                 />
                 {signal}
               </span>

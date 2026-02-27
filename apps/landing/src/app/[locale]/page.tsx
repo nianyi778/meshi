@@ -2,12 +2,13 @@ import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
+import { SocialProof } from "@/components/social-proof";
 import { Features } from "@/components/features";
-import { HowItWorks } from "@/components/how-it-works";
 import { TemplatesShowcase } from "@/components/templates-showcase";
+import { HowItWorks } from "@/components/how-it-works";
+import { CompareSection } from "@/components/compare-section";
 import { CTASection } from "@/components/cta-section";
 import { FAQ } from "@/components/faq";
-import { CompareSection } from "@/components/compare-section";
 import { Footer } from "@/components/footer";
 
 export function generateStaticParams() {
@@ -27,10 +28,11 @@ export default async function LandingPage({
       <Navbar />
       <main>
         <Hero />
+        <SocialProof />
         <Features />
-        <CompareSection />
-        <HowItWorks />
         <TemplatesShowcase />
+        <HowItWorks />
+        <CompareSection />
         <CTASection />
         <FAQ />
       </main>

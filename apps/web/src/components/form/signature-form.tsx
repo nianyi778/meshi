@@ -99,7 +99,7 @@ function FieldRow({
             value={value}
             placeholder={t(`form.placeholders.${field}`)}
             onChange={(e) => onValueChange(e.target.value)}
-            className="border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] transition-all duration-200 placeholder:text-[var(--color-brand-text-muted)]/50 focus:border-[var(--color-brand-primary)] focus:ring-2 focus:ring-[var(--color-brand-primary)]/10"
+            className="border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] transition-all duration-200 placeholder:text-[var(--color-brand-text-muted)]/50 focus:border-[var(--color-brand-accent)] focus:ring-2 focus:ring-[var(--color-brand-accent)]/15"
           />
         </div>
         <div className="mt-6 flex items-center gap-1">
@@ -109,8 +109,8 @@ function FieldRow({
               onClick={() => setShowUtm(!showUtm)}
               className={`shrink-0 rounded-md px-2 py-1 text-[10px] font-bold tracking-wide border transition-colors cursor-pointer ${
                 showUtm
-                  ? "border-[var(--color-brand-primary)] text-[var(--color-brand-primary)] bg-[var(--color-brand-primary)]/5"
-                  : "border-[var(--color-brand-border)] text-[var(--color-brand-text-muted)] hover:border-[var(--color-brand-primary)] hover:text-[var(--color-brand-primary)]"
+                  ? "border-[var(--color-brand-accent)] text-[var(--color-brand-accent)] bg-[var(--color-brand-accent)]/5"
+                  : "border-[var(--color-brand-border)] text-[var(--color-brand-text-muted)] hover:border-[var(--color-brand-accent)] hover:text-[var(--color-brand-accent)]"
               }`}
             >
               UTM
@@ -122,7 +122,7 @@ function FieldRow({
             title={visible ? t("common.hide") : t("common.show")}
             className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-150 cursor-pointer ${
               visible
-                ? "bg-[var(--color-brand-primary)]/10 text-[var(--color-brand-primary)]"
+                ? "bg-[var(--color-brand-accent)]/10 text-[var(--color-brand-accent)]"
                 : "bg-[var(--color-brand-surface-alt)] text-[var(--color-brand-text-muted)] opacity-50"
             }`}
           >
@@ -225,7 +225,7 @@ function LogoUpload({
           title={visible ? t("common.hide") : t("common.show")}
           className={`flex h-8 w-8 items-center justify-center rounded-full transition-all duration-150 cursor-pointer ${
             visible
-              ? "bg-[var(--color-brand-primary)]/10 text-[var(--color-brand-primary)]"
+              ? "bg-[var(--color-brand-accent)]/10 text-[var(--color-brand-accent)]"
               : "bg-[var(--color-brand-surface-alt)] text-[var(--color-brand-text-muted)] opacity-50"
           }`}
         >
@@ -252,7 +252,7 @@ function LogoUpload({
         <button
           type="button"
           onClick={() => fileInputRef.current?.click()}
-          className="flex w-full items-center justify-center gap-2.5 rounded-xl border-2 border-dashed border-[var(--color-brand-border)] px-4 py-7 text-sm text-[var(--color-brand-text-muted)] transition-all duration-200 hover:border-[var(--color-brand-primary)]/40 hover:bg-[var(--color-brand-primary)]/5 hover:text-[var(--color-brand-text)] cursor-pointer"
+          className="flex w-full items-center justify-center gap-2.5 rounded-xl border-2 border-dashed border-[var(--color-brand-border)] px-4 py-7 text-sm text-[var(--color-brand-text-muted)] transition-all duration-200 hover:border-[var(--color-brand-accent)]/40 hover:bg-[var(--color-brand-accent)]/5 hover:text-[var(--color-brand-text)] cursor-pointer"
         >
           <Upload className="h-4 w-4" />
           {t("form.logoSelect")}
@@ -307,7 +307,7 @@ export function SignatureForm() {
       {SECTIONS.map((section, idx) => (
         <fieldset key={section.titleKey} className="space-y-4">
           <div className="flex items-center gap-3">
-            <legend className="border-l-[3px] border-[var(--color-brand-primary)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">
+            <legend className="border-l-[3px] border-[var(--color-brand-accent)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">
               {t(section.titleKey)}
             </legend>
             {idx === 0 && (
@@ -336,7 +336,7 @@ export function SignatureForm() {
       {/* ---------- Social Links ---------- */}
       <fieldset className="space-y-4">
         <div className="flex items-center justify-between">
-          <legend className="border-l-[3px] border-[var(--color-brand-primary)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">
+          <legend className="border-l-[3px] border-[var(--color-brand-accent)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">
             {t("form.sections.social")}
           </legend>
           <button
@@ -345,7 +345,7 @@ export function SignatureForm() {
             title={style.fieldVisibility.socialLinks ? t("common.hide") : t("common.show")}
             className={`flex h-8 w-8 items-center justify-center rounded-full transition-all duration-150 cursor-pointer ${
               style.fieldVisibility.socialLinks
-                ? "bg-[var(--color-brand-primary)]/10 text-[var(--color-brand-primary)]"
+                ? "bg-[var(--color-brand-accent)]/10 text-[var(--color-brand-accent)]"
                 : "bg-[var(--color-brand-surface-alt)] text-[var(--color-brand-text-muted)] opacity-50"
             }`}
           >
@@ -380,7 +380,7 @@ export function SignatureForm() {
                     );
                     updateField("socialLinks", next);
                   }}
-                  className="h-9 rounded-lg border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-2 text-xs text-[var(--color-brand-text)] transition-all duration-200 focus:border-[var(--color-brand-primary)] focus:ring-2 focus:ring-[var(--color-brand-primary)]/10"
+                  className="h-9 rounded-lg border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-2 text-xs text-[var(--color-brand-text)] transition-all duration-200 focus:border-[var(--color-brand-accent)] focus:ring-2 focus:ring-[var(--color-brand-accent)]/15"
                 >
                   {SOCIAL_PLATFORMS.map((p) => (
                     <option key={p.id} value={p.id}>{p.label}</option>
@@ -395,7 +395,7 @@ export function SignatureForm() {
                     );
                     updateField("socialLinks", next);
                   }}
-                  className="border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] transition-all duration-200 placeholder:text-[var(--color-brand-text-muted)]/50 focus:border-[var(--color-brand-primary)] focus:ring-2 focus:ring-[var(--color-brand-primary)]/10"
+                  className="border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] transition-all duration-200 placeholder:text-[var(--color-brand-text-muted)]/50 focus:border-[var(--color-brand-accent)] focus:ring-2 focus:ring-[var(--color-brand-accent)]/15"
                 />
                 <button
                   type="button"
@@ -421,7 +421,7 @@ export function SignatureForm() {
                 const next: SocialLink[] = [...data.socialLinks, { platform: "linkedin" as const, url: "" }];
                 updateField("socialLinks", next);
               }}
-              className="gap-1.5 rounded-lg border-[var(--color-brand-border)] text-[var(--color-brand-text-muted)] transition-all duration-200 hover:border-[var(--color-brand-primary)]/30 hover:text-[var(--color-brand-primary)] cursor-pointer"
+              className="gap-1.5 rounded-lg border-[var(--color-brand-border)] text-[var(--color-brand-text-muted)] transition-all duration-200 hover:border-[var(--color-brand-accent)]/30 hover:text-[var(--color-brand-accent)] cursor-pointer"
             >
               <Plus className="h-3.5 w-3.5" />
               {t("form.addSocial")}
@@ -433,7 +433,7 @@ export function SignatureForm() {
       {/* ---------- QR Code ---------- */}
       <fieldset className="space-y-4">
         <div className="flex items-center justify-between">
-          <legend className="border-l-[3px] border-[var(--color-brand-primary)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">
+          <legend className="border-l-[3px] border-[var(--color-brand-accent)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">
             {t("form.fields.qrCode")}
           </legend>
           <button
@@ -442,7 +442,7 @@ export function SignatureForm() {
             title={style.fieldVisibility.qrCode ? t("common.hide") : t("common.show")}
             className={`flex h-8 w-8 items-center justify-center rounded-full transition-all duration-150 cursor-pointer ${
               style.fieldVisibility.qrCode
-                ? "bg-[var(--color-brand-primary)]/10 text-[var(--color-brand-primary)]"
+                ? "bg-[var(--color-brand-accent)]/10 text-[var(--color-brand-accent)]"
                 : "bg-[var(--color-brand-surface-alt)] text-[var(--color-brand-text-muted)] opacity-50"
             }`}
           >
@@ -460,7 +460,7 @@ export function SignatureForm() {
       {/* ---------- Disclaimer ---------- */}
       <fieldset className="space-y-4">
         <div className="flex items-center justify-between">
-          <legend className="border-l-[3px] border-[var(--color-brand-primary)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">
+          <legend className="border-l-[3px] border-[var(--color-brand-accent)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">
             {t("form.sections.disclaimer")}
           </legend>
           <button
@@ -469,7 +469,7 @@ export function SignatureForm() {
             title={style.fieldVisibility.disclaimer ? t("common.hide") : t("common.show")}
             className={`flex h-8 w-8 items-center justify-center rounded-full transition-all duration-150 cursor-pointer ${
               style.fieldVisibility.disclaimer
-                ? "bg-[var(--color-brand-primary)]/10 text-[var(--color-brand-primary)]"
+                ? "bg-[var(--color-brand-accent)]/10 text-[var(--color-brand-accent)]"
                 : "bg-[var(--color-brand-surface-alt)] text-[var(--color-brand-text-muted)] opacity-50"
             }`}
           >
@@ -485,13 +485,13 @@ export function SignatureForm() {
           onChange={(e) => updateField("disclaimer", e.target.value)}
           placeholder={t("form.placeholders.disclaimer")}
           rows={3}
-          className="w-full rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-3.5 py-2.5 text-sm text-gray-700 placeholder:text-gray-400 transition-all duration-200 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 resize-none"
+          className="w-full rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-3.5 py-2.5 text-sm text-gray-700 placeholder:text-gray-400 transition-all duration-200 focus:border-[var(--color-brand-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-accent)]/15 resize-none"
         />
       </fieldset>
 
       {/* ---------- Logo ---------- */}
       <fieldset className="space-y-4">
-        <legend className="border-l-[3px] border-[var(--color-brand-primary)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">
+        <legend className="border-l-[3px] border-[var(--color-brand-accent)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">
           {t("form.sections.logo")}
         </legend>
         <LogoUpload

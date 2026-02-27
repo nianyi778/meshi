@@ -51,7 +51,7 @@ function ColorPicker({ label, value, onChange }: ColorPickerProps) {
         <Input
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="h-7 border-[var(--color-brand-border)] font-mono text-xs uppercase transition-all duration-200 focus:border-[var(--color-brand-primary)] focus:ring-2 focus:ring-[var(--color-brand-primary)]/10"
+          className="h-7 border-[var(--color-brand-border)] font-mono text-xs uppercase transition-all duration-200 focus:border-[var(--color-brand-accent)] focus:ring-2 focus:ring-[var(--color-brand-accent)]/10"
           maxLength={7}
         />
       </div>
@@ -186,7 +186,7 @@ export function StylePanel() {
     <div className="flex flex-col gap-10">
       {/* ===== Template selector ===== */}
       <section className="space-y-4">
-        <h3 className="border-l-[3px] border-[var(--color-brand-primary)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">{t("style.template")}</h3>
+        <h3 className="border-l-[3px] border-[var(--color-brand-accent)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">{t("style.template")}</h3>
         <div className="grid grid-cols-2 gap-3">
           {TEMPLATES.map((tpl) => {
             const isActive = style.templateId === tpl.id;
@@ -197,23 +197,23 @@ export function StylePanel() {
                 onClick={() => setTemplate(tpl.id)}
                 className={`group relative cursor-pointer rounded-xl border-2 p-2.5 text-left transition-all duration-200 ${
                   isActive
-                    ? "border-[var(--color-brand-primary)] bg-[var(--color-brand-primary)]/5 ring-2 ring-[var(--color-brand-primary)] ring-offset-2 shadow-sm shadow-[var(--color-brand-primary)]/10"
-                    : "border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] hover:border-[var(--color-brand-primary)]/30 hover:shadow-sm"
+                    ? "border-[var(--color-brand-accent)] bg-[var(--color-brand-accent)]/5 ring-2 ring-[var(--color-brand-accent)] ring-offset-2 shadow-sm shadow-[var(--color-brand-accent)]/10"
+                    : "border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] hover:border-[var(--color-brand-accent)]/30 hover:shadow-sm"
                 }`}
               >
                 {/* Checkmark badge */}
                 {isActive && (
-                  <div className="absolute top-1.5 right-1.5 z-10 flex h-5 w-5 items-center justify-center rounded-full bg-[var(--color-brand-primary)] shadow-sm">
+                  <div className="absolute top-1.5 right-1.5 z-10 flex h-5 w-5 items-center justify-center rounded-full bg-[var(--color-brand-accent)] shadow-sm">
                     <Check className="h-3 w-3 text-white" />
                   </div>
                 )}
                 {/* SVG thumbnail */}
-                <div className="mb-2 h-[72px] w-full overflow-hidden rounded-lg border border-[var(--color-brand-border)]/50 bg-white">
+                <div className="mb-2 h-[90px] w-full overflow-hidden rounded-lg border border-[var(--color-brand-border)]/50 bg-white">
                   {TEMPLATE_THUMBNAILS[tpl.id as TemplateId]}
                 </div>
                 {/* Template name */}
                 <span className={`block text-center text-xs font-semibold ${
-                  isActive ? "text-[var(--color-brand-primary)]" : "text-[var(--color-brand-text)]"
+                  isActive ? "text-[var(--color-brand-accent)]" : "text-[var(--color-brand-text)]"
                 }`}>
                   {t(`templates.${tpl.id}.name`)}
                 </span>
@@ -225,7 +225,7 @@ export function StylePanel() {
 
       {/* ===== Color customization ===== */}
       <section className="space-y-5">
-        <h3 className="border-l-[3px] border-[var(--color-brand-primary)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">{t("style.color")}</h3>
+        <h3 className="border-l-[3px] border-[var(--color-brand-accent)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">{t("style.color")}</h3>
 
         {/* Color presets */}
         <div className="space-y-2.5">
@@ -245,8 +245,8 @@ export function StylePanel() {
                   title={t(`colorPresets.${preset.key}`)}
                   className={`group/swatch relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border-2 transition-all duration-200 hover:scale-110 hover:shadow-md ${
                     isActive
-                      ? "border-[var(--color-brand-primary)] ring-2 ring-[var(--color-brand-primary)]/20 shadow-sm"
-                      : "border-[var(--color-brand-border)] hover:border-[var(--color-brand-primary)]/40"
+                      ? "border-[var(--color-brand-accent)] ring-2 ring-[var(--color-brand-accent)]/20 shadow-sm"
+                      : "border-[var(--color-brand-border)] hover:border-[var(--color-brand-accent)]/40"
                   }`}
                 >
                   <span
@@ -291,7 +291,7 @@ export function StylePanel() {
 
       {/* ===== Font family ===== */}
       <section className="space-y-4">
-        <h3 className="border-l-[3px] border-[var(--color-brand-primary)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">{t("style.font")}</h3>
+        <h3 className="border-l-[3px] border-[var(--color-brand-accent)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">{t("style.font")}</h3>
         <div className="space-y-2.5">
           <Label
             htmlFor="font-family-select"
@@ -303,7 +303,7 @@ export function StylePanel() {
             id="font-family-select"
             value={style.fontFamily}
             onChange={(e) => setFontFamily(e.target.value as FontFamily)}
-            className="flex h-10 w-full cursor-pointer rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-3 py-2 text-sm shadow-sm transition-all duration-200 focus-visible:border-[var(--color-brand-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-brand-primary)]/10"
+            className="flex h-10 w-full cursor-pointer rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-3 py-2 text-sm shadow-sm transition-all duration-200 focus-visible:border-[var(--color-brand-accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-brand-accent)]/10"
           >
             {FONT_FAMILIES.map((f) => (
               <option key={f.id} value={f.id}>
@@ -334,7 +334,7 @@ export function StylePanel() {
             step={1}
             value={style.fontSize}
             onChange={(e) => setFontSize(Number(e.target.value))}
-            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-[var(--color-brand-border)] accent-[var(--color-brand-primary)]"
+            className="h-2 w-full cursor-pointer appearance-none rounded-full bg-[var(--color-brand-border)] accent-[var(--color-brand-accent)]"
           />
           <div className="flex justify-between text-[10px] text-[var(--color-brand-text-muted)]">
             <span>12px</span>
@@ -345,7 +345,7 @@ export function StylePanel() {
 
       {/* ===== Border ===== */}
       <section className="space-y-4">
-        <h3 className="border-l-[3px] border-[var(--color-brand-primary)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">{t("style.border")}</h3>
+        <h3 className="border-l-[3px] border-[var(--color-brand-accent)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">{t("style.border")}</h3>
 
         <div className="space-y-2.5">
           <Label className="text-[11px] font-semibold tracking-wider text-[var(--color-brand-text-muted)] uppercase">
@@ -361,8 +361,8 @@ export function StylePanel() {
                   onClick={() => setBorderStyle(bs as BorderStyle)}
                   className={`cursor-pointer rounded-lg border px-3.5 py-2 text-xs font-semibold transition-all duration-200 ${
                     isActive
-                      ? "border-[var(--color-brand-primary)] bg-[var(--color-brand-primary)]/10 text-[var(--color-brand-primary)] shadow-sm"
-                      : "border-[var(--color-brand-border)] text-[var(--color-brand-text-muted)] hover:border-[var(--color-brand-primary)]/30 hover:text-[var(--color-brand-text)]"
+                      ? "border-[var(--color-brand-accent)] bg-[var(--color-brand-accent)]/10 text-[var(--color-brand-accent)] shadow-sm"
+                      : "border-[var(--color-brand-border)] text-[var(--color-brand-text-muted)] hover:border-[var(--color-brand-accent)]/30 hover:text-[var(--color-brand-text)]"
                   }`}
                 >
                   {t(`style.borderOptions.${bs}`)}

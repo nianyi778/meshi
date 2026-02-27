@@ -30,7 +30,8 @@
     },
     "preview": "Preview",
     "previewDesktop": "Desktop",
-    "previewMobile": "Mobile"
+    "previewMobile": "Mobile",
+    "newMessage": "New Message"
   },
   "form": {
     "sections": {
@@ -155,6 +156,7 @@
     "copyError": "Failed to copy. Please check your browser settings.",
     "setEmail": "Set in Email",
     "downloadHtm": "Download Outlook .htm",
+    "pngCompatibility": "PNG works with Gmail & Outlook",
     "guide": {
       "gmail": {
         "step1": "Click 'Copy HTML' below.",
@@ -281,7 +283,14 @@
     },
     "templatesShowcase": {
       "title": "Templates for every style",
-      "subtitle": "Choose from 7 professional templates. All fully customizable to match your brand."
+      "subtitle": "Choose from 7 professional templates. All fully customizable to match your brand.",
+      "useTemplate": "Use this template →"
+    },
+    "socialProof": {
+      "templates": "Templates",
+      "creationTime": "Seconds to create",
+      "cost": "Free forever",
+      "languages": "Languages"
     },
     "cta": {
       "title": "Make your email signature more professional.",

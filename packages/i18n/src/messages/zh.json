@@ -30,7 +30,8 @@
     },
     "preview": "预览",
     "previewDesktop": "桌面",
-    "previewMobile": "手机"
+    "previewMobile": "手机",
+    "newMessage": "新邮件"
   },
   "form": {
     "sections": {
@@ -155,6 +156,7 @@
     "copyError": "复制失败。请检查浏览器设置。",
     "setEmail": "设置到邮箱",
     "downloadHtm": "下载 Outlook .htm",
+    "pngCompatibility": "PNG 兼容 Gmail 和 Outlook",
     "guide": {
       "gmail": {
         "step1": "点击下方「复制 HTML」按钮。",
@@ -281,7 +283,14 @@
     },
     "templatesShowcase": {
       "title": "适合各种风格的模板",
-      "subtitle": "从7个专业模板中选择。所有模板都可完全自定义以匹配您的品牌。"
+      "subtitle": "从7个专业模板中选择。所有模板都可完全自定义以匹配您的品牌。",
+      "useTemplate": "使用此模板 →"
+    },
+    "socialProof": {
+      "templates": "模板",
+      "creationTime": "秒创建",
+      "cost": "永久免费",
+      "languages": "支持语言"
     },
     "cta": {
       "title": "让您的邮件签名更加专业。",

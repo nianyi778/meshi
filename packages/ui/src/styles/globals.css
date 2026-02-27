@@ -1,44 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-background: hsl(0 0% 100%);
-  --color-foreground: hsl(210 11% 8%);
+  --color-background: hsl(40 20% 98%);
+  --color-foreground: hsl(215 25% 17%);
   --color-card: hsl(0 0% 100%);
-  --color-card-foreground: hsl(210 11% 8%);
+  --color-card-foreground: hsl(215 25% 17%);
   --color-popover: hsl(0 0% 100%);
-  --color-popover-foreground: hsl(210 11% 8%);
-  --color-primary: hsl(199 89% 48%);
-  --color-primary-foreground: hsl(0 0% 100%);
-  --color-secondary: hsl(210 40% 96%);
-  --color-secondary-foreground: hsl(210 11% 15%);
-  --color-muted: hsl(210 40% 96%);
+  --color-popover-foreground: hsl(215 25% 17%);
+  --color-primary: hsl(215 25% 17%);
+  --color-primary-foreground: hsl(40 20% 98%);
+  --color-secondary: hsl(40 10% 96%);
+  --color-secondary-foreground: hsl(215 25% 17%);
+  --color-muted: hsl(40 10% 96%);
   --color-muted-foreground: hsl(215 16% 47%);
-  --color-accent: hsl(24 95% 53%);
-  --color-accent-foreground: hsl(0 0% 100%);
+  --color-accent: hsl(43 50% 54%);
+  --color-accent-foreground: hsl(215 40% 6%);
   --color-destructive: hsl(0 84% 60%);
   --color-destructive-foreground: hsl(0 0% 100%);
-  --color-border: hsl(214 32% 91%);
-  --color-input: hsl(214 32% 91%);
-  --color-ring: hsl(199 89% 48%);
+  --color-border: hsl(215 20% 91%);
+  --color-input: hsl(215 20% 91%);
+  --color-ring: hsl(43 50% 54%);
   --radius: 0.625rem;
 
-  --color-brand-primary: #0EA5E9;
-  --color-brand-dark: #0369A1;
-  --color-brand-cta: #F97316;
-  --color-brand-cta-hover: #EA6C0A;
-  --color-brand-bg: #F0F9FF;
+  /* Brand — Sophisticated Japanese Professional */
+  --color-brand-primary: #1E293B;
+  --color-brand-primary-light: #334155;
+  --color-brand-dark: #0F172A;
+  --color-brand-accent: #C8A44E;
+  --color-brand-accent-light: #D4AF37;
+  --color-brand-cta: #C8A44E;
+  --color-brand-cta-hover: #B8943E;
+  --color-brand-bg: #FAFAF8;
   --color-brand-surface: #FFFFFF;
-  --color-brand-surface-alt: #F8FAFC;
-  --color-brand-text: #0C4A6E;
-  --color-brand-text-body: #334155;
-  --color-brand-text-muted: #64748B;
-  --color-brand-border: #E0F2FE;
+  --color-brand-surface-alt: #F5F5F0;
+  --color-brand-surface-dark: #1E293B;
+  --color-brand-text: #1E293B;
+  --color-brand-text-body: #475569;
+  --color-brand-text-muted: #94A3B8;
+  --color-brand-text-inverse: #FAFAF8;
+  --color-brand-border: #E2E8F0;
+  --color-brand-border-subtle: #F1F5F9;
 
   --font-sans: "Noto Sans JP", "Inter", system-ui, sans-serif;
-  --font-heading: "Plus Jakarta Sans", "Inter", "Noto Sans JP", system-ui, sans-serif;
+  --font-heading: "Noto Serif JP", "Noto Sans JP", system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
 }
 
 @layer base {

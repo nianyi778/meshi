@@ -18,7 +18,7 @@ function FAQItem({ question, answer, isOpen, onToggle }: {
   return (
     <StaggerItem>
       <button
-        className="w-full text-left py-5 flex items-start justify-between gap-4 group"
+        className="w-full text-left py-5 flex items-start justify-between gap-4 group cursor-pointer"
         onClick={onToggle}
         aria-expanded={isOpen}
       >
@@ -34,8 +34,8 @@ function FAQItem({ question, answer, isOpen, onToggle }: {
         <span
           className="shrink-0 mt-0.5 flex h-6 w-6 items-center justify-center rounded-full transition-all duration-300"
           style={{
-            backgroundColor: isOpen ? "var(--color-brand-primary)" : "var(--color-brand-bg)",
-            color: isOpen ? "#fff" : "var(--color-brand-text-muted)",
+            backgroundColor: isOpen ? "var(--color-brand-accent)" : "var(--color-brand-surface-alt)",
+            color: isOpen ? "var(--color-brand-dark)" : "var(--color-brand-text-muted)",
             transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
           }}
         >
@@ -81,7 +81,7 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="relative py-24 md:py-32"
+      className="relative py-20 md:py-28"
       style={{ backgroundColor: "#fff" }}
     >
       {/* Top border */}
@@ -93,11 +93,12 @@ export function FAQ() {
         }}
       />
 
-      <div className="relative mx-auto max-w-3xl px-5 lg:px-8">
+      <div className="relative mx-auto max-w-4xl px-5 lg:px-8">
         <FadeInUp>
           <div className="mb-14 text-center">
+            <div className="mx-auto mb-6 h-px w-12" style={{ backgroundColor: "var(--color-brand-accent)" }} />
             <h2
-              className="text-2xl font-extrabold md:text-[32px]"
+              className="text-2xl font-bold md:text-[32px]"
               style={{
                 fontFamily: "var(--font-heading)",
                 color: "var(--color-brand-text)",
@@ -119,7 +120,6 @@ export function FAQ() {
           </div>
         </FadeInUp>
 
-        {/* Divider top */}
         <div
           className="h-px w-full mb-0"
           style={{ backgroundColor: "var(--color-brand-border)" }}

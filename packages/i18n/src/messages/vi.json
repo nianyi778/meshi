@@ -30,7 +30,8 @@
     },
     "preview": "Xem trước",
     "previewDesktop": "Máy tính",
-    "previewMobile": "Di động"
+    "previewMobile": "Di động",
+    "newMessage": "Tin nhắn mới"
   },
   "form": {
     "sections": {
@@ -155,6 +156,7 @@
     "copyError": "Không thể sao chép. Vui lòng kiểm tra cài đặt trình duyệt.",
     "setEmail": "Cài vào Email",
     "downloadHtm": "Tải xuống Outlook .htm",
+    "pngCompatibility": "PNG tương thích Gmail & Outlook",
     "guide": {
       "gmail": {
         "step1": "Nhấn nút 'Sao chép HTML' bên dưới.",
@@ -281,7 +283,14 @@
     },
     "templatesShowcase": {
       "title": "Mẫu phù hợp với phong cách của bạn",
-      "subtitle": "Chọn từ 7 mẫu chuyên nghiệp. Tùy chỉnh đầy đủ cho tất cả."
+      "subtitle": "Chọn từ 7 mẫu chuyên nghiệp. Tùy chỉnh đầy đủ cho tất cả.",
+      "useTemplate": "Dùng mẫu này →"
+    },
+    "socialProof": {
+      "templates": "Mẫu",
+      "creationTime": "Giây để tạo",
+      "cost": "Miễn phí mãi mãi",
+      "languages": "Ngôn ngữ"
     },
     "cta": {
       "title": "Làm cho chữ ký email của bạn chuyên nghiệp hơn",

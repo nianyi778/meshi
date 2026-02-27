@@ -30,7 +30,8 @@
     },
     "preview": "ตัวอย่าง",
     "previewDesktop": "เดสก์ท็อป",
-    "previewMobile": "มือถือ"
+    "previewMobile": "มือถือ",
+    "newMessage": "ข้อความใหม่"
   },
   "form": {
     "sections": {
@@ -155,6 +156,7 @@
     "copyError": "ไม่สามารถคัดลอกได้ โปรดตรวจสอบการตั้งค่าเบราว์เซอร์",
     "setEmail": "ตั้งค่าในอีเมล",
     "downloadHtm": "ดาวน์โหลด Outlook .htm",
+    "pngCompatibility": "PNG ใช้ได้กับ Gmail และ Outlook",
     "guide": {
       "gmail": {
         "step1": "คลิกปุ่ม 'คัดลอก HTML' ด้านล่าง",
@@ -281,7 +283,14 @@
     },
     "templatesShowcase": {
       "title": "เทมเพลตที่เหมาะกับสไตล์ของคุณ",
-      "subtitle": "เลือกจาก 7 เทมเพลตระดับมืออาชีพ ปรับแต่งเต็มที่ได้ทั้งหมด"
+      "subtitle": "เลือกจาก 7 เทมเพลตระดับมืออาชีพ ปรับแต่งเต็มที่ได้ทั้งหมด",
+      "useTemplate": "ใช้เทมเพลตนี้ →"
+    },
+    "socialProof": {
+      "templates": "เทมเพลต",
+      "creationTime": "วินาทีในการสร้าง",
+      "cost": "ฟรีตลอดไป",
+      "languages": "ภาษาที่รองรับ"
     },
     "cta": {
       "title": "ทำให้ลายเซ็นอีเมลของคุณเป็นมืออาชีพมากขึ้น",

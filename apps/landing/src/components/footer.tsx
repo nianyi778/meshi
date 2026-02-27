@@ -37,16 +37,14 @@ export function Footer() {
   return (
     <footer
       className="relative pt-20 pb-12"
-      style={{
-        backgroundColor: "var(--color-brand-text)",
-      }}
+      style={{ backgroundColor: "var(--color-brand-dark)" }}
     >
-      {/* Subtle top border gradient */}
+      {/* Top gold accent line */}
       <div
         className="absolute top-0 left-0 right-0 h-px"
         style={{
-          background: "linear-gradient(90deg, transparent 0%, var(--color-brand-primary) 50%, transparent 100%)",
-          opacity: 0.3,
+          background: "linear-gradient(90deg, transparent 0%, var(--color-brand-accent) 50%, transparent 100%)",
+          opacity: 0.4,
         }}
       />
 
@@ -57,13 +55,17 @@ export function Footer() {
             <div className="flex items-center gap-2.5">
               <span
                 className="text-xl font-extrabold tracking-tight text-white"
-                style={{ fontFamily: "var(--font-heading)" }}
+                style={{ fontFamily: "var(--font-display)" }}
               >
                 Meishi
               </span>
               <span
-                className="rounded-md px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-white"
-                style={{ backgroundColor: "var(--color-brand-primary)" }}
+                className="h-4 w-px"
+                style={{ backgroundColor: "var(--color-brand-accent)" }}
+              />
+              <span
+                className="text-sm font-medium tracking-wider text-white/60"
+                style={{ fontFamily: "var(--font-heading)" }}
               >
                 名刺
               </span>
@@ -72,7 +74,7 @@ export function Footer() {
               className="mt-4 max-w-xs text-sm leading-[1.8]"
               style={{
                 fontFamily: "var(--font-sans)",
-                color: "rgba(255,255,255,0.5)",
+                color: "rgba(255,255,255,0.4)",
               }}
             >
               {t("landing.footer.tagline")}
@@ -84,8 +86,8 @@ export function Footer() {
             <h4
               className="mb-5 text-xs font-bold uppercase tracking-wider"
               style={{
-                fontFamily: "var(--font-heading)",
-                color: "rgba(255,255,255,0.7)",
+                fontFamily: "var(--font-sans)",
+                color: "rgba(255,255,255,0.6)",
               }}
             >
               {t("landing.footer.openSource")}
@@ -96,10 +98,8 @@ export function Footer() {
                   href={GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm transition-colors duration-200 cursor-pointer"
-                  style={{ fontFamily: "var(--font-sans)", color: "rgba(255,255,255,0.45)" }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.9)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.45)"; }}
+                  className="inline-flex items-center gap-2 text-sm transition-colors duration-200 cursor-pointer text-white/40 hover:text-[var(--color-brand-accent)]"
+                  style={{ fontFamily: "var(--font-sans)" }}
                 >
                   <Github size={13} />
                   {t("landing.footer.github")}
@@ -110,10 +110,8 @@ export function Footer() {
                   href={GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm transition-colors duration-200 cursor-pointer"
-                  style={{ fontFamily: "var(--font-sans)", color: "rgba(255,255,255,0.45)" }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.9)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255,255,255,0.45)"; }}
+                  className="inline-flex items-center gap-1.5 text-sm transition-colors duration-200 cursor-pointer text-white/40 hover:text-[var(--color-brand-accent)]"
+                  style={{ fontFamily: "var(--font-sans)" }}
                 >
                   <Star size={13} />
                   {t("landing.footer.starOnGithub")}
@@ -128,8 +126,8 @@ export function Footer() {
               <h4
                 className="mb-5 text-xs font-bold uppercase tracking-wider"
                 style={{
-                  fontFamily: "var(--font-heading)",
-                  color: "rgba(255,255,255,0.7)",
+                  fontFamily: "var(--font-sans)",
+                  color: "rgba(255,255,255,0.6)",
                 }}
               >
                 {col.title}
@@ -139,17 +137,8 @@ export function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm transition-colors duration-200 cursor-pointer"
-                      style={{
-                        fontFamily: "var(--font-sans)",
-                        color: "rgba(255,255,255,0.45)",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.color = "rgba(255,255,255,0.9)";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.color = "rgba(255,255,255,0.45)";
-                      }}
+                      className="text-sm transition-colors duration-200 cursor-pointer text-white/40 hover:text-[var(--color-brand-accent)]"
+                      style={{ fontFamily: "var(--font-sans)" }}
                     >
                       {link.label}
                     </a>
@@ -163,7 +152,7 @@ export function Footer() {
         {/* Divider */}
         <div
           className="mt-16 h-px w-full"
-          style={{ backgroundColor: "rgba(255,255,255,0.08)" }}
+          style={{ backgroundColor: "rgba(255,255,255,0.06)" }}
         />
 
         {/* Bottom bar */}
@@ -172,7 +161,7 @@ export function Footer() {
             className="text-xs"
             style={{
               fontFamily: "var(--font-sans)",
-              color: "rgba(255,255,255,0.35)",
+              color: "rgba(255,255,255,0.3)",
             }}
           >
             {t("landing.footer.copyright", { year: new Date().getFullYear() })}
@@ -181,7 +170,7 @@ export function Footer() {
             className="inline-flex items-center gap-1.5 text-xs"
             style={{
               fontFamily: "var(--font-sans)",
-              color: "rgba(255,255,255,0.35)",
+              color: "rgba(255,255,255,0.3)",
             }}
           >
             Made with

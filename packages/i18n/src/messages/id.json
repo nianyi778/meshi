@@ -30,7 +30,8 @@
     },
     "preview": "Pratinjau",
     "previewDesktop": "Desktop",
-    "previewMobile": "Ponsel"
+    "previewMobile": "Ponsel",
+    "newMessage": "Pesan Baru"
   },
   "form": {
     "sections": {
@@ -155,6 +156,7 @@
     "copyError": "Tidak dapat menyalin. Periksa pengaturan browser Anda.",
     "setEmail": "Atur di Email",
     "downloadHtm": "Unduh Outlook .htm",
+    "pngCompatibility": "PNG kompatibel dengan Gmail & Outlook",
     "guide": {
       "gmail": {
         "step1": "Klik tombol 'Salin HTML' di bawah.",
@@ -281,7 +283,14 @@
     },
     "templatesShowcase": {
       "title": "Template yang Sesuai dengan Gaya Anda",
-      "subtitle": "Pilih dari 7 template profesional. Semuanya dapat dikustomisasi sepenuhnya."
+      "subtitle": "Pilih dari 7 template profesional. Semuanya dapat dikustomisasi sepenuhnya.",
+      "useTemplate": "Gunakan template ini →"
+    },
+    "socialProof": {
+      "templates": "Template",
+      "creationTime": "Detik untuk membuat",
+      "cost": "Gratis selamanya",
+      "languages": "Bahasa"
     },
     "cta": {
       "title": "Buat Tanda Tangan Email Anda Lebih Profesional",

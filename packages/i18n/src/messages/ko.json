@@ -30,7 +30,8 @@
     },
     "preview": "미리보기",
     "previewDesktop": "데스크톱",
-    "previewMobile": "모바일"
+    "previewMobile": "모바일",
+    "newMessage": "새 메시지"
   },
   "form": {
     "sections": {
@@ -155,6 +156,7 @@
     "copyError": "복사에 실패했습니다. 브라우저 설정을 확인해주세요.",
     "setEmail": "이메일에 설정",
     "downloadHtm": "Outlook .htm 다운로드",
+    "pngCompatibility": "PNG는 Gmail / Outlook 호환",
     "guide": {
       "gmail": {
         "step1": "아래 'HTML 복사' 버튼을 클릭하세요.",
@@ -281,7 +283,14 @@
     },
     "templatesShowcase": {
       "title": "모든 스타일을 위한 템플릿",
-      "subtitle": "7가지 전문 템플릿 중에서 선택하세요. 모두 완전히 커스터마이징 가능하여 당신의 브랜드에 맞게 조정할 수 있습니다."
+      "subtitle": "7가지 전문 템플릿 중에서 선택하세요. 모두 완전히 커스터마이징 가능하여 당신의 브랜드에 맞게 조정할 수 있습니다.",
+      "useTemplate": "이 템플릿으로 만들기 →"
+    },
+    "socialProof": {
+      "templates": "템플릿",
+      "creationTime": "초 만에 완성",
+      "cost": "영구 무료",
+      "languages": "지원 언어"
     },
     "cta": {
       "title": "이메일 서명을 더욱 전문적으로 만드세요.",

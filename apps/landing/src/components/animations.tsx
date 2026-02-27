@@ -3,9 +3,13 @@
 import {
   motion,
   useReducedMotion,
+  useInView,
+  useMotionValue,
+  useTransform,
+  animate,
   type Variants,
 } from "framer-motion";
-import { type ReactNode } from "react";
+import { type ReactNode, useRef, useEffect } from "react";
 
 /* ------------------------------------------------------------------ */
 /*  Shared defaults                                                    */
@@ -262,5 +266,61 @@ export function ScaleIn({ children, className, delay = 0 }: ScaleInProps) {
     >
       {children}
     </motion.div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  CountUp — animates a number from 0 to end when in view            */
+/* ------------------------------------------------------------------ */
+
+interface CountUpProps {
+  end: number;
+  prefix?: string;
+  suffix?: string;
+  duration?: number;
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+export function CountUp({
+  end,
+  prefix = "",
+  suffix = "",
+  duration = 1.5,
+  className,
+  style,
+}: CountUpProps) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const prefersReduced = useReducedMotion();
+  const motionVal = useMotionValue(0);
+  const rounded = useTransform(motionVal, (v) => Math.round(v));
+
+  useEffect(() => {
+    if (!inView) return;
+    if (prefersReduced) {
+      motionVal.set(end);
+      return;
+    }
+    const controls = animate(motionVal, end, {
+      duration,
+      ease: [0.25, 0.1, 0.25, 1.0],
+    });
+    return controls.stop;
+  }, [inView, end, duration, motionVal, prefersReduced]);
+
+  useEffect(() => {
+    const unsubscribe = rounded.on("change", (v) => {
+      if (ref.current) {
+        ref.current.textContent = `${prefix}${v}${suffix}`;
+      }
+    });
+    return unsubscribe;
+  }, [rounded, prefix, suffix]);
+
+  return (
+    <span ref={ref} className={className} style={style}>
+      {prefix}0{suffix}
+    </span>
   );
 }

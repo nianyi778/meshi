@@ -36,7 +36,7 @@ export default function SignaturePreview() {
               onClick={() => setPreviewMode("desktop")}
               className={`flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-medium transition-all duration-200 cursor-pointer ${
                 !isMobile
-                  ? "bg-[var(--color-brand-primary)] text-white shadow-sm"
+                  ? "bg-[var(--color-brand-accent)] text-[var(--color-brand-dark)] shadow-sm"
                   : "text-[var(--color-brand-text-muted)] hover:text-[var(--color-brand-text)] hover:bg-[var(--color-brand-bg)]"
               }`}
             >
@@ -48,7 +48,7 @@ export default function SignaturePreview() {
               onClick={() => setPreviewMode("mobile")}
               className={`flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-medium transition-all duration-200 cursor-pointer ${
                 isMobile
-                  ? "bg-[var(--color-brand-primary)] text-white shadow-sm"
+                  ? "bg-[var(--color-brand-accent)] text-[var(--color-brand-dark)] shadow-sm"
                   : "text-[var(--color-brand-text-muted)] hover:text-[var(--color-brand-text)] hover:bg-[var(--color-brand-bg)]"
               }`}
             >
@@ -66,7 +66,7 @@ export default function SignaturePreview() {
                 onClick={() => setZoom(level)}
                 className={`rounded-md px-2.5 py-1 text-xs font-medium transition-all duration-200 cursor-pointer ${
                   zoom === level
-                    ? "bg-[var(--color-brand-primary)] text-white shadow-sm"
+                    ? "bg-[var(--color-brand-accent)] text-[var(--color-brand-dark)] shadow-sm"
                     : "text-[var(--color-brand-text-muted)] hover:text-[var(--color-brand-text)] hover:bg-[var(--color-brand-bg)]"
                 }`}
               >
@@ -84,7 +84,7 @@ export default function SignaturePreview() {
           <span className="h-3 w-3 rounded-full bg-[#FF5F57]" />
           <span className="h-3 w-3 rounded-full bg-[#FEBC2E]" />
           <span className="h-3 w-3 rounded-full bg-[#28C840]" />
-          <span className="ml-3 text-[11px] font-medium text-[var(--color-brand-text-muted)]">New Message</span>
+          <span className="ml-3 text-[11px] font-medium text-[var(--color-brand-text-muted)]">{t("generator.newMessage")}</span>
         </div>
         {/* Fake email fields */}
         <div className="space-y-0 border-b border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-4 py-2">
