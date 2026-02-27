@@ -186,7 +186,13 @@
     "signatureName": "Tên chữ ký",
     "saveNew": "Lưu mới",
     "load": "Tải",
-    "freeLimitReached": "Gói miễn phí cho phép {limit} chữ ký. Nâng cấp Pro để không giới hạn."
+    "freeLimitReached": "Gói miễn phí cho phép {limit} chữ ký. Nâng cấp Pro để không giới hạn.",
+    "upgradeTitle": "Nâng cấp Pro",
+    "upgradeDesc": "Lưu chữ ký không giới hạn và mở khóa tất cả tính năng cao cấp.",
+    "upgradeCta": "Nâng cấp Pro →",
+    "upgradeFeature1": "Lưu chữ ký không giới hạn",
+    "upgradeFeature2": "Hỗ trợ ưu tiên",
+    "upgradeFeature3": "Truy cập sớm tính năng mới"
   },
   "gmail": {
     "instructions": "Sử dụng Gmail API để đặt chữ ký trực tiếp. Tạo OAuth 2.0 Client ID trong Google Cloud Console.",

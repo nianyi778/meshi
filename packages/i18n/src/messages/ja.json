@@ -186,7 +186,13 @@
     "signatureName": "署名の名前",
     "saveNew": "新規保存",
     "load": "読込",
-    "freeLimitReached": "無料プランは{limit}件まで。Proにアップグレードで無制限。"
+    "freeLimitReached": "無料プランは{limit}件まで。Proにアップグレードで無制限。",
+    "upgradeTitle": "Proプランにアップグレード",
+    "upgradeDesc": "無制限の署名を保存し、すべてのプレミアム機能をご利用いただけます。",
+    "upgradeCta": "Proにアップグレード →",
+    "upgradeFeature1": "署名を無制限に保存",
+    "upgradeFeature2": "優先サポート",
+    "upgradeFeature3": "今後の新機能を先行利用"
   },
   "gmail": {
     "instructions": "Gmail APIを使用して署名を直接設定します。Google Cloud ConsoleでOAuth 2.0 クライアントIDを作成してください。",

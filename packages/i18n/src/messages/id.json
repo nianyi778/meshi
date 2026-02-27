@@ -186,7 +186,13 @@
     "signatureName": "Nama tanda tangan",
     "saveNew": "Simpan baru",
     "load": "Muat",
-    "freeLimitReached": "Paket gratis hanya {limit} tanda tangan. Upgrade ke Pro untuk tak terbatas."
+    "freeLimitReached": "Paket gratis hanya {limit} tanda tangan. Upgrade ke Pro untuk tak terbatas.",
+    "upgradeTitle": "Upgrade ke Pro",
+    "upgradeDesc": "Simpan tanda tangan tanpa batas dan buka semua fitur premium.",
+    "upgradeCta": "Upgrade ke Pro →",
+    "upgradeFeature1": "Simpan tanda tangan tak terbatas",
+    "upgradeFeature2": "Dukungan prioritas",
+    "upgradeFeature3": "Akses awal fitur baru"
   },
   "gmail": {
     "instructions": "Gunakan Gmail API untuk mengatur tanda tangan secara langsung. Buat OAuth 2.0 Client ID di Google Cloud Console.",

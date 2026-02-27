@@ -186,7 +186,13 @@
     "signatureName": "서명 이름",
     "saveNew": "새로 저장",
     "load": "불러오기",
-    "freeLimitReached": "무료 플랜은 {limit}개까지. Pro로 업그레이드하면 무제한."
+    "freeLimitReached": "무료 플랜은 {limit}개까지. Pro로 업그레이드하면 무제한.",
+    "upgradeTitle": "Pro로 업그레이드",
+    "upgradeDesc": "서명을 무제한으로 저장하고 모든 프리미엄 기능을 이용하세요.",
+    "upgradeCta": "Pro로 업그레이드 →",
+    "upgradeFeature1": "서명 무제한 저장",
+    "upgradeFeature2": "우선 지원",
+    "upgradeFeature3": "신기능 얼리 액세스"
   },
   "gmail": {
     "instructions": "Gmail API를 사용하여 서명을 직접 설정합니다. Google Cloud Console에서 OAuth 2.0 클라이언트 ID를 생성해주세요.",

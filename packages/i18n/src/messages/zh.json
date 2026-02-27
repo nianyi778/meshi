@@ -186,7 +186,13 @@
     "signatureName": "签名名称",
     "saveNew": "新建保存",
     "load": "加载",
-    "freeLimitReached": "免费版最多{limit}套，升级 Pro 版可无限使用。"
+    "freeLimitReached": "免费版最多{limit}套，升级 Pro 版可无限使用。",
+    "upgradeTitle": "升级为 Pro",
+    "upgradeDesc": "无限保存签名，解锁所有高级功能。",
+    "upgradeCta": "升级 Pro →",
+    "upgradeFeature1": "无限保存签名",
+    "upgradeFeature2": "优先支持",
+    "upgradeFeature3": "新功能抄先体验"
   },
   "gmail": {
     "instructions": "使用Gmail API直接设置签名。请在Google Cloud Console中创建OAuth 2.0客户端ID。",

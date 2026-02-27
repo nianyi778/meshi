@@ -1,8 +1,8 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAuthStore } from "@/store/auth-store";
 import { useSignatureStore } from "@/store/signature-store";
-import { Github, LogOut, User, Cloud, CloudOff } from "lucide-react";
+import { Github, LogOut, User, Cloud, CloudOff, Sparkles, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 const FREE_LIMIT = 3;
@@ -11,6 +11,7 @@ export function AuthButton() {
   const { user, isLoading, cloudSignatures, fetchUser, logout, saveSignature } =
     useAuthStore();
   const { data, style } = useSignatureStore();
+  const [showUpgradeBanner, setShowUpgradeBanner] = useState(false);
   const t = useTranslations();
 
   useEffect(() => {
@@ -20,9 +21,7 @@ export function AuthButton() {
   const handleSave = async () => {
     const result = await saveSignature("My Signature", data, style);
     if ("error" in result && result.error === "free_limit_reached") {
-      alert(
-        `Free plan allows ${FREE_LIMIT} signatures. Upgrade to Pro for unlimited.`,
-      );
+      setShowUpgradeBanner(true);
     }
   };
 
@@ -34,26 +33,46 @@ export function AuthButton() {
 
   if (user) {
     return (
-      <div className="flex items-center gap-2">
-        <button
-          onClick={handleSave}
-          className="flex items-center gap-1.5 rounded-lg border border-[var(--color-brand-border)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--color-brand-text)] hover:border-[var(--color-brand-primary)]/40 transition-all cursor-pointer"
-        >
-          <Cloud className="h-3.5 w-3.5 text-[var(--color-brand-primary)]" />
-          {t("auth.save")} ({cloudSignatures.length}/
-          {user.plan === "pro" ? "∞" : FREE_LIMIT})
-        </button>
-        <div className="flex items-center gap-1.5 text-xs text-[var(--color-brand-text-muted)]">
-          <User className="h-3.5 w-3.5" />
-          <span className="max-w-[120px] truncate">{user.name}</span>
+      <div className="flex flex-col items-end gap-1.5">
+        <div className="flex items-center gap-2">
+          <button
+            onClick={handleSave}
+            className="flex items-center gap-1.5 rounded-lg border border-[var(--color-brand-border)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--color-brand-text)] hover:border-[var(--color-brand-primary)]/40 transition-all cursor-pointer"
+          >
+            <Cloud className="h-3.5 w-3.5 text-[var(--color-brand-primary)]" />
+            {t("auth.save")} ({cloudSignatures.length}/
+            {user.plan === "pro" ? "∞" : FREE_LIMIT})
+          </button>
+          <div className="flex items-center gap-1.5 text-xs text-[var(--color-brand-text-muted)]">
+            <User className="h-3.5 w-3.5" />
+            <span className="max-w-[120px] truncate">{user.name}</span>
+          </div>
+          <button
+            onClick={logout}
+            className="rounded-lg border border-[var(--color-brand-border)] p-1.5 text-[var(--color-brand-text-muted)] hover:text-destructive hover:border-destructive/30 transition-all cursor-pointer"
+            title={t("auth.logout")}
+          >
+            <LogOut className="h-3.5 w-3.5" />
+          </button>
         </div>
-        <button
-          onClick={logout}
-          className="rounded-lg border border-[var(--color-brand-border)] p-1.5 text-[var(--color-brand-text-muted)] hover:text-destructive hover:border-destructive/30 transition-all cursor-pointer"
-          title={t("auth.logout")}
-        >
-          <LogOut className="h-3.5 w-3.5" />
-        </button>
+        {showUpgradeBanner && (
+          <div className="flex items-center gap-2 rounded-lg border border-[var(--color-brand-primary)]/30 bg-[var(--color-brand-primary)]/5 px-3 py-2 text-[11px]">
+            <Sparkles className="h-3.5 w-3.5 shrink-0 text-[var(--color-brand-primary)]" />
+            <span className="text-[var(--color-brand-text)]">{t("auth.freeLimitReached", { limit: FREE_LIMIT })}</span>
+            <a
+              href="mailto:support@ekagu.qzz.io?subject=Pro%20Plan%20Inquiry"
+              className="shrink-0 font-bold text-[var(--color-brand-primary)] underline hover:opacity-80 cursor-pointer"
+            >
+              {t("auth.upgradeCta")}
+            </a>
+            <button
+              onClick={() => setShowUpgradeBanner(false)}
+              className="ml-1 shrink-0 text-[var(--color-brand-text-muted)] hover:text-[var(--color-brand-text)] cursor-pointer"
+            >
+              <X className="h-3 w-3" />
+            </button>
+          </div>
+        )}
       </div>
     );
   }

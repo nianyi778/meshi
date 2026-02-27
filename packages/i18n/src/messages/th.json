@@ -186,7 +186,13 @@
     "signatureName": "ชื่อลายเซ็น",
     "saveNew": "บันทึกใหม่",
     "load": "โหลด",
-    "freeLimitReached": "แผนฟรีรองรับ {limit} รายการ อัปเกรดเป็น Pro เพื่อไม่จำกัด"
+    "freeLimitReached": "แผนฟรีรองรับ {limit} รายการ อัปเกรดเป็น Pro เพื่อไม่จำกัด",
+    "upgradeTitle": "อัปเกรดเป็น Pro",
+    "upgradeDesc": "บันทึกลายเซ็นไม่จำกัดและใช้งานฟีเจอร์พรีเมียมทั้งหมด",
+    "upgradeCta": "อัปเกรดเป็น Pro →",
+    "upgradeFeature1": "บันทึกลายเซ็นไม่จำกัด",
+    "upgradeFeature2": "การสนับสนุนแบบพิเศษ",
+    "upgradeFeature3": "เข้าถึงฟีเจอร์ใหม่ก่อนใคร"
   },
   "gmail": {
     "instructions": "ใช้ Gmail API เพื่อตั้งค่าลายเซ็นโดยตรง สร้าง OAuth 2.0 Client ID ใน Google Cloud Console",

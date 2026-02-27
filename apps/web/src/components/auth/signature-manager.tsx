@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useAuthStore } from "@/store/auth-store";
 import { useSignatureStore } from "@/store/signature-store";
-import { Cloud, Plus, Trash2, Lock } from "lucide-react";
+import { Cloud, Plus, Trash2, Sparkles, Check } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 const FREE_LIMIT = 3;
@@ -96,11 +96,31 @@ export function SignatureManager() {
           </button>
         </div>
       ) : (
-        <div className="flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2">
-          <Lock className="h-3.5 w-3.5 text-amber-500" />
-          <span className="text-[11px] text-amber-700">
-            {t("auth.freeLimitReached", { limit: FREE_LIMIT })}
-          </span>
+        <div className="rounded-xl border border-[var(--color-brand-primary)]/20 bg-gradient-to-br from-[var(--color-brand-primary)]/5 to-[var(--color-brand-primary)]/10 p-4 space-y-3">
+          <div className="flex items-start gap-2.5">
+            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[var(--color-brand-primary)] text-white shadow-sm">
+              <Sparkles className="h-3.5 w-3.5" />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-[var(--color-brand-text)]">{t("auth.upgradeTitle")}</p>
+              <p className="mt-0.5 text-[11px] text-[var(--color-brand-text-muted)]">{t("auth.upgradeDesc")}</p>
+            </div>
+          </div>
+          <ul className="space-y-1.5 pl-1">
+            {(["upgradeFeature1", "upgradeFeature2", "upgradeFeature3"] as const).map((key) => (
+              <li key={key} className="flex items-center gap-2 text-[11px] text-[var(--color-brand-text-body)]">
+                <Check className="h-3 w-3 shrink-0 text-[var(--color-brand-primary)]" />
+                {t(`auth.${key}`)}
+              </li>
+            ))}
+          </ul>
+          <a
+            href="mailto:support@ekagu.qzz.io?subject=Pro%20Plan%20Inquiry"
+            className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-[var(--color-brand-primary)] px-4 py-2 text-xs font-bold text-white shadow-sm transition-all duration-150 hover:opacity-90 active:scale-[0.98] cursor-pointer"
+          >
+            <Sparkles className="h-3.5 w-3.5" />
+            {t("auth.upgradeCta")}
+          </a>
         </div>
       )}
     </div>

@@ -186,7 +186,13 @@
     "signatureName": "Signature name",
     "saveNew": "Save new",
     "load": "Load",
-    "freeLimitReached": "Free plan allows {limit} signatures. Upgrade to Pro for unlimited."
+    "freeLimitReached": "Free plan allows {limit} signatures. Upgrade to Pro for unlimited.",
+    "upgradeTitle": "Upgrade to Pro",
+    "upgradeDesc": "Save unlimited signatures and unlock all premium features.",
+    "upgradeCta": "Upgrade to Pro →",
+    "upgradeFeature1": "Unlimited saved signatures",
+    "upgradeFeature2": "Priority support",
+    "upgradeFeature3": "Early access to new features"
   },
   "gmail": {
     "instructions": "Use Gmail API to set your signature directly. Create an OAuth 2.0 client ID in Google Cloud Console.",
