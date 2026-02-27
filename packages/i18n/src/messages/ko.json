@@ -192,7 +192,8 @@
     "upgradeCta": "Pro로 업그레이드 →",
     "upgradeFeature1": "서명 무제한 저장",
     "upgradeFeature2": "우선 지원",
-    "upgradeFeature3": "신기능 얼리 액세스"
+    "upgradeFeature3": "신기능 얼리 액세스",
+    "loginWithGoogle": "Google로 로그인"
   },
   "gmail": {
     "instructions": "Gmail API를 사용하여 서명을 직접 설정합니다. Google Cloud Console에서 OAuth 2.0 클라이언트 ID를 생성해주세요.",

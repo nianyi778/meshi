@@ -192,7 +192,8 @@
     "upgradeCta": "升级 Pro →",
     "upgradeFeature1": "无限保存签名",
     "upgradeFeature2": "优先支持",
-    "upgradeFeature3": "新功能抄先体验"
+    "upgradeFeature3": "新功能抄先体验",
+    "loginWithGoogle": "Google 登录"
   },
   "gmail": {
     "instructions": "使用Gmail API直接设置签名。请在Google Cloud Console中创建OAuth 2.0客户端ID。",

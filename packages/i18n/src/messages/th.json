@@ -192,7 +192,8 @@
     "upgradeCta": "อัปเกรดเป็น Pro →",
     "upgradeFeature1": "บันทึกลายเซ็นไม่จำกัด",
     "upgradeFeature2": "การสนับสนุนแบบพิเศษ",
-    "upgradeFeature3": "เข้าถึงฟีเจอร์ใหม่ก่อนใคร"
+    "upgradeFeature3": "เข้าถึงฟีเจอร์ใหม่ก่อนใคร",
+    "loginWithGoogle": "เข้าสู่ระบบด้วย Google"
   },
   "gmail": {
     "instructions": "ใช้ Gmail API เพื่อตั้งค่าลายเซ็นโดยตรง สร้าง OAuth 2.0 Client ID ใน Google Cloud Console",

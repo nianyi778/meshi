@@ -192,7 +192,8 @@
     "upgradeCta": "Upgrade ke Pro →",
     "upgradeFeature1": "Simpan tanda tangan tak terbatas",
     "upgradeFeature2": "Dukungan prioritas",
-    "upgradeFeature3": "Akses awal fitur baru"
+    "upgradeFeature3": "Akses awal fitur baru",
+    "loginWithGoogle": "Masuk dengan Google"
   },
   "gmail": {
     "instructions": "Gunakan Gmail API untuk mengatur tanda tangan secara langsung. Buat OAuth 2.0 Client ID di Google Cloud Console.",

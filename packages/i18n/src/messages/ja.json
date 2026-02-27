@@ -192,7 +192,8 @@
     "upgradeCta": "Proにアップグレード →",
     "upgradeFeature1": "署名を無制限に保存",
     "upgradeFeature2": "優先サポート",
-    "upgradeFeature3": "今後の新機能を先行利用"
+    "upgradeFeature3": "今後の新機能を先行利用",
+    "loginWithGoogle": "Googleでログイン"
   },
   "gmail": {
     "instructions": "Gmail APIを使用して署名を直接設定します。Google Cloud ConsoleでOAuth 2.0 クライアントIDを作成してください。",

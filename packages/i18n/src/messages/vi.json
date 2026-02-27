@@ -192,7 +192,8 @@
     "upgradeCta": "Nâng cấp Pro →",
     "upgradeFeature1": "Lưu chữ ký không giới hạn",
     "upgradeFeature2": "Hỗ trợ ưu tiên",
-    "upgradeFeature3": "Truy cập sớm tính năng mới"
+    "upgradeFeature3": "Truy cập sớm tính năng mới",
+    "loginWithGoogle": "Đăng nhập với Google"
   },
   "gmail": {
     "instructions": "Sử dụng Gmail API để đặt chữ ký trực tiếp. Tạo OAuth 2.0 Client ID trong Google Cloud Console.",

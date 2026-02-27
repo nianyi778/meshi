@@ -192,7 +192,8 @@
     "upgradeCta": "Upgrade to Pro →",
     "upgradeFeature1": "Unlimited saved signatures",
     "upgradeFeature2": "Priority support",
-    "upgradeFeature3": "Early access to new features"
+    "upgradeFeature3": "Early access to new features",
+    "loginWithGoogle": "Login with Google"
   },
   "gmail": {
     "instructions": "Use Gmail API to set your signature directly. Create an OAuth 2.0 client ID in Google Cloud Console.",

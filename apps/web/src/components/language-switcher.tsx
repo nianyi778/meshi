@@ -3,8 +3,12 @@
 import { useState, useRef, useEffect } from "react";
 import { useLocale } from "next-intl";
 import { Globe } from "lucide-react";
-import { locales, localeNames, localeFlagEmoji } from "@meishi/i18n";
+import { locales, localeNames } from "@meishi/i18n";
 import type { Locale } from "@meishi/i18n";
+
+const localeShort: Record<Locale, string> = {
+  ja: "JA", zh: "ZH", en: "EN", ko: "KO", th: "TH", vi: "VI", id: "ID",
+};
 
 export function LanguageSwitcher() {
   const currentLocale = useLocale() as Locale;
@@ -43,10 +47,9 @@ export function LanguageSwitcher() {
         aria-label="Switch language"
       >
         <Globe className="h-4 w-4" />
-        <span className="hidden sm:inline">
-          {localeFlagEmoji[currentLocale]} {localeNames[currentLocale]}
+        <span className="text-xs font-semibold tracking-wide">
+          {localeShort[currentLocale]}
         </span>
-        <span className="sm:hidden">{localeFlagEmoji[currentLocale]}</span>
       </button>
 
       {open && (
@@ -61,7 +64,7 @@ export function LanguageSwitcher() {
                   : "text-slate-700"
               }`}
             >
-              <span>{localeFlagEmoji[locale]}</span>
+              <span className="text-xs font-semibold w-6 text-slate-400">{localeShort[locale]}</span>
               <span>{localeNames[locale]}</span>
             </button>
           ))}
