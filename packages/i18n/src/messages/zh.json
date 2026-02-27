@@ -43,10 +43,12 @@
     },
     "fields": {
       "companyName": "公司名称",
+      "department": "部门",
+      "jobTitle": "职位",
       "personName": "姓名",
       "nameReading": "名字拼音",
       "webUrl": "网站",
-      "email": "邮箱地址",
+      "email": "邮筱地址",
       "phone": "电话号码",
       "postalCode": "邮政编码",
       "address1": "地址1",
@@ -55,6 +57,8 @@
     },
     "placeholders": {
       "companyName": "示例科技有限公司",
+      "department": "销售部",
+      "jobTitle": "经理",
       "personName": "张三",
       "nameReading": "Zhang San / 张三",
       "webUrl": "https://www.example.com.cn",
@@ -149,9 +153,9 @@
       },
       "outlook": {
         "step1": "点击下方「复制 HTML」按钮。",
-        "step2": "打开 Outlook 设置 → 邮件 → 撰写和回复 → 电子邮件签名。",
-        "step3": "点击「新建签名」并输入名称。",
-        "step4": "粘贴到文本区域并保存。"
+        "step2": "打开 Outlook → 文件 → 选项 → 邮件 → 签名。",
+        "step3": "点击「新建」，输入名称，在编辑区右键 → 「粘贴为 HTML」。",
+        "step4": "设置新邮件和回复/转发的签名，点击 OK 保存。"
       },
       "apple": {
         "step1": "点击下方「复制 HTML」按钮。",

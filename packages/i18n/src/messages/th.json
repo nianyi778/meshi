@@ -43,6 +43,8 @@
     },
     "fields": {
       "companyName": "ชื่อบริษัท",
+      "department": "แผนก/ฝ่าย",
+      "jobTitle": "ตำแหน่งงาน",
       "personName": "ชื่อ-นามสกุล",
       "nameReading": "การออกเสียง",
       "webUrl": "เว็บไซต์",
@@ -55,6 +57,8 @@
     },
     "placeholders": {
       "companyName": "บริษัท ตัวอย่าง จำกัด",
+      "department": "ฝ่ายขาย",
+      "jobTitle": "ผู้จัดการ",
       "personName": "สมชาย ใจดี",
       "nameReading": "Somchai Jaidee",
       "webUrl": "https://www.example.co.th",

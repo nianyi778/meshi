@@ -43,6 +43,8 @@
     },
     "fields": {
       "companyName": "Tên công ty",
+      "department": "Phòng ban",
+      "jobTitle": "Chức vụ",
       "personName": "Họ và tên",
       "nameReading": "Cách phát âm",
       "webUrl": "Trang web",
@@ -55,6 +57,8 @@
     },
     "placeholders": {
       "companyName": "Công ty TNHH Mẫu",
+      "department": "Phòng kinh doanh",
+      "jobTitle": "Quản lý",
       "personName": "Nguyễn Văn An",
       "nameReading": "Nguyen Van An",
       "webUrl": "https://www.example.com.vn",

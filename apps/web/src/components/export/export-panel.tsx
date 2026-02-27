@@ -6,6 +6,7 @@ import { Download, ClipboardCopy, Mail, Check, Loader2 } from "lucide-react";
 import { useSignatureStore } from "@/store/signature-store";
 import { exportAsPng, generateGmailHtml, copyHtmlToClipboard } from "@/lib/export-utils";
 import { EmailClientGuide } from "./email-client-guide";
+import { usePostHog } from "posthog-js/react";
 
 export function ExportPanel() {
   const { data, style } = useSignatureStore();
@@ -13,9 +14,16 @@ export function ExportPanel() {
   const [copySuccess, setCopySuccess] = useState(false);
   const [showGuide, setShowGuide] = useState(false);
   const t = useTranslations();
-
+  const posthog = usePostHog();
   const handlePngExport = useCallback(async () => {
     setPngLoading(true);
+    posthog?.capture("export_clicked", {
+      format: "png",
+      template: style.templateId,
+      fields_filled: Object.values(data).filter((v) => typeof v === "string" && v.trim() !== "").length,
+      has_logo: !!data.logoUrl,
+      has_social: data.socialLinks.length > 0,
+    });
     try {
       await exportAsPng("signature-preview");
     } catch (err) {
@@ -24,18 +32,25 @@ export function ExportPanel() {
     } finally {
       setPngLoading(false);
     }
-  }, [t]);
+  }, [t, posthog, data, style]);
 
   const handleCopyHtml = useCallback(async () => {
     const html = generateGmailHtml(data, style);
     const success = await copyHtmlToClipboard(html);
     if (success) {
+      posthog?.capture("export_clicked", {
+        format: "html",
+        template: style.templateId,
+        fields_filled: Object.values(data).filter((v) => typeof v === "string" && v.trim() !== "").length,
+        has_logo: !!data.logoUrl,
+        has_social: data.socialLinks.length > 0,
+      });
       setCopySuccess(true);
       setTimeout(() => setCopySuccess(false), 2000);
     } else {
       alert(t("export.copyError"));
     }
-  }, [data, style, t]);
+  }, [data, style, t, posthog]);
 
   return (
     <div className="space-y-5">
@@ -74,7 +89,7 @@ export function ExportPanel() {
 
         {/* Email Client Guide Toggle — Tertiary */}
         <button
-          onClick={() => setShowGuide(!showGuide)}
+          onClick={() => { const next = !showGuide; setShowGuide(next); if (next) posthog?.capture("email_guide_opened", { template: style.templateId }); }}
           className={`flex items-center gap-2.5 rounded-xl border px-5 py-2.5 text-sm font-semibold shadow-sm transition-all duration-200 cursor-pointer ${
             showGuide
               ? "border-[var(--color-brand-primary)] bg-[var(--color-brand-primary)]/5 text-[var(--color-brand-primary)] shadow-[var(--color-brand-primary)]/10"

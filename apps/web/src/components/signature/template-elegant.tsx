@@ -94,6 +94,13 @@ export function TemplateElegant({ data, style, className }: TemplateProps) {
         </div>
       )}
 
+      {/* Department + Job title — centered */}
+      {(v.department && data.department || v.jobTitle && data.jobTitle) && (
+        <div style={{ ...centerStyle, fontSize: `${fontSize - 2}px`, opacity: 0.6, marginTop: "4px", letterSpacing: "0.08em" }}>
+          {[v.department && data.department, v.jobTitle && data.jobTitle].filter(Boolean).join(" ・ ")}
+        </div>
+      )}
+
       {/* Company name — centered, small */}
       {v.companyName && data.companyName && (
         <div

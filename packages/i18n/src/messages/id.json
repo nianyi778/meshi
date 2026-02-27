@@ -43,6 +43,8 @@
     },
     "fields": {
       "companyName": "Nama Perusahaan",
+      "department": "Departemen",
+      "jobTitle": "Jabatan",
       "personName": "Nama Lengkap",
       "nameReading": "Cara Pengucapan",
       "webUrl": "Situs Web",
@@ -55,6 +57,8 @@
     },
     "placeholders": {
       "companyName": "PT Contoh Sukses",
+      "department": "Departemen Penjualan",
+      "jobTitle": "Manajer",
       "personName": "Budi Santoso",
       "nameReading": "Budi Santoso",
       "webUrl": "https://www.example.co.id",

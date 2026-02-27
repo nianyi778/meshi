@@ -90,6 +90,13 @@ export function TemplateCorporate({ data, style, className }: TemplateProps) {
           </div>
         )}
 
+        {/* Department + Job title */}
+        {(v.department && data.department || v.jobTitle && data.jobTitle) && (
+          <div style={{ fontSize: `${fontSize - 1}px`, color: style.accentColor, marginBottom: "4px" }}>
+            {[v.department && data.department, v.jobTitle && data.jobTitle].filter(Boolean).join(" / ")}
+          </div>
+        )}
+
         {/* Person name + reading */}
         {v.personName && data.personName && (
           <div

@@ -71,6 +71,25 @@ export function TemplateClassic({ data, style, className }: TemplateProps) {
         </div>
       )}
 
+      {/* Company + Department + Job title */}
+      {v.companyName && data.companyName && (
+        <div
+          style={{
+            fontWeight: 700,
+            fontSize: `${fontSize + 1}px`,
+            color: style.primaryColor,
+            marginBottom: "2px",
+          }}
+        >
+          {data.companyName}
+        </div>
+      )}
+      {(v.department && data.department || v.jobTitle && data.jobTitle) && (
+        <div style={{ fontSize: `${fontSize - 1}px`, color: style.accentColor, marginBottom: "2px" }}>
+          {[v.department && data.department, v.jobTitle && data.jobTitle].filter(Boolean).join(" / ")}
+        </div>
+      )}
+
       {/* Person name + reading */}
       {v.personName && data.personName && (
         <div

@@ -15,6 +15,10 @@ export interface SocialLink {
 export interface SignatureData {
   /** 会社名 */
   companyName: string;
+  /** 部署 */
+  department: string;
+  /** 役職 */
+  jobTitle: string;
   /** 氏名 */
   personName: string;
   /** フリガナ / ローマ字読み */
@@ -56,6 +60,8 @@ export type BorderStyle = "solid" | "double" | "dashed" | "dotted" | "none";
 /** Field visibility toggles */
 export interface FieldVisibility {
   companyName: boolean;
+  department: boolean;
+  jobTitle: boolean;
   personName: boolean;
   nameReading: boolean;
   webUrl: boolean;

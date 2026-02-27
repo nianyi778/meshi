@@ -43,6 +43,8 @@
     },
     "fields": {
       "companyName": "会社名",
+      "department": "部署",
+      "jobTitle": "役職",
       "personName": "氏名",
       "nameReading": "フリガナ",
       "webUrl": "ウェブサイト",
@@ -55,13 +57,15 @@
     },
     "placeholders": {
       "companyName": "株式会社○○",
+      "department": "営業部",
+      "jobTitle": "マネージャー",
       "personName": "山田 太郎",
       "nameReading": "ヤマダ タロウ / Yamada Taro",
       "webUrl": "https://www.example.co.jp",
       "email": "taro@example.co.jp",
       "phone": "03-1234-5678",
       "postalCode": "〒100-0001",
-      "address1": "東京都千代田区千代田1-1",
+      "address1": "東京都千代田区千代田１－１",
       "address2": "サンプルビルディング 10階",
       "disclaimer": "このメールは機密情報を含む場合があります。誤って受信された場合は削除してください。"
     },
@@ -149,9 +153,9 @@
       },
       "outlook": {
         "step1": "下の「HTMLをコピー」ボタンをクリックします。",
-        "step2": "Outlook設定 → メール → 作成と返信 → メール署名を開きます。",
-        "step3": "「新しい署名」をクリックし、名前を入力します。",
-        "step4": "テキストエリアに貼り付けて保存します。"
+        "step2": "Outlookを起動し、[ファイル] → [オプション] → [メール] → [署名] を開きます。",
+        "step3": "[新規作成] をクリックし、名前を入力。編集エリアを右クリック → [HTMLとして谼り付け] で貼り付け。",
+        "step4": "『新しいメッセージ』と『返信/転送』への署名を設定し、[OK]で保存。"
       },
       "apple": {
         "step1": "下の「HTMLをコピー」ボタンをクリックします。",

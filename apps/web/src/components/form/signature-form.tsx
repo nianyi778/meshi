@@ -20,7 +20,7 @@ const SECTIONS: {
 }[] = [
   {
     titleKey: "form.sections.basic",
-    fields: ["companyName", "personName", "nameReading"],
+    fields: ["companyName", "department", "jobTitle", "personName", "nameReading"],
   },
   {
     titleKey: "form.sections.contact",

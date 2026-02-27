@@ -29,14 +29,16 @@ export const DEFAULT_FIELD_VISIBILITY: FieldVisibility = {
 
 export const DEFAULT_SIGNATURE_DATA: SignatureData = {
   companyName: "株式会社テクノソリューション",
-  personName: "田中 美咲",
+  department: "営業部",
+  jobTitle: "マネージャー",
+  personName: "田中 美咏",
   nameReading: "タナカ ミサキ / Misaki Tanaka",
   webUrl: "https://www.techno-solution.co.jp",
   email: "m.tanaka@techno-solution.co.jp",
   phone: "03-1234-5678",
   postalCode: "100-0001",
-  address1: "東京都千代田区千代田1-1",
-  address2: "テクノビル 3F",
+  address1: "東京都千代田区千代田１－１",
+  address2: "テクノビル　３Ｆ",
   logoUrl: "",
   socialLinks: [],
   disclaimer: "",
@@ -177,6 +179,8 @@ export const TEMPLATE_MAP = Object.fromEntries(
 
 export const SIGNATURE_FIELD_KEYS: (keyof SignatureData)[] = [
   "companyName",
+  "department",
+  "jobTitle",
   "personName",
   "nameReading",
   "webUrl",

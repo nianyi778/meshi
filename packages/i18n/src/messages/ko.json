@@ -43,6 +43,8 @@
     },
     "fields": {
       "companyName": "회사명",
+      "department": "부서",
+      "jobTitle": "직함",
       "personName": "이름",
       "nameReading": "이름 읽기",
       "webUrl": "웹사이트",
@@ -55,6 +57,8 @@
     },
     "placeholders": {
       "companyName": "주식회사 샘플",
+      "department": "영업부",
+      "jobTitle": "매니저",
       "personName": "김민수",
       "nameReading": "Kim Min-su / 김민수",
       "webUrl": "https://www.example.co.kr",

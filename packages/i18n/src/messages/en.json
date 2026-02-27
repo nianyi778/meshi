@@ -43,6 +43,8 @@
     },
     "fields": {
       "companyName": "Company Name",
+      "department": "Department",
+      "jobTitle": "Job Title",
       "personName": "Full Name",
       "nameReading": "Name Reading",
       "webUrl": "Website",
@@ -55,6 +57,8 @@
     },
     "placeholders": {
       "companyName": "Acme Inc.",
+      "department": "Sales Department",
+      "jobTitle": "Manager",
       "personName": "John Smith",
       "nameReading": "John Smith",
       "webUrl": "https://www.example.com",
@@ -149,9 +153,9 @@
       },
       "outlook": {
         "step1": "Click 'Copy HTML' below.",
-        "step2": "Open Outlook Settings → Mail → Compose and reply → Email signature.",
-        "step3": "Click 'New signature' and give it a name.",
-        "step4": "Paste into the text area and save."
+        "step2": "Open Outlook → File → Options → Mail → Signatures.",
+        "step3": "Click 'New', name it, right-click the edit area → 'Paste as HTML'.",
+        "step4": "Set signature for 'New messages' and 'Replies/Forwards', click OK."
       },
       "apple": {
         "step1": "Click 'Copy HTML' below.",

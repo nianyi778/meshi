@@ -118,6 +118,13 @@ export function TemplateMinimal({ data, style, className }: TemplateProps) {
         </div>
       )}
 
+      {/* Department + Job title */}
+      {(v.department && data.department || v.jobTitle && data.jobTitle) && (
+        <div style={{ fontSize: `${fontSize - 2}px`, opacity: 0.55, marginTop: "2px" }}>
+          {[v.department && data.department, v.jobTitle && data.jobTitle].filter(Boolean).join(" / ")}
+        </div>
+      )}
+
       {/* Company name — smaller, muted */}
       {v.companyName && data.companyName && (
         <div

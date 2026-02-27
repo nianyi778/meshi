@@ -119,6 +119,10 @@ function generateClassicHtml(data: SignatureData, style: SignatureStyle): string
   if (v.companyName && data.companyName) {
     rows.push(`<tr><td style="padding:4px 0 0;font-weight:bold;color:${style.primaryColor};font-size:${style.fontSize}px;">${escapeHtml(data.companyName)}</td></tr>`);
   }
+  const deptJob = [v.department && data.department, v.jobTitle && data.jobTitle].filter(Boolean).map(escapeHtml).join(" / ");
+  if (deptJob) {
+    rows.push(`<tr><td style="padding:1px 0;font-size:${style.fontSize - 1}px;color:${style.accentColor};">${deptJob}</td></tr>`);
+  }
   if (v.personName && data.personName) {
     const reading = v.nameReading && data.nameReading ? `（${escapeHtml(data.nameReading)}）` : "";
     rows.push(`<tr><td style="padding:2px 0;font-size:${style.fontSize}px;">${escapeHtml(data.personName)}${reading}</td></tr>`);
@@ -165,7 +169,11 @@ function generateModernHtml(data: SignatureData, style: SignatureStyle): string 
     rows.push(`<tr><td style="padding:0 0 2px;font-size:${style.fontSize + 2}px;font-weight:bold;color:${style.primaryColor};">${escapeHtml(data.personName)}</td></tr>`);
   }
   if (v.nameReading && data.nameReading) {
-    rows.push(`<tr><td style="padding:0 0 8px;font-size:${style.fontSize - 2}px;color:#999999;">${escapeHtml(data.nameReading)}</td></tr>`);
+    rows.push(`<tr><td style="padding:0 0 2px;font-size:${style.fontSize - 2}px;color:#999999;">${escapeHtml(data.nameReading)}</td></tr>`);
+  }
+  const deptJobModern = [v.department && data.department, v.jobTitle && data.jobTitle].filter(Boolean).map(escapeHtml).join(" / ");
+  if (deptJobModern) {
+    rows.push(`<tr><td style="padding:0 0 8px;font-size:${style.fontSize - 2}px;color:#888888;">${deptJobModern}</td></tr>`);
   }
 
   const contactRows: string[] = [];
@@ -199,6 +207,10 @@ function generateMinimalHtml(data: SignatureData, style: SignatureStyle): string
   if (v.personName && data.personName) {
     rows.push(`<tr><td style="font-size:${Math.round(style.fontSize * 1.5)}px;font-weight:bold;color:${style.primaryColor};padding:0 0 2px;">${escapeHtml(data.personName)}</td></tr>`);
   }
+  const deptJobMin = [v.department && data.department, v.jobTitle && data.jobTitle].filter(Boolean).map(escapeHtml).join(" / ");
+  if (deptJobMin) {
+    rows.push(`<tr><td style="font-size:${style.fontSize - 1}px;color:#888;padding:0 0 2px;">${deptJobMin}</td></tr>`);
+  }
   if (v.companyName && data.companyName) {
     rows.push(`<tr><td style="font-size:${style.fontSize - 1}px;color:#999;padding:0 0 8px;">${escapeHtml(data.companyName)}</td></tr>`);
   }
@@ -229,7 +241,11 @@ function generateCorporateHtml(data: SignatureData, style: SignatureStyle): stri
   const rows: string[] = [];
 
   if (v.companyName && data.companyName) {
-    rows.push(`<tr><td style="font-weight:bold;font-size:${style.fontSize}px;color:${style.primaryColor};padding:0 0 4px;">${escapeHtml(data.companyName)}</td></tr>`);
+    rows.push(`<tr><td style="font-weight:bold;font-size:${style.fontSize}px;color:${style.primaryColor};padding:0 0 2px;">${escapeHtml(data.companyName)}</td></tr>`);
+  }
+  const deptJobCorp = [v.department && data.department, v.jobTitle && data.jobTitle].filter(Boolean).map(escapeHtml).join(" / ");
+  if (deptJobCorp) {
+    rows.push(`<tr><td style="font-size:${style.fontSize - 1}px;color:${style.accentColor};padding:0 0 2px;">${deptJobCorp}</td></tr>`);
   }
   if (v.personName && data.personName) {
     const reading = v.nameReading && data.nameReading ? ` <span style="color:#999;font-size:${style.fontSize - 2}px;">${escapeHtml(data.nameReading)}</span>` : "";
@@ -268,7 +284,11 @@ function generateElegantHtml(data: SignatureData, style: SignatureStyle): string
     rows.push(`<tr><td style="${centerStyle}font-size:${style.fontSize + 4}px;font-weight:bold;color:${style.primaryColor};padding:12px 0 2px;letter-spacing:2px;">${escapeHtml(data.personName)}</td></tr>`);
   }
   if (v.companyName && data.companyName) {
-    rows.push(`<tr><td style="${centerStyle}font-size:${style.fontSize - 2}px;color:#999;padding:0 0 8px;">${escapeHtml(data.companyName)}</td></tr>`);
+    rows.push(`<tr><td style="${centerStyle}font-size:${style.fontSize - 2}px;color:#999;padding:0 0 4px;">${escapeHtml(data.companyName)}</td></tr>`);
+  }
+  const deptJobEleg = [v.department && data.department, v.jobTitle && data.jobTitle].filter(Boolean).map(escapeHtml).join(" ・ ");
+  if (deptJobEleg) {
+    rows.push(`<tr><td style="${centerStyle}font-size:${style.fontSize - 2}px;color:#aaa;padding:0 0 8px;">${deptJobEleg}</td></tr>`);
   }
 
   rows.push(`<tr><td style="${centerStyle}color:#ccc;padding:4px 0;">· · ·</td></tr>`);

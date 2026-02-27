@@ -96,6 +96,13 @@ export function TemplateModern({ data, style, className }: TemplateProps) {
               {data.nameReading}
             </div>
           )}
+
+          {/* Department + Job title */}
+          {(v.department && data.department || v.jobTitle && data.jobTitle) && (
+            <div style={{ fontSize: `${fontSize - 2}px`, opacity: 0.65, marginTop: "2px" }}>
+              {[v.department && data.department, v.jobTitle && data.jobTitle].filter(Boolean).join(" / ")}
+            </div>
+          )}
         </div>
 
         {/* Logo */}
