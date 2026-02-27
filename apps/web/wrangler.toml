@@ -12,5 +12,5 @@ routes = [
 [[d1_databases]]
 binding = "DB"
 database_name = "meishi-db"
-database_id = "REPLACE_WITH_ACTUAL_ID"
+database_id = "0a387f70-533d-4aa4-9c15-fef532d1f226"
 migrations_dir = "drizzle/migrations"
