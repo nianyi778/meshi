@@ -35,7 +35,7 @@ export function ExportPanel() {
   }, [t, posthog, data, style]);
 
   const handleCopyHtml = useCallback(async () => {
-    const html = generateGmailHtml(data, style);
+    const html = await generateGmailHtml(data, style);
     const success = await copyHtmlToClipboard(html);
     if (success) {
       posthog?.capture("export_clicked", {

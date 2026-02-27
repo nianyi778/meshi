@@ -17,7 +17,7 @@ export function GmailIntegration() {
   const t = useTranslations();
 
   const handleCopy = useCallback(async () => {
-    const html = generateGmailHtml(data, style);
+    const html = await generateGmailHtml(data, style);
     const success = await copyHtmlToClipboard(html);
     if (success) {
       setCopied(true);

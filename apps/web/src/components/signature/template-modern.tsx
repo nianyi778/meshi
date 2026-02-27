@@ -3,6 +3,7 @@
 import type { SignatureData, SignatureStyle } from "@meishi/core/types";
 import { getFontFamilyCss, formatPhoneForLink, getSocialIconSvg } from "@meishi/core/utils";
 import { SOCIAL_PLATFORMS } from "@meishi/core/constants";
+import { QRCodeDisplay } from "./qr-code-display";
 
 interface TemplateProps {
   data: SignatureData;
@@ -233,6 +234,13 @@ export function TemplateModern({ data, style, className }: TemplateProps) {
               />
             );
           })}
+        </div>
+      )}
+
+      {/* QR Code */}
+      {v.qrCode && data.webUrl && (
+        <div style={{ marginTop: "10px" }}>
+          <QRCodeDisplay url={data.webUrl} size={60} color={style.primaryColor} />
         </div>
       )}
 

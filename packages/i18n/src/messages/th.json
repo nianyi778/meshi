@@ -53,7 +53,8 @@
       "postalCode": "รหัสไปรษณีย์",
       "address1": "ที่อยู่ 1",
       "address2": "ที่อยู่ 2",
-      "logoUrl": "รูปโลโก้"
+      "logoUrl": "รูปโลโก้",
+      "qrCode": "QR โค้ด"
     },
     "placeholders": {
       "companyName": "บริษัท ตัวอย่าง จำกัด",
@@ -72,6 +73,7 @@
     "logoSelect": "คลิกเพื่อเลือกโลโก้",
     "logoPreview": "ตัวอย่างโลโก้",
     "logoSelectAria": "เลือกรูปโลโก้",
+    "qrCodeDescription": "แสดง QR โค้ดของ URL เว็บไซต์ในลายเซ็น",
     "utm": {
       "title": "เพิ่มพารามิเตอร์ UTM",
       "campaign": "ชื่อแคมเปญ",
@@ -124,6 +126,14 @@
     "elegant": {
       "name": "เอเลแกนต์",
       "description": "ฟอนต์เซริฟ เส้นขอบบาง ดูสง่างาม"
+    },
+    "creative": {
+      "name": "ครีเอทีฟ",
+      "description": "แถบไล่สี + เลย์เอาต์ 2 คอลัมน์ เหมาะสำหรับสายงานครีเอทีฟ"
+    },
+    "professional": {
+      "name": "โปรเฟสชันนัล",
+      "description": "แผงซ้ายสีเข้ม + ข้อมูลติดต่อด้านขวา เหมาะสำหรับการเงิน กฎหมาย"
     }
   },
   "colorPresets": {

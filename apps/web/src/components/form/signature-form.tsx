@@ -418,6 +418,29 @@ export function SignatureForm() {
         </div>
       </fieldset>
 
+      {/* ---------- QR Code ---------- */}
+      <fieldset className="space-y-4">
+        <div className="flex items-center justify-between">
+          <legend className="text-sm font-bold text-[var(--color-brand-text)]">
+            {t("form.fields.qrCode")}
+          </legend>
+          <button
+            type="button"
+            onClick={() => toggleFieldVisibility("qrCode")}
+            title={style.fieldVisibility.qrCode ? t("common.hide") : t("common.show")}
+            className="flex h-8 w-8 items-center justify-center rounded-lg text-[var(--color-brand-text-muted)] transition-all duration-200 hover:bg-[var(--color-brand-bg)] hover:text-[var(--color-brand-text)] cursor-pointer"
+          >
+            {style.fieldVisibility.qrCode ? (
+              <Eye className="h-4 w-4" />
+            ) : (
+              <EyeOff className="h-4 w-4 opacity-50" />
+            )}
+          </button>
+        </div>
+        <p className="text-xs text-[var(--color-brand-text-muted)]">
+          {t("form.qrCodeDescription")}
+        </p>
+      </fieldset>
       {/* ---------- Disclaimer ---------- */}
       <fieldset className="space-y-4">
         <div className="flex items-center justify-between">

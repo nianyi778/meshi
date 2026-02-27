@@ -21,7 +21,7 @@ export function EmailClientGuide() {
   const t = useTranslations();
 
   const handleCopy = useCallback(async () => {
-    const html = generateGmailHtml(data, style);
+    const html = await generateGmailHtml(data, style);
     const ok = await copyHtmlToClipboard(html);
     if (ok) {
       setCopied(true);

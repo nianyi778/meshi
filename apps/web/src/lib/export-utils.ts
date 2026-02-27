@@ -1,4 +1,5 @@
 import { toPng } from "html-to-image";
+import QRCode from "qrcode";
 import type {
   SignatureData,
   SignatureStyle,
@@ -107,7 +108,20 @@ function buildSocialLinksRow(data: SignatureData, style: SignatureStyle, align?:
   return `<tr><td style="padding:10px 0 0;${alignStyle}">${icons}</td></tr>`;
 }
 
-function generateClassicHtml(data: SignatureData, style: SignatureStyle): string {
+function buildQRCodeRow(qrDataUrl: string, align?: string): string {
+  const alignStyle = align === "center" ? "text-align:center;" : "";
+  return `<tr><td style="padding:10px 0 0;${alignStyle}"><img src="${qrDataUrl}" width="60" height="60" alt="QR Code" style="display:block;${align === "center" ? "margin:0 auto;" : ""}" /></td></tr>`;
+}
+
+async function generateQRDataUrl(url: string, color: string): Promise<string> {
+  return QRCode.toDataURL(url, {
+    width: 60,
+    margin: 1,
+    color: { dark: color, light: "#FFFFFF" },
+  });
+}
+
+function generateClassicHtml(data: SignatureData, style: SignatureStyle, qrDataUrl?: string): string {
   const v = style.fieldVisibility;
   const fontCss = getFontFamilyCss(style.fontFamily);
   const borderLine = `<tr><td style="border-top:2px ${style.borderStyle} ${style.borderColor};padding:0;line-height:0;font-size:0;">&nbsp;</td></tr>`;
@@ -150,13 +164,14 @@ function generateClassicHtml(data: SignatureData, style: SignatureStyle): string
   }
 
   rows.push(buildSocialLinksRow(data, style));
+  if (qrDataUrl && v.qrCode && data.webUrl) rows.push(buildQRCodeRow(qrDataUrl));
 
   if (style.borderStyle !== "none") rows.push(borderLine);
 
   return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:${fontCss};font-size:${style.fontSize}px;color:${style.textColor};background-color:${style.backgroundColor};max-width:500px;">${rows.join("")}</table>`;
 }
 
-function generateModernHtml(data: SignatureData, style: SignatureStyle): string {
+function generateModernHtml(data: SignatureData, style: SignatureStyle, qrDataUrl?: string): string {
   const v = style.fieldVisibility;
   const fontCss = getFontFamilyCss(style.fontFamily);
 
@@ -196,10 +211,11 @@ function generateModernHtml(data: SignatureData, style: SignatureStyle): string 
   }
 
   rows.push(buildSocialLinksRow(data, style));
+  if (qrDataUrl && v.qrCode && data.webUrl) rows.push(buildQRCodeRow(qrDataUrl));
 
   return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:${fontCss};color:${style.textColor};background-color:${style.backgroundColor};padding:20px;border-radius:12px;border:1px solid #e5e7eb;max-width:500px;">${rows.join("")}</table>`;
 }
-function generateMinimalHtml(data: SignatureData, style: SignatureStyle): string {
+function generateMinimalHtml(data: SignatureData, style: SignatureStyle, qrDataUrl?: string): string {
   const v = style.fieldVisibility;
   const fontCss = getFontFamilyCss(style.fontFamily);
   const rows: string[] = [];
@@ -232,10 +248,11 @@ function generateMinimalHtml(data: SignatureData, style: SignatureStyle): string
   }
 
   rows.push(buildSocialLinksRow(data, style));
+  if (qrDataUrl && v.qrCode && data.webUrl) rows.push(buildQRCodeRow(qrDataUrl));
 
   return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:${fontCss};font-size:${style.fontSize}px;color:${style.textColor};background-color:${style.backgroundColor};max-width:500px;">${rows.join("")}</table>`;
 }
-function generateCorporateHtml(data: SignatureData, style: SignatureStyle): string {
+function generateCorporateHtml(data: SignatureData, style: SignatureStyle, qrDataUrl?: string): string {
   const v = style.fieldVisibility;
   const fontCss = getFontFamilyCss(style.fontFamily);
   const rows: string[] = [];
@@ -267,10 +284,11 @@ function generateCorporateHtml(data: SignatureData, style: SignatureStyle): stri
   }
 
   rows.push(buildSocialLinksRow(data, style));
+  if (qrDataUrl && v.qrCode && data.webUrl) rows.push(buildQRCodeRow(qrDataUrl));
 
   return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:${fontCss};font-size:${style.fontSize}px;color:${style.textColor};background-color:${style.backgroundColor};border-left:4px solid ${style.accentColor};padding:12px 0 12px 16px;max-width:500px;">${rows.join("")}</table>`;
 }
-function generateElegantHtml(data: SignatureData, style: SignatureStyle): string {
+function generateElegantHtml(data: SignatureData, style: SignatureStyle, qrDataUrl?: string): string {
   const v = style.fieldVisibility;
   const fontCss = getFontFamilyCss(style.fontFamily);
   const rows: string[] = [];
@@ -312,6 +330,7 @@ function generateElegantHtml(data: SignatureData, style: SignatureStyle): string
   }
 
   rows.push(buildSocialLinksRow(data, style, "center"));
+  if (qrDataUrl && v.qrCode && data.webUrl) rows.push(buildQRCodeRow(qrDataUrl, "center"));
 
   if (style.borderStyle !== "none") {
     rows.push(`<tr><td style="border-bottom:1px solid ${style.borderColor};padding:12px 0 0;"></td></tr>`);
@@ -319,15 +338,136 @@ function generateElegantHtml(data: SignatureData, style: SignatureStyle): string
 
   return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:${fontCss};font-size:${style.fontSize}px;color:${style.textColor};background-color:${style.backgroundColor};max-width:500px;width:100%;">${rows.join("")}</table>`;
 }
-const TEMPLATE_GENERATORS: Record<TemplateId, (data: SignatureData, style: SignatureStyle) => string> = {
+function generateCreativeHtml(data: SignatureData, style: SignatureStyle, qrDataUrl?: string): string {
+  const v = style.fieldVisibility;
+  const fontCss = getFontFamilyCss(style.fontFamily);
+  const rows: string[] = [];
+
+  // Top gradient bar
+  rows.push(`<tr><td colspan="2" style="height:6px;border-radius:3px 3px 0 0;background:linear-gradient(135deg, ${style.primaryColor}, ${style.accentColor});padding:0;line-height:0;font-size:0;">&nbsp;</td></tr>`);
+  rows.push('<tr><td colspan="2" style="height:14px;"></td></tr>');
+
+  // Two-column content row
+  const leftParts: string[] = [];
+  if (v.logo && data.logoUrl) {
+    leftParts.push(`<img src="${escapeHtml(data.logoUrl)}" alt="${escapeHtml(data.companyName || 'Logo')}" style="max-height:36px;max-width:140px;object-fit:contain;margin-bottom:10px;display:block;" />`);
+  }
+  if (v.personName && data.personName) {
+    leftParts.push(`<div style="font-weight:700;font-size:${style.fontSize + 4}px;color:${style.primaryColor};line-height:1.3;margin-bottom:2px;">${escapeHtml(data.personName)}</div>`);
+  }
+  if (v.nameReading && data.nameReading) {
+    leftParts.push(`<div style="font-size:${style.fontSize - 2}px;opacity:0.6;margin-bottom:4px;">${escapeHtml(data.nameReading)}</div>`);
+  }
+  const deptJobCreative = [v.department && data.department, v.jobTitle && data.jobTitle].filter(Boolean).map(escapeHtml).join(" / ");
+  if (deptJobCreative) {
+    leftParts.push(`<div style="font-size:${style.fontSize - 1}px;color:${style.accentColor};font-weight:600;margin-bottom:4px;">${deptJobCreative}</div>`);
+  }
+  if (v.companyName && data.companyName) {
+    leftParts.push(`<div style="font-size:${style.fontSize - 1}px;font-weight:500;opacity:0.8;">${escapeHtml(data.companyName)}</div>`);
+  }
+
+  const rightParts: string[] = [];
+  if (v.email && data.email) {
+    rightParts.push(`<div style="margin-bottom:4px;font-size:${style.fontSize - 1}px;"><span style="opacity:0.5;">✉ </span><a href="mailto:${escapeHtml(data.email)}" style="color:${style.textColor};text-decoration:none;">${escapeHtml(data.email)}</a></div>`);
+  }
+  if (v.phone && data.phone) {
+    rightParts.push(`<div style="margin-bottom:4px;font-size:${style.fontSize - 1}px;"><span style="opacity:0.5;">📱 </span><a href="tel:${formatPhoneForLink(data.phone)}" style="color:${style.textColor};text-decoration:none;">${escapeHtml(data.phone)}</a></div>`);
+  }
+  if (v.webUrl && data.webUrl) {
+    rightParts.push(`<div style="margin-bottom:4px;font-size:${style.fontSize - 1}px;"><span style="opacity:0.5;">🌐 </span><a href="${escapeHtml(data.webUrl)}" style="color:${style.textColor};text-decoration:none;" target="_blank">${escapeHtml(data.webUrl)}</a></div>`);
+  }
+  const addrParts: string[] = [];
+  if (v.postalCode && data.postalCode) addrParts.push(`〒${escapeHtml(data.postalCode)}`);
+  if (v.address1 && data.address1) addrParts.push(escapeHtml(data.address1));
+  if (v.address2 && data.address2) addrParts.push(escapeHtml(data.address2));
+  if (addrParts.length > 0) {
+    rightParts.push(`<div style="margin-bottom:4px;font-size:${style.fontSize - 1}px;"><span style="opacity:0.5;">📍 </span>${addrParts.join(" ")}</div>`);
+  }
+  // Social links in right column
+  if (v.socialLinks && data.socialLinks && data.socialLinks.length > 0) {
+    const icons = data.socialLinks.map((link) => {
+      const platform = SOCIAL_PLATFORMS.find(p => p.id === link.platform);
+      if (!platform || !link.url) return "";
+      return `<a href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;width:26px;height:26px;border-radius:6px;background-color:${platform.color};text-align:center;line-height:26px;text-decoration:none;">${getSocialIconSvg(link.platform)}</a>`;
+    }).filter(Boolean).join("&nbsp;");
+    if (icons) rightParts.push(`<div style="margin-top:8px;">${icons}</div>`);
+  }
+  if (qrDataUrl && v.qrCode && data.webUrl) rightParts.push(`<div style="margin-top:10px;"><img src="${qrDataUrl}" width="60" height="60" alt="QR Code" style="display:block;" /></div>`);
+
+  rows.push(`<tr><td style="vertical-align:top;padding-right:16px;width:50%;">${leftParts.join("")}</td><td style="vertical-align:top;padding-left:16px;border-left:2px solid ${style.accentColor};width:50%;">${rightParts.join("")}</td></tr>`);
+
+  return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:${fontCss};font-size:${style.fontSize}px;color:${style.textColor};background-color:${style.backgroundColor};max-width:500px;width:100%;">${rows.join("")}</table>`;
+}
+
+function generateProfessionalHtml(data: SignatureData, style: SignatureStyle, qrDataUrl?: string): string {
+  const v = style.fieldVisibility;
+  const fontCss = getFontFamilyCss(style.fontFamily);
+  const labelCss = `font-size:${style.fontSize - 2}px;color:${style.accentColor};font-weight:600;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1px;`;
+
+  const leftParts: string[] = [];
+  if (v.logo && data.logoUrl) {
+    leftParts.push(`<img src="${escapeHtml(data.logoUrl)}" alt="${escapeHtml(data.companyName || 'Logo')}" style="max-height:32px;max-width:120px;object-fit:contain;filter:brightness(0) invert(1);margin-bottom:12px;display:block;" />`);
+  }
+  if (v.personName && data.personName) {
+    leftParts.push(`<div style="font-weight:700;font-size:${style.fontSize + 3}px;color:#FFFFFF;line-height:1.3;margin-bottom:4px;">${escapeHtml(data.personName)}</div>`);
+  }
+  if (v.nameReading && data.nameReading) {
+    leftParts.push(`<div style="font-size:${style.fontSize - 2}px;color:rgba(255,255,255,0.7);margin-bottom:6px;">${escapeHtml(data.nameReading)}</div>`);
+  }
+  const deptJobProf = [v.department && data.department, v.jobTitle && data.jobTitle].filter(Boolean).map(escapeHtml).join(" / ");
+  if (deptJobProf) {
+    leftParts.push(`<div style="font-size:${style.fontSize - 1}px;color:${style.accentColor};font-weight:600;margin-bottom:4px;">${deptJobProf}</div>`);
+  }
+  if (v.companyName && data.companyName) {
+    leftParts.push(`<div style="font-size:${style.fontSize - 1}px;color:rgba(255,255,255,0.8);">${escapeHtml(data.companyName)}</div>`);
+  }
+
+  const rightParts: string[] = [];
+  if (v.email && data.email) {
+    rightParts.push(`<div style="margin-bottom:8px;"><div style="${labelCss}">Email</div><a href="mailto:${escapeHtml(data.email)}" style="color:${style.textColor};text-decoration:none;">${escapeHtml(data.email)}</a></div>`);
+  }
+  if (v.phone && data.phone) {
+    rightParts.push(`<div style="margin-bottom:8px;"><div style="${labelCss}">Tel</div><a href="tel:${formatPhoneForLink(data.phone)}" style="color:${style.textColor};text-decoration:none;">${escapeHtml(data.phone)}</a></div>`);
+  }
+  if (v.webUrl && data.webUrl) {
+    rightParts.push(`<div style="margin-bottom:8px;"><div style="${labelCss}">Web</div><a href="${escapeHtml(data.webUrl)}" style="color:${style.textColor};text-decoration:none;" target="_blank">${escapeHtml(data.webUrl)}</a></div>`);
+  }
+  const addrItems: string[] = [];
+  if (v.postalCode && data.postalCode) addrItems.push(`〒${escapeHtml(data.postalCode)}`);
+  if (v.address1 && data.address1) addrItems.push(escapeHtml(data.address1));
+  if (v.address2 && data.address2) addrItems.push(escapeHtml(data.address2));
+  if (addrItems.length > 0) {
+    rightParts.push(`<div style="margin-bottom:8px;"><div style="${labelCss}">Address</div>${addrItems.join("<br>")}</div>`);
+  }
+  // Social links
+  if (v.socialLinks && data.socialLinks && data.socialLinks.length > 0) {
+    const icons = data.socialLinks.map((link) => {
+      const platform = SOCIAL_PLATFORMS.find(p => p.id === link.platform);
+      if (!platform || !link.url) return "";
+      return `<a href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer" style="display:inline-block;width:26px;height:26px;border-radius:6px;background-color:${platform.color};text-align:center;line-height:26px;text-decoration:none;">${getSocialIconSvg(link.platform)}</a>`;
+    }).filter(Boolean).join("&nbsp;");
+    if (icons) rightParts.push(`<div style="margin-top:4px;">${icons}</div>`);
+  }
+  if (qrDataUrl && v.qrCode && data.webUrl) rightParts.push(`<div style="margin-top:10px;"><img src="${qrDataUrl}" width="60" height="60" alt="QR Code" style="display:block;" /></div>`);
+
+  return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:${fontCss};font-size:${style.fontSize}px;max-width:500px;width:100%;"><tr><td style="vertical-align:top;background-color:${style.primaryColor};color:#FFFFFF;padding:20px 16px;width:40%;">${leftParts.join("")}</td><td style="vertical-align:top;background-color:${style.backgroundColor};color:${style.textColor};padding:20px 16px;border-left:3px solid ${style.accentColor};width:60%;">${rightParts.join("")}</td></tr></table>`;
+}
+const TEMPLATE_GENERATORS: Record<TemplateId, (data: SignatureData, style: SignatureStyle, qrDataUrl?: string) => string> = {
   classic: generateClassicHtml,
   modern: generateModernHtml,
   minimal: generateMinimalHtml,
   corporate: generateCorporateHtml,
   elegant: generateElegantHtml,
+  creative: generateCreativeHtml,
+  professional: generateProfessionalHtml,
 };
 
-export function generateGmailHtml(data: SignatureData, style: SignatureStyle): string {
+export async function generateGmailHtml(data: SignatureData, style: SignatureStyle): Promise<string> {
+  const v = style.fieldVisibility;
+  let qrDataUrl: string | undefined;
+  if (v.qrCode && data.webUrl) {
+    qrDataUrl = await generateQRDataUrl(data.webUrl, style.primaryColor);
+  }
   const generator = TEMPLATE_GENERATORS[style.templateId];
-  return generator(data, style);
+  return generator(data, style, qrDataUrl);
 }

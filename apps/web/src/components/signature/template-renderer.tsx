@@ -6,6 +6,8 @@ import { TemplateModern } from "./template-modern";
 import { TemplateMinimal } from "./template-minimal";
 import { TemplateCorporate } from "./template-corporate";
 import { TemplateElegant } from "./template-elegant";
+import { TemplateCreative } from "./template-creative";
+import { TemplateProfessional } from "./template-professional";
 
 interface TemplateRendererProps {
   data: SignatureData;
@@ -27,6 +29,10 @@ export default function TemplateRenderer({
       return <TemplateCorporate data={data} style={style} />;
     case "elegant":
       return <TemplateElegant data={data} style={style} />;
+    case "creative":
+      return <TemplateCreative data={data} style={style} />;
+    case "professional":
+      return <TemplateProfessional data={data} style={style} />;
     default: {
       const _exhaustive: never = style.templateId;
       return <TemplateClassic data={data} style={style} />;

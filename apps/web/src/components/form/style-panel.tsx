@@ -120,6 +120,41 @@ const TEMPLATE_THUMBNAILS: Record<TemplateId, React.ReactNode> = {
       <rect x="60" y="70" width="40" height="2" rx="1" fill="var(--color-brand-primary)" opacity="0.3" />
     </svg>
   ),
+  creative: (
+    <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <defs>
+        <linearGradient id="creative-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="var(--color-brand-primary)" />
+          <stop offset="100%" stopColor="#EC4899" />
+        </linearGradient>
+      </defs>
+      <rect x="8" y="6" width="144" height="6" rx="3" fill="url(#creative-grad)" opacity="0.85" />
+      <rect x="8" y="20" width="50" height="7" rx="2" fill="var(--color-brand-primary)" opacity="0.7" />
+      <rect x="8" y="30" width="36" height="4" rx="1.5" fill="#94A3B8" opacity="0.4" />
+      <rect x="8" y="38" width="44" height="3" rx="1" fill="#CBD5E1" opacity="0.35" />
+      <rect x="8" y="45" width="40" height="3" rx="1" fill="#CBD5E1" opacity="0.35" />
+      <line x1="80" y1="18" x2="80" y2="68" stroke="var(--color-brand-primary)" strokeWidth="1.5" opacity="0.3" />
+      <rect x="88" y="20" width="60" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="88" y="28" width="52" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="88" y="36" width="56" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="88" y="44" width="48" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+    </svg>
+  ),
+  professional: (
+    <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <rect x="0" y="0" width="60" height="80" fill="var(--color-brand-primary)" opacity="0.9" />
+      <rect x="10" y="16" width="40" height="7" rx="2" fill="#FFFFFF" opacity="0.9" />
+      <rect x="10" y="27" width="30" height="4" rx="1.5" fill="#FFFFFF" opacity="0.5" />
+      <rect x="10" y="36" width="36" height="3" rx="1" fill="#D4AF37" opacity="0.7" />
+      <rect x="10" y="44" width="34" height="3" rx="1" fill="#FFFFFF" opacity="0.4" />
+      <rect x="64" y="0" width="3" height="80" fill="#D4AF37" opacity="0.6" />
+      <rect x="74" y="16" width="72" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="74" y="24" width="64" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="74" y="32" width="68" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="74" y="40" width="56" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+      <rect x="74" y="48" width="60" height="3" rx="1" fill="#CBD5E1" opacity="0.4" />
+    </svg>
+  ),
 };
 
 // ---------------------------------------------------------------------------

@@ -53,7 +53,8 @@
       "postalCode": "Kode Pos",
       "address1": "Alamat 1",
       "address2": "Alamat 2",
-      "logoUrl": "Gambar Logo"
+      "logoUrl": "Gambar Logo",
+      "qrCode": "Kode QR"
     },
     "placeholders": {
       "companyName": "PT Contoh Sukses",
@@ -72,6 +73,7 @@
     "logoSelect": "Klik untuk memilih logo",
     "logoPreview": "Pratinjau Logo",
     "logoSelectAria": "Pilih gambar logo",
+    "qrCodeDescription": "Tampilkan kode QR URL situs web di tanda tangan.",
     "utm": {
       "title": "Tambah Parameter UTM",
       "campaign": "Nama kampanye",
@@ -124,6 +126,14 @@
     "elegant": {
       "name": "Elegan",
       "description": "Font serif, batas tipis. Kesan mewah."
+    },
+    "creative": {
+      "name": "Kreatif",
+      "description": "Bar gradien + tata letak 2 kolom. Cocok untuk industri kreatif."
+    },
+    "professional": {
+      "name": "Profesional",
+      "description": "Panel kiri gelap + kontak kanan. Ideal untuk keuangan, hukum, konsultasi."
     }
   },
   "colorPresets": {

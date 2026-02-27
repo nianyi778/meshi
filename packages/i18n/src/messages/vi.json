@@ -53,7 +53,8 @@
       "postalCode": "Mã bưu chính",
       "address1": "Địa chỉ 1",
       "address2": "Địa chỉ 2",
-      "logoUrl": "Hình ảnh logo"
+      "logoUrl": "Hình ảnh logo",
+      "qrCode": "Mã QR"
     },
     "placeholders": {
       "companyName": "Công ty TNHH Mẫu",
@@ -72,6 +73,7 @@
     "logoSelect": "Nhấp để chọn logo",
     "logoPreview": "Xem trước logo",
     "logoSelectAria": "Chọn hình ảnh logo",
+    "qrCodeDescription": "Hiển thị mã QR của URL trang web trong chữ ký.",
     "utm": {
       "title": "Thêm tham số UTM",
       "campaign": "Tên chiến dịch",
@@ -124,6 +126,14 @@
     "elegant": {
       "name": "Thanh lịch",
       "description": "Phông chữ serif, đường viền mỏng. Ấn tượng sang trọng."
+    },
+    "creative": {
+      "name": "Sáng Tạo",
+      "description": "Thanh gradient + bố cục 2 cột. Phù hợp ngành sáng tạo và startup."
+    },
+    "professional": {
+      "name": "Chuyên Nghiệp",
+      "description": "Bảng trái tối + liên hệ phải. Lý tưởng cho tài chính, luật, tư vấn."
     }
   },
   "colorPresets": {

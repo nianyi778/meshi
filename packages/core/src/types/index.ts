@@ -44,7 +44,7 @@ export interface SignatureData {
 }
 
 /** Template ID */
-export type TemplateId = "classic" | "modern" | "minimal" | "corporate" | "elegant";
+export type TemplateId = "classic" | "modern" | "minimal" | "corporate" | "elegant" | "creative" | "professional";
 
 /** Font family options */
 export type FontFamily =
@@ -73,6 +73,7 @@ export interface FieldVisibility {
   logo: boolean;
   socialLinks: boolean;
   disclaimer: boolean;
+  qrCode: boolean;
 }
 
 /** Style customization options */

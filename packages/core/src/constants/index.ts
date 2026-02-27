@@ -25,6 +25,7 @@ export const DEFAULT_FIELD_VISIBILITY: FieldVisibility = {
   logo: false,
   socialLinks: true,
   disclaimer: false,
+  qrCode: false,
 };
 
 export const DEFAULT_SIGNATURE_DATA: SignatureData = {
@@ -164,6 +165,26 @@ export const TEMPLATES: TemplateDefinition[] = [
       accentColor: "#A8A29E",
       borderStyle: "solid",
       fontFamily: "noto-serif-jp",
+    },
+  },
+  {
+    id: "creative",
+    previewKey: "creative",
+    defaultStyle: {
+      primaryColor: "#7C3AED",
+      accentColor: "#EC4899",
+      borderStyle: "none",
+      fontFamily: "inter",
+    },
+  },
+  {
+    id: "professional",
+    previewKey: "professional",
+    defaultStyle: {
+      primaryColor: "#1E3A5F",
+      accentColor: "#D4AF37",
+      borderStyle: "none",
+      fontFamily: "noto-sans-jp",
     },
   },
 ];

@@ -53,7 +53,8 @@
       "postalCode": "Postal Code",
       "address1": "Address Line 1",
       "address2": "Address Line 2",
-      "logoUrl": "Logo Image"
+      "logoUrl": "Logo Image",
+      "qrCode": "QR Code"
     },
     "placeholders": {
       "companyName": "Acme Inc.",
@@ -72,6 +73,7 @@
     "logoSelect": "Click to select logo",
     "logoPreview": "Logo preview",
     "logoSelectAria": "Select logo image",
+    "qrCodeDescription": "Display a QR code for your website URL in the signature.",
     "utm": {
       "title": "Add UTM Parameters",
       "campaign": "Campaign name",
@@ -124,6 +126,14 @@
     "elegant": {
       "name": "Elegant",
       "description": "Serif font with thin borders. Refined impression."
+    },
+    "creative": {
+      "name": "Creative",
+      "description": "Gradient bar + 2-column layout. Perfect for designers and startups."
+    },
+    "professional": {
+      "name": "Professional",
+      "description": "Dark left panel + contact right. Ideal for finance, legal, consulting."
     }
   },
   "colorPresets": {

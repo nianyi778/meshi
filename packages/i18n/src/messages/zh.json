@@ -53,7 +53,8 @@
       "postalCode": "邮政编码",
       "address1": "地址1",
       "address2": "地址2",
-      "logoUrl": "Logo图片"
+      "logoUrl": "Logo图片",
+      "qrCode": "二维码"
     },
     "placeholders": {
       "companyName": "示例科技有限公司",
@@ -72,6 +73,7 @@
     "logoSelect": "点击选择logo",
     "logoPreview": "Logo预览",
     "logoSelectAria": "选择Logo图片",
+    "qrCodeDescription": "在署名中显示网站URL的二维码。",
     "utm": {
       "title": "添加 UTM 参数",
       "campaign": "推广活动名称",
@@ -124,6 +126,14 @@
     "elegant": {
       "name": "优雅",
       "description": "衬线字体，细边框。高端大气。"
+    },
+    "creative": {
+      "name": "创意",
+      "description": "渐变顶栏＋双栏布局，适合创意行业。"
+    },
+    "professional": {
+      "name": "专业",
+      "description": "深色左栏＋联系信息右栏，适合金融法律咨询行业。"
     }
   },
   "colorPresets": {
