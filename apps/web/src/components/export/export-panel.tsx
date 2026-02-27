@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { useTranslations } from "next-intl";
-import { Download, ClipboardCopy, Mail, Check, Loader2, FileDown } from "lucide-react";
+import { Download, ClipboardCopy, Mail, Check, Loader2, FileDown, ArrowRight } from "lucide-react";
 import { useSignatureStore } from "@/store/signature-store";
 import { exportAsPng, generateGmailHtml, copyHtmlToClipboard, downloadOutlookHtm } from "@/lib/export-utils";
 import { EmailClientGuide } from "./email-client-guide";
@@ -54,13 +54,13 @@ export function ExportPanel() {
   }, [data, style, t, posthog]);
 
   return (
-    <div className="space-y-5">
-      <div className="flex flex-wrap gap-3">
+    <div className="space-y-4">
+      <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
         {/* PNG Download — Primary CTA */}
         <button
           onClick={handlePngExport}
           disabled={pngLoading}
-          className="flex items-center gap-2.5 rounded-xl bg-[var(--color-brand-cta)] px-6 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[var(--color-brand-cta)]/20 transition-all duration-200 hover:bg-[var(--color-brand-cta-hover)] hover:shadow-md hover:shadow-[var(--color-brand-cta)]/25 disabled:opacity-50 cursor-pointer"
+          className="col-span-2 flex items-center justify-center gap-2.5 rounded-xl bg-[var(--color-brand-cta)] px-8 py-3 text-sm font-semibold text-white shadow-sm shadow-[var(--color-brand-cta)]/20 transition-all duration-150 hover:bg-[var(--color-brand-cta-hover)] hover:shadow-md hover:shadow-[var(--color-brand-cta)]/25 active:scale-[0.98] disabled:opacity-50 cursor-pointer sm:col-span-1"
         >
           {pngLoading ? (
             <Loader2 className="h-4 w-4 animate-spin" />
@@ -68,12 +68,13 @@ export function ExportPanel() {
             <Download className="h-4 w-4" />
           )}
           {t("export.downloadPng")}
+          <ArrowRight className="h-3.5 w-3.5" />
         </button>
 
         {/* Copy HTML — Secondary */}
         <button
           onClick={handleCopyHtml}
-          className="flex items-center gap-2.5 rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-5 py-2.5 text-sm font-semibold text-[var(--color-brand-text-body)] shadow-sm transition-all duration-200 hover:border-[var(--color-brand-primary)]/30 hover:bg-[var(--color-brand-bg)] hover:shadow-md cursor-pointer"
+          className="flex items-center justify-center gap-2.5 rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-5 py-2.5 text-sm font-semibold text-[var(--color-brand-text-body)] shadow-sm transition-all duration-150 hover:border-[var(--color-brand-primary)]/40 hover:bg-[var(--color-brand-bg)] hover:shadow-md active:scale-[0.98] cursor-pointer"
         >
           {copySuccess ? (
             <>
@@ -91,7 +92,7 @@ export function ExportPanel() {
         {/* Email Client Guide Toggle — Tertiary */}
         <button
           onClick={() => { const next = !showGuide; setShowGuide(next); if (next) posthog?.capture("email_guide_opened", { template: style.templateId }); }}
-          className={`flex items-center gap-2.5 rounded-xl border px-5 py-2.5 text-sm font-semibold shadow-sm transition-all duration-200 cursor-pointer ${
+          className={`flex items-center justify-center gap-2.5 rounded-xl border px-5 py-2.5 text-sm font-semibold shadow-sm transition-all duration-150 active:scale-[0.98] cursor-pointer ${
             showGuide
               ? "border-[var(--color-brand-primary)] bg-[var(--color-brand-primary)]/5 text-[var(--color-brand-primary)] shadow-[var(--color-brand-primary)]/10"
               : "border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] text-[var(--color-brand-text-body)] hover:border-[var(--color-brand-primary)]/30 hover:bg-[var(--color-brand-bg)] hover:shadow-md"
@@ -105,12 +106,13 @@ export function ExportPanel() {
         <button
           onClick={async () => { setHtmLoading(true); try { await downloadOutlookHtm(data, style); posthog?.capture("export_clicked", { format: "htm", template: style.templateId }); } finally { setHtmLoading(false); } }}
           disabled={htmLoading}
-          className="flex items-center gap-2.5 rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-5 py-2.5 text-sm font-semibold text-[var(--color-brand-text-body)] shadow-sm transition-all duration-200 hover:border-[var(--color-brand-primary)]/30 hover:bg-[var(--color-brand-bg)] hover:shadow-md cursor-pointer"
+          className="flex items-center justify-center gap-2.5 rounded-xl border border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] px-5 py-2.5 text-sm font-semibold text-[var(--color-brand-text-body)] shadow-sm transition-all duration-150 hover:border-[var(--color-brand-primary)]/30 hover:bg-[var(--color-brand-bg)] hover:shadow-md active:scale-[0.98] cursor-pointer"
         >
           {htmLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <FileDown className="h-4 w-4" />}
           {t("export.downloadHtm")}
         </button>
       </div>
+      <p className="text-[11px] text-[var(--color-brand-text-muted)]">PNG は Gmail / Outlook 両対応</p>
 
       {/* Email Client Guide Panel */}
       {showGuide && (

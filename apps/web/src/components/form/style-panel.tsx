@@ -186,7 +186,7 @@ export function StylePanel() {
     <div className="flex flex-col gap-10">
       {/* ===== Template selector ===== */}
       <section className="space-y-4">
-        <h3 className="text-sm font-bold text-[var(--color-brand-text)]">{t("style.template")}</h3>
+        <h3 className="border-l-[3px] border-[var(--color-brand-primary)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">{t("style.template")}</h3>
         <div className="grid grid-cols-2 gap-3">
           {TEMPLATES.map((tpl) => {
             const isActive = style.templateId === tpl.id;
@@ -197,7 +197,7 @@ export function StylePanel() {
                 onClick={() => setTemplate(tpl.id)}
                 className={`group relative cursor-pointer rounded-xl border-2 p-2.5 text-left transition-all duration-200 ${
                   isActive
-                    ? "border-[var(--color-brand-primary)] bg-[var(--color-brand-primary)]/5 shadow-sm shadow-[var(--color-brand-primary)]/10"
+                    ? "border-[var(--color-brand-primary)] bg-[var(--color-brand-primary)]/5 ring-2 ring-[var(--color-brand-primary)] ring-offset-2 shadow-sm shadow-[var(--color-brand-primary)]/10"
                     : "border-[var(--color-brand-border)] bg-[var(--color-brand-surface)] hover:border-[var(--color-brand-primary)]/30 hover:shadow-sm"
                 }`}
               >
@@ -225,7 +225,7 @@ export function StylePanel() {
 
       {/* ===== Color customization ===== */}
       <section className="space-y-5">
-        <h3 className="text-sm font-bold text-[var(--color-brand-text)]">{t("style.color")}</h3>
+        <h3 className="border-l-[3px] border-[var(--color-brand-primary)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">{t("style.color")}</h3>
 
         {/* Color presets */}
         <div className="space-y-2.5">
@@ -243,7 +243,7 @@ export function StylePanel() {
                   type="button"
                   onClick={() => handlePresetClick(preset)}
                   title={t(`colorPresets.${preset.key}`)}
-                  className={`group/swatch relative flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border-2 transition-all duration-200 hover:scale-110 hover:shadow-md ${
+                  className={`group/swatch relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border-2 transition-all duration-200 hover:scale-110 hover:shadow-md ${
                     isActive
                       ? "border-[var(--color-brand-primary)] ring-2 ring-[var(--color-brand-primary)]/20 shadow-sm"
                       : "border-[var(--color-brand-border)] hover:border-[var(--color-brand-primary)]/40"
@@ -291,7 +291,7 @@ export function StylePanel() {
 
       {/* ===== Font family ===== */}
       <section className="space-y-4">
-        <h3 className="text-sm font-bold text-[var(--color-brand-text)]">{t("style.font")}</h3>
+        <h3 className="border-l-[3px] border-[var(--color-brand-primary)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">{t("style.font")}</h3>
         <div className="space-y-2.5">
           <Label
             htmlFor="font-family-select"
@@ -345,7 +345,7 @@ export function StylePanel() {
 
       {/* ===== Border ===== */}
       <section className="space-y-4">
-        <h3 className="text-sm font-bold text-[var(--color-brand-text)]">{t("style.border")}</h3>
+        <h3 className="border-l-[3px] border-[var(--color-brand-primary)]/60 pl-2.5 text-sm font-bold text-[var(--color-brand-text)]">{t("style.border")}</h3>
 
         <div className="space-y-2.5">
           <Label className="text-[11px] font-semibold tracking-wider text-[var(--color-brand-text-muted)] uppercase">
