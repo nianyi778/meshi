@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, lazy, Suspense } from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { SignatureForm } from "@/components/form/signature-form";
@@ -38,13 +37,13 @@ export default function GeneratorPage() {
       <header className="sticky top-0 z-50" style={{ backgroundColor: "rgba(15,23,42,0.97)", backdropFilter: "blur(16px)" }}>
         <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6">
           <div className="flex items-center gap-3">
-            <Link
-              href={`/${locale}`}
+            <a
+              href={`https://meishi.ekagu.qzz.io/${locale}`}
               className="group flex items-center gap-1.5 rounded-lg px-2 py-1.5 text-sm font-medium transition-all duration-150 cursor-pointer text-white/40 hover:text-[var(--color-brand-accent)]"
             >
               <ArrowLeft className="h-3.5 w-3.5 transition-transform duration-150 group-hover:-translate-x-0.5" />
               {t("common.back")}
-            </Link>
+            </a>
             <div className="h-5 w-px bg-white/10" />
             <div className="flex items-center gap-2.5">
               <span

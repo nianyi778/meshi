@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useAuthStore } from "@/store/auth-store";
 import { useSignatureStore } from "@/store/signature-store";
-import { LogOut, User, Cloud, Sparkles, X } from "lucide-react";
+import { LogOut, User, Cloud, Sparkles, X, Github } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 const FREE_LIMIT = 3;
@@ -92,11 +92,12 @@ export function AuthButton() {
         </svg>
         {t("auth.loginWithGoogle")}
       </a>
-      {/* GitHub — ghost text link */}
+      {/* GitHub — ghost link with icon */}
       <a
         href="/api/auth/github"
-        className="text-xs font-medium text-[var(--color-brand-text-muted)] hover:text-[var(--color-brand-text)] transition-colors cursor-pointer"
+        className="flex items-center gap-1 text-xs font-medium text-[var(--color-brand-text-muted)] hover:text-[var(--color-brand-text)] transition-colors cursor-pointer"
       >
+        <Github className="h-3.5 w-3.5" />
         GitHub
       </a>
     </div>
